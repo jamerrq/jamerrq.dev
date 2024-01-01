@@ -1,0 +1,38 @@
+---
+import AboutMe from './about-me-card.astro';
+import Title from './title.astro';
+import Experience from './experience.astro';
+import Buttons from './buttons.astro';
+import TechStack from './tech-stack.astro';
+import Featured from './featured.astro';
+import Blog from './blog.astro';
+import Socials from './socials.astro';
+
+const BENTO_STYLES = [
+	'bg-[#1b383c]',
+  'grid',
+	'items-center',
+	'justify-center',
+	'w-[95dvw]',
+	'h-[95dvh]',
+	'content-center',
+	'rounded-sm',
+	'shadow-xl',
+	'border-2',
+  'grid-cols-6',
+  'grid-rows-6',
+  'gap-3',
+  'p-3',
+].join(' ');
+---
+
+<div class={BENTO_STYLES} id="bento-grid">
+  <AboutMe />
+  <Buttons />
+  <TechStack />
+  <Experience />
+  <Title />
+  <Featured />
+  <Socials />
+  <Blog />
+</div>

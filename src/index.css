@@ -1,0 +1,32 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+@font-face{
+    src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.otf');
+    font-family: 'Fira';
+}
+
+.responsive-text{
+    font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
+}
+
+.responsive-text-xs{
+    font-size: clamp(1rem, 8vw - 2rem, 2rem);
+}
+
+.responsive-text-sm{
+    font-size: clamp(0.75rem, 8vw - 2rem, 1.5rem);
+}
+
+.responsive-text-xxs{
+    font-size: clamp(0.5rem, 8vw - 2rem, 1rem);
+}
+
+main{
+    background-image: url('/pizarra.webp');
+}
+
+/* #bento-grid div {
+    border: 2px solid white;
+    border-style: dashed;
+} */

@@ -1,0 +1,1572 @@
+---
+import Typed from './typed.astro';
+---
+
+<div class="row-span-2 col-span-2 title bg-emerald-900 p-2 rounded-sm w-full flex items-center flex-col">
+  <p class="font-rubik font-semibold">
+    @jamerrq.dev
+  </p>
+  <!-- <div class="input-wrapper">
+    <span class="placeholder"></span>
+  </div> -->
+  <Typed />
+</div>
+
+<style>
+@charset "UTF-8";
+
+.title{
+  /* background-color: #34D399; */
+  /* border-radius: 0.5rem; */
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Rubik Doodle Shadow';
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  /* border: 2px solid #fff; */
+}
+
+</style>
+<!-- 
+.input-wrapper {
+  display: block;
+  font-family: fira;
+  font-size: 1rem;
+}
+.input-wrapper > input,
+.input-wrapper > .placeholder {
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+.input-wrapper > .placeholder {
+  pointer-events: none;
+}
+.input-wrapper > .placeholder::before {
+  content: "​";
+  content: "​"/"Backend Developer 📦";
+  alt: "Backend Developer 📦";
+  white-space: break-spaces;
+  will-change: content;
+  -webkit-animation: typed-0 16.88s linear 1s infinite forwards;
+          animation: typed-0 16.88s linear 1s infinite forwards;
+}
+.input-wrapper > .placeholder::after {
+  content: "​";
+  position: relative;
+  display: inline-block;
+  padding-right: 2px;
+  border-right: 2px solid currentColor;
+  white-space: nowrap;
+  -webkit-animation: typed-0-caret 0.75s linear 1s infinite forwards;
+          animation: typed-0-caret 0.75s linear 1s infinite forwards;
+}
+@-webkit-keyframes typed-0 {
+  0%, 0.3939447077% {
+    content: "​B";
+    content: "​B"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  0.3949447077%, 0.7888894155% {
+    content: "​Ba";
+    content: "​Ba"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  0.7898894155%, 1.1838341232% {
+    content: "​Bac";
+    content: "​Bac"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  1.1848341232%, 1.578778831% {
+    content: "​Back";
+    content: "​Back"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  1.579778831%, 1.9737235387% {
+    content: "​Backe";
+    content: "​Backe"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  1.9747235387%, 2.3686682464% {
+    content: "​Backen";
+    content: "​Backen"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  2.3696682464%, 2.7636129542% {
+    content: "​Backend";
+    content: "​Backend"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  2.7646129542%, 3.1585576619% {
+    content: "​Backend ";
+    content: "​Backend "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  3.1595576619%, 3.5535023697% {
+    content: "​Backend D";
+    content: "​Backend D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  3.5545023697%, 3.9484470774% {
+    content: "​Backend De";
+    content: "​Backend De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  3.9494470774%, 4.3433917852% {
+    content: "​Backend Dev";
+    content: "​Backend Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  4.3443917852%, 4.7383364929% {
+    content: "​Backend Deve";
+    content: "​Backend Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  4.7393364929%, 5.1332812006% {
+    content: "​Backend Devel";
+    content: "​Backend Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  5.1342812006%, 5.5282259084% {
+    content: "​Backend Develo";
+    content: "​Backend Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  5.5292259084%, 5.9231706161% {
+    content: "​Backend Develop";
+    content: "​Backend Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  5.9241706161%, 6.3181153239% {
+    content: "​Backend Develope";
+    content: "​Backend Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  6.3191153239%, 6.7130600316% {
+    content: "​Backend Developer";
+    content: "​Backend Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  6.7140600316%, 7.1080047393% {
+    content: "​Backend Developer ";
+    content: "​Backend Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  7.1090047393%, 15.7177993681% {
+    content: "​Backend Developer 📦";
+    content: "​Backend Developer 📦"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  15.7187993681%, 16.0337551343% {
+    content: "​Backend Developer ";
+    content: "​Backend Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.0347551343%, 16.3497109005% {
+    content: "​Backend Developer";
+    content: "​Backend Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.3507109005%, 16.6656666667% {
+    content: "​Backend Develope";
+    content: "​Backend Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.6666666667%, 16.9816224329% {
+    content: "​Backend Develop";
+    content: "​Backend Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.9826224329%, 17.2975781991% {
+    content: "​Backend Develo";
+    content: "​Backend Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  17.2985781991%, 17.6135339652% {
+    content: "​Backend Devel";
+    content: "​Backend Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  17.6145339652%, 17.9294897314% {
+    content: "​Backend Deve";
+    content: "​Backend Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  17.9304897314%, 18.2454454976% {
+    content: "​Backend Dev";
+    content: "​Backend Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  18.2464454976%, 18.5614012638% {
+    content: "​Backend De";
+    content: "​Backend De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  18.5624012638%, 18.87735703% {
+    content: "​Backend D";
+    content: "​Backend D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  18.87835703%, 19.1933127962% {
+    content: "​Backend ";
+    content: "​Backend "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  19.1943127962%, 19.5092685624% {
+    content: "​Backend";
+    content: "​Backend"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  19.5102685624%, 19.8252243286% {
+    content: "​Backen";
+    content: "​Backen"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  19.8262243286%, 20.1411800948% {
+    content: "​Backe";
+    content: "​Backe"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  20.1421800948%, 20.457135861% {
+    content: "​Back";
+    content: "​Back"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  20.458135861%, 20.7730916272% {
+    content: "​Bac";
+    content: "​Bac"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  20.7740916272%, 21.0890473934% {
+    content: "​Ba";
+    content: "​Ba"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  21.0900473934%, 21.4050031596% {
+    content: "​B";
+    content: "​B"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  21.4060031596%, 25.354450237% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  25.355450237%, 25.7493949447% {
+    content: "​M";
+    content: "​M"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  25.7503949447%, 26.1443396524% {
+    content: "​Ma";
+    content: "​Ma"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  26.1453396524%, 26.5392843602% {
+    content: "​Mat";
+    content: "​Mat"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  26.5402843602%, 26.9342290679% {
+    content: "​Math";
+    content: "​Math"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  26.9352290679%, 27.3291737757% {
+    content: "​Math ";
+    content: "​Math "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  27.3301737757%, 27.7241184834% {
+    content: "​Math E";
+    content: "​Math E"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  27.7251184834%, 28.1190631912% {
+    content: "​Math En";
+    content: "​Math En"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  28.1200631912%, 28.5140078989% {
+    content: "​Math Eng";
+    content: "​Math Eng"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  28.5150078989%, 28.9089526066% {
+    content: "​Math Engi";
+    content: "​Math Engi"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  28.9099526066%, 29.3038973144% {
+    content: "​Math Engin";
+    content: "​Math Engin"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  29.3048973144%, 29.6988420221% {
+    content: "​Math Engine";
+    content: "​Math Engine"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  29.6998420221%, 30.0937867299% {
+    content: "​Math Enginee";
+    content: "​Math Enginee"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  30.0947867299%, 30.4887314376% {
+    content: "​Math Engineer";
+    content: "​Math Engineer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  30.4897314376%, 30.8836761453% {
+    content: "​Math Engineer ";
+    content: "​Math Engineer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  30.8846761453%, 31.2786208531% {
+    content: "​Math Engineer 󰿈";
+    content: "​Math Engineer 󰿈"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  31.2796208531%, 31.6735655608% {
+    content: "​Math Engineer 󰿈 ";
+    content: "​Math Engineer 󰿈 "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  31.6745655608%, 40.2833601896% {
+    content: "​Math Engineer 󰿈 󰍘";
+    content: "​Math Engineer 󰿈 󰍘"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  40.2843601896%, 40.5993159558% {
+    content: "​Math Engineer 󰿈 ";
+    content: "​Math Engineer 󰿈 "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  40.6003159558%, 40.915271722% {
+    content: "​Math Engineer 󰿈";
+    content: "​Math Engineer 󰿈"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  40.916271722%, 41.2312274882% {
+    content: "​Math Engineer ";
+    content: "​Math Engineer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  41.2322274882%, 41.5471832543% {
+    content: "​Math Engineer";
+    content: "​Math Engineer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  41.5481832543%, 41.8631390205% {
+    content: "​Math Enginee";
+    content: "​Math Enginee"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  41.8641390205%, 42.1790947867% {
+    content: "​Math Engine";
+    content: "​Math Engine"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  42.1800947867%, 42.4950505529% {
+    content: "​Math Engin";
+    content: "​Math Engin"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  42.4960505529%, 42.8110063191% {
+    content: "​Math Engi";
+    content: "​Math Engi"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  42.8120063191%, 43.1269620853% {
+    content: "​Math Eng";
+    content: "​Math Eng"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  43.1279620853%, 43.4429178515% {
+    content: "​Math En";
+    content: "​Math En"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  43.4439178515%, 43.7588736177% {
+    content: "​Math E";
+    content: "​Math E"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  43.7598736177%, 44.0748293839% {
+    content: "​Math ";
+    content: "​Math "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  44.0758293839%, 44.3907851501% {
+    content: "​Math";
+    content: "​Math"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  44.3917851501%, 44.7067409163% {
+    content: "​Mat";
+    content: "​Mat"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  44.7077409163%, 45.0226966825% {
+    content: "​Ma";
+    content: "​Ma"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  45.0236966825%, 45.3386524487% {
+    content: "​M";
+    content: "​M"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  45.3396524487%, 49.2880995261% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  49.2890995261%, 49.6830442338% {
+    content: "​S";
+    content: "​S"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  49.6840442338%, 50.0779889415% {
+    content: "​So";
+    content: "​So"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  50.0789889415%, 50.4729336493% {
+    content: "​Sof";
+    content: "​Sof"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  50.4739336493%, 50.867878357% {
+    content: "​Soft";
+    content: "​Soft"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  50.868878357%, 51.2628230648% {
+    content: "​Softw";
+    content: "​Softw"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  51.2638230648%, 51.6577677725% {
+    content: "​Softwa";
+    content: "​Softwa"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  51.6587677725%, 52.0527124803% {
+    content: "​Softwar";
+    content: "​Softwar"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  52.0537124803%, 52.447657188% {
+    content: "​Software";
+    content: "​Software"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  52.448657188%, 52.8426018957% {
+    content: "​Software ";
+    content: "​Software "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  52.8436018957%, 53.2375466035% {
+    content: "​Software D";
+    content: "​Software D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  53.2385466035%, 53.6324913112% {
+    content: "​Software De";
+    content: "​Software De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  53.6334913112%, 54.027436019% {
+    content: "​Software Dev";
+    content: "​Software Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  54.028436019%, 54.4223807267% {
+    content: "​Software Deve";
+    content: "​Software Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  54.4233807267%, 54.8173254344% {
+    content: "​Software Devel";
+    content: "​Software Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  54.8183254344%, 55.2122701422% {
+    content: "​Software Develo";
+    content: "​Software Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  55.2132701422%, 55.6072148499% {
+    content: "​Software Develop";
+    content: "​Software Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  55.6082148499%, 56.0021595577% {
+    content: "​Software Develope";
+    content: "​Software Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  56.0031595577%, 56.3971042654% {
+    content: "​Software Developer";
+    content: "​Software Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  56.3981042654%, 56.7920489731% {
+    content: "​Software Developer ";
+    content: "​Software Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  56.7930489731%, 65.4018436019% {
+    content: "​Software Developer 🔬";
+    content: "​Software Developer 🔬"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  65.4028436019%, 65.7177993681% {
+    content: "​Software Developer ";
+    content: "​Software Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  65.7187993681%, 66.0337551343% {
+    content: "​Software Developer";
+    content: "​Software Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.0347551343%, 66.3497109005% {
+    content: "​Software Develope";
+    content: "​Software Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.3507109005%, 66.6656666667% {
+    content: "​Software Develop";
+    content: "​Software Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.6666666667%, 66.9816224329% {
+    content: "​Software Develo";
+    content: "​Software Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.9826224329%, 67.2975781991% {
+    content: "​Software Devel";
+    content: "​Software Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  67.2985781991%, 67.6135339652% {
+    content: "​Software Deve";
+    content: "​Software Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  67.6145339652%, 67.9294897314% {
+    content: "​Software Dev";
+    content: "​Software Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  67.9304897314%, 68.2454454976% {
+    content: "​Software De";
+    content: "​Software De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  68.2464454976%, 68.5614012638% {
+    content: "​Software D";
+    content: "​Software D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  68.5624012638%, 68.87735703% {
+    content: "​Software ";
+    content: "​Software "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  68.87835703%, 69.1933127962% {
+    content: "​Software";
+    content: "​Software"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  69.1943127962%, 69.5092685624% {
+    content: "​Softwar";
+    content: "​Softwar"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  69.5102685624%, 69.8252243286% {
+    content: "​Softwa";
+    content: "​Softwa"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  69.8262243286%, 70.1411800948% {
+    content: "​Softw";
+    content: "​Softw"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  70.1421800948%, 70.457135861% {
+    content: "​Soft";
+    content: "​Soft"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  70.458135861%, 70.7730916272% {
+    content: "​Sof";
+    content: "​Sof"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  70.7740916272%, 71.0890473934% {
+    content: "​So";
+    content: "​So"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  71.0900473934%, 71.4050031596% {
+    content: "​S";
+    content: "​S"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  71.4060031596%, 75.354450237% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  75.355450237%, 75.7493949447% {
+    content: "​T";
+    content: "​T"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  75.7503949447%, 76.1443396524% {
+    content: "​Ty";
+    content: "​Ty"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  76.1453396524%, 76.5392843602% {
+    content: "​Typ";
+    content: "​Typ"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  76.5402843602%, 76.9342290679% {
+    content: "​Type";
+    content: "​Type"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  76.9352290679%, 77.3291737757% {
+    content: "​Types";
+    content: "​Types"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  77.3301737757%, 77.7241184834% {
+    content: "​Typesc";
+    content: "​Typesc"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  77.7251184834%, 78.1190631912% {
+    content: "​Typescr";
+    content: "​Typescr"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  78.1200631912%, 78.5140078989% {
+    content: "​Typescri";
+    content: "​Typescri"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  78.5150078989%, 78.9089526066% {
+    content: "​Typescrip";
+    content: "​Typescrip"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  78.9099526066%, 79.3038973144% {
+    content: "​Typescript";
+    content: "​Typescript"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  79.3048973144%, 79.6988420221% {
+    content: "​Typescript ";
+    content: "​Typescript "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  79.6998420221%, 80.0937867299% {
+    content: "​Typescript L";
+    content: "​Typescript L"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  80.0947867299%, 80.4887314376% {
+    content: "​Typescript Lo";
+    content: "​Typescript Lo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  80.4897314376%, 80.8836761453% {
+    content: "​Typescript Lov";
+    content: "​Typescript Lov"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  80.8846761453%, 81.2786208531% {
+    content: "​Typescript Love";
+    content: "​Typescript Love"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  81.2796208531%, 81.6735655608% {
+    content: "​Typescript Lover";
+    content: "​Typescript Lover"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  81.6745655608%, 82.0685102686% {
+    content: "​Typescript Lover ";
+    content: "​Typescript Lover "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  82.0695102686%, 90.6783048973% {
+    content: "​Typescript Lover 💙";
+    content: "​Typescript Lover 💙"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  90.6793048973%, 90.9942606635% {
+    content: "​Typescript Lover ";
+    content: "​Typescript Lover "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  90.9952606635%, 91.3102164297% {
+    content: "​Typescript Lover";
+    content: "​Typescript Lover"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  91.3112164297%, 91.6261721959% {
+    content: "​Typescript Love";
+    content: "​Typescript Love"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  91.6271721959%, 91.9421279621% {
+    content: "​Typescript Lov";
+    content: "​Typescript Lov"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  91.9431279621%, 92.2580837283% {
+    content: "​Typescript Lo";
+    content: "​Typescript Lo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  92.2590837283%, 92.5740394945% {
+    content: "​Typescript L";
+    content: "​Typescript L"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  92.5750394945%, 92.8899952607% {
+    content: "​Typescript ";
+    content: "​Typescript "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  92.8909952607%, 93.2059510269% {
+    content: "​Typescript";
+    content: "​Typescript"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  93.2069510269%, 93.521906793% {
+    content: "​Typescrip";
+    content: "​Typescrip"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  93.522906793%, 93.8378625592% {
+    content: "​Typescri";
+    content: "​Typescri"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  93.8388625592%, 94.1538183254% {
+    content: "​Typescr";
+    content: "​Typescr"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  94.1548183254%, 94.4697740916% {
+    content: "​Typesc";
+    content: "​Typesc"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  94.4707740916%, 94.7857298578% {
+    content: "​Types";
+    content: "​Types"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  94.7867298578%, 95.101685624% {
+    content: "​Type";
+    content: "​Type"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  95.102685624%, 95.4176413902% {
+    content: "​Typ";
+    content: "​Typ"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  95.4186413902%, 95.7335971564% {
+    content: "​Ty";
+    content: "​Ty"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  95.7345971564%, 96.0495529226% {
+    content: "​T";
+    content: "​T"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  96.0505529226%, 100% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+}
+@keyframes typed-0 {
+  0%, 0.3939447077% {
+    content: "​B";
+    content: "​B"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  0.3949447077%, 0.7888894155% {
+    content: "​Ba";
+    content: "​Ba"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  0.7898894155%, 1.1838341232% {
+    content: "​Bac";
+    content: "​Bac"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  1.1848341232%, 1.578778831% {
+    content: "​Back";
+    content: "​Back"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  1.579778831%, 1.9737235387% {
+    content: "​Backe";
+    content: "​Backe"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  1.9747235387%, 2.3686682464% {
+    content: "​Backen";
+    content: "​Backen"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  2.3696682464%, 2.7636129542% {
+    content: "​Backend";
+    content: "​Backend"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  2.7646129542%, 3.1585576619% {
+    content: "​Backend ";
+    content: "​Backend "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  3.1595576619%, 3.5535023697% {
+    content: "​Backend D";
+    content: "​Backend D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  3.5545023697%, 3.9484470774% {
+    content: "​Backend De";
+    content: "​Backend De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  3.9494470774%, 4.3433917852% {
+    content: "​Backend Dev";
+    content: "​Backend Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  4.3443917852%, 4.7383364929% {
+    content: "​Backend Deve";
+    content: "​Backend Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  4.7393364929%, 5.1332812006% {
+    content: "​Backend Devel";
+    content: "​Backend Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  5.1342812006%, 5.5282259084% {
+    content: "​Backend Develo";
+    content: "​Backend Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  5.5292259084%, 5.9231706161% {
+    content: "​Backend Develop";
+    content: "​Backend Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  5.9241706161%, 6.3181153239% {
+    content: "​Backend Develope";
+    content: "​Backend Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  6.3191153239%, 6.7130600316% {
+    content: "​Backend Developer";
+    content: "​Backend Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  6.7140600316%, 7.1080047393% {
+    content: "​Backend Developer ";
+    content: "​Backend Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  7.1090047393%, 15.7177993681% {
+    content: "​Backend Developer 📦";
+    content: "​Backend Developer 📦"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  15.7187993681%, 16.0337551343% {
+    content: "​Backend Developer ";
+    content: "​Backend Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.0347551343%, 16.3497109005% {
+    content: "​Backend Developer";
+    content: "​Backend Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.3507109005%, 16.6656666667% {
+    content: "​Backend Develope";
+    content: "​Backend Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.6666666667%, 16.9816224329% {
+    content: "​Backend Develop";
+    content: "​Backend Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  16.9826224329%, 17.2975781991% {
+    content: "​Backend Develo";
+    content: "​Backend Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  17.2985781991%, 17.6135339652% {
+    content: "​Backend Devel";
+    content: "​Backend Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  17.6145339652%, 17.9294897314% {
+    content: "​Backend Deve";
+    content: "​Backend Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  17.9304897314%, 18.2454454976% {
+    content: "​Backend Dev";
+    content: "​Backend Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  18.2464454976%, 18.5614012638% {
+    content: "​Backend De";
+    content: "​Backend De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  18.5624012638%, 18.87735703% {
+    content: "​Backend D";
+    content: "​Backend D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  18.87835703%, 19.1933127962% {
+    content: "​Backend ";
+    content: "​Backend "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  19.1943127962%, 19.5092685624% {
+    content: "​Backend";
+    content: "​Backend"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  19.5102685624%, 19.8252243286% {
+    content: "​Backen";
+    content: "​Backen"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  19.8262243286%, 20.1411800948% {
+    content: "​Backe";
+    content: "​Backe"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  20.1421800948%, 20.457135861% {
+    content: "​Back";
+    content: "​Back"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  20.458135861%, 20.7730916272% {
+    content: "​Bac";
+    content: "​Bac"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  20.7740916272%, 21.0890473934% {
+    content: "​Ba";
+    content: "​Ba"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  21.0900473934%, 21.4050031596% {
+    content: "​B";
+    content: "​B"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  21.4060031596%, 25.354450237% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  25.355450237%, 25.7493949447% {
+    content: "​M";
+    content: "​M"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  25.7503949447%, 26.1443396524% {
+    content: "​Ma";
+    content: "​Ma"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  26.1453396524%, 26.5392843602% {
+    content: "​Mat";
+    content: "​Mat"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  26.5402843602%, 26.9342290679% {
+    content: "​Math";
+    content: "​Math"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  26.9352290679%, 27.3291737757% {
+    content: "​Math ";
+    content: "​Math "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  27.3301737757%, 27.7241184834% {
+    content: "​Math E";
+    content: "​Math E"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  27.7251184834%, 28.1190631912% {
+    content: "​Math En";
+    content: "​Math En"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  28.1200631912%, 28.5140078989% {
+    content: "​Math Eng";
+    content: "​Math Eng"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  28.5150078989%, 28.9089526066% {
+    content: "​Math Engi";
+    content: "​Math Engi"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  28.9099526066%, 29.3038973144% {
+    content: "​Math Engin";
+    content: "​Math Engin"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  29.3048973144%, 29.6988420221% {
+    content: "​Math Engine";
+    content: "​Math Engine"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  29.6998420221%, 30.0937867299% {
+    content: "​Math Enginee";
+    content: "​Math Enginee"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  30.0947867299%, 30.4887314376% {
+    content: "​Math Engineer";
+    content: "​Math Engineer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  30.4897314376%, 30.8836761453% {
+    content: "​Math Engineer ";
+    content: "​Math Engineer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  30.8846761453%, 31.2786208531% {
+    content: "​Math Engineer 󰿈";
+    content: "​Math Engineer 󰿈"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  31.2796208531%, 31.6735655608% {
+    content: "​Math Engineer 󰿈 ";
+    content: "​Math Engineer 󰿈 "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  31.6745655608%, 40.2833601896% {
+    content: "​Math Engineer 󰿈 󰍘";
+    content: "​Math Engineer 󰿈 󰍘"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  40.2843601896%, 40.5993159558% {
+    content: "​Math Engineer 󰿈 ";
+    content: "​Math Engineer 󰿈 "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  40.6003159558%, 40.915271722% {
+    content: "​Math Engineer 󰿈";
+    content: "​Math Engineer 󰿈"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  40.916271722%, 41.2312274882% {
+    content: "​Math Engineer ";
+    content: "​Math Engineer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  41.2322274882%, 41.5471832543% {
+    content: "​Math Engineer";
+    content: "​Math Engineer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  41.5481832543%, 41.8631390205% {
+    content: "​Math Enginee";
+    content: "​Math Enginee"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  41.8641390205%, 42.1790947867% {
+    content: "​Math Engine";
+    content: "​Math Engine"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  42.1800947867%, 42.4950505529% {
+    content: "​Math Engin";
+    content: "​Math Engin"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  42.4960505529%, 42.8110063191% {
+    content: "​Math Engi";
+    content: "​Math Engi"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  42.8120063191%, 43.1269620853% {
+    content: "​Math Eng";
+    content: "​Math Eng"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  43.1279620853%, 43.4429178515% {
+    content: "​Math En";
+    content: "​Math En"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  43.4439178515%, 43.7588736177% {
+    content: "​Math E";
+    content: "​Math E"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  43.7598736177%, 44.0748293839% {
+    content: "​Math ";
+    content: "​Math "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  44.0758293839%, 44.3907851501% {
+    content: "​Math";
+    content: "​Math"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  44.3917851501%, 44.7067409163% {
+    content: "​Mat";
+    content: "​Mat"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  44.7077409163%, 45.0226966825% {
+    content: "​Ma";
+    content: "​Ma"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  45.0236966825%, 45.3386524487% {
+    content: "​M";
+    content: "​M"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  45.3396524487%, 49.2880995261% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  49.2890995261%, 49.6830442338% {
+    content: "​S";
+    content: "​S"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  49.6840442338%, 50.0779889415% {
+    content: "​So";
+    content: "​So"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  50.0789889415%, 50.4729336493% {
+    content: "​Sof";
+    content: "​Sof"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  50.4739336493%, 50.867878357% {
+    content: "​Soft";
+    content: "​Soft"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  50.868878357%, 51.2628230648% {
+    content: "​Softw";
+    content: "​Softw"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  51.2638230648%, 51.6577677725% {
+    content: "​Softwa";
+    content: "​Softwa"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  51.6587677725%, 52.0527124803% {
+    content: "​Softwar";
+    content: "​Softwar"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  52.0537124803%, 52.447657188% {
+    content: "​Software";
+    content: "​Software"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  52.448657188%, 52.8426018957% {
+    content: "​Software ";
+    content: "​Software "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  52.8436018957%, 53.2375466035% {
+    content: "​Software D";
+    content: "​Software D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  53.2385466035%, 53.6324913112% {
+    content: "​Software De";
+    content: "​Software De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  53.6334913112%, 54.027436019% {
+    content: "​Software Dev";
+    content: "​Software Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  54.028436019%, 54.4223807267% {
+    content: "​Software Deve";
+    content: "​Software Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  54.4233807267%, 54.8173254344% {
+    content: "​Software Devel";
+    content: "​Software Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  54.8183254344%, 55.2122701422% {
+    content: "​Software Develo";
+    content: "​Software Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  55.2132701422%, 55.6072148499% {
+    content: "​Software Develop";
+    content: "​Software Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  55.6082148499%, 56.0021595577% {
+    content: "​Software Develope";
+    content: "​Software Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  56.0031595577%, 56.3971042654% {
+    content: "​Software Developer";
+    content: "​Software Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  56.3981042654%, 56.7920489731% {
+    content: "​Software Developer ";
+    content: "​Software Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  56.7930489731%, 65.4018436019% {
+    content: "​Software Developer 🔬";
+    content: "​Software Developer 🔬"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  65.4028436019%, 65.7177993681% {
+    content: "​Software Developer ";
+    content: "​Software Developer "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  65.7187993681%, 66.0337551343% {
+    content: "​Software Developer";
+    content: "​Software Developer"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.0347551343%, 66.3497109005% {
+    content: "​Software Develope";
+    content: "​Software Develope"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.3507109005%, 66.6656666667% {
+    content: "​Software Develop";
+    content: "​Software Develop"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.6666666667%, 66.9816224329% {
+    content: "​Software Develo";
+    content: "​Software Develo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  66.9826224329%, 67.2975781991% {
+    content: "​Software Devel";
+    content: "​Software Devel"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  67.2985781991%, 67.6135339652% {
+    content: "​Software Deve";
+    content: "​Software Deve"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  67.6145339652%, 67.9294897314% {
+    content: "​Software Dev";
+    content: "​Software Dev"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  67.9304897314%, 68.2454454976% {
+    content: "​Software De";
+    content: "​Software De"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  68.2464454976%, 68.5614012638% {
+    content: "​Software D";
+    content: "​Software D"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  68.5624012638%, 68.87735703% {
+    content: "​Software ";
+    content: "​Software "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  68.87835703%, 69.1933127962% {
+    content: "​Software";
+    content: "​Software"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  69.1943127962%, 69.5092685624% {
+    content: "​Softwar";
+    content: "​Softwar"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  69.5102685624%, 69.8252243286% {
+    content: "​Softwa";
+    content: "​Softwa"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  69.8262243286%, 70.1411800948% {
+    content: "​Softw";
+    content: "​Softw"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  70.1421800948%, 70.457135861% {
+    content: "​Soft";
+    content: "​Soft"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  70.458135861%, 70.7730916272% {
+    content: "​Sof";
+    content: "​Sof"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  70.7740916272%, 71.0890473934% {
+    content: "​So";
+    content: "​So"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  71.0900473934%, 71.4050031596% {
+    content: "​S";
+    content: "​S"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  71.4060031596%, 75.354450237% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  75.355450237%, 75.7493949447% {
+    content: "​T";
+    content: "​T"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  75.7503949447%, 76.1443396524% {
+    content: "​Ty";
+    content: "​Ty"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  76.1453396524%, 76.5392843602% {
+    content: "​Typ";
+    content: "​Typ"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  76.5402843602%, 76.9342290679% {
+    content: "​Type";
+    content: "​Type"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  76.9352290679%, 77.3291737757% {
+    content: "​Types";
+    content: "​Types"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  77.3301737757%, 77.7241184834% {
+    content: "​Typesc";
+    content: "​Typesc"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  77.7251184834%, 78.1190631912% {
+    content: "​Typescr";
+    content: "​Typescr"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  78.1200631912%, 78.5140078989% {
+    content: "​Typescri";
+    content: "​Typescri"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  78.5150078989%, 78.9089526066% {
+    content: "​Typescrip";
+    content: "​Typescrip"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  78.9099526066%, 79.3038973144% {
+    content: "​Typescript";
+    content: "​Typescript"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  79.3048973144%, 79.6988420221% {
+    content: "​Typescript ";
+    content: "​Typescript "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  79.6998420221%, 80.0937867299% {
+    content: "​Typescript L";
+    content: "​Typescript L"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  80.0947867299%, 80.4887314376% {
+    content: "​Typescript Lo";
+    content: "​Typescript Lo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  80.4897314376%, 80.8836761453% {
+    content: "​Typescript Lov";
+    content: "​Typescript Lov"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  80.8846761453%, 81.2786208531% {
+    content: "​Typescript Love";
+    content: "​Typescript Love"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  81.2796208531%, 81.6735655608% {
+    content: "​Typescript Lover";
+    content: "​Typescript Lover"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  81.6745655608%, 82.0685102686% {
+    content: "​Typescript Lover ";
+    content: "​Typescript Lover "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  82.0695102686%, 90.6783048973% {
+    content: "​Typescript Lover 💙";
+    content: "​Typescript Lover 💙"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  90.6793048973%, 90.9942606635% {
+    content: "​Typescript Lover ";
+    content: "​Typescript Lover "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  90.9952606635%, 91.3102164297% {
+    content: "​Typescript Lover";
+    content: "​Typescript Lover"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  91.3112164297%, 91.6261721959% {
+    content: "​Typescript Love";
+    content: "​Typescript Love"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  91.6271721959%, 91.9421279621% {
+    content: "​Typescript Lov";
+    content: "​Typescript Lov"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  91.9431279621%, 92.2580837283% {
+    content: "​Typescript Lo";
+    content: "​Typescript Lo"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  92.2590837283%, 92.5740394945% {
+    content: "​Typescript L";
+    content: "​Typescript L"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  92.5750394945%, 92.8899952607% {
+    content: "​Typescript ";
+    content: "​Typescript "/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  92.8909952607%, 93.2059510269% {
+    content: "​Typescript";
+    content: "​Typescript"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  93.2069510269%, 93.521906793% {
+    content: "​Typescrip";
+    content: "​Typescrip"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  93.522906793%, 93.8378625592% {
+    content: "​Typescri";
+    content: "​Typescri"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  93.8388625592%, 94.1538183254% {
+    content: "​Typescr";
+    content: "​Typescr"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  94.1548183254%, 94.4697740916% {
+    content: "​Typesc";
+    content: "​Typesc"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  94.4707740916%, 94.7857298578% {
+    content: "​Types";
+    content: "​Types"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  94.7867298578%, 95.101685624% {
+    content: "​Type";
+    content: "​Type"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  95.102685624%, 95.4176413902% {
+    content: "​Typ";
+    content: "​Typ"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  95.4186413902%, 95.7335971564% {
+    content: "​Ty";
+    content: "​Ty"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  95.7345971564%, 96.0495529226% {
+    content: "​T";
+    content: "​T"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+  96.0505529226%, 100% {
+    content: "​";
+    content: "​"/"Backend Developer 📦";
+    alt: "Backend Developer 📦";
+  }
+}
+@-webkit-keyframes typed-0-caret {
+  75% {
+    border-color: transparent;
+  }
+}
+@keyframes typed-0-caret {
+  75% {
+    border-color: transparent;
+  }
+}
+.input-wrapper > input:focus + .placeholder, .input-wrapper > input:active + .placeholder {
+  display: none;
+}
+</style> -->

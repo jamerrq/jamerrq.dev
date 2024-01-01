@@ -1,0 +1,51 @@
+---
+const BUTTONS_STYLES = [
+  'col-span-2',
+  'row-span-1',
+  'gap-2',
+  'rounded-sm',
+  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'flex',
+  'items-center',
+  'justify-around',
+  'responsive-text',
+  'border-2',
+  'border-emerald-300',
+  // 'bg-[#1b383c]',
+  'text-emerald-950',
+  'font-rubik',
+  'w-full',
+  'h-full',
+  'transition-all',
+  'duration-200',
+  'hover:bg-emerald-900',
+  'hover:text-emerald-100',
+  'bg-emerald-300',
+  '[&>*]:font-fira',
+  // '[&>*]:hover:text-emerald-300',
+].join(' ');
+
+const BUTTON_STYLES = [
+  'hover:text-emerald-300',
+  'hover:scale-110',
+].join(' ');
+---
+
+
+<article class={BUTTONS_STYLES}>
+  <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="switch language en/es">
+    
+  </a>
+  <!-- <a href="" target="_blank" rel="noopener noreferrer"  title="go home">
+    
+  </a> -->
+  <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="go home">
+    󰝮
+  </a>
+  <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="switch dark/light theme">
+    
+  </a>
+  <button onclick="self.close()" class={BUTTON_STYLES} title="get out">
+    󰗼
+  </button>
+</article>

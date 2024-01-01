@@ -1,0 +1,52 @@
+---
+const SOCIALS_STYLES: string = [
+  'col-span-2',
+  'row-span-2',
+  'gap-2',
+  'bg-indigo-400',
+  'rounded-sm',
+  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'flex',
+  'items-center',
+  'justify-center',
+  'responsive-text',
+  // 'font-bold',
+  // 'text-indigo-950',
+  'font-rubik',
+  'w-full',
+  'h-full',
+  'transition-all',
+  'duration-200',
+  'border-indigo-300',
+  // 'hover:border-indigo-100',
+  'border-2',
+  'hover:bg-indigo-900',
+  'hover:text-indigo-300',
+  // 'hover:scale-[1.02]',
+  // 'hover:duration-200',
+  // 'hover:ease-in-out',
+  'grid',
+  'grid-rows-2',
+  'grid-cols-1'
+].join(' ');
+---
+
+<article class={SOCIALS_STYLES} title="My Links">
+  <div class="flex gap-2 justify-center text-black">
+    <p class="font-fira"></p>
+    <p class="font-semibold">Socials</p>
+    <p class="font-fira"></p>
+  </div>
+  <div class="flex justify-around [&>a]:font-fira">
+    <!-- GitHub -->
+    <a href="https://github.com/jamerrq" target="_blank" rel="noopener noreferrer" class="font-fira hover:scale-110 hover:text-indigo-300" title="GitHub"></a>
+    <!-- Mail -->
+    <a href="mailto:jamerrq@gmail.com" target="_blank" rel="noopener noreferrer" class="font-fira hover:scale-110 hover:text-indigo-300" title="Mail">󰆎</a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/jamerrq/" target="_blank" rel="noopener noreferrer" class="font-fira hover:scale-110 hover:text-indigo-300" title="Linkedin"></a>
+    <!-- Twitter -->
+    <a href="https://twitter.com/jamerrq" target="_blank" rel="noopener noreferrer" class="font-fira hover:scale-110 hover:text-indigo-300" title="Twitter/X"></a>
+    <!-- Spotify -->
+    <a href="https://open.spotify.com/user/jamerrq" target="_blank" rel="noopener noreferrer" class="font-fira hover:scale-110 hover:text-indigo-300" title="Spotify"></a>
+  </div>
+</article>
