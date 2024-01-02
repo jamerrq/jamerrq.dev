@@ -3,46 +3,50 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <style>
-  #_404_container {
-    width: 50dvw;
-    height: 50dvh;
-    display: grid;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border-radius: 0.5rem;
-    background-color: #1b383c;
-    font-family: "Rubik Doodle Shadow", sans-serif;
-    /* font-size: 2rem; */
-    text-align: center;
-    padding: 1rem;
-  }
+#_404_container {
+  width: 50dvw;
+  height: 50dvh;
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 0.5rem;
+  background-color: #1b383c;
+  font-family: "Rubik Doodle Shadow", sans-serif;
+  /* font-size: 2rem; */
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 0.05rem 0 0.1rem #000;
+  border: 1px solid white;
+  font-weight: 600;
+}
 
-  .go-home-button{
-    color: white;
-    text-decoration: none;
-    border: 1px solid white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.05rem 0 0.1rem #000;
-    transition: all 0.2s ease-in-out;
-  }
+.go-home-button{
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.05rem 0 0.1rem #000;
+  transition: all 0.2s ease-in-out;
+}
 
-  .go-home-button:hover{
-    color: #1b383c;
-    background-color: white;
-    transform: scale(1.02);
-    transition: all 0.2s ease-in-out;
-  }
+.go-home-button:hover{
+  color: #1b383c;
+  background-color: white;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
 </style>
 
 <Layout title="Resource Not Found">
   <main class="h-[100dvh] w-[100dvw] grid items-center justify-center text-white" id="background">
     <div id="_404_container" class="responsive-text">
-      <h1>Resource Not Found!</h1>
-      <p class="responsive-text-sm">Sorry, the resource you are looking for does not exist (yet?).</p>
-      <p class="responsive-text-sm">Please check the URL and try again.</p>
+      <h1>Page Not Found!</h1>
+      <p class="responsive-text-xxs">Sorry, the resource you are looking for does not exist (yet?).</p>
+      <p class="responsive-text-xxs">Please check the URL and try again.</p>
       <a href="/" class="responsive-text-sm go-home-button">
         Go Home
       </a>

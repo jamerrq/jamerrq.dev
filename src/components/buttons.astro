@@ -10,42 +10,89 @@ const BUTTONS_STYLES = [
   'justify-around',
   'responsive-text',
   'border-2',
-  'border-emerald-300',
+  'border-teal-300',
   // 'bg-[#1b383c]',
-  'text-emerald-950',
-  'font-rubik',
+  'text-teal-950',
+  'font-rubik-doodle',
   'w-full',
   'h-full',
   'transition-all',
   'duration-200',
-  'hover:bg-emerald-900',
-  'hover:text-emerald-100',
-  'bg-emerald-300',
+  'dark:bg-teal-900',
+  'dark:text-teal-100',
+  'bg-teal-400',
   '[&>*]:font-fira',
-  // '[&>*]:hover:text-emerald-300',
+  // '[&>*]:hover:text-teal-300',
 ].join(' ');
 
 const BUTTON_STYLES = [
-  'hover:text-emerald-300',
+  'hover:text-teal-300',
   'hover:scale-110',
 ].join(' ');
 ---
 
 
 <article class={BUTTONS_STYLES}>
+  <!-- LANGUAGE SWITCH -->
   <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="switch language en/es">
     
   </a>
   <!-- <a href="" target="_blank" rel="noopener noreferrer"  title="go home">
     
   </a> -->
+  <!-- HOME -->
   <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="go home">
     󰝮
   </a>
-  <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="switch dark/light theme">
-    
-  </a>
+  <!-- THEME SWITCH -->
+  <button id="theme-toggle" type="button" class="focus:outline-none hover:scale-125 hover:text-teal-300" title="switch dark/light theme">
+    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+  </button>
+  <!-- CLOSE -->
   <button onclick="self.close()" class={BUTTON_STYLES} title="get out">
     󰗼
   </button>
 </article>
+<script defer>
+  const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+  const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+  // Cambia los iconos dentro del botón en función de la configuración anterior
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+      // en caso que se haya configurado previamente
+      document.documentElement.classList.add('dark');
+  } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+  }
+
+  const themeToggleBtn = document.getElementById('theme-toggle');
+
+  themeToggleBtn.addEventListener('click', function() {
+
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      // se comprueba si se ha configurado previamente
+      if (localStorage.getItem('color-theme')) {
+          if (localStorage.getItem('color-theme') === 'light') {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          } else {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          }
+
+      // se comprueba si el sistema operativo tiene configurado el tema oscuro
+      } else {
+          if (document.documentElement.classList.contains('dark')) {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          } else {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          }
+      }
+  });
+</script>

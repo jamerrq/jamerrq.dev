@@ -1,13 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class', // or 'media' or 'class
   theme: {
     extend: {
       fontFamily: {
-        'rubik': ['Rubik Doodle Shadow', 'sans-serif'],
+        'rubik-doodle': ['Rubik Doodle Shadow', 'sans-serif'],
         'fira': ['Fira', 'monospace', 'sans-serif'],
         'rubik-maze': ['Rubik Maze', 'sans-serif'],
         'merriweather': ['Merriweather', 'serif'],
+        'rubik': ['Rubik', 'sans-serif'],
+        'roboto-slab': ['Roboto Slab', 'serif'],
       },
     },
     colors: {
