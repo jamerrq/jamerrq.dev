@@ -2,7 +2,7 @@
 url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
 @font-face{
-    src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.otf');
+    src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.otf') format('opentype');
     font-family: 'Fira';
 }
 
