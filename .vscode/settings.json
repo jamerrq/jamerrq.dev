@@ -4,5 +4,8 @@
   ],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///home/jamerrq/dev/astro/jamerrq.dev/.github/workflows/deploy.yml"
   }
 }
