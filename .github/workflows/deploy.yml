@@ -15,7 +15,7 @@ jobs:
 
       # Not using npm? Change `npm ci` to `yarn install` or `pnpm i`
       - name: Install dependencies
-        run: curl -fsSL https://bun.sh/install | bash && bun install
+        run: curl -fsSL https://bun.sh/install | bash && ~/.bun/bin/bun install
 
       # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
       - name: Build Astro
