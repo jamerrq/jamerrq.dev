@@ -1,0 +1,55 @@
+---
+const OS_STYLES = [
+  'col-span-1',
+  'row-span-2',
+  'gap-2',
+  'bg-red-400',
+  'rounded-sm',
+  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'flex',
+  'flex-col',
+  'items-center',
+  'justify-center',
+  'responsive-text-xs',
+  'font-bold',
+  'text-red-950',
+  'font-rubik-doodle',
+  'w-full',
+  'h-full',
+  'transition-all',
+  'duration-200',
+  'border-red-950',
+  'dark:border-red-300',
+  'border-2',
+  'dark:bg-red-900',
+  'dark:text-red-400',
+  // 'hover:scale-[1.02]',
+  // 'hover:duration-200',
+  // 'hover:ease-in-out',
+].join(' ');
+---
+
+<article class={OS_STYLES} title="My OS">
+  <header class="flex gap-2">
+    <h1>Testing</h1>
+    <p class="font-thin">󰙨</p>
+  </header>
+  <main class="grid place-items-center gap-2 grid-cols-2 grid-rows-2 [&>a]:rounded-sm [&>a]:border-2">
+    <!-- Vitest -->
+    <a href="https://vitest.dev/" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/-%2388B91A.svg?style=for-the-badge&logo=vitest&logoColor=white" alt="vite" title="Vitest">
+    </a>
+    <!-- Mocha -->
+    <a href="https://mochajs.org/" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/-%238D6748.svg?style=for-the-badge&logo=mocha&logoColor=white" alt="mocha" title="Mocha">
+    </a>
+    <!-- Chai -->
+    <a href="https://www.chaijs.com/" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/-%23F6ECD7.svg?style=for-the-badge&logo=chai&logoColor=A30701" alt="chai" title="Chai">
+    </a>
+    <!-- Jest -->
+    <a href="https://jestjs.io/" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/-%23C21325.svg?style=for-the-badge&logo=jest&logoColor=white" alt="jest" title="Jest">
+    </a>
+  </main>
+</article>

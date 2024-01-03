@@ -23,6 +23,6 @@
     font-size: clamp(0.5rem, 8vw - 2rem, 1rem);
 }
 
-main{
+main#background{
     background-image: url('/pizarra.webp');
 }

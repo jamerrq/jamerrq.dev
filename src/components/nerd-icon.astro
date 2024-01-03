@@ -2,6 +2,6 @@
 const { props="" } = Astro.props
 ---
 
-<p class={"font-fira font-thin" + props}>
+<p class=`font-fira font-thin ${props}`>
   <slot></slot>
 </p>

@@ -1,0 +1,116 @@
+---
+const DEV_TOOLS_STYLES = [
+  'col-span-2',
+  'row-span-3',
+  'bg-emerald-400',
+  'rounded-sm',
+  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'flex',
+  'flex-col',
+  'gap-2',
+  'items-center',
+  'justify-center',
+  // 'text-2xl',
+  // 'font-bold',
+  // 'text-emerald-950',
+  'font-rubik-doodle',
+  'w-full',
+  'h-full',
+  'transition-all',
+  'border-2',
+  'border-emerald-950',
+  'dark:border-emerald-300',
+  'text-emerald-950',
+  'dark:bg-emerald-900',
+  'dark:text-emerald-300',
+  // 'hover:scale-[1.02]',
+  // 'hover:transition-all',
+  'responsive-text-xs',
+  'font-bold'
+].join(' ')
+---
+
+<article title="The tools I (love) work with" class={DEV_TOOLS_STYLES}>
+  <header class="flex gap-2 responsive-text-xs">
+    <h1 class="">Dev Tools</h1>
+    <p class="font-thin">󰄛</p>
+  </header>
+  <ul class="responsive-text-sm w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-sm [&>li>main>a>img]:border-2">
+    <li>
+      <header class="flex gap-2">
+        <h2>IDE</h2>
+        <p class="font-thin">󰨞</p>
+      </header>
+      <main>
+        <!-- VS Code -->
+        <a href="https://www.sqlite.org/index.html" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/VSCODE-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code"/>
+        </a>
+      </main>
+    </li>
+    <li>
+      <header class="flex gap-2">
+        <h2>API</h2>
+        <p class="font-thin"></p>
+      </header>
+      <main>
+        <!-- Postman -->
+        <a href="https://www.postman.com/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
+        </a>
+      </main>
+    </li>
+    <li>
+      <header class="flex gap-2">
+        <h2>Linter</h2>
+        <p class="font-thin"></p>
+      </header>
+      <main class="flex gap-1">
+        <!-- EsLint -->
+        <a href="https://eslint.org/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="EsLint" />
+        </a>
+        <!-- Biome -->
+        <!-- <a href="https://biomejs.dev/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/Biome-000000?style=for-the-badge&logo=biome&logoColor=white" alt="Biome" />
+        </a> -->
+      </main>
+    </li>
+    <li>
+      <header class="flex gap-2">
+        <h2>Versioning</h2>
+        <p class="font-thin"></p>
+      </header>
+      <main>
+        <!-- Git -->
+        <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+        </a>
+      </main>
+    </li>
+    <li class="col-span-2">
+      <header class="flex gap-2">
+        <h2>Others</h2>
+        <p class="font-thin"></p>
+      </header>
+      <main class="flex gap-1 ">
+        <!-- Markdown -->
+        <a href="https://www.markdownguide.org/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/MD-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown" />
+        </a>
+        <!-- LaTeX -->
+        <a href="https://www.latex-project.org/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white" alt="LaTeX" />
+        </a>
+        <!-- Notion -->
+        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Notion" />
+        </a>
+        <!-- ZSH -->
+        <a href="https://ohmyz.sh/" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.shields.io/badge/ZSH-008080?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="ZSH" />
+        </a>
+      </main>
+    </li>
+  </ul>
+</article>
