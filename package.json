@@ -19,6 +19,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "sass": "^1.69.6",
     "tailwindcss-debug-screens": "^2.2.1"
   }
 }

@@ -10,7 +10,8 @@ const BUTTONS_STYLES = [
   'justify-around',
   'responsive-text',
   'border-2',
-  'border-teal-300',
+  'border-teal-950',
+  'dark:border-teal-300',
   // 'bg-[#1b383c]',
   'text-teal-950',
   'font-rubik-doodle',
@@ -26,53 +27,61 @@ const BUTTONS_STYLES = [
 ].join(' ');
 
 const BUTTON_STYLES = [
-  'hover:text-teal-300',
-  'hover:scale-110',
+  'dark:hover:text-teal-300',
+  'hover:text-teal-100',
+  // 'hover:scale-110',
 ].join(' ');
 ---
 
 
 <article class={BUTTONS_STYLES}>
   <!-- LANGUAGE SWITCH -->
-  <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="switch language en/es">
+  <button class={BUTTON_STYLES} title="switch language en/es" id="language-toggle">
     
-  </a>
-  <!-- <a href="" target="_blank" rel="noopener noreferrer"  title="go home">
+  </button>
+  <!-- HOME OR RANDOM PLACE -->
+  <button class={BUTTON_STYLES + ' hidden'} title="go home" id="home-button">
     
-  </a> -->
-  <!-- HOME -->
-  <a href="" target="_blank" rel="noopener noreferrer" class={BUTTON_STYLES} title="go home">
+  </button>
+  <button class={BUTTON_STYLES + ' hidden'} title="go to a random page" id="random-place-button">
     󰝮
-  </a>
+  </button>
   <!-- THEME SWITCH -->
-  <button id="theme-toggle" type="button" class="focus:outline-none hover:scale-125 hover:text-teal-300" title="switch dark/light theme">
-    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+  <button id="theme-toggle" type="button" title="switch dark/light theme" class="dark:hover:text-teal-300 hover:text-teal-100">
+    <p id="theme-toggle-dark-icon" class="hidden" >
+      
+    </p>
+    <p id="theme-toggle-light-icon" class="hidden" >
+      
+    </p>
   </button>
   <!-- CLOSE -->
-  <button onclick="self.close()" class={BUTTON_STYLES} title="get out">
-    󰗼
-  </button>
+  <a href="https://github.com/jamerrq/jamerrq.dev" target="_blank" rel="noopener noreferrer" class="dark:hover:text-teal-300 hover:text-teal-100" title="Source Code. Leave a star 🌟 if you like!">
+    
+  </a>
 </article>
+
 <script defer>
-  const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-  const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
 
   // Cambia los iconos dentro del botón en función de la configuración anterior
-  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      themeToggleLightIcon.classList.remove('hidden');
+  if (localStorage.getItem('color-theme') === 'dark'
+        || (!('color-theme' in localStorage)
+        && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      lightIcon.classList.remove('hidden');
       // en caso que se haya configurado previamente
       document.documentElement.classList.add('dark');
   } else {
-      themeToggleDarkIcon.classList.remove('hidden');
+      darkIcon.classList.remove('hidden');
   }
 
   const themeToggleBtn = document.getElementById('theme-toggle');
 
   themeToggleBtn.addEventListener('click', function() {
 
-      themeToggleDarkIcon.classList.toggle('hidden');
-      themeToggleLightIcon.classList.toggle('hidden');
+      darkIcon.classList.toggle('hidden');
+      lightIcon.classList.toggle('hidden');
 
       // se comprueba si se ha configurado previamente
       if (localStorage.getItem('color-theme')) {
@@ -94,5 +103,31 @@ const BUTTON_STYLES = [
               localStorage.setItem('color-theme', 'dark');
           }
       }
+  });
+
+  // Home & Random Place buttons
+  const homeButton = document.getElementById('home-button');
+  const randomPlaceButton = document.getElementById('random-place-button');
+
+  // Mediante la ruta se comprueba si se está en la página principal
+  if (window.location.pathname === '/') {
+      homeButton.classList.add('hidden');
+      randomPlaceButton.classList.remove('hidden');
+  } else {
+      homeButton.classList.remove('hidden');
+      randomPlaceButton.classList.add('hidden');
+  }
+
+  // Agrega el evento de click a los botones
+  homeButton.addEventListener('click', function() {
+      window.location.href = '/';
+  });
+  randomPlaceButton.addEventListener('click', function() {
+      const places = [
+        '/blog',
+        '/tech-stack',
+        '/featured'
+      ]
+      window.location.href = places[Math.floor(Math.random() * places.length)];
   });
 </script>

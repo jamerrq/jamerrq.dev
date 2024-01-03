@@ -1,4 +1,5 @@
 ---
+import NerdIcon from "./nerd-icon.astro";
 const FEATURED_STYLES = [
   'col-span-1',
   'row-span-2',
@@ -7,6 +8,7 @@ const FEATURED_STYLES = [
   'rounded-sm',
   'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
   'flex',
+  'flex-col',
   'items-center',
   'justify-center',
   'responsive-text-sm',
@@ -17,7 +19,8 @@ const FEATURED_STYLES = [
   'h-full',
   'transition-all',
   'duration-200',
-  'border-blue-300',
+  'border-blue-950',
+  'dark:border-blue-300',
   'border-2',
   'dark:bg-blue-900',
   'dark:text-blue-400',
@@ -28,6 +31,17 @@ const FEATURED_STYLES = [
 ---
 
 <a class={FEATURED_STYLES} title="Featured Resources" href="/featured">
-  <p>Featured</p>
-  <p class="font-fira font-thin">󰂺</p>
+  <div class="flex gap-1">
+    <p>Featured</p>
+    <NerdIcon props="inline">
+      󰂺
+    </NerdIcon>
+  </div>
+  <p>&</p>
+  <div class="flex gap-1">
+    <NerdIcon props="inline">
+      
+    </NerdIcon>
+    <p>Projects</p>
+  </div>
 </a>

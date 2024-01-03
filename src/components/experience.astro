@@ -1,4 +1,5 @@
 ---
+import NerdIcon from "./nerd-icon.astro";
 const EXPERIENCE_STYLES = [
   'col-span-2',
   'row-span-4',
@@ -18,7 +19,8 @@ const EXPERIENCE_STYLES = [
   'h-full',
   'transition-all',
   'border-2',
-  'border-red-300',
+  'dark:border-red-300',
+  'border-red-950',
   'dark:bg-red-800',
   'dark:text-red-200',
   'hover:scale-[1.02]',
@@ -26,6 +28,7 @@ const EXPERIENCE_STYLES = [
   'flex',
   'flex-col',
   'p-1',
+  '[&>div>ul>li]:bg-red-200',
   '[&>div>ul>li]:dark:bg-red-900',
   '[&>div>ul>li]:dark:text-red-200',
   '[&>div>ul>li>a]:bg-amber-700',
@@ -34,16 +37,15 @@ const EXPERIENCE_STYLES = [
 ---
 
 <article class={EXPERIENCE_STYLES} title="Projects I've worked on" class="relative">
-  <a href="/projects" title="More projects">
+  <a href="/projects">
   <div class="responsive-text-xs flex gap-2">
-    <p>Projects</p>
+    <p>Working on</p>
       <p class="font-fira font-thin"></p>
-      <p class="font-fira font-thin"></p>
     </div>
   </a>
   <div class="h-full w-full gap-2">
     <ul class="flex gap-2 flex-col justify-around h-full font-roboto-slab">
-      <li class="grid grid-rows-2 grid-cols-2 justify-items-center border-2 rounded-sm [&>*]:border-2 [&>*]:border-red-950 [&>*]:w-full [&>*]:text-center">
+      <li class="grid grid-rows-2 grid-cols-2 justify-items-center [&>*]:border-2 [&>*]:border-red-300 [&>*]:dark:border-red-800 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm">
         <a class="col-span-2" href="https://pinturas-app-back.onrender.com/" target="_blank" rel="noopener noreferrer">
           Backend Server For IDE Pinturerias
         </a>
@@ -89,8 +91,8 @@ const EXPERIENCE_STYLES = [
           <img src="https://img.shields.io/badge/-%23ff6c37.svg?style=for-the-badge&logo=postman&logoColor=white" alt="postman" title="Postman" class="-mr-3">
         </div>
       </li>
-      <li class="grid grid-rows-2 grid-cols-2 justify-items-center rounded-sm border-2 [&>*]:border-2 [&>*]:border-red-950 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm bg-red-300">
-          <a href="https://pinturas-app-front.vercel.app/" target="_blank" rel="noopener noreferrer" class="col-span-2 bg-red-500">
+      <li class="grid grid-rows-2 grid-cols-2 justify-items-center [&>*]:border-2 [&>*]:border-red-300 [&>*]:dark:border-red-800 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm">
+          <a href="https://pinturas-app-front.vercel.app/" target="_blank" rel="noopener noreferrer" class="col-span-2">
             Frontend UI For IDE Pinturerias
           </a>
         <p>

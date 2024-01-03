@@ -4,11 +4,11 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 ### Dark Mode
 
-![v1_dark](./lib/v1.png)
+![v2_dark](./lib/v2_dark.png)
 
 ### Light Mode
 
-![v1_light](./lib/v1_light.png)
+![v2_light](./lib/v2_light.png)
 
 ## Stack 🥞
 
