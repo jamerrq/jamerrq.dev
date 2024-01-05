@@ -6,7 +6,7 @@ interface Props {
 const { title } = Astro.props
 import '@fontsource/merriweather'
 // import { ViewTransitions } from 'astro:transitions'
-const MODE = import.meta.env.MODE
+const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
 ---
 
 <!doctype html>
@@ -27,7 +27,7 @@ const MODE = import.meta.env.MODE
     <title>{title}</title>
     <!-- <ViewTransitions /> -->
   </head>
-  <body class=`${MODE === 'development' ? 'debug-screens' : ''}`>
+  <body class={BODY_CLASS}>
     <slot />
   </body>
 </html>
