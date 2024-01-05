@@ -1,5 +1,5 @@
 ---
-import NerdIcon from "./nerd-icon.astro";
+import NerdIcon from './nerd-icon.astro'
 const FEATURED_STYLES = [
   'col-span-1',
   'row-span-2',
@@ -26,22 +26,18 @@ const FEATURED_STYLES = [
   'dark:text-blue-400',
   'hover:scale-[1.02]',
   'hover:duration-200',
-  'hover:ease-in-out',
-].join(' ');
+  'hover:ease-in-out'
+].join(' ')
 ---
 
-<a class={FEATURED_STYLES} title="Featured Resources" href="/featured">
-  <div class="flex gap-1">
+<a class={FEATURED_STYLES} title='Featured Resources' href='/featured'>
+  <div class='flex gap-1'>
     <p>Featured</p>
-    <NerdIcon props="inline">
-      󰂺
-    </NerdIcon>
+    <NerdIcon props='inline'>󰂺</NerdIcon>
   </div>
   <p>&</p>
-  <div class="flex gap-1">
-    <NerdIcon props="inline">
-      
-    </NerdIcon>
+  <div class='flex gap-1'>
+    <NerdIcon props='inline'></NerdIcon>
     <p>Projects</p>
   </div>
 </a>

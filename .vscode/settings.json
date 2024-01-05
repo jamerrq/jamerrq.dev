@@ -7,5 +7,25 @@
   },
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "file:///home/jamerrq/dev/astro/jamerrq.dev/.github/workflows/deploy.yml"
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "astro"
+  ],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders",
+    "package.json"
+  ]
 }
