@@ -17,7 +17,13 @@
   ],
   "editor.formatOnSave": true,
   "cSpell.words": [
-    "astro"
+    "altano",
+    "astro",
+    "astrojs",
+    "Deno",
+    "jamerrq",
+    "opengraph",
+    "tsconfigs"
   ],
   "cSpell.ignorePaths": [
     "package-lock.json",
