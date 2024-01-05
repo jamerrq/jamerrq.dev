@@ -2,7 +2,7 @@
 const ABOUT_ME_STYLES = [
   'col-span-4',
   'row-span-2',
-  'bg-slate-400',
+  'bg-slate-300',
   'dark:bg-slate-900',
   'dark:text-slate-300',
   'rounded-sm',
@@ -27,8 +27,8 @@ const ABOUT_ME_STYLES = [
   'flex-col',
   '[&>p]:font-fira',
   '[&>p]:text-base',
-  'text-slate-900',
-  'dark:text-slate-300'
+  'text-black',
+  'dark:text-white'
 ].join(' ')
 ---
 
@@ -41,26 +41,30 @@ const ABOUT_ME_STYLES = [
       <p class=''>
         <p class='font-fira inline'></p>
         My name is Jamer José, I'm a Math Engineer from
-        <a
-          href='https://www.eafit.edu.co/'
-          rel='noopener noreferrer'
-          target='_blank'
-          class='text-blue-800 dark:text-blue-300'
-        >
-          EAFIT University
-        </a>.
+        <div class="inline dark:bg-blue-100 bg-blue-800 px-1 rounded-sm w-fit">
+          <a
+            href='https://www.eafit.edu.co/'
+            rel='noopener noreferrer'
+            target='_blank'
+            class='text-slate-50 dark:text-slate-800'
+          >
+            EAFIT University
+          </a>
+        </div>
       </p>
       <p>
         <p class='font-fira inline'>󰜐</p>
         Currently working as part time Backend Developer at
-        <a
-          href='https://www.linkedin.com/showcase/dium-team/about/'
-          rel='noopener noreferrer'
-          target='_blank'
-          class='text-blue-800 dark:text-blue-300'
-        >
-          Dium
-        </a>.
+        <div class="inline dark:bg-emerald-100 bg-emerald-800 px-1 rounded-sm w-fit">
+          <a
+            href='https://www.linkedin.com/showcase/dium-team/about/'
+            rel='noopener noreferrer'
+            target='_blank'
+            class='text-slate-50 dark:text-slate-800'
+          >
+            Dium
+          </a>
+        </div>
       </p>
       <p>
         <p class='font-fira inline'>󰮮</p>
@@ -75,7 +79,7 @@ const ABOUT_ME_STYLES = [
     <img
       src='/me2.webp'
       alt=''
-      class='w-[15%] h-auto rounded-sm border-2 border-slate-300 hidden lg:block'
+      class='w-[15%] h-auto rounded-sm border-2 border-slate-800 dark:border-slate-300 hidden lg:block'
     />
   </div>
 </article>

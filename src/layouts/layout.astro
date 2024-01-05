@@ -5,8 +5,8 @@ interface Props {
 
 const { title } = Astro.props
 import '@fontsource/merriweather'
-import '../index.css'
 // import { ViewTransitions } from 'astro:transitions'
+const MODE = import.meta.env.MODE
 ---
 
 <!doctype html>
@@ -15,42 +15,50 @@ import '../index.css'
     <meta charset='UTF-8' />
     <meta name='description' content='jamerrq.dev' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='stylesheet' href='/src/index.css' />
     <link rel='icon' type='image' href='/favicon.png' />
+    <!-- Preconnect to Google Fonts Cdn -->
+    <link rel='preconnect' href='https://fonts.googleapis.com' crossorigin />
     <meta name='generator' content={Astro.generator} />
+    <meta property='og:title' content='jamerrq.dev' />
+    <meta property='og:type' content='personal website' />
+    <meta property='og:url' content='https://jamerrq.deno.dev' />
+    <meta property='og:image' content='https://jamerrq.deno.dev/og-image.png' />
+    <meta property='og:description' content='Software Developer.' />
     <title>{title}</title>
     <!-- <ViewTransitions /> -->
   </head>
-  <body class='debug-screens'>
+  <body class=`${MODE === 'development' ? 'debug-screens' : ''}`>
     <slot />
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+  @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+  @font-face {
+    src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.otf')
+      format('opentype');
+    font-family: 'Fira';
   }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+
+  .responsive-text {
+    font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+
+  .responsive-text-xs {
+    font-size: clamp(1rem, 8vw - 2rem, 2rem);
+  }
+
+  .responsive-text-sm {
+    font-size: clamp(0.75rem, 8vw - 2rem, 1.5rem);
+  }
+
+  .responsive-text-xxs {
+    font-size: clamp(0.5rem, 8vw - 2rem, 1rem);
+  }
+
+  main#background {
+    background-image: url('/pizarra.webp');
   }
 </style>

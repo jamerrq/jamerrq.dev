@@ -4,11 +4,15 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 ### Dark Mode
 
-![v2_dark](./lib/v2_dark.png)
+![v3_dark](./lib/v3_dark.png)
 
 ### Light Mode
 
-![v2_light](./lib/v2_light.png)
+![v3_light](./lib/v3_light.png)
+
+### LightHouse Report
+
+![LightHouse Score](./lib/lighthouse.png)
 
 ## Stack 🥞
 
@@ -21,6 +25,7 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=
 
 ![Bun](https://img.shields.io/badge/-Bun-FF3E00?style=flat-square&logo=bun&logoColor=white)
 ![Prettier](https://img.shields.io/badge/-Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white)
+![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
 
 ### CI/CD & Deployment 🚀
 
