@@ -10,8 +10,8 @@ const BUTTONS_STYLES = [
   'justify-around',
   'responsive-text',
   'border-2',
-  'border-slate-950',
-  'dark:border-slate-300',
+  'border-emerald-950',
+  'dark:border-emerald-300',
   // 'bg-[#1b383c]',
   'text-slate-950',
   'font-rubik-doodle',
@@ -27,8 +27,8 @@ const BUTTONS_STYLES = [
 ].join(' ')
 
 const BUTTON_STYLES = [
-  'dark:hover:text-slate-300',
-  'hover:text-slate-100'
+  'dark:hover:text-emerald-300',
+  'hover:text-emerald-900'
   // 'hover:scale-110',
 ].join(' ')
 ---
@@ -37,7 +37,7 @@ const BUTTON_STYLES = [
   <!-- LANGUAGE SWITCH -->
   <button
     class={BUTTON_STYLES}
-    title='switch language en/es'
+    title='Switch language en/es'
     id='language-toggle'
   >
     
@@ -48,7 +48,7 @@ const BUTTON_STYLES = [
   </button>
   <button
     class={BUTTON_STYLES + ' hidden'}
-    title='go to a random page'
+    title='Go to a random page'
     id='random-place-button'
   >
     󰝮
@@ -57,8 +57,8 @@ const BUTTON_STYLES = [
   <button
     id='theme-toggle'
     type='button'
-    title='switch dark/light theme'
-    class='dark:hover:text-slate-300 hover:text-slate-100'
+    title='Switch dark/light theme'
+    class='dark:hover:text-emerald-300 hover:text-emerald-900'
   >
     <p id='theme-toggle-dark-icon' class='hidden'></p>
     <p id='theme-toggle-light-icon' class='hidden'></p>
@@ -68,8 +68,8 @@ const BUTTON_STYLES = [
     href='https://github.com/jamerrq/jamerrq.dev'
     target='_blank'
     rel='noopener noreferrer'
-    class='dark:hover:text-slate-300 hover:text-slate-100'
-    title='Source Code. Leave a star 🌟 if you like!'
+    class='dark:hover:text-emerald-300 hover:text-emerald-900'
+    title='Source code on GitHub'
   >
     
   </a>

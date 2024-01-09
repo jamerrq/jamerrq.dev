@@ -4,7 +4,6 @@ const ABOUT_ME_STYLES = [
   'row-span-2',
   'bg-slate-300',
   'dark:bg-slate-900',
-  'dark:text-slate-300',
   'rounded-sm',
   'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
   'flex',
@@ -12,17 +11,18 @@ const ABOUT_ME_STYLES = [
   'justify-center',
   'font-bold',
   'text-black',
+  'dark:text-slate-300',
   'font-rubik-doodle',
   'w-full',
   'h-full',
-  'transition-all',
+  // 'transition-all',
   'border-2',
-  'dark:border-slate-300',
-  'border-slate-950',
+  'border-emerald-950',
+  'dark:border-emerald-300',
   // 'hover:bg-slate-900',
   // 'hover:text-slate-300',
-  'hover:scale-[1.02]',
-  'hover:transition-all',
+  // 'hover:scale-[1.02]',
+  // 'hover:transition-all',
   'responsive-text-xs',
   'flex-col',
   '[&>p]:font-fira',
@@ -33,9 +33,9 @@ const ABOUT_ME_STYLES = [
 ---
 
 <article class={ABOUT_ME_STYLES} title='Get to know me'>
-  <h1>About Me</h1>
+  <h1 class='dark:text-emerald-300 text-emerald-950'>About Me</h1>
   <div
-    class='flex items-center p-2 justify-around w-full font-merriweather responsive-text-xxs'
+    class='flex items-center p-2 justify-around w-full font-merriweather responsive-text-xxs relative'
   >
     <div>
       <p class=''>
@@ -74,14 +74,15 @@ const ABOUT_ME_STYLES = [
         they offer.
       </p>
       <p>
-        <p class='font-fira inline'></p>
-        My goal is to build quality software that is secure and scalable.
+        <p class='font-fira inline'>󰛓</p>
+        The best way to get something done is to begin.
       </p>
     </div>
-    <img
+    <!-- <img
       src='/me2.webp'
       alt=''
-      class='w-[15%] h-auto rounded-sm border-2 border-slate-800 dark:border-slate-300 hidden lg:block'
-    />
+      class='w-[15%] h-auto rounded-sm border-2 border-emerald-800 dark:border-emerald-300 hidden lg:block'
+    /> -->
+    <!-- <CalmPeep /> -->
   </div>
 </article>

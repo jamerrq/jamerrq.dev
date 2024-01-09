@@ -4,7 +4,8 @@ const TECH_STACK_STYLES = [
   'row-span-3',
   'bg-slate-300',
   'rounded-sm',
-  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  // 'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'shadow-[0_0_0.5rem_rgb(0_0_0)]',
   'flex',
   'flex-col',
   'gap-2',
@@ -18,11 +19,11 @@ const TECH_STACK_STYLES = [
   'h-full',
   'transition-all',
   'border-2',
-  'border-slate-950',
-  'dark:border-slate-300',
-  'text-slate-950',
+  'border-amber-500',
+  // 'dark:border-amber-500',
+  'text-amber-950',
+  'dark:text-amber-300',
   'dark:bg-slate-900',
-  'dark:text-slate-300',
   'hover:scale-[1.02]',
   'hover:transition-all',
   'responsive-text-xs'
@@ -131,5 +132,8 @@ const TECH_STACK_STYLES = [
       />
     </div>
   </div>
-  <p class='font-bold responsive-text-xxs pt-2'>-- Tap to see more --</p>
+  <aside class='p-2 rounded-sm flex gap-2 justify-center items-center'>
+    <p class='font-bold responsive-text-xxs'>Tap to see more</p>
+    <p class='font-thin'>󰧥</p>
+  </aside>
 </a>

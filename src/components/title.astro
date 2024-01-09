@@ -1,15 +1,20 @@
 ---
 import Typed from './typed.astro'
+import StripedPocketTee from './css-peeps/striped-pocket-tee.astro'
 ---
 
 <div
-  class='row-span-2 col-span-2 title dark:bg-emerald-900 dark:text-emerald-300 text-emerald-950 bg-emerald-400 p-2 rounded-sm w-full flex items-center flex-col'
+  class='row-span-2 col-span-2 title dark:bg-emerald-900 dark:text-emerald-300 text-emerald-950 bg-emerald-400 p-2 rounded-sm w-full flex items-center flex-row'
 >
-  <p class='font-rubik-doodle font-semibold'>@jamerrq.dev</p>
-  <!-- <div class="input-wrapper">
-    <span class="placeholder"></span>
-  </div> -->
-  <Typed />
+  <div class='flex flex-col'>
+    <p class='font-rubik-doodle font-semibold'>@jamerrq.dev</p>
+    <!-- <div class="input-wrapper">
+      <span class="placeholder"></span>
+    </div> -->
+    <Typed />
+  </div>
+  <!-- <CalmPeep /> -->
+  <StripedPocketTee />
 </div>
 
 <style>

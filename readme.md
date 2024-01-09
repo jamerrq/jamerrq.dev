@@ -4,22 +4,33 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 ### Dark Mode
 
-![v3_dark](./lib/v3_dark.png)
+![v4_dark](./lib/v4_dark.png)
 
 ### Light Mode
 
-![v3_light](./lib/v3_light.png)
+![v4_light](./lib/v4_light.png)
 
 ### LightHouse Report
 
 ![LightHouse Score](./lib/lighthouse.png)
 
+## Pages 📄
+
+### Tech Stack
+
+![Tech Stack](./lib/pages/tech-stack.png)
+
+### 404
+
+![404](./lib/pages/404.png)
+
+> [!NOTE]
+> Other pages are still under development 🚧. As well as the translations.
+
 ## Stack 🥞
 
 ![Astro](https://img.shields.io/badge/-Astro-000000?style=flat-square&logo=astro&logoColor=white)
-![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![Tailwind
-CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
 
 ### Tooling 🛠️
 
@@ -37,3 +48,5 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=
 - [Nerd Fonts Cheat Sheet](https://www.nerdfonts.com/cheat-sheet)
 - [Tailwind CSS Debug Screens](https://github.com/jorenvanhee/tailwindcss-debug-screens)
 - [Typed CSS](https://typedcss.com/)
+- [CSS Peeps](https://css-peeps.com/)
+- [Tailwind Cheat Sheet](https://tailwindcomponents.com/cheatsheet/)

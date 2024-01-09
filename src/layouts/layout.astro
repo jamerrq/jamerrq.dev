@@ -16,7 +16,7 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     <meta name='description' content='jamerrq.dev' />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image' href='/favicon.png' />
-    <!-- Preconnect to Google Fonts Cdn -->
+    <!-- Preconnect to Google Fonts CDN -->
     <link rel='preconnect' href='https://fonts.googleapis.com' crossorigin />
     <meta name='generator' content={Astro.generator} />
     <meta property='og:title' content='jamerrq.dev' />
@@ -60,5 +60,6 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
 
   main#background {
     background-image: url('/pizarra.webp');
+    background-size: fill;
   }
 </style>
