@@ -50,3 +50,5 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 - [Typed CSS](https://typedcss.com/)
 - [CSS Peeps](https://css-peeps.com/)
 - [Tailwind Cheat Sheet](https://tailwindcomponents.com/cheatsheet/)
+- [Astro View Transitions](https://docs.astro.build/en/guides/view-transitions/)
+- [Astro View Transitions - Lifecycle Events](https://docs.astro.build/en/guides/view-transitions/#lifecycle-events)
