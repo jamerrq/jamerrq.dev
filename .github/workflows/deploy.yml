@@ -19,7 +19,7 @@ jobs:
 
       # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
       - name: Build Astro
-        run: bun run build
+        run: ~/.bun/bin/bun run build
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
