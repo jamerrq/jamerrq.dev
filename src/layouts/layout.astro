@@ -6,6 +6,7 @@ interface Props {
 const { title } = Astro.props
 import '@fontsource/merriweather'
 import { ViewTransitions } from 'astro:transitions'
+import ResponsiveContainer from '../components/responsive-container.astro'
 const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
 ---
 
@@ -28,37 +29,40 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     <ViewTransitions />
   </head>
   <body class={BODY_CLASS}>
+    <ResponsiveContainer />
     <slot />
-  </body><style is:global>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    <style is:global>
+      @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;400;700&display=swap');
 
-    @font-face {
-      src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.otf')
-        format('opentype');
-      font-family: 'Fira';
-    }
+      @font-face {
+        src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.otf')
+          format('opentype');
+        font-family: 'Fira';
+      }
 
-    .responsive-text {
-      font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
-    }
+      .responsive-text {
+        font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
+      }
 
-    .responsive-text-xs {
-      font-size: clamp(1rem, 8vw - 2rem, 2rem);
-    }
+      .responsive-text-xs {
+        font-size: clamp(1rem, 8vw - 2rem, 2rem);
+      }
 
-    .responsive-text-sm {
-      font-size: clamp(0.75rem, 8vw - 2rem, 1.5rem);
-    }
+      .responsive-text-sm {
+        font-size: clamp(0.75rem, 6vw - 2rem, 1.5rem);
+      }
 
-    .responsive-text-xxs {
-      font-size: clamp(0.5rem, 8vw - 2rem, 1rem);
-    }
+      .responsive-text-xxs {
+        font-size: clamp(0.5rem, 4vw - 2rem, 1rem);
+      }
 
-    main#background {
-      background-image: url('/pizarra.webp');
-      background-size: fill;
-    }
-  </style>
+      main#background {
+        background-image: url('/pizarra.webp');
+        background-size: fill;
+      }
+    </style>
+  </body>
 </html>

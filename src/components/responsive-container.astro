@@ -1,0 +1,50 @@
+---
+import ResponsivePeep from './css-peeps/responsive-peep.astro'
+---
+
+<style>
+  .container {
+    width: 50dvw;
+    min-height: 50dvh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    border-radius: 0.5rem;
+    background-color: #1b383c;
+    font-family: 'Rubik Doodle Shadow', fira, sans-serif;
+    /* font-size: 2rem; */
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 0 0.05rem 0 0.1rem #000;
+    border: 1px solid white;
+    font-weight: 600;
+    /* gap: 0.25rem; */
+  }
+
+  #blur_background {
+    filter: blur(1px);
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url('/pizarra.webp');
+  }
+</style>
+
+<div class='xl:hidden block'>
+  <div id='blur_background'></div>
+  <main class='w-[100dvw] h-[100dvh] grid place-content-center bg-black'>
+    <div class='responsive-text container'>
+      <h1>You caught me</h1>
+      <ResponsivePeep />
+      <p class='responsive-text-xxs font-fira'>
+        The responsive design for this page is still in progress.
+        <br />
+        I invite you to visit it from a computer or a tablet to get the best experience.
+        <br />
+        But don't hesitate! I'm hardly working on this and I'll be done soon 🤘.
+      </p>
+    </div>
+  </main>
+</div>

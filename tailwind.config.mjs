@@ -11,6 +11,7 @@ export default {
         'merriweather': ['Merriweather', 'serif'],
         'rubik': ['Rubik', 'sans-serif'],
         'roboto-slab': ['Roboto Slab', 'serif'],
+        'onest': ['Onest', 'sans-serif'],
       },
     },
     colors: {

@@ -1,5 +1,6 @@
 ---
-import CalmPeep from '../css-peeps/calm-laptop.astro'
+import TechPeep from '../css-peeps/tech-peep.astro'
+import TechPeepLight from '../css-peeps/tech-peep-light.astro'
 const TITLE_STYLES: string = [
   'row-span-2',
   'col-span-2',
@@ -16,14 +17,17 @@ const TITLE_STYLES: string = [
   'justify-center',
   'flex-row',
   'font-rubik-doodle',
-  'shadow-[0_0_0.5rem_rgba(0_0_0)]'
+  // 'shadow-[0_0_0.5rem_rgba(0_0_0)]'
+  'shadow-[0_0_0.3rem_rgb(69_26_3)]', // rgb(69, 26, 3)
+  'dark:shadow-[0_0_0.3rem_rgb(253_230_138)]' // rgb(253, 230, 138)
 ].join(' ')
 ---
 
 <a class={TITLE_STYLES} transition:name='tech-stack' href='/'>
   <div class='flex flex-col'>
     <p class='font-semibold responsive-text-xs'>Tech Stack </p>
-    <p class='font-semibold'>Artists have brushes, <br /> I got these.</p>
+    <p class='font-semibold'>Painters have brushes, <br /> I got these.</p>
   </div>
-  <CalmPeep />
+  <TechPeep />
+  <TechPeepLight />
 </a>
