@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/layout.astro'
-import Peep from '../components/css-peeps/404-peep.astro'
+import Peep from '../components/css-peeps/peep.astro'
+import Container from '../components/container.astro'
 ---
 
 <style>
   #_404_container {
     width: 50dvw;
-    height: 50dvh;
+    min-height: 50dvh;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -51,9 +52,9 @@ import Peep from '../components/css-peeps/404-peep.astro'
 </style>
 
 <Layout title='Resource Not Found'>
-  <div id='_404_background'></div>
+  <div id='_404_background' class='hidden xl:grid'></div>
   <main class='w-[100dvw] h-[100dvh] grid place-content-center bg-black'>
-    <div id='_404_container' class='responsive-text'>
+    <Container>
       <h1>Page Not Found!</h1>
       <Peep />
       <p class='responsive-text-xxs font-fira'>
@@ -71,6 +72,6 @@ import Peep from '../components/css-peeps/404-peep.astro'
           Try Again </button
         >
       </div>
-    </div>
+    </Container>
   </main>
 </Layout>
