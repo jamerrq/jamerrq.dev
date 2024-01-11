@@ -1,22 +1,16 @@
-<div class='css-peeps dark:hidden'></div>
-<style>
-  @import url(https://unpkg.com/css-peeps@1/css-peeps.css);
+---
+import Peep from './peep.astro'
+---
 
-  .css-peeps {
-    --peep-head: twists1;
-    --peep-face: suspicious;
-    --peep-body: sweater-crossed;
-
-    --peep-hat-color: #fc03c2;
-    --peep-hair-color: #7300e6;
-    --peep-skin-color: #96634e;
-    /* --peep-accessory-color: #00ff00; */
-    /* --peep-facial-hair-color: #ffd700; */
-    --peep-object-color: #ffa500;
-    --peep-clothes-color: #fff;
-
-    width: 135px;
-    height: 135px;
-    border-radius: 10px;
-  }
-</style>
+<div class="dark:hidden">
+  <Peep
+    head='twists1'
+    face='suspicious'
+    body='sweater-crossed'
+    hatColor='#fc03c2'
+    hairColor='#34d399'
+    skinColor='#96634e'
+    objectColor='#ffa500'
+    clothesColor='#fff'
+  />
+</div>

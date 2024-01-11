@@ -1,0 +1,62 @@
+---
+const {
+  head = 'twists1',
+  face = 'gasp',
+  body = 'coffee',
+  facialHair = '',
+  accesory = '',
+
+  hatColor = '#3178c6',
+  hairColor = '#34d399',
+  skinColor = '#96634e',
+  accessoryColor = '#00ff00',
+
+  facialHairColor = '#ffd700',
+  objectColor = '#3178c6',
+  clothesColor = '#000'
+} = Astro.props
+---
+
+<>
+  <div class='css-peeps'></div>
+  <style
+    define:vars={{
+      head,
+      face,
+      body,
+      facialHair,
+      accesory,
+
+      hatColor,
+      hairColor,
+      skinColor,
+      accessoryColor,
+
+      facialHairColor,
+      objectColor,
+      clothesColor
+    }}
+  >
+    .css-peeps {
+      --peep-head: var(--head);
+      --peep-face: var(--face);
+      --peep-body: var(--body);
+      --peep-facial-hair: var(--facialHair);
+      --peep-accessory: var(--accesory);
+
+      --peep-hat-color: var(--hatColor);
+      --peep-hair-color: var(--hairColor);
+      --peep-skin-color: var(--skinColor);
+      --peep-accessory-color: var(--accessoryColor);
+
+      --peep-facial-hair-color: var(--facialHairColor);
+      --peep-object-color: var(--objectColor);
+
+      --peep-clothes-color: var(--clothesColor);
+
+      width: 125px;
+      height: 125px;
+      border-radius: 10px;
+    }
+  </style>
+</>
