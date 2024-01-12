@@ -1,0 +1,35 @@
+---
+const BOX_STYLES: string = [
+  'col-span-2',
+  'row-span-2',
+  'gap-2',
+  'bg-slate-300',
+  'rounded-sm',
+  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'flex',
+  'items-center',
+  'justify-center',
+  'responsive-text',
+  'text-slate-950',
+  'font-rubik-doodle',
+  'w-full',
+  'h-full',
+  'transition-all',
+  'duration-200',
+  'border-emerald-950',
+  'dark:border-emerald-300',
+  'border-2',
+  'dark:bg-slate-900',
+  'dark:text-emerald-300',
+  // 'hover:scale-[1.02]',
+  // 'hover:duration-200',
+  // 'hover:ease-in-out',
+  'grid',
+  'grid-rows-2',
+  'grid-cols-1'
+].join(' ')
+---
+
+<article class={BOX_STYLES} title='My Links'>
+  <slot />
+</article>

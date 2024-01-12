@@ -76,7 +76,8 @@ const BUTTON_STYLES = [
 </article>
 
 <script defer>
-  function setDarkTheme() {
+  // Theme switch
+  function setTheme() {
     const darkIcon = document.getElementById('theme-toggle-dark-icon')
     const lightIcon = document.getElementById('theme-toggle-light-icon')
 
@@ -122,16 +123,17 @@ const BUTTON_STYLES = [
     })
   }
 
-  setDarkTheme()
-  document.addEventListener('astro:after-preparation', setDarkTheme)
-  document.addEventListener('astro:after-swap', setDarkTheme)
+  setTheme()
+  document.addEventListener('astro:after-preparation', setTheme)
+  document.addEventListener('astro:after-swap', setTheme)
 
   // Home & Random Place buttons
   const setHomeRandomButton = () => {
     const homeButton = document.getElementById('home-button')
     const randomPlaceButton = document.getElementById('random-place-button')
 
-    // Mediante la ruta se comprueba si se está en la página principal
+    // Show home button only if not in home
+    // Otherwise show random place button
     if (window.location.pathname === '/') {
       homeButton.classList.add('hidden')
       randomPlaceButton.classList.remove('hidden')
@@ -140,7 +142,7 @@ const BUTTON_STYLES = [
       randomPlaceButton.classList.add('hidden')
     }
 
-    // Agrega el evento de click a los botones
+    // Add click event to home button
     homeButton.addEventListener('click', function () {
       window.location.href = '/'
     })
@@ -154,4 +156,26 @@ const BUTTON_STYLES = [
   setHomeRandomButton()
   document.addEventListener('astro:after-preparation', setHomeRandomButton)
   document.addEventListener('astro:after-swap', setHomeRandomButton)
+
+  // Language switch
+  const setLanguageToggle = () => {
+    const languageToggle = document.getElementById('language-toggle')
+
+    // Add click event to language toggle button
+    languageToggle.addEventListener('click', function () {
+      const currentLanguage = window.location.pathname.split('/').at(1) || 'en'
+      // if path starts with /es then remove it
+      // else add /es
+      // window.alert(currentLanguage)
+      const newUrl =
+        currentLanguage === 'es'
+          ? window.location.pathname.replace('/es', '')
+          : '/es' + window.location.pathname
+      window.location.href = newUrl
+    })
+  }
+
+  setLanguageToggle()
+  document.addEventListener('astro:after-preparation', setLanguageToggle)
+  document.addEventListener('astro:after-swap', setLanguageToggle)
 </script>
