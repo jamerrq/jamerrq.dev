@@ -19,7 +19,7 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 > [!NOTE]
 > This is a preview report to verify Accessibility, Best Practices and SEO.
 > Performance score could mislead due to perform the test in a local environment.
-> To see a recent report, check this [PDF](./lib/lighthouse/jan-12.pdf)
+> To see a recent report, check this [PDF](./lib/lighthouse/jan-14.pdf)
 
 ## Pages 📄
 
@@ -42,7 +42,6 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 ### Responsive
 
 </summary>
-
 
 ![Responsive](./lib/pages/responsive.png)
 
