@@ -26,11 +26,17 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
       href='https://unpkg.com/css-peeps@1/css-peeps.css'
     />
     <meta name='generator' content={Astro.generator} />
+    <!-- Open Graph -->
     <meta property='og:title' content='jamerrq.dev' />
     <meta property='og:type' content='personal website' />
     <meta property='og:url' content='https://jamerrq.deno.dev' />
     <meta property='og:image' content='https://jamerrq.deno.dev/og-image.png' />
     <meta property='og:description' content='Software Developer.' />
+    <meta property='og:site_name' content='jamerrq.dev' />
+    <!-- Robots -->
+    <meta name='robots' content='index, follow' />
+    <meta name='googlebot' content='index, follow' />
+    <meta name='google' content='notranslate' />
     <title>{title}</title>
     <ViewTransitions />
   </head>
