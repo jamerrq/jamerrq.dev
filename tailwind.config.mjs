@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'rubik-doodle': ['Rubik Doodle Shadow', 'Fira', 'sans-serif'],
-        'fira': ['Fira', 'monospace', 'sans-serif'],
+        'rubik-doodle': ['Rubik Doodle Shadow', 'Fira Mono Nerd', 'sans-serif'],
+        'fira': ['Fira Mono Nerd', 'monospace', 'sans-serif'],
         'rubik-maze': ['Rubik Maze', 'sans-serif'],
         'merriweather': ['Merriweather', 'serif'],
         'rubik': ['Rubik', 'sans-serif'],

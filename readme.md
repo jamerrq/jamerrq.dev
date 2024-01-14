@@ -2,17 +2,24 @@
 
 Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
+![](https://img.shields.io/badge/Made%20with-Astro%20💙-orange?style=for-the-badge&logo=astro&logoColor=orange)
+
 ### Dark Mode
 
-![v4_dark](./lib/v4_dark.png)
+![v5_dark](./lib/snaps/v5_dark.png)
 
 ### Light Mode
 
-![v4_light](./lib/v4_light.png)
+![v5_light](./lib/snaps/v5_light.png)
 
-### LightHouse Report
+### LightHouse Report (Preview)
 
-![LightHouse Score](./lib/lighthouse.png)
+![LightHouse Score](./lib/lighthouse/preview-report.png)
+
+> [!NOTE]
+> This is a preview report to verify Accessibility, Best Practices and SEO.
+> Performance score could mislead due to perform the test in a local environment.
+> To see a recent report, check this [PDF](./lib/lighthouse/jan-12.pdf)
 
 ## Pages 📄
 
@@ -20,9 +27,26 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 ![Tech Stack](./lib/pages/tech-stack.png)
 
+## Projects & Featured 🚀
+
+![Featured & Projects](./lib/pages/featured-and-projects.png)
+
 ### 404
 
 ![404](./lib/pages/404.png)
+
+<details closed>
+
+<summary>
+
+### Responsive
+
+</summary>
+
+
+![Responsive](./lib/pages/responsive.png)
+
+</details>
 
 > [!NOTE]
 > Other pages are still under development 🚧. As well as the translations.

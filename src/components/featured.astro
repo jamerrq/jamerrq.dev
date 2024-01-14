@@ -33,7 +33,12 @@ const FEATURED_STYLES = [
 ].join(' ')
 ---
 
-<a class={FEATURED_STYLES} title='Featured Resources' href='/featured'>
+<a
+  class={FEATURED_STYLES}
+  title='Featured Resources'
+  href='/featured'
+  transition:name='featured-and-projects'
+>
   <div class='flex gap-1'>
     <p>Featured</p>
     <NerdIcon props='inline'>󰂺</NerdIcon>

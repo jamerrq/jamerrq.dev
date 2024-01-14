@@ -1,13 +1,4 @@
 ---
-import AboutMe from './about-me-card.astro'
-import Title from './title.astro'
-import Experience from './experience.astro'
-import Buttons from './buttons.astro'
-import TechStack from './tech-stack.astro'
-import Featured from './featured.astro'
-import Blog from './blog.astro'
-import Socials from './socials.astro'
-
 const BENTO_STYLES = [
   'bg-[#1b383c]',
   'hidden',
@@ -27,13 +18,6 @@ const BENTO_STYLES = [
 ].join(' ')
 ---
 
-<div class={BENTO_STYLES} id='bento-grid'>
-  <AboutMe />
-  <Buttons />
-  <TechStack />
-  <Experience />
-  <Title />
-  <Featured />
-  <Socials />
-  <Blog />
-</div>
+<main class={BENTO_STYLES}>
+  <slot />
+</main>

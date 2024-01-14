@@ -1,0 +1,34 @@
+---
+const ABOUT_STYLES = [
+  'col-span-4',
+  'row-span-1',
+  'bg-slate-300',
+  'dark:bg-slate-900',
+  'dark:text-slate-300',
+  'rounded-sm',
+  'shadow-[0_0_0.3rem_rgb(69_26_3)]', // rgb(69, 26, 3)
+  'dark:shadow-[0_0_0.3rem_rgb(253_230_138)]', // rgb(253, 230, 138)
+  'flex',
+  'items-center',
+  'justify-center',
+  'font-bold',
+  'text-black',
+  'font-rubik-doodle',
+  'w-full',
+  'h-full',
+  'transition-all',
+  'border-2',
+  'dark:border-amber-300',
+  'border-amber-950',
+  'responsive-text-xs',
+  'flex-row',
+  'gap-2',
+  'text-slate-900',
+  'dark:text-slate-300'
+].join(' ')
+---
+
+<a class={ABOUT_STYLES} transition:name='featured-and-projects' href='/'>
+  <p class='text-cyan-950 dark:text-cyan-300'>Featured Resources</p>
+  <p class='text-emerald-950 dark:text-emerald-300'>& Projects</p>
+</a>

@@ -7,27 +7,10 @@ import DevTools from './dev-tools.astro'
 import Os from './os.astro'
 import Testing from './testing.astro'
 import Languages from './languages.astro'
-
-const BENTO_STYLES = [
-  'bg-[#1b383c]',
-  'hidden',
-  'xl:grid',
-  'items-center',
-  'justify-center',
-  'w-[95dvw]',
-  'h-[95dvh]',
-  'content-center',
-  'rounded-sm',
-  'shadow-xl',
-  'border-2',
-  'grid-cols-6',
-  'grid-rows-6',
-  'gap-3',
-  'p-3'
-].join(' ')
+import Bento from '../bento.astro'
 ---
 
-<div class={BENTO_STYLES} id='bento-grid'>
+<Bento>
   <About />
   <Buttons />
   <DevTools />
@@ -36,4 +19,4 @@ const BENTO_STYLES = [
   <Os />
   <Languages />
   <Testing />
-</div>
+</Bento>

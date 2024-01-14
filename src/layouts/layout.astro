@@ -39,13 +39,19 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     <Background />
     <slot />
     <style is:global>
-      /* @import url('/node_modules/css-peeps/css-peeps.css'); */
-      @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+      @font-face {
+        src: url('/fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.woff2');
+        font-family: 'Rubik Doodle Shadow';
+      }
+
+      @font-face {
+        src: url('/fonts/RobotoSlab/RobotoSlab-VariableFont_wght.woff2');
+        font-family: 'Roboto Slab';
+      }
 
       @font-face {
         src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.woff2');
-        font-family: 'Fira';
+        font-family: 'Fira Mono Nerd';
       }
 
       .responsive-text {
