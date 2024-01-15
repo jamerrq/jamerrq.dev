@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "title": "Resources App",
+      "website": "https://resources-app.vercel.app/",
+      "repository": "https://github.com/jamerrq/resources-app"
+    },
+    {
+      "title": "Midu.dev",
+      "website": "https://midu.dev/",
+      "repository": "https://github.com/midudev",
+      "links": [
+        {
+          "icon": "",
+          "title": "Twitch Channel",
+          "url": "https://www.twitch.tv/midudev"
+        },
+        {
+          "icon": "",
+          "title": "Youtube Channel",
+          "url": "https://www.youtube.com/c/midudev"
+        },
+        {
+          "icon": "",
+          "title": "Twitter",
+          "url": "https://twitter.com/midudev"
+        }
+      ]
+    },
+    {
+      "title": "Free Programming Books",
+      "website": "https://ebookfoundation.github.io/free-programming-books/",
+      "repository": "https://github.com/EbookFoundation/free-programming-books"
+    },
+    {
+      "title": "Advent JS 2023",
+      "website": "https://adventjs.dev/",
+      "repository": "https://github.com/jamerrq/advent-js-2023"
+    },
+    {
+      "title": "Cool Contrast",
+      "website": "https://coolcontrast.vercel.app/",
+      "repository": "https://github.com/AlexGarrixen/Cool-Contrast"
+    },
+    {
+      "title": "Project Based Learning",
+      "repository": "https://github.com/practical-tutorials/project-based-learning"
+    },
+    {
+      "title": "CodeSignal JS",
+      "repository": "https://github.com/jamerrq/codesignal-js",
+      "website": "https://app.codesignal.com/profile/jamerrq"
+    },
+    {
+      "title": "Codeforces 2023",
+      "repository": "https://github.com/jamerrq/cp2023",
+      "website": "https://codeforces.com/profile/jamerrq"
+    },
+    {
+      "title": "Codember 2023",
+      "repository": "https://github.com/jamerrq/codember-2023",
+      "website": "https://codember.dev/"
+    },
+    {
+      "title": "Best Pens 2023",
+      "website": "https://codepen.io/2023/popular"
+    }
+  ]
+}

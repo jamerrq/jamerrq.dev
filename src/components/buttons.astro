@@ -43,11 +43,11 @@ const BUTTON_STYLES = [
     
   </button>
   <!-- HOME OR RANDOM PLACE -->
-  <button class={BUTTON_STYLES + ' hidden'} title='go home' id='home-button'>
+  <button class={`${BUTTON_STYLES} hidden`} title='go home' id='home-button'>
     
   </button>
   <button
-    class={BUTTON_STYLES + ' hidden'}
+    class={`${BUTTON_STYLES} hidden`}
     title='Go to a random page'
     id='random-place-button'
   >
@@ -96,7 +96,7 @@ const BUTTON_STYLES = [
 
     const themeToggleBtn = document.getElementById('theme-toggle')
 
-    themeToggleBtn.addEventListener('click', function () {
+    themeToggleBtn.addEventListener('click', () => {
       darkIcon.classList.toggle('hidden')
       lightIcon.classList.toggle('hidden')
 
@@ -111,14 +111,12 @@ const BUTTON_STYLES = [
         }
 
         // se comprueba si el sistema operativo tiene configurado el tema oscuro
+      } else if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark')
+        localStorage.setItem('color-theme', 'light')
       } else {
-        if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark')
-          localStorage.setItem('color-theme', 'light')
-        } else {
-          document.documentElement.classList.add('dark')
-          localStorage.setItem('color-theme', 'dark')
-        }
+        document.documentElement.classList.add('dark')
+        localStorage.setItem('color-theme', 'dark')
       }
     })
   }
@@ -143,12 +141,12 @@ const BUTTON_STYLES = [
     }
 
     // Add click event to home button
-    homeButton.addEventListener('click', function () {
+    homeButton.addEventListener('click', () => {
       window.location.href = '/'
     })
 
-    randomPlaceButton.addEventListener('click', function () {
-      const places = ['/blog', '/tech-stack', '/featured-and-projects']
+    randomPlaceButton.addEventListener('click', () => {
+      const places = ['/blog', '/tech-stack', '/featured']
       window.location.href = places[Math.floor(Math.random() * places.length)]
     })
   }
@@ -162,7 +160,7 @@ const BUTTON_STYLES = [
     const languageToggle = document.getElementById('language-toggle')
 
     // Add click event to language toggle button
-    languageToggle.addEventListener('click', function () {
+    languageToggle.addEventListener('click', () => {
       const currentLanguage = window.location.pathname.split('/').at(1) || 'en'
       // if path starts with /es then remove it
       // else add /es
@@ -170,7 +168,7 @@ const BUTTON_STYLES = [
       const newUrl =
         currentLanguage === 'es'
           ? window.location.pathname.replace('/es', '')
-          : '/es' + window.location.pathname
+          : `/es${window.location.pathname}`
       window.location.href = newUrl
     })
   }

@@ -3,5 +3,21 @@
   "exclude": [
     "node_modules",
     "dist",
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+  }
 }

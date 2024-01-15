@@ -1,12 +1,13 @@
-import { defineConfig } from 'astro/config'
-import tailwind from "@astrojs/tailwind"
-import deno from '@astrojs/deno'
+import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
+import deno from '@astrojs/deno';
+import robotsTxt from "astro-robots-txt";
 
-import robotsTxt from "astro-robots-txt"
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), robotsTxt()],
+  integrations: [tailwind(), robotsTxt(), preact()],
   adapter: deno(),
   output: 'server',
   i18n: {
@@ -20,4 +21,4 @@ export default defineConfig({
     }
   },
   site: 'https://jamerrq.deno.dev/'
-})
+});

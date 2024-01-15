@@ -53,7 +53,9 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 ## Stack 🥞
 
 ![Astro](https://img.shields.io/badge/-Astro-000000?style=flat-square&logo=astro&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Tailwind
+CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Preact](https://img.shields.io/badge/-Preact-673AB8?style=flat-square&logo=preact&logoColor=white)
 
 ### Tooling 🛠️
 

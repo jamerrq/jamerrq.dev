@@ -1,0 +1,181 @@
+{
+  "data": [
+    {
+      "title": "Json Forms App",
+      "description": "This application allows you to convert a JSON file to a web form interface, as well as register the answers in a database.",
+      "stack": [
+        "Supabase",
+        "Next JS",
+        "Tailwind CSS"
+      ],
+      "demo": "https://json-forms-app.vercel.app/",
+      "repository": "https://github.com/jamerrq/json-forms-app"
+    },
+    {
+      "title": "Rocket Launches App",
+      "description": "Astro course app to explore the beauty and power of the framework with features like view Transition, dynamic data fetching and server-side rendering.",
+      "stack": [
+        "Astro",
+        "Tailwind CSS"
+      ],
+      "demo": "https://rocket-launches.deno.dev/",
+      "repository": "https://github.com/jamerrq/rocket-launches"
+    },
+    {
+      "title": "Reading List App",
+      "description": "Technical test for an interview, the challenge was to design and implement a small web application of a book list and bookmarks.",
+      "stack": [
+        "Next JS",
+        "Tailwind CSS"
+      ],
+      "demo": "https://reading-list-app-ecru.vercel.app/",
+      "repository": "https://github.com/jamerrq/reading-list-app"
+    },
+    {
+      "title": "TypeScript - Exercism",
+      "description": "My solutions to the TypeScript track on Exercism.",
+      "stack": [
+        "TypeScript"
+      ],
+      "repository": "https://github.com/jamerrq/typescriptExercisesOnExercism",
+      "demo": "https://exercism.org/tracks/typescript"
+    },
+    {
+      "title": "Foundational C#",
+      "description": ".NET course with Microsoft, where I learned the basics of C# and .NET.",
+      "stack": [
+        "C#",
+        ".NET"
+      ],
+      "repository": "https://github.com/jamerrq/Foundational-CSharp-with-Microsoft",
+      "demo": "https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/"
+    },
+    {
+      "title": "User Managment API",
+      "description": "Full Stack application to manage users, with features like filtering, sorting, CRUD operations and user interface in React.",
+      "stack": [
+        "Express",
+        "TypeScript",
+        "Sequelize",
+        "PostgreSQL",
+        "React"
+      ],
+      "repository": "https://github.com/jamerrq/wks-typescript",
+      "demo": "https://wks-typescript.vercel.app/"
+    },
+    {
+      "title": "Sport Scheduling",
+      "description": "Scheduling of Colombian professional soccer league: A comparison of models and algorithms.",
+      "stack": [
+        "Python",
+        "Jupyter Notebook",
+        "LaTeX"
+      ],
+      "repository": "https://github.com/jamerrq/20201-Sport-Scheduling",
+      "demo": "https://github.com/jamerrq/20192-Sport-Scheduling"
+    },
+    {
+      "title": "AHP Forms App",
+      "description": "Private freelance application for the Rise Group to create forms and surveys using the Analytic Hierarchy Process (AHP).",
+      "stack": [
+        "Python",
+        "Html",
+        "JavaScript",
+        "Php"
+      ],
+      "private": true
+    }
+  ],
+  "logos": [
+    {
+      "name": "Supabase",
+      "url": "https://img.shields.io/badge/-Supabase-181818?style=for-the-badge&logo=supabase&logoColor=white",
+      "ref": "https://supabase.io/"
+    },
+    {
+      "name": "Next JS",
+      "url": "https://img.shields.io/badge/-Next.js-181818?style=for-the-badge&logo=next.js&logoColor=white",
+      "ref": "https://nextjs.org/"
+    },
+    {
+      "name": "Tailwind CSS",
+      "url": "https://img.shields.io/badge/-Tailwind%20CSS-181818?style=for-the-badge&logo=tailwind-css&logoColor=white",
+      "ref": "https://tailwindcss.com/"
+    },
+    {
+      "name": "Astro",
+      "url": "https://img.shields.io/badge/-Astro-181818?style=for-the-badge&logo=astro&logoColor=white",
+      "ref": "https://astro.build/"
+    },
+    {
+      "name": "Deno",
+      "url": "https://img.shields.io/badge/-Deno-181818?style=for-the-badge&logo=deno&logoColor=white",
+      "ref": "https://deno.land/"
+    },
+    {
+      "name": "TypeScript",
+      "url": "https://img.shields.io/badge/-TypeScript-181818?style=for-the-badge&logo=typescript&logoColor=white",
+      "ref": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "C#",
+      "url": "https://img.shields.io/badge/-C%23-181818?style=for-the-badge&logo=c-sharp&logoColor=white",
+      "ref": "https://docs.microsoft.com/en-us/dotnet/csharp/"
+    },
+    {
+      "name": ".NET",
+      "url": "https://img.shields.io/badge/-.NET-181818?style=for-the-badge&logo=.net&logoColor=white",
+      "ref": "https://dotnet.microsoft.com/"
+    },
+    {
+      "name": "Express",
+      "url": "https://img.shields.io/badge/-Express-181818?style=for-the-badge&logo=express&logoColor=white",
+      "ref": "https://expressjs.com/"
+    },
+    {
+      "name": "Sequelize",
+      "url": "https://img.shields.io/badge/-Sequelize-181818?style=for-the-badge&logo=sequelize&logoColor=white",
+      "ref": "https://sequelize.org/"
+    },
+    {
+      "name": "PostgreSQL",
+      "url": "https://img.shields.io/badge/-PostgreSQL-181818?style=for-the-badge&logo=postgresql&logoColor=white",
+      "ref": "https://www.postgresql.org/"
+    },
+    {
+      "name": "React",
+      "url": "https://img.shields.io/badge/-React-181818?style=for-the-badge&logo=react&logoColor=white",
+      "ref": "https://reactjs.org/"
+    },
+    {
+      "name": "Python",
+      "url": "https://img.shields.io/badge/-Python-181818?style=for-the-badge&logo=python&logoColor=white",
+      "ref": "https://www.python.org/"
+    },
+    {
+      "name": "Jupyter Notebook",
+      "url": "https://img.shields.io/badge/-Jupyter%20Notebook-181818?style=for-the-badge&logo=jupyter&logoColor=white",
+      "ref": "https://jupyter.org/"
+    },
+    {
+      "name": "LaTeX",
+      "url": "https://img.shields.io/badge/-LaTeX-181818?style=for-the-badge&logo=latex&logoColor=white",
+      "ref": "https://www.latex-project.org/"
+    },
+    {
+      "name": "Html",
+      "url": "https://img.shields.io/badge/-Html-181818?style=for-the-badge&logo=html5&logoColor=white",
+      "ref": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    {
+      "name": "JavaScript",
+      "url": "https://img.shields.io/badge/-JavaScript-181818?style=for-the-badge&logo=javascript&logoColor=white",
+      "ref": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "name": "Php",
+      "url": "https://img.shields.io/badge/-Php-181818?style=for-the-badge&logo=php&logoColor=white",
+      "ref": "https://www.php.net/"
+    }
+  ]
+}

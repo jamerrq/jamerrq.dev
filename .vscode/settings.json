@@ -13,7 +13,7 @@
     "javascriptreact",
     "astro",
     "typescript",
-    "typescriptreact"
+    // "typescriptreact"
   ],
   "editor.formatOnSave": true,
   "cSpell.words": [
