@@ -2,7 +2,6 @@ import { data } from '@data/resources.json'
 const RESOURCE_STYLES: string = [
   'col-span-2',
   'row-span-4',
-  'bg-cyan-300',
   'rounded-sm',
   'shadow-[0_0_0.3rem_rgb(8_51_68)]', // rgb(8, 51, 68)
   // 'dark:shadow-[0_0_0.3rem_rgb(103_232_249)]', // rgb(103, 232, 249)
@@ -21,7 +20,8 @@ const RESOURCE_STYLES: string = [
   'dark:border-cyan-500',
   'text-cyan-950',
   'dark:text-cyan-300',
-  'dark:bg-cyan-900',
+  'bg-slate-300',
+  'dark:bg-slate-900',
   'hover:scale-[1.02]',
   'hover:transition-all',
   'responsive-text-sm'

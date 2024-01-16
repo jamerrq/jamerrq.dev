@@ -77,3 +77,4 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=
 - [Tailwind Cheat Sheet](https://tailwindcomponents.com/cheatsheet/)
 - [Astro View Transitions](https://docs.astro.build/en/guides/view-transitions/)
 - [Astro View Transitions - Lifecycle Events](https://docs.astro.build/en/guides/view-transitions/#lifecycle-events)
+- [🦔 AstroCritters](https://github.com/astro-community/AstroCritters)
