@@ -2,9 +2,11 @@
 import Bento from '../main/bento.astro'
 import Buttons from '@components/main/buttons.astro'
 import BlogAbout from '@components/blog/blog-about.astro'
+import LastEntries from './last-entries'
 ---
 
 <Bento>
   <Buttons />
   <BlogAbout />
+  <LastEntries client:visible />
 </Bento>

@@ -70,7 +70,7 @@ export default function Resources({ n = 3 }: ResourcesProps) {
   return (
     <>
       <div class='absolute font-merriweather responsive-text bg-emerald-200 left-1 rounded-sm flex items-center py-2'>
-        <button onClick={goLeft}>
+        <button onClick={goLeft} title={'iterate over'}>
           <Left />
         </button>
       </div>
@@ -102,7 +102,7 @@ export default function Resources({ n = 3 }: ResourcesProps) {
         )
       })}
       <div class='absolute responsive-text bg-emerald-200 right-1 rounded-sm flex items-center py-2'>
-        <button onClick={goRight}>
+        <button onClick={goRight} title={'iterate over'}>
           <Right />
         </button>
       </div>

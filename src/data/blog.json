@@ -1,9 +1,16 @@
 {
-  "data": [
+  "entries": [
     {
       "title": "The process of creating this website",
       "date": "2023-Jan-16",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl aliquet nunc, vitae aliquam"
+      "título": "El proceso de crear este sitio web",
+      "href": "building-this-website"
+    },
+    {
+      "title": "5+ years using Linux and I couldn't be happier",
+      "date": "2023-Jan-16",
+      "título": "5+ años usando Linux y no podría estar más feliz",
+      "href": "5-years-using-linux"
     }
   ]
 }

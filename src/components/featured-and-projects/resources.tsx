@@ -31,7 +31,6 @@ const RESOURCE_STYLES: string = [
 import { signal } from '@preact/signals'
 const index = signal(0)
 
-
 import Link from './link'
 
 type ResourceProps = {
@@ -53,7 +52,7 @@ export default function Resources({ n = 3 }: ResourceProps) {
   return (
     <>
       <div class='absolute bg-cyan-300 bottom-16 left-1 rounded-sm flex items-center py-2'>
-        <button onClick={goLeft}>
+        <button onClick={goLeft} title={'iterate over'}>
           <Left />
         </button>
       </div>
@@ -71,7 +70,7 @@ export default function Resources({ n = 3 }: ResourceProps) {
         )
       })}
       <div class='absolute bg-cyan-300 bottom-16 right-1 rounded-sm flex items-center py-2'>
-        <button onClick={goRight}>
+        <button onClick={goRight} title={'iterate over'}>
           <Right />
         </button>
       </div>
