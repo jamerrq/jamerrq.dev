@@ -1,5 +1,6 @@
 ---
-const BLOG_STYLES = [
+import NerdIcon from './nerd-icon.astro'
+const FEATURED_STYLES = [
   'col-span-1',
   'row-span-2',
   'gap-2',
@@ -8,9 +9,10 @@ const BLOG_STYLES = [
   'shadow-[0_0_0.3rem_rgb(69_26_3)]', // rgb(69, 26, 3)
   'dark:shadow-[0_0_0.3rem_rgb(253_230_138)]', // rgb(253, 230, 138)
   'flex',
+  'flex-col',
   'items-center',
   'justify-center',
-  'responsive-text',
+  'responsive-text-sm',
   'font-bold',
   'text-amber-950',
   'dark:text-amber-300',
@@ -18,11 +20,12 @@ const BLOG_STYLES = [
   'w-full',
   'h-full',
   'transition-all',
-  'duration-200',
   'dark:transition-all',
-  // 'dark:border-emerald-300',
-  'border-2',
+  'ease-in-out',
+  'duration-200',
   'border-amber-500',
+  // 'dark:border-amber-500',
+  'border-2',
   'dark:bg-slate-900',
   'hover:scale-[1.02]',
   'hover:duration-200',
@@ -30,7 +33,17 @@ const BLOG_STYLES = [
 ].join(' ')
 ---
 
-<a class={BLOG_STYLES} title='Personal Blog' href='/blog'>
-  <p>Blog</p>
-  <p class='font-fira font-thin'></p>
+<a
+  class={FEATURED_STYLES}
+  title='Featured Resources'
+  href='/featured'
+  transition:name='featured-and-projects'
+>
+  <div class='flex gap-1'>
+    <p>Featured</p>
+  </div>
+  <p>&</p>
+  <div class='flex gap-1'>
+    <p>Projects</p>
+  </div>
 </a>

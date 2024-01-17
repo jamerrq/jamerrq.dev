@@ -6,8 +6,8 @@ interface Props {
 const { title }: Props = Astro.props
 import '@fontsource/merriweather'
 import { ViewTransitions } from 'astro:transitions'
-import ResponsiveContainer from '../components/responsive-container.astro'
-import Background from '../components/background.astro'
+import ResponsiveContainer from '../components/main/responsive-container.astro'
+import Background from '../components/main/background.astro'
 const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
 ---
 
@@ -75,11 +75,6 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
       @font-face {
         src: url('/fonts/RobotoSlab/RobotoSlab-VariableFont_wght.woff2');
         font-family: 'Roboto Slab';
-      }
-
-      @font-face {
-        src: url('/fonts/FiraMonoNerd/FiraMonoNerdFontMono-Medium.woff2');
-        font-family: 'Fira Mono Nerd';
       }
 
       .responsive-text {

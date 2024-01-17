@@ -1,0 +1,96 @@
+---
+import '@fontsource/handlee'
+import '@fontsource/redressed'
+import Layout from 'src/layouts/layout.astro'
+import Footer from '@components/main/footer.astro'
+---
+
+<Layout title='Board - jamerrq.dev'>
+  <style>
+    .handlee-font {
+      font-family: 'redressed', sans-serif;
+      display: grid;
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: aquamarine;
+      width: 33%;
+      position: absolute;
+      top: 2rem;
+      left: 0.25rem;
+      gap: 1rem;
+      font-weight: bold;
+    }
+
+    .rubik-font {
+      font-family: 'Rubik Doodle Shadow', sans-serif;
+      display: grid;
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: aquamarine;
+      width: 33%;
+      position: absolute;
+      top: 2rem;
+      left: 28.65em;
+      gap: 1rem;
+      font-weight: bold;
+    }
+
+    .fira-font {
+      font-family: 'Fira Mono Nerd', sans-serif;
+      display: grid;
+      padding: 1rem;
+      border-radius: 5px;
+      background-color: aquamarine;
+      width: 33%;
+      position: absolute;
+      top: 2rem;
+      left: 57em;
+      gap: 1rem;
+      font-weight: bold;
+    }
+  </style>
+  <main>
+    <div class='handlee-font'>
+      <h1>h1</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        dolor temporibus, aperiam, enim omnis quibusdam mollitia et magnam aut,
+        natus possimus veritatis repellendus id repellat iusto sed optio nam
+        placeat.
+      </p>
+      <span class='responsive-text'>responsive</span>
+      <span class='responsive-text-xs'>responsive xs</span>
+      <span class='responsive-text-sm'>responsive sm</span>
+      <span class='responsive-text-xxs'>responsive xxs</span>
+    </div>
+
+    <div class='rubik-font'>
+      <h1>h1</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        dolor temporibus, aperiam, enim omnis quibusdam mollitia et magnam aut,
+        natus possimus veritatis repellendus id repellat iusto sed optio nam
+        placeat.
+      </p>
+      <span class='responsive-text'>responsive</span>
+      <span class='responsive-text-xs'>responsive xs</span>
+      <span class='responsive-text-sm'>responsive sm</span>
+      <span class='responsive-text-xxs'>responsive xxs</span>
+    </div>
+
+    <div class='fira-font'>
+      <h1>h1</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        dolor temporibus, aperiam, enim omnis quibusdam mollitia et magnam aut,
+        natus possimus veritatis repellendus id repellat iusto sed optio nam
+        placeat.
+      </p>
+      <span class='responsive-text'>responsive</span>
+      <span class='responsive-text-xs'>responsive xs</span>
+      <span class='responsive-text-sm'>responsive sm</span>
+      <span class='responsive-text-xxs'>responsive xxs</span>
+    </div>
+  </main>
+  <Footer />
+</Layout>

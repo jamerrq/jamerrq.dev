@@ -1,6 +1,5 @@
 ---
-import NerdIcon from './nerd-icon.astro'
-const FEATURED_STYLES = [
+const BLOG_STYLES = [
   'col-span-1',
   'row-span-2',
   'gap-2',
@@ -9,10 +8,9 @@ const FEATURED_STYLES = [
   'shadow-[0_0_0.3rem_rgb(69_26_3)]', // rgb(69, 26, 3)
   'dark:shadow-[0_0_0.3rem_rgb(253_230_138)]', // rgb(253, 230, 138)
   'flex',
-  'flex-col',
   'items-center',
   'justify-center',
-  'responsive-text-sm',
+  'responsive-text',
   'font-bold',
   'text-amber-950',
   'dark:text-amber-300',
@@ -20,31 +18,28 @@ const FEATURED_STYLES = [
   'w-full',
   'h-full',
   'transition-all',
-  'dark:transition-all',
-  'ease-in-out',
   'duration-200',
-  'border-amber-500',
-  // 'dark:border-amber-500',
+  'dark:transition-all',
+  // 'dark:border-emerald-300',
   'border-2',
+  'border-amber-500',
   'dark:bg-slate-900',
   'hover:scale-[1.02]',
   'hover:duration-200',
   'hover:ease-in-out'
 ].join(' ')
+import { siGitbook } from 'simple-icons'
 ---
 
 <a
-  class={FEATURED_STYLES}
-  title='Featured Resources'
-  href='/featured'
-  transition:name='featured-and-projects'
+  class={BLOG_STYLES}
+  title='Personal Blog'
+  href='/blog'
+  transition:name='blog'
 >
-  <div class='flex gap-1'>
-    <p>Featured</p>
-    <NerdIcon props='inline'>󰂺</NerdIcon>
-  </div>
-  <p>&</p>
-  <div class='flex gap-1'>
-    <p>Projects</p>
-  </div>
+  <p>Blog</p>
+  <svg
+    class='w-8 h-8 inline-flex dark:fill-amber-300 fill-amber-950'
+    set:html={siGitbook.svg}
+  />
 </a>

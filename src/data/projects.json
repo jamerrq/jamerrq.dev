@@ -65,7 +65,7 @@
     },
     {
       "title": "Sport Scheduling",
-      "description": "Scheduling of Colombian professional soccer league: A comparison of models and algorithms.",
+      "description": "Investigation Project. Scheduling of Colombian professional soccer league: A comparison of models and algorithms.",
       "stack": [
         "Python",
         "Jupyter Notebook",

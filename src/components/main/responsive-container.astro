@@ -1,5 +1,5 @@
 ---
-import ResponsivePeep from './css-peeps/peep.astro'
+import ResponsivePeep from '@components/css-peeps/peep.astro'
 import Container from './container.astro'
 import BlurBackground from './blur-background.astro'
 ---
@@ -9,8 +9,7 @@ import BlurBackground from './blur-background.astro'
   <main class='w-[100dvw] h-[100dvh] grid place-content-center'>
     <Container>
       <div class='flex gap-2'>
-        <h1>You caught me</h1>
-        <p class='font-thin'>󰚽</p>
+        <h1>You caught me!</h1>
       </div>
       <ResponsivePeep
         facialHair='mustache1'
@@ -18,7 +17,7 @@ import BlurBackground from './blur-background.astro'
         face='smile-big'
         clothesColor='#34d399'
       />
-      <p class='responsive-text-xxs font-fira'>
+      <p class='responsive-text-xxs font-merriweather'>
         The responsive design for this page is still in progress.
         <br />
         I invite you to visit it from a computer or a tablet to get the best experience.

@@ -55,6 +55,8 @@ type ResourcesProps = {
   n?: number
 }
 
+import { Left, Right } from './icons'
+
 export default function Resources({ n = 3 }: ResourcesProps) {
   const goRight = () => {
     index.value++
@@ -67,8 +69,10 @@ export default function Resources({ n = 3 }: ResourcesProps) {
 
   return (
     <>
-      <div class='absolute font-fira responsive-text bg-emerald-300 left-1 rounded-sm'>
-        <button onClick={goLeft}></button>
+      <div class='absolute font-merriweather responsive-text bg-emerald-200 left-1 rounded-sm flex items-center py-2'>
+        <button onClick={goLeft}>
+          <Left />
+        </button>
       </div>
       {Array.from(Array(n).keys()).map((i) => {
         // Array.from(Array(n).keys())
@@ -76,7 +80,7 @@ export default function Resources({ n = 3 }: ResourcesProps) {
         return (
           <article class={PROJECT_STYLES} key={i}>
             <h1>{project.title}</h1>
-            <p class='font-bold responsive-text-xxs font-fira dark:text-slate-200'>
+            <p class='font-bold responsive-text-xxs font-merriweather dark:text-slate-200'>
               {project.description}
             </p>
             {/* <span class='responsive-text-xs font-semibold'>Stack</span> */}
@@ -85,9 +89,9 @@ export default function Resources({ n = 3 }: ResourcesProps) {
                 <Tech key={index} tech={tech} />
               ))}
             </ul>
-            {!project.private && (
+            {/* {!project.private && (
               <span class='responsive-text-xs'>Source Code & Demo</span>
-            )}
+            )} */}
             <div class='flex gap-2'>
               {project?.repository && (
                 <Link href={project.repository} text='' />
@@ -97,8 +101,10 @@ export default function Resources({ n = 3 }: ResourcesProps) {
           </article>
         )
       })}
-      <div class='absolute font-fira responsive-text bg-emerald-300 right-1 rounded-sm'>
-        <button onClick={goRight}></button>
+      <div class='absolute responsive-text bg-emerald-200 right-1 rounded-sm flex items-center py-2'>
+        <button onClick={goRight}>
+          <Right />
+        </button>
       </div>
     </>
   )

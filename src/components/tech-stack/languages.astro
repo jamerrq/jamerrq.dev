@@ -31,63 +31,85 @@ const SOCIALS_STYLES: string = [
   'grid-rows-2',
   'grid-cols-1'
 ].join(' ')
+
+import {
+  siPython,
+  siJavascript,
+  siTypescript,
+  siCsharp,
+  siGnubash
+} from 'simple-icons'
 ---
 
 <article class={SOCIALS_STYLES} title='My Links'>
   <div class='flex gap-2 justify-center text-black'>
     <p>Languages</p>
-    <p class='font-fira'></p>
   </div>
-  <div class='flex justify-around [&>a]:font-fira [&>a]:font-thin'>
+  <div class='flex justify-around [&>a]: [&>a]:font-thin'>
     <!-- Python -->
     <a
       href='https://www.python.org/'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class='hover:scale-110'
       title='Python'
     >
-      󰌠
+      <svg
+        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
+        set:html={siPython.svg}
+      />
     </a>
     <!-- JavaScript -->
     <a
       href='https://developer.mozilla.org/en-US/docs/Web/JavaScript'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class='hover:scale-110'
       title='JavaScript'
     >
-      󰌞
+      <svg
+        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
+        set:html={siJavascript.svg}
+      />
     </a>
     <!-- TypeScript -->
     <a
       href='https://www.typescriptlang.org/'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class='hover:scale-110'
       title='TypeScript'
     >
-      󰛦
+      <svg
+        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
+        set:html={siTypescript.svg}
+      />
     </a>
     <!-- Bash -->
     <a
       href='https://www.gnu.org/software/bash/'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class='hover:scale-110'
       title='Bash'
     >
-      
+      <svg
+        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
+        set:html={siGnubash.svg}
+      />
     </a>
     <!-- C# -->
     <a
       href='https://docs.microsoft.com/en-us/dotnet/csharp/'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class='hover:scale-110'
       title='C#'
     >
-      󰌛
+      <svg
+        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
+        set:html={siCsharp.svg}
+      />
     </a>
   </div>
 </article>

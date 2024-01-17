@@ -26,9 +26,14 @@ const ABOUT_STYLES = [
   'text-slate-900',
   'dark:text-slate-300'
 ].join(' ')
+
+import { siGitbook } from 'simple-icons'
 ---
 
-<a class={ABOUT_STYLES} transition:name='featured-and-projects' href='/'>
-  <p class='text-cyan-950 dark:text-cyan-300'>Featured Resources</p>
-  <p class='text-emerald-950 dark:text-emerald-300'>& Projects</p>
+<a class={ABOUT_STYLES} transition:name='blog' href='/'>
+  <span>Blog</span>
+  <svg
+    class='w-8 h-8 inline-flex dark:fill-amber-300 fill-amber-950'
+    set:html={siGitbook.svg}
+  />
 </a>

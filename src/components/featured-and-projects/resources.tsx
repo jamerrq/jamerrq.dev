@@ -1,4 +1,5 @@
 import { data } from '@data/resources.json'
+
 const RESOURCE_STYLES: string = [
   'col-span-2',
   'row-span-4',
@@ -24,39 +25,20 @@ const RESOURCE_STYLES: string = [
   'dark:bg-slate-900',
   'hover:scale-[1.02]',
   'hover:transition-all',
-  'responsive-text-sm'
-].join(' ')
-const ANCHOR_STYLES = [
-  'font-thin',
-  'responsive-text',
-  'dark:text-amber-300',
-  'text-amber-950'
+  'responsive-text-xxs'
 ].join(' ')
 
 import { signal } from '@preact/signals'
 const index = signal(0)
 
-type LinkProps = {
-  href: string
-  text: string
-}
 
-export function Link({ href, text }: LinkProps) {
-  return (
-    <a
-      href={href}
-      target='_blank'
-      rel='noopener noreferrer'
-      class={ANCHOR_STYLES}
-    >
-      {text}
-    </a>
-  )
-}
+import Link from './link'
 
 type ResourceProps = {
   n?: number
 }
+
+import { Left, Right } from './icons'
 
 export default function Resources({ n = 3 }: ResourceProps) {
   const goRight = () => {
@@ -70,8 +52,10 @@ export default function Resources({ n = 3 }: ResourceProps) {
 
   return (
     <>
-      <div class='absolute font-fira responsive-text bg-cyan-300 bottom-16 left-1 rounded-sm'>
-        <button onClick={goLeft}></button>
+      <div class='absolute bg-cyan-300 bottom-16 left-1 rounded-sm flex items-center py-2'>
+        <button onClick={goLeft}>
+          <Left />
+        </button>
       </div>
       {Array.from(Array(n).keys()).map((i) => {
         // Array.from(Array(n).keys())
@@ -83,15 +67,13 @@ export default function Resources({ n = 3 }: ResourceProps) {
               <Link href={resource.repository} text='' />
             )}
             {resource?.website && <Link href={resource.website} text='󰖟' />}
-            {resource?.links &&
-              resource.links?.map((link, index) => (
-                <Link href={link.url} text={link.icon} key={index} />
-              ))}
           </article>
         )
       })}
-      <div class='absolute font-fira responsive-text bg-cyan-300 bottom-16 right-1 rounded-sm'>
-        <button onClick={goRight}></button>
+      <div class='absolute bg-cyan-300 bottom-16 right-1 rounded-sm flex items-center py-2'>
+        <button onClick={goRight}>
+          <Right />
+        </button>
       </div>
     </>
   )

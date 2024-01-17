@@ -1,0 +1,81 @@
+---
+const ABOUT_ME_STYLES = [
+  'col-span-4',
+  'row-span-2',
+  'bg-slate-300',
+  'dark:bg-slate-900',
+  'rounded-sm',
+  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'flex',
+  'items-center',
+  'justify-center',
+  'font-bold',
+  'text-black',
+  'dark:text-slate-300',
+  'font-rubik-doodle',
+  'w-full',
+  'h-full',
+  // 'transition-all',
+  'border-2',
+  'border-emerald-950',
+  'dark:border-emerald-300',
+  // 'hover:bg-slate-900',
+  // 'hover:text-slate-300',
+  // 'hover:scale-[1.02]',
+  // 'hover:transition-all',
+  'responsive-text-xs',
+  'flex-col',
+  '[&>p]:text-base',
+  'text-black',
+  'dark:text-white'
+].join(' ')
+---
+
+<article class={ABOUT_ME_STYLES} title='Get to know me'>
+  <h1 class='dark:text-emerald-300 text-emerald-950'>About Me</h1>
+  <div
+    class='flex items-center p-3 justify-around w-full font-merriweather responsive-text-xxs relative'
+  >
+    <ul class='w-full text-center'>
+      <li>
+        <p>
+          My name is Jamer José, I'm a Math Engineer from
+          <a
+            href='https://www.eafit.edu.co/'
+            rel='noopener noreferrer'
+            target='_blank'
+            class='text-slate-50 dark:text-slate-800 inline dark:bg-blue-100 bg-blue-800 px-1 rounded-sm w-fit'
+          >
+            EAFIT University
+          </a>
+        </p>
+      </li>
+      <!-- <p class='font-fira inline'>󰜐</p> -->
+      <li>
+        <p>
+          Currently working as part time Backend Developer at
+          <a
+            href='https://www.linkedin.com/showcase/dium-team/about/'
+            rel='noopener noreferrer'
+            target='_blank'
+            class='text-slate-50 dark:text-slate-800 inline dark:bg-emerald-100 bg-emerald-800 px-1 rounded-sm w-fit'
+          >
+            Dium
+          </a>
+        </p>
+      </li>
+      <li>
+        <p>
+          Big fan of the open source and the web, as well as the great
+          possibilities they offer.
+        </p>
+      </li>
+      <li>
+        <p>
+          I strongly believe that the best way to achieve something is to start
+          it.
+        </p>
+      </li>
+    </ul>
+  </div>
+</article>

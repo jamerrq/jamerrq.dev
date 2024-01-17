@@ -31,78 +31,94 @@ const SOCIALS_STYLES: string = [
   'grid-rows-2',
   'grid-cols-1'
 ].join(' ')
+import {
+  siMaildotru,
+  siGithub,
+  siGmail,
+  siLichess,
+  siLinkedin,
+  siAdobeacrobatreader
+} from 'simple-icons'
 ---
 
 <article class={SOCIALS_STYLES} title='My Links'>
-  <div class='flex gap-2 justify-center text-black'>
-    <!-- <p class='font-fira'></p> -->
+  <div class='flex gap-2 justify-center text-black items-center'>
     <p class='font-semibold'>Contact</p>
-    <p class='font-fira'></p>
+    <svg
+      class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+      set:html={siMaildotru.svg}
+    />
   </div>
-  <div class='flex justify-around [&>a]:font-fira'>
+  <div class='flex justify-around [&>a]:'>
     <!-- GitHub -->
     <a
       href='https://github.com/jamerrq'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class=' hover:scale-110'
       title='GitHub'
     >
-      
+      <svg
+        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+        set:html={siGithub.svg}
+        fill={siGithub.hex}
+      />
     </a>
     <!-- Mail -->
     <a
       href='mailto:jamerrq@gmail.com'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class=' hover:scale-110'
       title='Mail'
     >
-      󰆎
+      <svg
+        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+        set:html={siGmail.svg}
+        fill={siGmail.hex}
+      />
     </a>
     <!-- LinkedIn -->
     <a
       href='https://www.linkedin.com/in/jamerrq/'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class=' hover:scale-110'
       title='Linkedin'
     >
-      
+      <svg
+        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+        set:html={siLinkedin.svg}
+        fill={siLinkedin.hex}
+      />
     </a>
-    <!-- Twitter
-    <a href="https://twitter.com/jamerrq" target="_blank" rel="noopener noreferrer" class="font-fira hover:scale-110 " title="Twitter/X">
-      
-    </a> -->
     <!-- CV -->
     <a
       href='https://my-portfolio-jamerrq.netlify.app/assets/pdf/CV_JamerRebolledo.pdf'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class=' hover:scale-110'
       title='CV'
     >
-      󰧮
+      <svg
+        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+        set:html={siAdobeacrobatreader.svg}
+        fill={siAdobeacrobatreader.hex}
+      />
     </a>
-    <!-- Spotify -->
-    <!-- <a
-      href='https://open.spotify.com/user/jamerrq'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='font-fira hover:scale-110 '
-      title='Spotify'
-    >
-      
-    </a> -->
     <!-- Lichess -->
     <a
       href='https://lichess.org/@/jamerrq'
       target='_blank'
       rel='noopener noreferrer'
-      class='font-fira hover:scale-110'
+      class=' hover:scale-110'
       title='Lichess'
     >
-      󰡘
+      <svg
+        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+        set:html={siLichess.svg}
+        fill={siLichess.hex}
+      />
     </a>
   </div>
 </article>

@@ -10,6 +10,8 @@ type LinkProps = {
   text: string
 }
 
+import { WebIcon, GithubIcon } from "./icons"
+
 export default function Link({ href, text }: LinkProps) {
   return (
     <a
@@ -18,7 +20,7 @@ export default function Link({ href, text }: LinkProps) {
       rel='noopener noreferrer'
       class={ANCHOR_STYLES}
     >
-      {text}
+      {text === '' ? <GithubIcon /> : <WebIcon /> }
     </a>
   )
 }

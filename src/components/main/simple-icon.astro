@@ -1,0 +1,11 @@
+---
+interface Props {
+  icon: {
+    svg: string
+    hex: string
+  }
+}
+const { icon }: Props = Astro.props
+---
+
+<svg class='w-6 h-6' set:html={icon.svg} fill={`#${icon.hex}`} />

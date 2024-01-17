@@ -28,6 +28,8 @@ const OS_STYLES = [
   'hover:duration-200',
   'hover:ease-in-out'
 ].join(' ')
+
+import { siLinux, siUbuntu } from 'simple-icons'
 ---
 
 <a
@@ -37,9 +39,16 @@ const OS_STYLES = [
   target='_blank'
   rel='noopener noreferrer'
 >
-  <header class='flex gap-2'>
+  <header class='flex gap-2 items-center'>
     <h1>OS</h1>
-    <p class='font-thin'> </p>
+    <svg
+      class={'w-6 h-6 fill-amber-900 dark:fill-amber-600'}
+      set:html={siLinux.svg}
+    />
+    <svg
+      class={'w-6 h-6 fill-amber-900 dark:fill-amber-600'}
+      set:html={siUbuntu.svg}
+    />
   </header>
   <main>
     <p class='responsive-text-xxs'>Ubuntu 20.04.6 LTS</p>

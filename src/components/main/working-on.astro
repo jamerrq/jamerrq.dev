@@ -1,0 +1,316 @@
+---
+const EXPERIENCE_STYLES = [
+  'col-span-2',
+  'row-span-4',
+  'gap-2',
+  'bg-slate-300',
+  'rounded-sm',
+  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
+  'flex',
+  'items-center',
+  'justify-center',
+  'align-center',
+  // 'text-2xl',
+  'font-semibold',
+  'text-slate-950',
+  'font-rubik-doodle',
+  'w-full',
+  'h-full',
+  // 'transition-all',
+  'border-2',
+  'dark:border-emerald-300',
+  'border-emerald-950',
+  'dark:bg-slate-800',
+  'dark:text-slate-200',
+  // 'hover:scale-[1.02]',
+  // 'hover:transition-all',
+  'flex',
+  'flex-col',
+  'p-1',
+  // '[&>div>ul>li]:bg-emerald-300',
+  // '[&>div>ul>li]:dark:bg-slate-900',
+  '[&>div>ul>li]:dark:text-slate-200',
+  '[&>div>ul>li>a]:bg-emerald-500',
+  '[&>div>ul>li>a]:dark:bg-emerald-400',
+  '[&>div>ul>li>a]:dark:text-emerald-950',
+  '[&>div>ul>li>a]:text-slate-950'
+].join(' ')
+import {
+  siNodedotjs,
+  siExpress,
+  siPostgresql,
+  siSequelize,
+  siJsonwebtokens,
+  siPostman,
+  siReact,
+  siRedux,
+  siTailwindcss,
+  siVercel,
+  siVite,
+  siAuth0,
+  siGitkraken
+} from 'simple-icons'
+---
+
+<article class={EXPERIENCE_STYLES} title="Projects I'm working on">
+  <a href='/featured'>
+    <div
+      class='responsive-text-xs flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
+    >
+      <p>Working on</p>
+      <!-- <p class='font-fira font-thin'></p> -->
+      <svg
+        class='w-6 h-6 inline-flex'
+        set:html={siGitkraken.svg}
+        fill={`#${siGitkraken.hex}`}
+      />
+    </div>
+  </a>
+  <div class='h-full w-full gap-2'>
+    <ul
+      class='flex gap-2 responsive-text-xxs flex-col justify-around h-full font-merriweather font-bold'
+    >
+      <li
+        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm'
+      >
+        <a
+          class='col-span-2'
+          href='https://pinturas-app-back.onrender.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Backend Server for IDE Pinturerias
+        </a>
+        <p>Time</p>
+        <p>5+ months</p>
+        <!-- <p>
+          Contributors
+        </p>
+        <a href="https://github.com/Ide-Pinturerias/pinturas-app-back/graphs/contributors" target="_blank" rel="noopener noreferrer">
+          9+
+        </a> -->
+        <p>GitHub Repo</p>
+        <a
+          href='https://github.com/Ide-Pinturerias/pinturas-app-back'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='responsive-text-xxs'
+        >
+          pinturas-app-back
+        </a>
+        <p>Live Demo</p>
+        <a
+          href='https://pinturas-app-back.onrender.com/'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='responsive-text-xxs'
+        >
+          onrender.com
+        </a>
+        <p>Technologies</p>
+        <div
+          class='flex w-full overflow-hidden bg-emerald-100 gap-2 p-1 items-center justify-center'
+        >
+          <!-- Node -->
+          <a
+            href='https://nodejs.org/en/about'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='Node.js'
+          >
+            <svg
+              class='w-6 h-6 hover:scale-110'
+              set:html={siNodedotjs.svg}
+              fill={`#${siNodedotjs.hex}`}
+            />
+          </a>
+          <!-- Express -->
+          <a
+            href='https://expressjs.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='Express'
+          >
+            <svg
+              class='w-6 h-6 hover:scale-110'
+              set:html={siExpress.svg}
+              fill={`#${siExpress.hex}`}
+            />
+          </a>
+          <!-- PostgreSQL -->
+          <a
+            href='https://www.postgresql.org/'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='PostgreSQL'
+          >
+            <svg
+              class='w-5 h-6'
+              set:html={siPostgresql.svg}
+              fill={`#${siPostgresql.hex}`}
+            />
+          </a>
+          <!-- Sequelize -->
+          <a
+            href='https://sequelize.org/'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='Sequelize'
+          >
+            <svg
+              class='w-6 h-6 hover:scale-110'
+              set:html={siSequelize.svg}
+              fill={`#${siSequelize.hex}`}
+            />
+          </a>
+          <!-- JWT -->
+          <a
+            href='https://jwt.io/'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='Json Web Tokens'
+          >
+            <svg
+              class='w-6 h-6 hover:scale-110'
+              set:html={siJsonwebtokens.svg}
+              fill={`#${siJsonwebtokens.hex}`}
+            />
+          </a>
+          <!-- Postman -->
+          <a
+            href='https://www.postman.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <svg
+              class='w-5 h-6'
+              set:html={siPostman.svg}
+              fill={`#${siPostman.hex}`}
+            />
+          </a>
+        </div>
+      </li>
+      <li
+        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm'
+      >
+        <a
+          href='https://pinturas-app-front.vercel.app/'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='col-span-2'
+        >
+          Frontend UI for IDE Pinturerias
+        </a>
+        <p>Time</p>
+        <p>5+ months</p>
+        <!-- <p>
+          Contributors
+        </p>
+        <a href="https://github.com/Ide-Pinturerias/pinturas-app-front/graphs/contributors" target="_blank" rel="noopener noreferrer">
+          9+
+        </a> -->
+        <p>GitHub Repo</p>
+        <a
+          href='https://github.com/Ide-Pinturerias/pinturas-app-front'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='responsive-text-xxs'
+        >
+          pinturas-app-front
+        </a>
+        <p>Live Demo</p>
+        <a
+          href='https://pinturas-app-front.vercel.app/'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='responsive-text-xxs'
+        >
+          vercel.app
+        </a>
+        <p>Technologies</p>
+        <div
+          class='flex w-full overflow-hidden bg-emerald-100 gap-2 p-1 items-center justify-center'
+        >
+          <!-- React -->
+          <a
+            href='https://reactjs.org/'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='React'
+          >
+            <svg
+              class='w-6 h-6 hover:scale-110'
+              set:html={siReact.svg}
+              fill={`#${siSequelize.hex}`}
+            />
+          </a>
+          <!-- Redux -->
+          <a
+            href='https://redux.js.org/'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='Redux'
+          >
+            <svg
+              class='w-6 h-6 hover:scale-110'
+              set:html={siRedux.svg}
+              fill={`#${siRedux.hex}`}
+            />
+            <!-- Tailwind -->
+            <a
+              href='https://tailwindcss.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+              title='Tailwind CSS'
+            >
+              <svg
+                class='w-6 h-6 hover:scale-110'
+                set:html={siTailwindcss.svg}
+                fill={`#${siTailwindcss.hex}`}
+              />
+              <!-- Vercel -->
+              <a
+                href='https://vercel.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                title='Vercel'
+              >
+                <svg
+                  class='w-6 h-6 hover:scale-110'
+                  set:html={siVercel.svg}
+                  fill={`#${siVercel.hex}`}
+                />
+                <!-- Vite -->
+                <a
+                  href='https://vitejs.dev/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  title='Vite'
+                >
+                  <svg
+                    class='w-6 h-6 hover:scale-110'
+                    set:html={siVite.svg}
+                    fill={`#${siVite.hex}`}
+                  />
+                  <!-- Auth0 -->
+                  <a
+                    href='https://auth0.com/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    title='Auth0'
+                  >
+                    <svg
+                      class='w-6 h-6 hover:scale-110'
+                      set:html={siAuth0.svg}
+                      fill={`#${siAuth0.hex}`}
+                    />
+                  </a>
+                </a>
+              </a>
+            </a>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</article>

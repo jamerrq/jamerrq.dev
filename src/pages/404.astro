@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/layout.astro'
-import Peep from '../components/css-peeps/peep.astro'
-import Container from '../components/container.astro'
+import Peep from '@components/css-peeps/peep.astro'
+import Container from '@components/main/container.astro'
 ---
 
 <style>
@@ -14,7 +14,7 @@ import Container from '../components/container.astro'
     color: white;
     border-radius: 0.5rem;
     background-color: #1b383c;
-    font-family: 'Rubik Doodle Shadow', 'Fira Mono Nerd', sans-serif;
+    font-family: 'Rubik Doodle Shadow', sans-serif;
     /* font-size: 2rem; */
     text-align: center;
     padding: 1rem;
@@ -52,29 +52,29 @@ import Container from '../components/container.astro'
 
   a,
   button {
-    font-family: 'Rubik Doodle Shadow', 'Fira Mono Nerd', sans-serif;
+    font-family: 'Rubik Doodle Shadow', sans-serif;
   }
 </style>
 
-<Layout title='Resource Not Found'>
+<Layout title='Resource Not Found - jamerrq.dev'>
   <div id='_404_background' class='hidden xl:grid' />
   <main class='w-[100dvw] h-[100dvh] grid place-content-center bg-black'>
     <Container>
       <h1>Page Not Found!</h1>
       <Peep />
-      <p class='responsive-text-xxs font-fira'>
+      <p class='responsive-text-xxs '>
         Sorry, the resource you are looking for does not exist (yet?).
       </p>
-      <p class='responsive-text-xxs font-fira'>
+      <p class='responsive-text-xxs '>
         Please check the URL and try again or go home
       </p>
       <div class='flex gap-2'>
-        <a href='/' class='responsive-text-xxs go-home-button'> Go Home </a>
+        <a href='/' class='responsive-text-xxs go-home-button'> Go Home</a>
         <button
           class='responsive-text-xxs go-home-button'
           onclick='window.location.reload()'
         >
-          Try Again </button
+          Try Again</button
         >
       </div>
     </Container>
