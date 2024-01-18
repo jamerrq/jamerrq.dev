@@ -21,12 +21,30 @@ const TITLE_STYLES: string = [
   // 'shadow-[0_0_0.15rem_rgb(69_26_3)]', // rgb(69, 26, 3)
   'shadow-[0_0_0.25rem_rgb(253_230_138)]' // rgb(253, 230, 138)
 ].join(' ')
+
+interface Props {
+  lang?: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
-<a class={TITLE_STYLES} transition:name='tech-stack' href='/'>
-  <div class='flex flex-col'>
-    <p class='font-semibold responsive-text-xs'>My Tech Stack</p>
-    <p class='font-semibold'>Painters have brushes, <br /> I got these.</p>
+<a
+  class={TITLE_STYLES}
+  transition:name='tech-stack'
+  href={lang === 'en' ? '/' : '/es'}
+>
+  <div class='flex flex-col font-merriweather w-[50%]'>
+    <p class='font-semibold text-2xl font-rubik-doodle'>
+      {lang === 'en' ? 'Tech Stack' : 'Mi Stack'}
+    </p>
+    <p class='font-semibold text-balance responsive-text-xxs'>
+      <!-- Painters have brushes, <br /> I got these. -->
+      {
+        lang === 'en'
+          ? 'Painters have brushes, I got these <3'
+          : 'Los pintores tienen pinceles, yo tengo estas <3'
+      }
+    </p>
   </div>
   <TechPeep />
   <TechPeepLight />

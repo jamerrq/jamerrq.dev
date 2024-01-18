@@ -52,12 +52,13 @@ function Tech({ tech }: ResourceProps) {
 }
 
 type ResourcesProps = {
-  n?: number
+  n?: number,
+  lang?: string
 }
 
 import { Left, Right } from './icons'
 
-export default function Resources({ n = 3 }: ResourcesProps) {
+export default function Resources({ n = 3, lang = 'en' }: ResourcesProps) {
   const goRight = () => {
     index.value++
     if (index.value > data.length - 1) index.value = 0
@@ -75,13 +76,12 @@ export default function Resources({ n = 3 }: ResourcesProps) {
         </button>
       </div>
       {Array.from(Array(n).keys()).map((i) => {
-        // Array.from(Array(n).keys())
         const project = data.at((i + index.value) % data.length)!
         return (
           <article class={PROJECT_STYLES} key={i}>
             <h1>{project.title}</h1>
             <p class='font-bold responsive-text-xxs font-merriweather dark:text-slate-200'>
-              {project.description}
+              {project.description[lang as 'es' | 'en']}
             </p>
             {/* <span class='responsive-text-xs font-semibold'>Stack</span> */}
             <ul class='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-sm flex-wrap'>
@@ -89,9 +89,6 @@ export default function Resources({ n = 3 }: ResourcesProps) {
                 <Tech key={index} tech={tech} />
               ))}
             </ul>
-            {/* {!project.private && (
-              <span class='responsive-text-xs'>Source Code & Demo</span>
-            )} */}
             <div class='flex gap-2'>
               {project?.repository && (
                 <Link href={project.repository} text='' />

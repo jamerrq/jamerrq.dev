@@ -1,6 +1,6 @@
 ---
 const WEB_DEV_STYLES = [
-  'col-span-2',
+  'col-span-1 xl:col-span-2',
   'row-span-4',
   'gap-1',
   'bg-slate-300',
@@ -61,6 +61,11 @@ const TECH_ICON_STYLES = [
   'rounded-md',
   'border-2'
 ].join(' ')
+
+interface Props {
+  lang?: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <article class={WEB_DEV_STYLES}>
@@ -72,8 +77,15 @@ const TECH_ICON_STYLES = [
       <p>Frontend</p>
       <p class="font-thin">󰒋</p>
     </div> -->
-  <header class='flex gap-2 responsive-text-xs'>
-    <h1>Web Development</h1>
+  <header class='flex gap-2 text-2xl'>
+    <h1>
+      {
+        {
+          en: 'Web Development',
+          es: 'Desarrollo Web'
+        }[lang]
+      }
+    </h1>
     <!-- <p class='font-thin'>󰜫</p> -->
   </header>
   <ul class='text-xl items-center p-1 w-full flex flex-col gap-1'>
@@ -307,7 +319,14 @@ const TECH_ICON_STYLES = [
       </li>
       <li>
         <header class='flex gap-2 justify-center'>
-          <h2>Cloud Services</h2>
+          <h2>
+            {
+              {
+                en: 'Cloud',
+                es: 'Nube'
+              }[lang]
+            }
+          </h2>
           <!-- <p class='font-thin'>󰅟</p> -->
         </header>
         <ul class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2'>

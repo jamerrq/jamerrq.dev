@@ -1,6 +1,6 @@
 ---
 const FEATURED_STYLES = [
-  'col-span-1',
+  'col-span-1 xl:col-span-1',
   'row-span-2',
   'gap-2',
   'bg-slate-300',
@@ -30,19 +30,26 @@ const FEATURED_STYLES = [
   'hover:duration-200',
   'hover:ease-in-out'
 ].join(' ')
+
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <a
   class={FEATURED_STYLES}
   title='Featured Resources'
-  href='/featured'
-  transition:name='featured-and-projects'
+  href={lang === 'en' ? '/featured' : '/es/destacados-y-proyectos'}
+  transition:name='featured'
 >
-  <div class='flex gap-1'>
-    <p>Featured</p>
-  </div>
+  <p>
+    <!-- Projects -->
+    {lang === 'en' ? 'Projects' : 'Proyectos'}
+  </p>
+  <!-- Featured -->
   <p>&</p>
-  <div class='flex gap-1'>
-    <p>Projects</p>
-  </div>
+  <p>
+    {lang === 'en' ? 'Featured' : 'Destacados'}
+  </p>
 </a>

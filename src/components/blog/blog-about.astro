@@ -20,17 +20,27 @@ const ABOUT_STYLES = [
   'border-2',
   'dark:border-amber-300',
   'border-amber-950',
-  'responsive-text-xs',
+  'text-4xl',
   'flex-row',
   'gap-2',
   'text-slate-900',
-  'dark:text-slate-300'
+  'dark:text-slate-300',
+  'p-2'
 ].join(' ')
 
 import { siGitbook } from 'simple-icons'
+
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
-<a class={ABOUT_STYLES} transition:name='blog' href='/'>
+<a
+  class={ABOUT_STYLES}
+  transition:name='blog'
+  href={lang === 'en' ? '/' : '/es'}
+>
   <span>Blog</span>
   <svg
     class='w-8 h-8 inline-flex dark:fill-amber-300 fill-amber-950'

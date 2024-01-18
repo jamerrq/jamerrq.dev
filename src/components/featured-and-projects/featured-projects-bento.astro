@@ -4,11 +4,15 @@ import About from './about.astro'
 import Buttons from '../main/buttons.astro'
 import ResourcesPreact from './resources.tsx'
 import ProjectsPreact from './projects.tsx'
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <Bento>
-  <About />
-  <Buttons />
-  <ProjectsPreact client:visible />
-  <ResourcesPreact client:visible />
+  <About lang={lang} />
+  <Buttons href={lang !== 'en' ? '/es' : '/'} />
+  <ProjectsPreact lang={lang} client:visible />
+  <ResourcesPreact lang={lang} client:visible />
 </Bento>

@@ -2,15 +2,26 @@
   "entries": [
     {
       "title": "The process of creating this website",
-      "date": "2023-Jan-16",
+      "date": "2024-Jan-01",
       "título": "El proceso de crear este sitio web",
       "href": "building-this-website"
     },
     {
       "title": "5+ years using Linux and I couldn't be happier",
-      "date": "2023-Jan-16",
+      "date": "2024-Jan-16",
       "título": "5+ años usando Linux y no podría estar más feliz",
       "href": "5-years-using-linux"
+    },
+    {
+      "title": "Projects to develop in 2024",
+      "date": "2024-Jan-17",
+      "título": "Proyectos a desarrollar en 2024",
+      "href": "projects-to-develop-in-2024"
+    },
+    {
+      "title": "Creating the most secure server in the world with Node.js",
+      "date": "2024-Jan-18",
+      "título": "Creando el servidor más seguro del mundo con Node.js"
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 const BLOG_STYLES = [
-  'col-span-1',
+  'col-span-1 xl:col-span-1',
   'row-span-2',
   'gap-2',
   'bg-slate-300',
@@ -29,12 +29,16 @@ const BLOG_STYLES = [
   'hover:ease-in-out'
 ].join(' ')
 import { siGitbook } from 'simple-icons'
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <a
   class={BLOG_STYLES}
   title='Personal Blog'
-  href='/blog'
+  href={lang === 'en' ? '/blog' : '/es/blog'}
   transition:name='blog'
 >
   <p>Blog</p>

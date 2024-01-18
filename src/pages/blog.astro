@@ -1,12 +1,16 @@
 ---
 import Layout from 'src/layouts/layout.astro'
 import BlogBento from '@components/blog/blog-bento.astro'
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <Layout title='Blog - jamerrq.dev'>
   <main
-    class='hidden h-[100dvh] w-[100dvw] xl:grid items-center justify-center'
+    class='h-[100dvh] w-[100dvw] grid items-center justify-center'
   >
-    <BlogBento />
+    <BlogBento lang={lang} />
   </main>
 </Layout>

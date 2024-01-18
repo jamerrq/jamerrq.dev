@@ -1,9 +1,10 @@
 ---
 interface Props {
   title: string
+  lang?: string
 }
 
-const { title }: Props = Astro.props
+const { title, lang = 'en' }: Props = Astro.props
 import '@fontsource/merriweather'
 import { ViewTransitions } from 'astro:transitions'
 import ResponsiveContainer from '../components/main/responsive-container.astro'
@@ -12,7 +13,7 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang={lang}>
   <head>
     <meta charset='UTF-8' />
     <meta name='description' content='jamerrq.dev' />
@@ -93,5 +94,92 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
         font-size: clamp(0.5rem, 2vw - 0.5rem, 1rem);
       }
     </style>
+    <script defer define:vars={{ lang }}>
+      // Theme switch
+      function setTheme() {
+        const darkIcon = document.getElementById('theme-toggle-dark-icon')
+        const lightIcon = document.getElementById('theme-toggle-light-icon')
+
+        // Cambia los iconos dentro del botón en función de la configuración anterior
+        if (
+          localStorage.getItem('color-theme') === 'dark' ||
+          (!('color-theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          lightIcon.classList.remove('hidden')
+          // en caso que se haya configurado previamente
+          document.documentElement.classList.add('dark')
+        } else {
+          darkIcon.classList.remove('hidden')
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle')
+
+        themeToggleBtn.addEventListener('click', () => {
+          darkIcon.classList.toggle('hidden')
+          lightIcon.classList.toggle('hidden')
+
+          // se comprueba si se ha configurado previamente
+          if (localStorage.getItem('color-theme')) {
+            if (localStorage.getItem('color-theme') === 'light') {
+              document.documentElement.classList.add('dark')
+              localStorage.setItem('color-theme', 'dark')
+            } else {
+              document.documentElement.classList.remove('dark')
+              localStorage.setItem('color-theme', 'light')
+            }
+
+            // se comprueba si el sistema operativo tiene configurado el tema oscuro
+          } else if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark')
+            localStorage.setItem('color-theme', 'light')
+          } else {
+            document.documentElement.classList.add('dark')
+            localStorage.setItem('color-theme', 'dark')
+          }
+        })
+      }
+
+      setTheme()
+      document.addEventListener('astro:after-preparation', setTheme)
+      document.addEventListener('astro:after-swap', setTheme)
+
+      // Home & Random Place buttons
+      const setHomeRandomButton = () => {
+        const homeButton = document.getElementById('home-button')
+        const randomPlaceButton = document.getElementById('random-place-button')
+
+        // Show home button only if not in home
+        // Otherwise show random place button
+        if (
+          window.location.pathname === '/' ||
+          window.location.pathname === '/es'
+        ) {
+          homeButton.classList.add('hidden')
+          randomPlaceButton.classList.remove('hidden')
+        } else {
+          homeButton.classList.remove('hidden')
+          randomPlaceButton.classList.add('hidden')
+        }
+
+        // Add click event to home button
+        homeButton.addEventListener('click', () => {
+          // window.location.href = '/'
+          lang === 'es'
+            ? (window.location.href = '/es')
+            : (window.location.href = '/')
+        })
+
+        randomPlaceButton.addEventListener('click', () => {
+          const places = ['/blog', '/tech-stack', '/featured']
+          window.location.href =
+            places[Math.floor(Math.random() * places.length)]
+        })
+      }
+
+      setHomeRandomButton()
+      document.addEventListener('astro:after-preparation', setHomeRandomButton)
+      document.addEventListener('astro:after-swap', setHomeRandomButton)
+    </script>
   </body>
 </html>

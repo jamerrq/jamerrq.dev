@@ -1,7 +1,11 @@
 ---
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 import AboutMe from './about-me-card.astro'
 import TechTitle from './title.astro'
-import Experience from './working-on.astro'
+import WorkingOn from './working-on.astro'
 import Buttons from './buttons.astro'
 import TechStack from './tech-stack.astro'
 import Featured from './featured.astro'
@@ -11,12 +15,12 @@ import Bento from './bento.astro'
 ---
 
 <Bento>
-  <AboutMe />
-  <Buttons />
-  <TechStack />
-  <Experience />
-  <TechTitle />
-  <Featured />
+  <AboutMe lang={lang} />
+  <Buttons href={lang === 'en' ? '/es' : '/'} />
+  <TechStack lang={lang} />
+  <WorkingOn lang={lang} />
+  <TechTitle lang={lang} />
+  <Featured lang={lang} />
   <Socials />
-  <Blog />
+  <Blog lang={lang} />
 </Bento>

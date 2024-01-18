@@ -1,6 +1,6 @@
 ---
 const ABOUT_STYLES = [
-  'col-span-4',
+  'col-span-1 xl:col-span-4',
   'row-span-1',
   'bg-slate-300',
   'dark:bg-slate-900',
@@ -20,15 +20,29 @@ const ABOUT_STYLES = [
   'border-2',
   'dark:border-amber-300',
   'border-amber-950',
-  'responsive-text-xs',
+  'text-3xl',
   'flex-row',
   'gap-2',
   'text-slate-900',
-  'dark:text-slate-300'
+  'dark:text-slate-300',
 ].join(' ')
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
-<a class={ABOUT_STYLES} transition:name='featured-and-projects' href='/'>
-  <p class='text-cyan-950 dark:text-cyan-300'>Featured Resources</p>
-  <p class='text-emerald-950 dark:text-emerald-300'>& Projects</p>
+<a
+  class={ABOUT_STYLES}
+  transition:name='featured'
+  href={lang === 'en' ? '/' : '/es'}
+>
+  <p class='text-emerald-950 dark:text-emerald-300'>
+    <!-- Projects -->
+    {lang === 'en' ? 'Projects &' : 'Proyectos y'}
+  </p>
+  <p class='text-cyan-950 dark:text-cyan-300'>
+    <!-- Featured Resources -->
+    {lang === 'en' ? 'Featured' : 'Destacados'}
+  </p>
 </a>
