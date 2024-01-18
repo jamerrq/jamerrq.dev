@@ -52,7 +52,7 @@ function Tech({ tech }: ResourceProps) {
 }
 
 type ResourcesProps = {
-  n?: number,
+  n?: number
   lang?: string
 }
 
