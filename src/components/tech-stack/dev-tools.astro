@@ -25,7 +25,7 @@ const DEV_TOOLS_STYLES = [
   'dark:text-cyan-300',
   // 'hover:scale-[1.02]',
   // 'hover:transition-all',
-  'responsive-text-xs',
+  'text-2xl',
   'font-bold'
 ].join(' ')
 import {
@@ -57,10 +57,14 @@ const DEV_ICONS_STYLES = [
   'border-2',
   'border-slate-800'
 ].join(' ')
+interface Props {
+  lang?: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <article title='The tools I (love) work with' class={DEV_TOOLS_STYLES}>
-  <header class='flex gap-2 responsive-text-xs'>
+  <header class='flex gap-2 text-2xl'>
     <h1 class=''>Dev Tools</h1>
     <!-- <p class='font-thin'></p> -->
   </header>
@@ -226,7 +230,9 @@ const DEV_ICONS_STYLES = [
     </li>
     <li class='col-span-2 -mt-2'>
       <header class='flex gap-2'>
-        <h2>Others</h2>
+        <h2>
+          {lang === 'en' ? 'Others' : 'Otras'}
+        </h2>
         <!-- <p class='font-thin'></p> -->
       </header>
       <main class='flex gap-1'>

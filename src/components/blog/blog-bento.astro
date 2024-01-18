@@ -3,10 +3,14 @@ import Bento from '../main/bento.astro'
 import Buttons from '@components/main/buttons.astro'
 import BlogAbout from '@components/blog/blog-about.astro'
 import LastEntries from './last-entries'
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <Bento>
   <Buttons />
-  <BlogAbout />
+  <BlogAbout lang={lang} />
   <LastEntries client:visible />
 </Bento>

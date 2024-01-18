@@ -1,12 +1,16 @@
 ---
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 import Layout from '../layouts/layout.astro'
 import Bento from '@components/main/main-bento.astro'
 ---
 
 <Layout title='jamerrq.dev'>
   <main
-    class='h-[100dvh] w-[100dvw] xl:grid items-center justify-center hidden'
+    class='h-[100dvh] w-[100dvw] grid items-center justify-center'
   >
-    <Bento />
+    <Bento lang={lang} />
   </main>
 </Layout>

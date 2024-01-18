@@ -1,6 +1,6 @@
 ---
 const EXPERIENCE_STYLES = [
-  'col-span-2',
+  'col-span-1 xl:col-span-2',
   'row-span-4',
   'gap-2',
   'bg-slate-300',
@@ -50,22 +50,27 @@ import {
   siAuth0,
   siGitkraken
 } from 'simple-icons'
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <article class={EXPERIENCE_STYLES} title="Projects I'm working on">
-  <a href='/featured'>
-    <div
-      class='responsive-text-xs flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
-    >
-      <p>Working on</p>
-      <!-- <p class='font-fira font-thin'></p> -->
-      <svg
-        class='w-6 h-6 inline-flex'
-        set:html={siGitkraken.svg}
-        fill={`#${siGitkraken.hex}`}
-      />
-    </div>
-  </a>
+  <div
+    class='text-2xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
+  >
+    <p>
+      <!-- Working on -->
+      {lang === 'en' ? 'Working on' : 'Trabajando en'}
+    </p>
+    <!-- <p class='font-fira font-thin'></p> -->
+    <svg
+      class='w-6 h-6 inline-flex'
+      set:html={siGitkraken.svg}
+      fill={`#${siGitkraken.hex}`}
+    />
+  </div>
   <div class='h-full w-full gap-2'>
     <ul
       class='flex gap-2 responsive-text-xxs flex-col justify-around h-full font-merriweather font-bold'
@@ -79,17 +84,25 @@ import {
           target='_blank'
           rel='noopener noreferrer'
         >
-          Backend Server for IDE Pinturerias
+          <!-- Backend Server for IDE Pinturerias -->
+          {
+            lang === 'en'
+              ? 'Backend Server for IDE Pinturerias'
+              : 'Servidor Backend para IDE Pinturerias'
+          }
         </a>
-        <p>Time</p>
-        <p>5+ months</p>
-        <!-- <p>
-          Contributors
+        <p>
+          <!-- Time -->
+          {lang === 'en' ? 'Time' : 'Tiempo'}
         </p>
-        <a href="https://github.com/Ide-Pinturerias/pinturas-app-back/graphs/contributors" target="_blank" rel="noopener noreferrer">
-          9+
-        </a> -->
-        <p>GitHub Repo</p>
+        <p>
+          <!-- 5+ months -->
+          {lang === 'en' ? '5+ months' : '5+ meses'}
+        </p>
+        <p>
+          <!-- Repository -->
+          {lang === 'en' ? 'Repository' : 'Repositorio'}
+        </p>
         <a
           href='https://github.com/Ide-Pinturerias/pinturas-app-back'
           target='_blank'
@@ -98,7 +111,10 @@ import {
         >
           pinturas-app-back
         </a>
-        <p>Live Demo</p>
+        <p>
+          <!-- Live Demo -->
+          {lang === 'en' ? 'Preview' : 'Avance'}
+        </p>
         <a
           href='https://pinturas-app-back.onrender.com/'
           target='_blank'
@@ -107,7 +123,10 @@ import {
         >
           onrender.com
         </a>
-        <p>Technologies</p>
+        <p>
+          <!-- Technologies -->
+          {lang === 'en' ? 'Technologies' : 'Tecnologías'}
+        </p>
         <div
           class='flex w-full overflow-hidden bg-emerald-100 gap-2 p-1 items-center justify-center'
         >
@@ -200,17 +219,25 @@ import {
           rel='noopener noreferrer'
           class='col-span-2'
         >
-          Frontend UI for IDE Pinturerias
+          <!-- Frontend UI for IDE Pinturerias -->
+          {
+            lang === 'en'
+              ? 'Frontend UI for IDE Pinturerias'
+              : 'Interfaz de Usuario para IDE Pinturerias'
+          }
         </a>
-        <p>Time</p>
-        <p>5+ months</p>
-        <!-- <p>
-          Contributors
+        <p>
+          <!-- Time -->
+          {lang === 'en' ? 'Time' : 'Tiempo'}
         </p>
-        <a href="https://github.com/Ide-Pinturerias/pinturas-app-front/graphs/contributors" target="_blank" rel="noopener noreferrer">
-          9+
-        </a> -->
-        <p>GitHub Repo</p>
+        <p>
+          <!-- 6+ months -->
+          {lang === 'en' ? '6+ months' : '6+ meses'}
+        </p>
+        <p>
+          <!-- Repository -->
+          {lang === 'en' ? 'Repository' : 'Repositorio'}
+        </p>
         <a
           href='https://github.com/Ide-Pinturerias/pinturas-app-front'
           target='_blank'
@@ -219,7 +246,10 @@ import {
         >
           pinturas-app-front
         </a>
-        <p>Live Demo</p>
+        <p>
+          <!-- Live Demo -->
+          {lang === 'en' ? 'Preview' : 'Avance'}
+        </p>
         <a
           href='https://pinturas-app-front.vercel.app/'
           target='_blank'
@@ -228,9 +258,12 @@ import {
         >
           vercel.app
         </a>
-        <p>Technologies</p>
+        <p>
+          <!-- Technologies -->
+          {lang === 'en' ? 'Technologies' : 'Tecnologías'}
+        </p>
         <div
-          class='flex w-full overflow-hidden bg-emerald-100 gap-2 p-1 items-center justify-center'
+          class='flex w-full bg-emerald-100 gap-2 p-1 items-center justify-center'
         >
           <!-- React -->
           <a

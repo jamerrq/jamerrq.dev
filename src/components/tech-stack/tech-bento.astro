@@ -8,15 +8,19 @@ import Os from './os.astro'
 import Testing from './testing.astro'
 import Languages from './languages.astro'
 import Bento from '../main/bento.astro'
+interface Props {
+  lang?: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <Bento>
-  <About />
-  <Buttons />
-  <DevTools />
-  <WebDev />
-  <Title />
+  <About lang={lang} />
+  <Buttons href={lang === 'en' ? '/es/tech-stack' : '/tech-stack'} />
+  <DevTools lang={lang} />
+  <WebDev lang={lang} />
+  <Title lang={lang} />
   <Os />
-  <Languages />
-  <Testing />
+  <Languages lang={lang} />
+  <Testing lang={lang} />
 </Bento>

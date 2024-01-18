@@ -19,26 +19,42 @@ const ABOUT_STYLES = [
   'border-2',
   'dark:border-emerald-300',
   'border-emerald-950',
-  'responsive-text-xs',
+  'text-2xl',
   'flex-col',
   // '[&>p]:font-fira',
   '[&>p]:text-base',
   'text-slate-900',
   'dark:text-slate-300'
 ].join(' ')
+interface Props {
+  lang?: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <article class={ABOUT_STYLES}>
-  <h1 class='dark:text-emerald-300'>About</h1>
+  <h1 class='dark:text-emerald-300'>
+    {lang === 'en' ? 'About' : 'Acerca de'}
+  </h1>
   <div
     class='flex flex-col items-center p-4 justify-around w-full font-merriweather responsive-text-xxs gap-2'
   >
     <p class='responsive-text-xxs'>
-      These are the tools that make my work (and life) easier
+      <!-- Tools that make my work (and life) easier -->
+      {
+        lang === 'en'
+          ? 'Tools that make my work (and life) easier'
+          : 'Herramientas que hacen mi trabajo (y vida) más fácil'
+      }
     </p>
-    <p class='italic text-cyan-900 dark:text-cyan-300'>
-      "If I have seen further [than others], it is by standing on the shoulders
-      of giants" - Isaac Newton
-    </p>
+    <quote class='italic text-cyan-900 dark:text-cyan-300'>
+      <!-- "If I have seen further [than others], it is by standing on the shoulders
+      of giants" - Isaac Newton -->
+      {
+        lang === 'en'
+          ? '"If I have seen further [than others], it is by standing on the shoulders of giants" - Isaac Newton'
+          : '"Si he visto más lejos [que otros], es por estar de pie sobre los hombros de gigantes" - Isaac Newton'
+      }
+    </quote>
   </div>
 </article>

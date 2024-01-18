@@ -1,6 +1,6 @@
 ---
 const OS_STYLES = [
-  'col-span-1',
+  'col-span-1 xl:col-span-1',
   'row-span-2',
   'gap-2',
   'bg-slate-300',
@@ -10,7 +10,7 @@ const OS_STYLES = [
   'flex-col',
   'items-center',
   'justify-center',
-  'responsive-text-xs',
+  'text-2xl',
   'font-bold',
   'dark:text-emerald-400',
   'text-emerald-950',
@@ -28,6 +28,7 @@ const OS_STYLES = [
   // 'hover:duration-200',
   // 'hover:ease-in-out',
 ].join(' ')
+
 const DEV_ICONS_STYLES = [
   'w-10',
   'h-10',
@@ -40,12 +41,20 @@ const DEV_ICONS_STYLES = [
   'border-2',
   'border-slate-800'
 ].join(' ')
+
 import { siVitest, siMocha, siChai, siJest, siGit } from 'simple-icons'
+
+interface Props {
+  lang?: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <article class={OS_STYLES}>
   <header class='flex gap-2'>
-    <h1>Testing</h1>
+    <h1>
+      {lang === 'en' ? 'Testing' : 'Pruebas'}
+    </h1>
   </header>
   <main
     class='grid place-items-center gap-2 grid-cols-2 grid-rows-2 [&>a>img]:rounded-sm [&>a>img]:border-2'

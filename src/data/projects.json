@@ -2,7 +2,10 @@
   "data": [
     {
       "title": "Json Forms App",
-      "description": "This application allows you to convert a JSON file to a web form interface, as well as register the answers in a database.",
+      "description": {
+        "en": "This application allows you to convert a JSON file to a web form interface, as well as register the answers in a database.",
+        "es": "Esta aplicación permite convertir un archivo JSON a una interfaz de formulario web, así como registrar las respuestas en una base de datos."
+      },
       "stack": [
         "Supabase",
         "Next JS",
@@ -13,7 +16,10 @@
     },
     {
       "title": "Rocket Launches App",
-      "description": "Astro course app to explore the beauty and power of the framework with features like view Transition, dynamic data fetching and server-side rendering.",
+      "description": {
+        "en": "Astro course app to explore the beauty and power of the framework with features like view Transition, dynamic data fetching and server-side rendering.",
+        "es": "Aplicación del curso de Astro para explorar la belleza y potencia del framework con características como transición de vistas, obtención de datos dinámicos y renderizado del lado del servidor."
+      },
       "stack": [
         "Astro",
         "Tailwind CSS"
@@ -23,7 +29,10 @@
     },
     {
       "title": "Reading List App",
-      "description": "Technical test for an interview, the challenge was to design and implement a small web application of a book list and bookmarks.",
+      "description": {
+        "en": "Technical test for an interview, the challenge was to design and implement a small web application of a book list and bookmarks.",
+        "es": "Prueba técnica para una entrevista, el reto fue diseñar e implementar una pequeña aplicación web de una lista de libros y marcadores."
+      },
       "stack": [
         "Next JS",
         "Tailwind CSS"
@@ -33,7 +42,10 @@
     },
     {
       "title": "TypeScript - Exercism",
-      "description": "My solutions to the TypeScript track on Exercism.",
+      "description": {
+        "en": "My solutions to the TypeScript track on Exercism.",
+        "es": "Mis soluciones a la pista de TypeScript en Exercism."
+      },
       "stack": [
         "TypeScript"
       ],
@@ -42,7 +54,10 @@
     },
     {
       "title": "Foundational C#",
-      "description": ".NET course with Microsoft, where I learned the basics of C# and .NET.",
+      "description": {
+        "en": ".NET course with Microsoft, where I learned the basics of C# and .NET (in progress).",
+        "es": "Curso de .NET con Microsoft, donde aprendí los fundamentos de C# y .NET (en progreso)."
+      },
       "stack": [
         "C#",
         ".NET"
@@ -52,7 +67,10 @@
     },
     {
       "title": "User Managment API",
-      "description": "Full Stack application to manage users, with features like filtering, sorting, CRUD operations and user interface in React.",
+      "description": {
+        "en": "Full Stack application to manage users, with features like filtering, sorting, CRUD operations and user interface in React.",
+        "es": "Aplicación Full Stack para administrar usuarios, con características como filtrado, ordenamiento, operaciones CRUD e interfaz de usuario en React."
+      },
       "stack": [
         "Express",
         "TypeScript",
@@ -65,7 +83,10 @@
     },
     {
       "title": "Sport Scheduling",
-      "description": "Investigation Project. Scheduling of Colombian professional soccer league: A comparison of models and algorithms.",
+      "description": {
+        "en": "Investigation Project. Scheduling of Colombian professional soccer league: A comparison of models and algorithms.",
+        "es": "Proyecto de Investigación. Programación de la liga profesional de fútbol colombiano: Una comparación de modelos y algoritmos."
+      },
       "stack": [
         "Python",
         "Jupyter Notebook",
@@ -76,7 +97,10 @@
     },
     {
       "title": "AHP Forms App",
-      "description": "Private freelance application for the Rise Group to create forms and surveys using the Analytic Hierarchy Process (AHP).",
+      "description": {
+        "en": "Private freelance application for the Rise Group to create forms and surveys using the Analytic Hierarchy Process (AHP).",
+        "es": "Aplicación freelance privada para el Grupo Rise para crear formularios y encuestas utilizando el Proceso Analítico Jerárquico (AHP)."
+      },
       "stack": [
         "Python",
         "Html",

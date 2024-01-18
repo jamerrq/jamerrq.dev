@@ -1,3 +1,7 @@
+---
+import { siAstro, siPreact } from 'simple-icons'
+---
+
 <style>
   footer {
     position: fixed;
@@ -7,6 +11,10 @@
     height: fit-content;
     padding: 1rem;
     text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
     font-size: 0.8rem;
     color: #fff;
     background-color: #000;
@@ -14,11 +22,18 @@
   }
 </style>
 
-<footer>
-  Made with &lg;3 by <a
-    href='https://github.com/jamerrq'
-    target='_blank'
-    rel='noopener noreferrer'>jamerrq</a
-  >
-  <a href='/' class='bg-slate-100 text-slate-900 px-2 rounded-lg'> Home</a>
-</footer>
+<a href='/'>
+  <footer>
+    Powered by
+    <svg
+      class='w-6 h-6 inline'
+      set:html={siAstro.svg}
+      fill={`#${siAstro.hex}`}
+    />
+    <svg
+      class='w-6 h-6 inline'
+      set:html={siPreact.svg}
+      fill={`#${siPreact.hex}`}
+    />
+  </footer>
+</a>

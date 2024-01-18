@@ -1,6 +1,6 @@
 ---
 const SOCIALS_STYLES: string = [
-  'col-span-2',
+  'col-span-1 xl:col-span-2',
   'row-span-2',
   'gap-2',
   'bg-slate-300',
@@ -39,11 +39,18 @@ import {
   siCsharp,
   siGnubash
 } from 'simple-icons'
+
+interface Props {
+  lang?: string
+}
+const { lang = 'en' }: Props = Astro.props
 ---
 
 <article class={SOCIALS_STYLES} title='My Links'>
   <div class='flex gap-2 justify-center text-black'>
-    <p>Languages</p>
+    <p>
+      {lang === 'en' ? 'Languages' : 'Lenguajes'}
+    </p>
   </div>
   <div class='flex justify-around [&>a]: [&>a]:font-thin'>
     <!-- Python -->
