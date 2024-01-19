@@ -31,6 +31,10 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 ![Featured & Projects](./lib/pages/featured-and-projects.png)
 
+## Blog 📝
+
+![Alt text](lib/pages/blog.png)
+
 ### 404
 
 ![404](./lib/pages/404.png)
@@ -39,9 +43,17 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 <summary>
 
-### Less than 1MB!
+## New! Mobile version 📱
 
-![Alt text](image.png)
+</summary>
+
+![Mobile](./lib/snaps/mobile2.png)
+
+</details>
+
+### All shipped into less than 1MB ⚡
+
+![Alt text](lib/snaps/resources-loaded.png)
 
 ## Stack 🥞
 
@@ -65,9 +77,10 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=
 
 - [Nerd Fonts Cheat Sheet](https://www.nerdfonts.com/cheat-sheet)
 - [Tailwind CSS Debug Screens](https://github.com/jorenvanhee/tailwindcss-debug-screens)
-- [Typed CSS](https://typedcss.com/)
-- [CSS Peeps](https://css-peeps.com/)
+- [Typed CSS (removed)](https://typedcss.com/)
+- [CSS Peeps (removed)](https://css-peeps.com/)
 - [Tailwind Cheat Sheet](https://tailwindcomponents.com/cheatsheet/)
 - [Astro View Transitions](https://docs.astro.build/en/guides/view-transitions/)
 - [Astro View Transitions - Lifecycle Events](https://docs.astro.build/en/guides/view-transitions/#lifecycle-events)
 - [🦔 AstroCritters](https://github.com/astro-community/AstroCritters)
+- [@astrojs/preact](https://docs.astro.build/en/guides/integrations-guide/preact/)
