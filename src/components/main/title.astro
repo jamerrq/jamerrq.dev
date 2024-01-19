@@ -1,7 +1,4 @@
 ---
-import Typed from '@components/main/typed.astro'
-import StripedPocketTee from '@components/css-peeps/striped-pocket-tee.astro'
-import StripedPocketTeeLight from '@components/css-peeps/striped-pocket-tee-light.astro'
 interface Props {
   lang: string
 }
@@ -15,16 +12,10 @@ const { lang = 'en' }: Props = Astro.props
     <a href={lang !== 'en' ? '/' : 'es'}>
       <p class='font-rubik-doodle font-semibold'>@jamerrq.dev</p>
     </a>
-    <!-- <div class="input-wrapper">
-      <span class="placeholder"></span>
-    </div> -->
-    <Typed />
-    <span class='block xl:hidden font-merriweather text-sm text-center'>
+    <span class='block font-merriweather text-sm text-center'>
       Software Developer
     </span>
   </div>
-  <StripedPocketTee />
-  <StripedPocketTeeLight />
 </div>
 
 <style>

@@ -2,6 +2,8 @@ import { data, logos } from '@data/projects.json'
 
 import Link from './link'
 
+import { shuffle } from '@utils'
+
 const PROJECT_STYLES: string = [
   'col-span-6',
   'row-span-4',
@@ -14,21 +16,21 @@ const PROJECT_STYLES: string = [
   'gap-3',
   'items-center',
   'justify-center',
-  // 'text-2xl',
   'font-bold',
-  // 'text-slate-950',
   'font-rubik-doodle',
   'w-full',
-  'h-full',
+  'h-[300px]',
+  'xl:h-full',
   'transition-all',
   'border-2',
   'border-emerald-500',
-  // 'dark:border-emerald-500',
   'text-emerald-950',
   'dark:text-emerald-300',
   'dark:bg-emerald-900',
   'responsive-text-xs',
-  'p-2'
+  'p-2',
+  'pb-5',
+  'relative'
 ].join(' ')
 
 import { signal } from '@preact/signals'
@@ -54,7 +56,32 @@ type ResourcesProps = {
   lang?: string
 }
 
-import { Left, Right } from './icons'
+import { DoubleLeft, DoubleRight } from './icons'
+
+const BUTTONS_STYLES = [
+  'absolute',
+  'bg-cyan-300',
+  'rounded-sm',
+  'flex',
+  'items-center',
+  'p-1'
+].join(' ')
+
+const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
+  <div class={`bottom-1 left-1 ${BUTTONS_STYLES}`}>
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleLeft />
+    </button>
+  </div>
+)
+
+const DoubleRightButton = ({ _f }: { _f: () => void }) => (
+  <div class={`bottom-1 right-1 ${BUTTONS_STYLES}`}>
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleRight />
+    </button>
+  </div>
+)
 
 export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
   const goRight = () => {
@@ -68,15 +95,12 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
 
   return (
     <>
-      <div class='absolute font-merriweather responsive-text bg-emerald-200 left-1 rounded-sm flex items-center py-2'>
-        <button onClick={goLeft} title={'iterate over'}>
-          <Left />
-        </button>
-      </div>
+      {/* <DoubleLeftButton _f={goLeft} /> */}
       {Array.from(Array(n).keys()).map((i) => {
-        const project = data.at((i + index.value) % data.length)!
+        const project = shuffle(data).at((i + index.value) % data.length)!
         return (
           <article class={PROJECT_STYLES} key={i}>
+            {i === 0 && <DoubleLeftButton _f={goLeft} />}
             <h1 class='text-2xl'>{project.title}</h1>
             <p class='font-bold responsive-text-xxs font-merriweather dark:text-slate-200'>
               {project.description[lang as 'es' | 'en']}
@@ -93,14 +117,11 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
               )}
               {project?.demo && <Link href={project.demo} text='󰖟' />}
             </div>
+            {i === n - 1 && <DoubleRightButton _f={goRight} />}
           </article>
         )
       })}
-      <div class='absolute responsive-text bg-emerald-200 right-1 rounded-sm flex items-center py-2'>
-        <button onClick={goRight} title={'iterate over'}>
-          <Right />
-        </button>
-      </div>
+      {/* <DoubleRightButton _f={goRight} /> */}
     </>
   )
 }

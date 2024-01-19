@@ -1,0 +1,30 @@
+---
+import Layout from './layout.astro'
+interface Props {
+  frontmatter: {
+    title: string
+  }
+}
+const { frontmatter }: Props = Astro.props
+import Buttons from '@components/main/buttons.astro'
+---
+
+<Layout title={frontmatter.title}>
+  <main
+    class='dark:bg-[#1b383c] bg-[#BFD8AF] w-[95dvw] min-h-[100dvh] mx-auto p-4 font-merriweather dark:text-emerald-50 font-semibold'
+  >
+    <Buttons />
+    <br />
+    <header
+      transition:name='blog-title'
+      class='flex font-merriweather text-slate-950 bg-emerald-500 p-2 cursor-pointer font-bold'
+      onclick='window.history.back()'
+    >
+      <h1>
+        {frontmatter.title}
+      </h1>
+    </header>
+    <br />
+    <slot />
+  </main>
+</Layout>

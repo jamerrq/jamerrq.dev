@@ -5,7 +5,6 @@ const RESOURCE_STYLES: string = [
   'row-span-4',
   'rounded-sm',
   'shadow-[0_0_0.3rem_rgb(8_51_68)]', // rgb(8, 51, 68)
-  // 'dark:shadow-[0_0_0.3rem_rgb(103_232_249)]', // rgb(103, 232, 249)
   'flex',
   'flex-row',
   'gap-2',
@@ -23,14 +22,15 @@ const RESOURCE_STYLES: string = [
   'dark:text-cyan-300',
   'bg-slate-300',
   'dark:bg-slate-900',
-  'hover:scale-[1.02]',
-  'hover:transition-all',
   'text-xl',
-  'p-2'
+  'p-2',
+  'relative'
 ].join(' ')
 
 import { signal } from '@preact/signals'
 const index = signal(0)
+
+import { Fragment } from 'preact/jsx-runtime'
 
 import Link from './link'
 
@@ -38,7 +38,50 @@ type ResourceProps = {
   n?: number
 }
 
-import { Left, Right } from './icons'
+import { DoubleUp, DoubleDown, DoubleLeft, DoubleRight } from './icons'
+
+const BUTTONS_STYLES = [
+  'absolute',
+  'bg-cyan-300',
+  'rounded-sm',
+  'flex',
+  'items-center',
+  'justify-center',
+  'py-1',
+  'px-0.5'
+].join(' ')
+
+const DoubleUpButton = ({ _f }: { _f: () => void }) => (
+  <div class={`left-1 ${BUTTONS_STYLES} xl:hidden`}>
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleUp />
+    </button>
+  </div>
+)
+
+const DoubleDownButton = ({ _f }: { _f: () => void }) => (
+  <div class={`right-1 ${BUTTONS_STYLES} xl:hidden`}>
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleDown />
+    </button>
+  </div>
+)
+
+const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
+  <div class={`left-1 ${BUTTONS_STYLES} hidden xl:flex`}>
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleLeft />
+    </button>
+  </div>
+)
+
+const DoubleRightButton = ({ _f }: { _f: () => void }) => (
+  <div class={`right-1 ${BUTTONS_STYLES} hidden xl:flex`}>
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleRight />
+    </button>
+  </div>
+)
 
 export default function Resources({ n = 3 }: ResourceProps) {
   const goRight = () => {
@@ -51,30 +94,24 @@ export default function Resources({ n = 3 }: ResourceProps) {
   }
 
   return (
-    <>
-      <div class='absolute bg-cyan-300 bottom-16 left-1 rounded-sm flex items-center py-2'>
-        <button onClick={goLeft} title={'iterate over'}>
-          <Left />
-        </button>
-      </div>
+    <Fragment>
       {Array.from(Array(n).keys()).map((i) => {
         // Array.from(Array(n).keys())
         const resource = data.at((i + index.value) % data.length)
         return (
           <article class={RESOURCE_STYLES} key={i}>
+            {i === 0 && <DoubleLeftButton _f={goLeft} />}
+            {i === 1 && <DoubleUpButton _f={goLeft} />}
             <span>{resource?.title}</span>
             {resource?.repository && (
               <Link href={resource.repository} text='' />
             )}
             {resource?.website && <Link href={resource.website} text='󰖟' />}
+            {i === 1 && <DoubleDownButton _f={goRight} />}
+            {i === 2 && <DoubleRightButton _f={goRight} />}
           </article>
         )
       })}
-      <div class='absolute bg-cyan-300 bottom-16 right-1 rounded-sm flex items-center py-2'>
-        <button onClick={goRight} title={'iterate over'}>
-          <Right />
-        </button>
-      </div>
-    </>
+    </Fragment>
   )
 }

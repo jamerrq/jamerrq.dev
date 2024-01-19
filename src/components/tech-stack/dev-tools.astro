@@ -158,6 +158,7 @@ const { lang = 'en' }: Props = Astro.props
           href='https://biomejs.dev/'
           target='_blank'
           rel='noopener noreferrer'
+          title='Biome'
         >
           <svg
             class={DEV_ICONS_STYLES}
@@ -271,7 +272,12 @@ const { lang = 'en' }: Props = Astro.props
           />
         </a>
         <!-- ZSH -->
-        <a href='https://ohmyz.sh/' target='_blank' rel='noopener noreferrer'>
+        <a
+          href='https://ohmyz.sh/'
+          target='_blank'
+          rel='noopener noreferrer'
+          title='Oh My Zsh'
+        >
           <svg
             class={DEV_ICONS_STYLES}
             set:html={siGnubash.svg}

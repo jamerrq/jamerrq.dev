@@ -43,6 +43,7 @@ import Moon from '@components/icons/moon.astro'
 import Sun from '@components/icons/sun.astro'
 import Translator from '@components/icons/translator.astro'
 import Shuffle from '@components/icons/shuffle.astro'
+import GoBack from '@components/icons/go-back.astro'
 
 const BOARD_BUTTON_STYLE =
   process.env.NODE_ENV !== 'development' ? '' : 'hidden'
@@ -81,6 +82,15 @@ const BOARD_BUTTON_STYLE =
     id='random-place-button'
   >
     <Shuffle class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300' />
+  </button>
+  <!-- GO BACK -->
+  <button
+    class={`${BUTTON_STYLES}`}
+    title='Go back'
+    id='go-back-button'
+    onclick='window.history.back()'
+  >
+    <GoBack class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300' />
   </button>
   <!-- SOURCE CODE -->
   <a

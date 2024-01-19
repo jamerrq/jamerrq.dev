@@ -2,7 +2,7 @@
 const SOCIALS_STYLES: string = [
   'col-span-2',
   'row-span-2',
-  'gap-2',
+  // 'gap-2',
   'bg-slate-300',
   'rounded-sm',
   'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
@@ -28,7 +28,7 @@ const SOCIALS_STYLES: string = [
   // 'hover:duration-200',
   // 'hover:ease-in-out',
   'grid',
-  'grid-rows-2',
+  'grid-rows-3',
   'grid-cols-1',
   'p-2'
 ].join(' ')
@@ -40,14 +40,25 @@ import {
   siLinkedin,
   siAdobeacrobatreader
 } from 'simple-icons'
+
+import Copy from '@components/icons/copy.astro'
 ---
 
 <article class={SOCIALS_STYLES} title='My Links'>
-  <div class='flex gap-2 justify-center text-black items-center'>
+  <header class='flex gap-2 justify-center text-black items-center'>
     <p class='font-semibold'>Contact</p>
     <svg
       class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
       set:html={siMaildotru.svg}
+    />
+  </header>
+  <div class='flex h-fit w-full items-center justify-center gap-2'>
+    <span class='font-merriweather font-bold text-sm text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-300 p-2 rounded-sm'>
+      jamerrq@gmail.com
+    </span>
+    <Copy
+      class='w-8 h-8 dark:bg-slate-300 bg-slate-950 fill-slate-300 dark:fill-slate-950 p-2 rounded-sm cursor-pointer hover:scale-110 transition-all'
+      onclick="navigator.clipboard.writeText('jamerrq@gmail.com'); alert('Email shipped into clipboard!');"
     />
   </div>
   <div class='flex justify-around [&>a]:'>

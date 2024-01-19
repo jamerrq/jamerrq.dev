@@ -5,12 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'rubik-doodle': ['Rubik Doodle Shadow', 'Fira Mono Nerd', 'sans-serif'],
-        'rubik-maze': ['Rubik Maze', 'sans-serif'],
+        'rubik-doodle': ['Rubik Doodle Shadow', 'system-ui'],
         merriweather: ['Merriweather', 'serif'],
-        rubik: ['Rubik', 'sans-serif'],
-        'roboto-slab': ['Roboto Slab', 'serif'],
-        onest: ['Onest', 'sans-serif'],
       },
     },
     colors: {

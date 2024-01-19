@@ -22,12 +22,14 @@
     "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
     "astro": "astro",
     "lint": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
-    "check-tsx": "tsc --noEmit --skipLibCheck --project tsconfig.json"
+    "check-tsx": "tsc --noEmit --skipLibCheck --project tsconfig.json",
+    "local-build-and-preview": "bun lint && bun run build && bun run preview"
   },
   "type": "module",
   "devDependencies": {
     "@fontsource/handlee": "^5.0.18",
     "@fontsource/redressed": "^5.0.18",
+    "@fontsource/rubik-doodle-shadow": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "^8.56.0",

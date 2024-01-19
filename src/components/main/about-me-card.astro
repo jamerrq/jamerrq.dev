@@ -18,14 +18,9 @@ const ABOUT_ME_STYLES = [
   'font-rubik-doodle',
   'w-full',
   'h-full',
-  // 'transition-all',
   'border-2',
   'border-emerald-950',
   'dark:border-emerald-300',
-  // 'hover:bg-slate-900',
-  // 'hover:text-slate-300',
-  // 'hover:scale-[1.02]',
-  // 'hover:transition-all',
   'flex-col',
   'text-base',
   'p-2'
@@ -39,9 +34,9 @@ const ABOUT_ME_STYLES = [
   <div
     class='flex items-center p-3 justify-around w-full font-merriweather text-base relative'
   >
-    <ul class='w-full text-center'>
+    <ul class='w-full text-center list-disc p-2'>
       <li>
-        <p>
+        <p class='text-balance'>
           {
             lang === 'en'
               ? "My name is Jamer José, I'm a Math Engineer from"
@@ -59,7 +54,7 @@ const ABOUT_ME_STYLES = [
       </li>
       <!-- <p class='font-fira inline'>󰜐</p> -->
       <li>
-        <p>
+        <p class='text-balance'>
           <!-- Currently working as part time Backend Developer at -->
           {
             lang === 'en'
@@ -77,7 +72,7 @@ const ABOUT_ME_STYLES = [
         </p>
       </li>
       <li>
-        <p>
+        <p class='text-balance'>
           <!-- Big fan of the open source and the web, as well as the great
           possibilities they offer. -->
           {
@@ -88,7 +83,7 @@ const ABOUT_ME_STYLES = [
         </p>
       </li>
       <li>
-        <p>
+        <p class='text-balance'>
           <!-- I strongly believe that the best way to achieve something is to start
           it. -->
           {

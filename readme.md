@@ -6,11 +6,11 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 ### Dark Mode
 
-![v5_dark](./lib/snaps/v5_dark.png)
+![v6_dark](./lib/snaps/v6_dark.png)
 
 ### Light Mode
 
-![v5_light](./lib/snaps/v5_light.png)
+![v6_light](./lib/snaps/v6_light.png)
 
 ### LightHouse Report (Preview)
 
@@ -39,16 +39,9 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 <summary>
 
-### Responsive
+### Less than 1MB!
 
-</summary>
-
-![Responsive](./lib/pages/responsive.png)
-
-</details>
-
-> [!NOTE]
-> Other pages are still under development 🚧. As well as the translations.
+![Alt text](image.png)
 
 ## Stack 🥞
 

@@ -14,6 +14,14 @@
       "problemMatcher": [],
       "label": "dev 🖌️",
       "detail": "astro dev"
+    },
+    {
+      "type": "npm",
+      "script": "local-build-and-preview",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: local-build-and-preview",
+      "detail": "bun lint && bun run build && bun run preview"
     }
   ]
 }

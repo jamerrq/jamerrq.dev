@@ -6,8 +6,9 @@ interface Props {
 
 const { title, lang = 'en' }: Props = Astro.props
 import '@fontsource/merriweather'
+import '@fontsource/rubik-doodle-shadow'
 import { ViewTransitions } from 'astro:transitions'
-import Background from '../components/main/background.astro'
+import Background from '@components/main/background.astro'
 const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
 ---
 
@@ -18,13 +19,6 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     <meta name='description' content='jamerrq.dev' />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image' href='/favicon.png' />
-    <!-- Preconnect to Google Fonts CDN -->
-    <!-- <link rel='preconnect' href='https://fonts.googleapis.com' crossorigin /> -->
-    <link
-      rel='stylesheet'
-      type='text/css'
-      href='https://unpkg.com/css-peeps@1/css-peeps.css'
-    />
     <meta name='generator' content={Astro.generator} />
     <!-- Open Graph -->
     <meta property='og:title' content='jamerrq.dev' />
@@ -66,15 +60,10 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
         text-wrap: pretty;
       }
 
-      @font-face {
+      /* @font-face {
         src: url('/fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.woff2');
         font-family: 'Rubik Doodle Shadow';
-      }
-
-      @font-face {
-        src: url('/fonts/RobotoSlab/RobotoSlab-VariableFont_wght.woff2');
-        font-family: 'Roboto Slab';
-      }
+      } */
 
       .responsive-text {
         font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
