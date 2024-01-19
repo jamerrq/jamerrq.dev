@@ -56,6 +56,8 @@ interface Props {
   lang?: string
 }
 const { lang = 'en' }: Props = Astro.props
+
+const SUBTITLE_STYLES = ['flex', 'flex-row', 'gap-2', 'text-2xl'].join(' ')
 ---
 
 <a
@@ -64,13 +66,13 @@ const { lang = 'en' }: Props = Astro.props
   href={lang === 'en' ? 'tech-stack' : '/es/tech-stack'}
   transition:name='tech-stack'
 >
-  <div class='gap-2 flex font-bold responsive-text'>
+  <div class='gap-2 flex font-bold text-4xl'>
     <p>
       {lang === 'en' ? 'Tech Stack' : 'Tecnologías'}
     </p>
   </div>
   <div class='grid grid-cols-2 gap-2 items-center justify-items-center'>
-    <div class='flex flex-row gap-2 responsive-text-sm'>
+    <div class={SUBTITLE_STYLES}>
       <p class='font-semibold'>Backend</p>
     </div>
     <div class={`${ICON_BLOCKS_STYLES} bg-emerald-100`}>
@@ -99,7 +101,7 @@ const { lang = 'en' }: Props = Astro.props
         fill={`#${siSequelize.hex}`}
       />
     </div>
-    <div class='flex flex-row gap-2 responsive-text-sm'>
+    <div class={SUBTITLE_STYLES}>
       <p class='font-semibold'>
         {lang === 'en' ? 'Languages' : 'Dialectos'}
       </p>
@@ -130,7 +132,7 @@ const { lang = 'en' }: Props = Astro.props
         fill={`#${siCsharp.hex}`}
       />
     </div>
-    <div class='flex flex-row gap-2 responsive-text-sm'>
+    <div class={SUBTITLE_STYLES}>
       <p class='font-semibold'>
         {lang === 'en' ? 'Tools' : 'Herramientas'}
       </p>
@@ -163,7 +165,7 @@ const { lang = 'en' }: Props = Astro.props
     </div>
   </div>
   <aside class='p-2 rounded-sm flex gap-2 justify-center items-center'>
-    <p class='font-bold responsive-text-xxs'>
+    <p class='font-bold text-base'>
       <!-- Tap to see more -->
       {lang === 'en' ? 'Tap to see more' : 'Toca para ver más'}
     </p>

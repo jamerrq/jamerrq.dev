@@ -1,8 +1,8 @@
 ---
-import Bento from '../main/bento.astro'
+import Bento from '@components/main/bento.astro'
 import Buttons from '@components/main/buttons.astro'
 import BlogAbout from '@components/blog/blog-about.astro'
-import LastEntries from './last-entries'
+import LastEntries from '@components/blog/last-entries'
 interface Props {
   lang: string
 }
@@ -10,7 +10,7 @@ const { lang = 'en' }: Props = Astro.props
 ---
 
 <Bento>
-  <Buttons />
+  <Buttons href={lang === 'en' ? '/es/blog' : '/blog'} />
   <BlogAbout lang={lang} />
-  <LastEntries client:visible />
+  <LastEntries client:load />
 </Bento>

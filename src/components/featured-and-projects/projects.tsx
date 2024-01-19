@@ -79,7 +79,7 @@ export default function Resources({ n = 3, lang = 'en' }: ResourcesProps) {
         const project = data.at((i + index.value) % data.length)!
         return (
           <article class={PROJECT_STYLES} key={i}>
-            <h1>{project.title}</h1>
+            <h1 class="text-2xl">{project.title}</h1>
             <p class='font-bold responsive-text-xxs font-merriweather dark:text-slate-200'>
               {project.description[lang as 'es' | 'en']}
             </p>

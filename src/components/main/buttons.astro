@@ -14,7 +14,6 @@ const BUTTONS_STYLES = [
   'flex',
   'items-center',
   'justify-around',
-  'responsive-text',
   'border-2',
   'border-emerald-950',
   'dark:border-emerald-300',
@@ -36,22 +35,30 @@ const BUTTON_STYLES = [
   // 'hover:scale-110',
 ].join(' ')
 
-import {
-  siMicrosofttranslator,
-  siKashflow,
-  siGithub,
-  siGooglecardboard
-} from 'simple-icons'
+import { siGithub, siGooglecardboard } from 'simple-icons'
 
 import Home from '@components/icons/home.astro'
 import Moon from '@components/icons/moon.astro'
 import Sun from '@components/icons/sun.astro'
+import Translator from '@components/icons/translator.astro'
+import Shuffle from '@components/icons/shuffle.astro'
 
 const BOARD_BUTTON_STYLE =
   process.env.NODE_ENV !== 'development' ? '' : 'hidden'
 ---
 
 <article class={BUTTONS_STYLES}>
+  <!-- THEME SWITCH -->
+  <button id='theme-toggle' type='button' title='Switch dark/light theme'>
+    <Moon
+      class='w-8 h-8 hidden dark:fill-emerald-300'
+      id='theme-toggle-dark-icon'
+    />
+    <Sun
+      class='w-8 h-8 hidden dark:fill-emerald-300'
+      id='theme-toggle-light-icon'
+    />
+  </button>
   <!-- LANGUAGE SWITCH -->
   <a
     class={BUTTON_STYLES}
@@ -59,9 +66,8 @@ const BOARD_BUTTON_STYLE =
     id='language-toggle'
     href={href}
   >
-    <svg
+    <Translator
       class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-      set:html={siMicrosofttranslator.svg}
     />
   </a>
   <!-- HOME OR RANDOM PLACE -->
@@ -73,21 +79,7 @@ const BOARD_BUTTON_STYLE =
     title='Go to a random page'
     id='random-place-button'
   >
-    <svg
-      class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-      set:html={siKashflow.svg}
-    />
-  </button>
-  <!-- THEME SWITCH -->
-  <button id='theme-toggle' type='button' title='Switch dark/light theme'>
-    <Moon
-      class='w-8 h-8 hidden dark:fill-emerald-300'
-      id='theme-toggle-dark-icon'
-    />
-    <Sun
-      class='w-8 h-8 hidden dark:fill-emerald-300'
-      id='theme-toggle-light-icon'
-    />
+    <Shuffle class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300' />
   </button>
   <!-- SOURCE CODE -->
   <a

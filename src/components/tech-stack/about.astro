@@ -11,7 +11,6 @@ const ABOUT_STYLES = [
   'items-center',
   'justify-center',
   'font-bold',
-  'text-black',
   'font-rubik-doodle',
   'w-full',
   'h-full',
@@ -37,9 +36,9 @@ const { lang = 'en' }: Props = Astro.props
     {lang === 'en' ? 'About' : 'Acerca de'}
   </h1>
   <div
-    class='flex flex-col items-center p-4 justify-around w-full font-merriweather responsive-text-xxs gap-2'
+    class='flex flex-col items-center p-4 justify-around w-full font-merriweather text-base gap-2'
   >
-    <p class='responsive-text-xxs'>
+    <p>
       <!-- Tools that make my work (and life) easier -->
       {
         lang === 'en'
