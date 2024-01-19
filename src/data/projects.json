@@ -55,8 +55,8 @@
     {
       "title": "Foundational C#",
       "description": {
-        "en": ".NET course with Microsoft, where I learned the basics of C# and .NET (in progress).",
-        "es": "Curso de .NET con Microsoft, donde aprendí los fundamentos de C# y .NET (en progreso)."
+        "en": ".NET course with Microsoft, where I am learning the basics of C# and .NET (in progress).",
+        "es": "Curso de .NET con Microsoft, donde estoy aprendiendo los fundamentos de C# y .NET (en progreso)."
       },
       "stack": [
         "C#",

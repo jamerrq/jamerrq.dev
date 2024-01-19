@@ -3,7 +3,7 @@ import { data, logos } from '@data/projects.json'
 import Link from './link'
 
 const PROJECT_STYLES: string = [
-  'col-span-2',
+  'col-span-6',
   'row-span-4',
   'bg-emerald-300',
   'rounded-sm',
@@ -27,10 +27,8 @@ const PROJECT_STYLES: string = [
   'text-emerald-950',
   'dark:text-emerald-300',
   'dark:bg-emerald-900',
-  'hover:scale-[1.02]',
-  'hover:transition-all',
   'responsive-text-xs',
-  'px-4'
+  'p-2'
 ].join(' ')
 
 import { signal } from '@preact/signals'
@@ -58,7 +56,7 @@ type ResourcesProps = {
 
 import { Left, Right } from './icons'
 
-export default function Resources({ n = 3, lang = 'en' }: ResourcesProps) {
+export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
   const goRight = () => {
     index.value++
     if (index.value > data.length - 1) index.value = 0
@@ -79,7 +77,7 @@ export default function Resources({ n = 3, lang = 'en' }: ResourcesProps) {
         const project = data.at((i + index.value) % data.length)!
         return (
           <article class={PROJECT_STYLES} key={i}>
-            <h1 class="text-2xl">{project.title}</h1>
+            <h1 class='text-2xl'>{project.title}</h1>
             <p class='font-bold responsive-text-xxs font-merriweather dark:text-slate-200'>
               {project.description[lang as 'es' | 'en']}
             </p>

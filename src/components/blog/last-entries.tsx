@@ -7,7 +7,7 @@ const LAST_ENTRIES_STYLES = [
   'rounded-sm',
   'flex',
   'flex-col',
-  'p-4',
+  'p-2',
   'font-bold',
   'text-black',
   'font-rubik-doodle',
@@ -31,7 +31,7 @@ export default function LastEntries() {
   return (
     <article class={LAST_ENTRIES_STYLES}>
       <h1 class='dark:text-emerald-300 text-emerald-950'>- Last Entries -</h1>
-      <ul class='grid grid-cols-[1fr_7fr] gap-2 w-full p-2 responsive-text-sm'>
+      <ul class='grid grid-cols-[1fr_7fr] gap-3 w-full p-2 responsive-text-sm'>
         <li class='dark:text-cyan-300 text-cyan-950'>Date</li>
         <li class='dark:text-cyan-300 text-cyan-950'>Title / Título</li>
         {entries.map((entry, index) => {

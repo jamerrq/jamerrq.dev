@@ -25,7 +25,8 @@ const RESOURCE_STYLES: string = [
   'dark:bg-slate-900',
   'hover:scale-[1.02]',
   'hover:transition-all',
-  'text-xl'
+  'text-xl',
+  'p-2'
 ].join(' ')
 
 import { signal } from '@preact/signals'

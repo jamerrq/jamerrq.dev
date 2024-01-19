@@ -10,9 +10,6 @@ const DEV_TOOLS_STYLES = [
   'gap-2',
   'items-center',
   'justify-center',
-  // 'text-2xl',
-  // 'font-bold',
-  // 'text-slate-950',
   'font-rubik-doodle',
   'w-full',
   'h-full',
@@ -23,10 +20,9 @@ const DEV_TOOLS_STYLES = [
   'text-cyan-950',
   'dark:bg-slate-900',
   'dark:text-cyan-300',
-  // 'hover:scale-[1.02]',
-  // 'hover:transition-all',
   'text-2xl',
-  'font-bold'
+  'font-bold',
+  'p-2'
 ].join(' ')
 import {
   siVisualstudiocode,
@@ -69,7 +65,7 @@ const { lang = 'en' }: Props = Astro.props
     <!-- <p class='font-thin'></p> -->
   </header>
   <ul
-    class='text-base w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-sm [&>li>main>a>img]:border-2'
+    class='text-xl w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-sm [&>li>main>a>img]:border-2'
   >
     <li>
       <header class='flex gap-2'>

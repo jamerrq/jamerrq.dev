@@ -10,7 +10,6 @@ const WEB_DEV_STYLES = [
   'items-center',
   'justify-center',
   'align-center',
-  // 'text-2xl',
   'font-bold',
   'text-blue-950',
   'font-rubik-doodle',
@@ -22,12 +21,11 @@ const WEB_DEV_STYLES = [
   'dark:border-blue-300',
   'dark:bg-slate-900',
   'dark:text-blue-300',
-  // 'hover:scale-[1.02]',
-  // 'hover:transition-all',
   'flex',
   'flex-col',
-  'p-1'
+  'p-2'
 ].join(' ')
+
 import {
   siNodedotjs,
   siExpress,
@@ -49,7 +47,7 @@ import {
   siAmazonaws,
   siGooglecloud
 } from 'simple-icons'
-// class='w-8 h-8 hover:scale-110 bg-emerald-100 p-1 rounded-full'
+
 const TECH_ICON_STYLES = [
   'w-10',
   'h-10',
@@ -90,7 +88,9 @@ const { lang = 'en' }: Props = Astro.props
   </header>
   <ul class='text-xl items-center p-1 w-full flex flex-col gap-1'>
     <li>
-      <header class='flex gap-2 justify-center'>
+      <header
+        class='flex gap-2 justify-center dark:text-amber-300 text-amber-950'
+      >
         <h2>Backend</h2>
         <!-- <p class='font-thin'>󰒍</p> -->
       </header>
@@ -198,7 +198,9 @@ const { lang = 'en' }: Props = Astro.props
         </ul>
       </main>
       <li>
-        <header class='flex gap-2 justify-center'>
+        <header
+          class='flex gap-2 justify-center dark:text-amber-300 text-amber-950'
+        >
           <h2>Frontend</h2>
           <!-- <p class='font-thin'></p> -->
         </header>
@@ -318,7 +320,9 @@ const { lang = 'en' }: Props = Astro.props
         </ul>
       </li>
       <li>
-        <header class='flex gap-2 justify-center'>
+        <header
+          class='flex gap-2 justify-center dark:text-amber-300 text-amber-950'
+        >
           <h2>
             {
               {

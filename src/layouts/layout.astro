@@ -7,7 +7,6 @@ interface Props {
 const { title, lang = 'en' }: Props = Astro.props
 import '@fontsource/merriweather'
 import { ViewTransitions } from 'astro:transitions'
-import ResponsiveContainer from '../components/main/responsive-container.astro'
 import Background from '../components/main/background.astro'
 const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
 ---
@@ -42,7 +41,6 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     <ViewTransitions />
   </head>
   <body class={BODY_CLASS}>
-    <ResponsiveContainer />
     <Background />
     <slot />
     <style is:global>
