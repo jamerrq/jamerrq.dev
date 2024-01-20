@@ -47,19 +47,24 @@ import GoBack from '@components/icons/go-back.astro'
 
 const BOARD_BUTTON_STYLE =
   process.env.NODE_ENV !== 'development' ? '' : 'hidden'
+
+// {SVGS_STYLES}
+const SVGS_STYLES = [
+  'w-6',
+  'h-6',
+  'xl:w-8',
+  'xl:h-8',
+  'inline-flex',
+  'fill-slate-950',
+  'dark:fill-emerald-300'
+].join(' ')
 ---
 
 <article class={BUTTONS_STYLES}>
   <!-- THEME SWITCH -->
   <button id='theme-toggle' type='button' title='Switch dark/light theme'>
-    <Moon
-      class='w-8 h-8 hidden dark:fill-emerald-300'
-      id='theme-toggle-dark-icon'
-    />
-    <Sun
-      class='w-8 h-8 hidden dark:fill-emerald-300'
-      id='theme-toggle-light-icon'
-    />
+    <Moon class={`${SVGS_STYLES} hidden`} id='theme-toggle-dark-icon' />
+    <Sun class={`${SVGS_STYLES} hidden`} id='theme-toggle-light-icon' />
   </button>
   <!-- LANGUAGE SWITCH -->
   <a
@@ -68,20 +73,18 @@ const BOARD_BUTTON_STYLE =
     id='language-toggle'
     href={href}
   >
-    <Translator
-      class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-    />
+    <Translator class={SVGS_STYLES} />
   </a>
   <!-- HOME OR RANDOM PLACE -->
   <button class={`${BUTTON_STYLES} hidden`} title='go home' id='home-button'>
-    <Home class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300' />
+    <Home class={SVGS_STYLES} />
   </button>
   <button
     class={`${BUTTON_STYLES} hidden`}
     title='Go to a random page'
     id='random-place-button'
   >
-    <Shuffle class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300' />
+    <Shuffle class={SVGS_STYLES} />
   </button>
   <!-- GO BACK -->
   <button
@@ -90,7 +93,7 @@ const BOARD_BUTTON_STYLE =
     id='go-back-button'
     onclick='window.history.back()'
   >
-    <GoBack class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300' />
+    <GoBack class={SVGS_STYLES} />
   </button>
   <!-- SOURCE CODE -->
   <a
@@ -100,10 +103,7 @@ const BOARD_BUTTON_STYLE =
     class='dark:hover:text-emerald-300 hover:text-emerald-900'
     title='Source code on GitHub'
   >
-    <svg
-      class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-      set:html={siGithub.svg}
-    />
+    <svg class={SVGS_STYLES} set:html={siGithub.svg} />
   </a>
   <!-- BOARD -->
   <a
@@ -111,9 +111,6 @@ const BOARD_BUTTON_STYLE =
     class={`${BUTTON_STYLES} ${BOARD_BUTTON_STYLE}`}
     title='Go to the board'
   >
-    <svg
-      class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-      set:html={siGooglecardboard.svg}
-    />
+    <svg class={SVGS_STYLES} set:html={siGooglecardboard.svg} />
   </a>
 </article>

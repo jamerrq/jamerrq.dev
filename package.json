@@ -16,7 +16,7 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",

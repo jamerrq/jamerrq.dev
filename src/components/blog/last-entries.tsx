@@ -38,10 +38,10 @@ export default function LastEntries() {
         {entries.map((entry, index) => {
           return (
             <Fragment key={index}>
-              <li class='font-merriweather responsive-text-xxs'>
+              <li class='font-merriweather text-sm xl:text-base'>
                 {entry.date}
               </li>
-              <li class='font-merriweather responsive-text-xxs dark:bg-emerald-900 bg-emerald-300 py-1 px-2 rounded-sm cursor-pointer hover:scale-105 transition-all duration-200'>
+              <li class='font-merriweather text-sm xl:text-base dark:bg-emerald-900 bg-emerald-300 py-1 px-2 rounded-sm cursor-pointer hover:scale-105 transition-all duration-200'>
                 <a href={`/blog/${entry.href}`}>
                   {entry.title} / {entry.título}
                 </a>

@@ -20,10 +20,10 @@ const ABOUT_STYLES = [
   'border-emerald-950',
   'text-2xl',
   'flex-col',
-  // '[&>p]:font-fira',
   '[&>p]:text-base',
   'text-slate-900',
-  'dark:text-slate-300'
+  'dark:text-slate-300',
+  'p-2'
 ].join(' ')
 interface Props {
   lang?: string
@@ -36,7 +36,7 @@ const { lang = 'en' }: Props = Astro.props
     {lang === 'en' ? 'About' : 'Acerca de'}
   </h1>
   <div
-    class='flex flex-col items-center p-4 justify-around w-full font-merriweather text-base gap-2'
+    class='flex flex-col items-center p-4 justify-around w-full font-merriweather text-sm xl:text-base gap-2'
   >
     <p>
       <!-- Tools that make my work (and life) easier -->
@@ -46,7 +46,7 @@ const { lang = 'en' }: Props = Astro.props
           : 'Herramientas que hacen mi trabajo (y vida) más fácil'
       }
     </p>
-    <quote class='italic text-cyan-900 dark:text-cyan-300'>
+    <quote class='italic text-cyan-900 dark:text-cyan-300 xl:text-base text-xs'>
       <!-- "If I have seen further [than others], it is by standing on the shoulders
       of giants" - Isaac Newton -->
       {

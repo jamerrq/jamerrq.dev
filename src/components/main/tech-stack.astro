@@ -4,7 +4,6 @@ const TECH_STACK_STYLES: string = [
   'row-span-3',
   'bg-slate-300',
   'rounded-sm',
-  // 'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
   'shadow-[0_0_0.3rem_rgb(69_26_3)]', // rgb(69, 26, 3)
   'dark:shadow-[0_0_0.3rem_rgb(253_230_138)]', // rgb(253, 230, 138)
   'flex',
@@ -12,16 +11,12 @@ const TECH_STACK_STYLES: string = [
   'p-2',
   'items-center',
   'justify-around',
-  // 'text-2xl',
-  // 'font-bold',
-  // 'text-slate-950',
   'font-rubik-doodle',
   'w-full',
   'h-full',
   'transition-all',
   'border-2',
   'border-amber-500',
-  // 'dark:border-amber-500',
   'text-amber-950',
   'dark:text-amber-300',
   'dark:bg-slate-900',
@@ -41,8 +36,7 @@ import {
   siGit,
   siVisualstudiocode,
   siDocker,
-  siUbuntu as siLinux,
-  siDevdotto
+  siUbuntu as siLinux
 } from 'simple-icons'
 // class='flex gap-2 [&>img]:rounded-sm bg-emerald-300 p-1 rounded-sm'
 const ICON_BLOCKS_STYLES = [
@@ -58,6 +52,11 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 
 const SUBTITLE_STYLES = ['flex', 'flex-row', 'gap-2', 'text-2xl'].join(' ')
+
+// {SVGS_STYLES}
+const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
+  ' '
+)
 ---
 
 <a
@@ -66,112 +65,98 @@ const SUBTITLE_STYLES = ['flex', 'flex-row', 'gap-2', 'text-2xl'].join(' ')
   href={lang === 'en' ? 'tech-stack' : '/es/tech-stack'}
   transition:name='tech-stack'
 >
-  <div class='gap-2 flex font-bold text-4xl'>
+  <div class='gap-2 flex font-bold text-2xl xl:text-4xl'>
     <p>
       {lang === 'en' ? 'Tech Stack' : 'Tecnologías'}
     </p>
   </div>
   <div class='grid grid-cols-2 gap-2 items-center justify-items-center'>
     <div class={SUBTITLE_STYLES}>
-      <p class='font-semibold'>Backend</p>
+      <p class='font-semibold text-xl xl:text-3xl'>Backend</p>
     </div>
     <div class={`${ICON_BLOCKS_STYLES} bg-emerald-100`}>
       <!-- Node -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siNodedotjs.svg}
         fill={`#${siNodedotjs.hex}`}
       />
       <!-- Express -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siExpress.svg}
         fill={`#${siExpress.hex}`}
       />
       <!-- PostgreSQL -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siPostgresql.svg}
         fill={`#${siPostgresql.hex}`}
       />
       <!-- Sequelize -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siSequelize.svg}
         fill={`#${siSequelize.hex}`}
       />
     </div>
     <div class={SUBTITLE_STYLES}>
-      <p class='font-semibold'>
+      <p class='font-semibold text-xl xl:text-3xl'>
         {lang === 'en' ? 'Languages' : 'Dialectos'}
       </p>
     </div>
     <div class={`${ICON_BLOCKS_STYLES} bg-emerald-200`}>
       <!-- TypeScript -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siTypescript.svg}
         fill={`#${siTypescript.hex}`}
       />
       <!-- Bash -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siGnubash.svg}
         fill={`#${siGnubash.hex}`}
       />
       <!-- Python -->
-      <svg
-        class='w-6 h-6 hover:scale-110'
-        set:html={siPython.svg}
-        fill='#ff9900'
-      />
+      <svg class={SVGS_STYLES} set:html={siPython.svg} fill='#ff9900' />
       <!-- C# -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siCsharp.svg}
         fill={`#${siCsharp.hex}`}
       />
     </div>
     <div class={SUBTITLE_STYLES}>
-      <p class='font-semibold'>
+      <p class='font-semibold text-xl xl:text-3xl'>
         {lang === 'en' ? 'Tools' : 'Misc'}
       </p>
     </div>
     <div class={`${ICON_BLOCKS_STYLES} bg-emerald-300`}>
       <!-- Git -->
-      <svg
-        class='w-6 h-6 hover:scale-110'
-        set:html={siGit.svg}
-        fill={`#${siGit.hex}`}
-      />
+      <svg class={SVGS_STYLES} set:html={siGit.svg} fill={`#${siGit.hex}`} />
       <!-- Visual Studio Code -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siVisualstudiocode.svg}
         fill={`#${siVisualstudiocode.hex}`}
       />
       <!-- Docker -->
       <svg
-        class='w-6 h-6 hover:scale-110'
+        class={SVGS_STYLES}
         set:html={siDocker.svg}
         fill={`#${siDocker.hex}`}
       />
       <!-- Linux -->
-      <svg
-        class='w-6 h-6 hover:scale-110'
-        set:html={siLinux.svg}
-        fill={`#FE7A36`}
-      />
+      <svg class={SVGS_STYLES} set:html={siLinux.svg} fill={`#FE7A36`} />
     </div>
   </div>
   <aside class='p-2 rounded-sm flex gap-2 justify-center items-center'>
-    <p class='font-bold text-base'>
+    <p
+      class='font-bold text-sm xl:text-base font-merriweather dark:text-emerald-300 text-slate-900 border-b-2'
+    >
       <!-- Tap to see more -->
       {lang === 'en' ? 'Tap to see more' : 'Toca para ver más'}
     </p>
-    <svg
-      class='w-6 h-6 dark:fill-amber-100 fill-amber-950'
-      set:html={siDevdotto.svg}
-    />
   </aside>
 </a>

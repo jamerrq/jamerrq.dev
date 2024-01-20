@@ -7,23 +7,42 @@ const ANCHOR_STYLES = [
 
 type LinkProps = {
   href: string
-  text: string
+  title: string
 }
 
-import { WebIcon, GithubIcon } from './icons'
+import {
+  WebIcon,
+  GithubIcon,
+  TwitterIcon,
+  TwitchIcon,
+  YoutubeIcon,
+  DiscordServerIcon
+} from './icons'
 
-export default function Link({ href, text }: LinkProps) {
+export default function Link({ href, title }: LinkProps) {
   return (
     <a
       href={href}
       target='_blank'
       rel='noopener noreferrer'
       class={ANCHOR_STYLES}
-      title={
-        text === '' ? 'Github Repository' : text === '󰖟' ? 'Website' : 'Link'
-      }
+      title={title}
     >
-      {text === '' ? <GithubIcon /> : <WebIcon />}
+      {title === 'Website' ? (
+        <WebIcon />
+      ) : title === 'Repository' ? (
+        <GithubIcon />
+      ) : title === 'Twitter Account' ? (
+        <TwitterIcon />
+      ) : title === 'Twitch Channel' ? (
+        <TwitchIcon />
+      ) : title === 'Youtube Channel' ? (
+        <YoutubeIcon />
+      ) : title === 'Discord Server' ? (
+        <DiscordServerIcon />
+      ) : (
+        <WebIcon />
+      )}
     </a>
   )
 }

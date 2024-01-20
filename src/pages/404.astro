@@ -24,7 +24,6 @@ import Container from '@components/main/container.astro'
   }
 
   .go-home-button {
-    color: white;
     text-decoration: none;
     border: 1px solid white;
     padding: 0.5rem 1rem;
@@ -61,14 +60,14 @@ import Container from '@components/main/container.astro'
     class='w-[100dvw] h-[100dvh] grid place-content-center bg-black [&>div>p]:text-balance'
   >
     <Container>
-      <h1>Page Not Found!</h1>
+      <h1 class='text-emerald-300'>Page Not Found!</h1>
       <p class='text-base font-merriweather'>
         Sorry, the resource you are looking for does not exist (yet?).
       </p>
       <p class='text-base font-merriweather'>
         Please check the URL and try again or go back.
       </p>
-      <div class='flex gap-2'>
+      <div class='flex gap-2 text-emerald-300'>
         <button class='text-base go-home-button' onclick='window.history.back()'
           >Go Back</button
         >

@@ -6,7 +6,7 @@ const RESOURCE_STYLES: string = [
   'rounded-sm',
   'shadow-[0_0_0.3rem_rgb(8_51_68)]', // rgb(8, 51, 68)
   'flex',
-  'flex-row',
+  'flex-col',
   'gap-2',
   'items-center',
   'justify-center',
@@ -22,7 +22,7 @@ const RESOURCE_STYLES: string = [
   'dark:text-cyan-300',
   'bg-slate-300',
   'dark:bg-slate-900',
-  'text-xl',
+  'text-base xl:text-2xl',
   'p-2',
   'relative'
 ].join(' ')
@@ -45,14 +45,19 @@ const BUTTONS_STYLES = [
   'bg-cyan-300',
   'rounded-sm',
   'flex',
+  'flex-wrap',
   'items-center',
   'justify-center',
   'py-1',
   'px-0.5'
 ].join(' ')
 
+import { shuffle } from '@utils'
+
+const shuffleData = shuffle(data)
+
 const DoubleUpButton = ({ _f }: { _f: () => void }) => (
-  <div class={`left-1 ${BUTTONS_STYLES} xl:hidden`}>
+  <div class={`-left-3 ${BUTTONS_STYLES} xl:hidden`}>
     <button onClick={_f} title={'iterate over'}>
       <DoubleUp />
     </button>
@@ -60,7 +65,7 @@ const DoubleUpButton = ({ _f }: { _f: () => void }) => (
 )
 
 const DoubleDownButton = ({ _f }: { _f: () => void }) => (
-  <div class={`right-1 ${BUTTONS_STYLES} xl:hidden`}>
+  <div class={`-right-3 ${BUTTONS_STYLES} xl:hidden`}>
     <button onClick={_f} title={'iterate over'}>
       <DoubleDown />
     </button>
@@ -97,16 +102,26 @@ export default function Resources({ n = 3 }: ResourceProps) {
     <Fragment>
       {Array.from(Array(n).keys()).map((i) => {
         // Array.from(Array(n).keys())
-        const resource = data.at((i + index.value) % data.length)
+        const resource = shuffleData.at((i + index.value) % data.length)
         return (
-          <article class={RESOURCE_STYLES} key={i}>
+          <article
+            class={`${RESOURCE_STYLES} ${i === 1 ? 'px-5' : ''}`}
+            key={i}
+          >
             {i === 0 && <DoubleLeftButton _f={goLeft} />}
             {i === 1 && <DoubleUpButton _f={goLeft} />}
             <span>{resource?.title}</span>
-            {resource?.repository && (
-              <Link href={resource.repository} text='' />
-            )}
-            {resource?.website && <Link href={resource.website} text='󰖟' />}
+            <div class='flex gap-2'>
+              {resource?.repository && (
+                <Link href={resource.repository} title='Repository' />
+              )}
+              {resource?.website && (
+                <Link href={resource.website} title='Website' />
+              )}
+              {resource?.links?.map((link, _i) => (
+                <Link href={link.url} title={link.site} key={_i} />
+              ))}
+            </div>
             {i === 1 && <DoubleDownButton _f={goRight} />}
             {i === 2 && <DoubleRightButton _f={goRight} />}
           </article>

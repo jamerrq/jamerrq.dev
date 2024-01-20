@@ -10,31 +10,26 @@ const EXPERIENCE_STYLES = [
   'items-center',
   'justify-center',
   'align-center',
-  // 'text-2xl',
   'font-semibold',
   'text-slate-950',
   'font-rubik-doodle',
   'w-full',
   'h-full',
-  // 'transition-all',
   'border-2',
   'dark:border-emerald-300',
   'border-emerald-950',
   'dark:bg-slate-800',
   'dark:text-slate-200',
-  // 'hover:scale-[1.02]',
-  // 'hover:transition-all',
   'flex',
   'flex-col',
   'p-1',
-  // '[&>div>ul>li]:bg-emerald-300',
-  // '[&>div>ul>li]:dark:bg-slate-900',
   '[&>div>ul>li]:dark:text-slate-200',
   '[&>div>ul>li>a]:bg-emerald-500',
   '[&>div>ul>li>a]:dark:bg-emerald-400',
   '[&>div>ul>li>a]:dark:text-emerald-950',
   '[&>div>ul>li>a]:text-slate-950'
 ].join(' ')
+
 import {
   siNodedotjs,
   siExpress,
@@ -50,6 +45,12 @@ import {
   siAuth0,
   siGitkraken
 } from 'simple-icons'
+
+// {ICONS_STYLES}
+const ICONS_STYLES = ['w-4', 'h-4', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
+  ' '
+)
+
 interface Props {
   lang: string
 }
@@ -58,13 +59,12 @@ const { lang = 'en' }: Props = Astro.props
 
 <article class={EXPERIENCE_STYLES} title="Projects I'm working on">
   <div
-    class='text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
+    class='text-xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
   >
     <p>
       <!-- Working on -->
       {lang === 'en' ? 'Working on' : 'Trabajando en'}
     </p>
-    <!-- <p class='font-fira font-thin'></p> -->
     <svg
       class='w-6 h-6 inline-flex'
       set:html={siGitkraken.svg}
@@ -76,7 +76,7 @@ const { lang = 'en' }: Props = Astro.props
       class='flex gap-2 text-base flex-col justify-around h-full font-merriweather font-bold'
     >
       <li
-        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm'
+        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'
       >
         <a
           class='col-span-2'
@@ -85,46 +85,48 @@ const { lang = 'en' }: Props = Astro.props
           rel='noopener noreferrer'
         >
           <!-- Backend Server for IDE Pinturerias -->
-          {
-            lang === 'en'
-              ? 'Backend Server for IDE Pinturerias'
-              : 'Servidor Backend para IDE Pinturerias'
-          }
+          <h1 class='text-sm xl:text-base'>
+            {
+              lang === 'en'
+                ? 'Backend Server for IDE Pinturerias'
+                : 'Servidor Backend para IDE Pinturerias'
+            }
+          </h1>
         </a>
-        <p>
+        <span class='text-sm xl:text-base'>
           <!-- Time -->
           {lang === 'en' ? 'Time' : 'Tiempo'}
-        </p>
-        <p>
+        </span>
+        <span>
           <!-- 5+ months -->
           {lang === 'en' ? '5+ months' : '5+ meses'}
-        </p>
-        <p>
+        </span>
+        <span>
           <!-- Repository -->
           {lang === 'en' ? 'Repository' : 'Repositorio'}
-        </p>
+        </span>
         <a
           href='https://github.com/Ide-Pinturerias/pinturas-app-back'
           target='_blank'
           rel='noopener noreferrer'
         >
-          pinturas-app-back
+          <span class='text-xs xl:text-base'> pinturas-app-back</span>
         </a>
-        <p>
+        <span>
           <!-- Live Demo -->
           {lang === 'en' ? 'Preview' : 'Avance'}
-        </p>
+        </span>
         <a
           href='https://pinturas-app-back.onrender.com/'
           target='_blank'
           rel='noopener noreferrer'
         >
-          onrender.com
+          <span class='text-sm xl:text-base'> onrender.com</span>
         </a>
-        <p>
+        <span>
           <!-- Technologies -->
           {lang === 'en' ? 'Technologies' : 'Tecnologías'}
-        </p>
+        </span>
         <div
           class='flex w-full overflow-hidden bg-emerald-100 gap-2 p-1 items-center justify-center'
         >
@@ -136,7 +138,7 @@ const { lang = 'en' }: Props = Astro.props
             title='Node.js'
           >
             <svg
-              class='w-6 h-6 hover:scale-110'
+              class={ICONS_STYLES}
               set:html={siNodedotjs.svg}
               fill={`#${siNodedotjs.hex}`}
             />
@@ -149,7 +151,7 @@ const { lang = 'en' }: Props = Astro.props
             title='Express'
           >
             <svg
-              class='w-6 h-6 hover:scale-110'
+              class={ICONS_STYLES}
               set:html={siExpress.svg}
               fill={`#${siExpress.hex}`}
             />
@@ -162,7 +164,7 @@ const { lang = 'en' }: Props = Astro.props
             title='PostgreSQL'
           >
             <svg
-              class='w-5 h-6 hover:scale-110'
+              class='w-3 xl:w-5 h-3 xl:h-6 hover:scale-110'
               set:html={siPostgresql.svg}
               fill={`#${siPostgresql.hex}`}
             />
@@ -175,7 +177,7 @@ const { lang = 'en' }: Props = Astro.props
             title='Sequelize'
           >
             <svg
-              class='w-6 h-6 hover:scale-110'
+              class={ICONS_STYLES}
               set:html={siSequelize.svg}
               fill={`#${siSequelize.hex}`}
             />
@@ -188,7 +190,7 @@ const { lang = 'en' }: Props = Astro.props
             title='Json Web Tokens'
           >
             <svg
-              class='w-6 h-6 hover:scale-110'
+              class={ICONS_STYLES}
               set:html={siJsonwebtokens.svg}
               fill={`#${siJsonwebtokens.hex}`}
             />
@@ -209,13 +211,13 @@ const { lang = 'en' }: Props = Astro.props
         </div>
       </li>
       <li
-        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm'
+        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'
       >
         <a
           href='https://pinturas-app-front.vercel.app/'
           target='_blank'
           rel='noopener noreferrer'
-          class='col-span-2'
+          class='col-span-2 text-sm xl:text-base'
         >
           <!-- Frontend UI for IDE Pinturerias -->
           {
@@ -224,40 +226,40 @@ const { lang = 'en' }: Props = Astro.props
               : 'Interfaz de Usuario para IDE Pinturerias'
           }
         </a>
-        <p>
+        <span>
           <!-- Time -->
           {lang === 'en' ? 'Time' : 'Tiempo'}
-        </p>
-        <p>
+        </span>
+        <span>
           <!-- 6+ months -->
           {lang === 'en' ? '6+ months' : '6+ meses'}
-        </p>
-        <p>
+        </span>
+        <span>
           <!-- Repository -->
           {lang === 'en' ? 'Repository' : 'Repositorio'}
-        </p>
+        </span>
         <a
           href='https://github.com/Ide-Pinturerias/pinturas-app-front'
           target='_blank'
           rel='noopener noreferrer'
         >
-          pinturas-app-front
+          <span class='text-xs xl:text-base'> pinturas-app-front</span>
         </a>
-        <p>
+        <span>
           <!-- Live Demo -->
           {lang === 'en' ? 'Preview' : 'Avance'}
-        </p>
+        </span>
         <a
           href='https://pinturas-app-front.vercel.app/'
           target='_blank'
           rel='noopener noreferrer'
         >
-          vercel.app
+          <span class='text-sm xl:text-base'> vercel.app</span>
         </a>
-        <p>
+        <span>
           <!-- Technologies -->
           {lang === 'en' ? 'Technologies' : 'Tecnologías'}
-        </p>
+        </span>
         <div
           class='flex w-full bg-emerald-100 gap-2 p-1 items-center justify-center'
         >
@@ -269,7 +271,7 @@ const { lang = 'en' }: Props = Astro.props
             title='React'
           >
             <svg
-              class='w-6 h-6 hover:scale-110'
+              class={ICONS_STYLES}
               set:html={siReact.svg}
               fill={`#${siSequelize.hex}`}
             />
@@ -282,7 +284,7 @@ const { lang = 'en' }: Props = Astro.props
             title='Redux'
           >
             <svg
-              class='w-6 h-6 hover:scale-110'
+              class={ICONS_STYLES}
               set:html={siRedux.svg}
               fill={`#${siRedux.hex}`}
             />
@@ -294,7 +296,7 @@ const { lang = 'en' }: Props = Astro.props
               title='Tailwind CSS'
             >
               <svg
-                class='w-6 h-6 hover:scale-110'
+                class={ICONS_STYLES}
                 set:html={siTailwindcss.svg}
                 fill={`#${siTailwindcss.hex}`}
               />
@@ -306,7 +308,7 @@ const { lang = 'en' }: Props = Astro.props
                 title='Vercel'
               >
                 <svg
-                  class='w-6 h-6 hover:scale-110'
+                  class={ICONS_STYLES}
                   set:html={siVercel.svg}
                   fill={`#${siVercel.hex}`}
                 />
@@ -318,7 +320,7 @@ const { lang = 'en' }: Props = Astro.props
                   title='Vite'
                 >
                   <svg
-                    class='w-6 h-6 hover:scale-110'
+                    class={ICONS_STYLES}
                     set:html={siVite.svg}
                     fill={`#${siVite.hex}`}
                   />
@@ -330,7 +332,7 @@ const { lang = 'en' }: Props = Astro.props
                     title='Auth0'
                   >
                     <svg
-                      class='w-6 h-6 hover:scale-110'
+                      class={ICONS_STYLES}
                       set:html={siAuth0.svg}
                       fill={`#${siAuth0.hex}`}
                     />

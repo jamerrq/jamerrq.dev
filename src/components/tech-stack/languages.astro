@@ -9,7 +9,7 @@ const SOCIALS_STYLES: string = [
   'flex',
   'items-center',
   'justify-center',
-  'text-4xl',
+  'text-2xl xl:text-4xl',
   'font-bold',
   'font-rubik-doodle',
   'w-full',
@@ -41,6 +41,14 @@ interface Props {
   lang?: string
 }
 const { lang = 'en' }: Props = Astro.props
+
+// {SVGS_STYLES}
+const SVGS_STYLES = [
+  'xl:w-8 w-6',
+  'xl:h-8 h-6',
+  'fill-indigo-950',
+  'dark:fill-indigo-300'
+].join(' ')
 ---
 
 <article class={SOCIALS_STYLES} title='My Links'>
@@ -58,10 +66,7 @@ const { lang = 'en' }: Props = Astro.props
       class='hover:scale-110'
       title='Python'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
-        set:html={siPython.svg}
-      />
+      <svg class={SVGS_STYLES} set:html={siPython.svg} />
     </a>
     <!-- JavaScript -->
     <a
@@ -71,10 +76,7 @@ const { lang = 'en' }: Props = Astro.props
       class='hover:scale-110'
       title='JavaScript'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
-        set:html={siJavascript.svg}
-      />
+      <svg class={SVGS_STYLES} set:html={siJavascript.svg} />
     </a>
     <!-- TypeScript -->
     <a
@@ -84,10 +86,7 @@ const { lang = 'en' }: Props = Astro.props
       class='hover:scale-110'
       title='TypeScript'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
-        set:html={siTypescript.svg}
-      />
+      <svg class={SVGS_STYLES} set:html={siTypescript.svg} />
     </a>
     <!-- Bash -->
     <a
@@ -97,10 +96,7 @@ const { lang = 'en' }: Props = Astro.props
       class='hover:scale-110'
       title='Bash'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
-        set:html={siGnubash.svg}
-      />
+      <svg class={SVGS_STYLES} set:html={siGnubash.svg} />
     </a>
     <!-- C# -->
     <a
@@ -110,10 +106,7 @@ const { lang = 'en' }: Props = Astro.props
       class='hover:scale-110'
       title='C#'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-indigo-950 dark:fill-indigo-300'
-        set:html={siCsharp.svg}
-      />
+      <svg class={SVGS_STYLES} set:html={siCsharp.svg} />
     </a>
   </div>
 </article>

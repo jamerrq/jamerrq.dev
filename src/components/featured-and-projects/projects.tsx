@@ -1,8 +1,8 @@
-import { data, logos } from '@data/projects.json'
-
-import Link from './link'
+import { data } from '@data/projects.json'
 
 import { shuffle } from '@utils'
+
+const shuffledData = shuffle(data)
 
 const PROJECT_STYLES: string = [
   'col-span-6',
@@ -19,7 +19,7 @@ const PROJECT_STYLES: string = [
   'font-bold',
   'font-rubik-doodle',
   'w-full',
-  'h-[300px]',
+  'xl:h-[400px] h-[300px]',
   'xl:h-full',
   'transition-all',
   'border-2',
@@ -29,27 +29,12 @@ const PROJECT_STYLES: string = [
   'dark:bg-emerald-900',
   'responsive-text-xs',
   'p-2',
-  'pb-5',
+  'pb-4',
   'relative'
 ].join(' ')
 
 import { signal } from '@preact/signals'
 const index = signal(0)
-
-interface ResourceProps {
-  tech: string
-}
-
-function Tech({ tech }: ResourceProps) {
-  const { name, url, ref } = logos.find((logo) => logo.name === tech)!
-  return (
-    <li>
-      <a href={ref} target='_blank' rel='noopener noreferrer'>
-        <img src={url} alt={name} />
-      </a>
-    </li>
-  )
-}
 
 type ResourcesProps = {
   n?: number
@@ -57,6 +42,18 @@ type ResourcesProps = {
 }
 
 import { DoubleLeft, DoubleRight } from './icons'
+
+import simpleIcons, { type toExportType } from '@components/icons/simple-icon'
+
+import { h } from 'preact'
+
+function SimpleIcon(key: string) {
+  const Icon = simpleIcons[key as keyof toExportType]
+  if (typeof Icon === 'function') {
+    return <Icon />
+  }
+  return h('fragment', {})
+}
 
 const BUTTONS_STYLES = [
   'absolute',
@@ -97,25 +94,41 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
     <>
       {/* <DoubleLeftButton _f={goLeft} /> */}
       {Array.from(Array(n).keys()).map((i) => {
-        const project = shuffle(data).at((i + index.value) % data.length)!
+        const project = shuffledData.at((i + index.value) % data.length)!
         return (
           <article class={PROJECT_STYLES} key={i}>
             {i === 0 && <DoubleLeftButton _f={goLeft} />}
-            <h1 class='text-2xl'>{project.title}</h1>
-            <p class='font-bold responsive-text-xxs font-merriweather dark:text-slate-200'>
+            <h1 class='xl:text-3xl text-xl'>{project.title}</h1>
+            <p class='font-bold font-merriweather dark:text-slate-200 text-xs xl:text-base'>
               {project.description[lang as 'es' | 'en']}
             </p>
             {/* <span class='responsive-text-xs font-semibold'>Stack</span> */}
             <ul class='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-sm flex-wrap'>
               {project?.stack?.map((tech, index) => (
-                <Tech key={index} tech={tech} />
+                <li key={index}>{SimpleIcon(tech)}</li>
               ))}
             </ul>
             <div class='flex gap-2'>
               {project?.repository && (
-                <Link href={project.repository} text='' />
+                <a
+                  href={project.repository}
+                  class='border-b-2 font-merriweather text-sm xl:text-base'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {lang === 'es' ? 'Repositorio' : 'Repository'}
+                </a>
               )}
-              {project?.demo && <Link href={project.demo} text='󰖟' />}
+              {project?.demo && (
+                <a
+                  href={project.demo}
+                  class='border-b-2 font-merriweather text-sm xl:text-base'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {lang === 'es' ? 'Demo' : 'Preview'}
+                </a>
+              )}
             </div>
             {i === n - 1 && <DoubleRightButton _f={goRight} />}
           </article>

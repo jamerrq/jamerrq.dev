@@ -8,7 +8,25 @@
     {
       "title": "Midu.dev",
       "website": "https://midu.dev/",
-      "repository": "https://github.com/midudev"
+      "repository": "https://github.com/midudev",
+      "links": [
+        {
+          "site": "Twitter Account",
+          "url": "https://twitter.com/midudev"
+        },
+        {
+          "site": "Youtube Channel",
+          "url": "https://www.youtube.com/@midulive"
+        },
+        {
+          "site": "Twitch Channel",
+          "url": "https://www.twitch.tv/midudev"
+        },
+        {
+          "site": "Discord Server",
+          "url": "https://discord.com/invite/midudev"
+        }
+      ]
     },
     {
       "title": "Free Programming Books",

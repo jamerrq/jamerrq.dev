@@ -5,15 +5,15 @@
       "type": "npm",
       "script": "lint",
       "problemMatcher": [],
-      "label": "pnpm: lint",
+      "label": "bun: lint",
       "detail": "eslint --ext .js,.astro src"
     },
     {
       "type": "npm",
       "script": "dev",
       "problemMatcher": [],
-      "label": "dev 🖌️",
-      "detail": "astro dev"
+      "label": "astro: dev",
+      "detail": "astro dev --host"
     },
     {
       "type": "npm",

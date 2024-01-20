@@ -32,6 +32,7 @@ const SOCIALS_STYLES: string = [
   'grid-cols-1',
   'p-2'
 ].join(' ')
+
 import {
   siMaildotru,
   siGithub,
@@ -42,19 +43,32 @@ import {
 } from 'simple-icons'
 
 import Copy from '@components/icons/copy.astro'
+
+// {ICONS_STYLES}
+const ICONS_STYLES = [
+  'w-6',
+  'h-6',
+  'xl:w-8',
+  'xl:h-8',
+  'inline-flex',
+  'fill-slate-950',
+  'dark:fill-emerald-300'
+].join(' ')
+
+interface Props {
+  lang: string
+}
+const { lang }: Props = Astro.props
 ---
 
 <article class={SOCIALS_STYLES} title='My Links'>
-  <header class='flex gap-2 justify-center text-black items-center'>
-    <p class='font-semibold'>Contact</p>
-    <svg
-      class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-      set:html={siMaildotru.svg}
-    />
+  <header class='flex gap-2 justify-center items-center'>
+    <p class='font-semibold text-3xl xl:text-4xl'>Contact</p>
+    <svg class={ICONS_STYLES} set:html={siMaildotru.svg} />
   </header>
   <div class='flex h-fit w-full items-center justify-center gap-2'>
     <span
-      class='font-merriweather font-bold text-sm text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-300 p-2 rounded-sm'
+      class='font-merriweather font-bold text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-300 p-2 rounded-sm border-2 border-slate-900'
     >
       jamerrq@gmail.com
     </span>
@@ -72,11 +86,7 @@ import Copy from '@components/icons/copy.astro'
       class='hover:scale-110'
       title='GitHub'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-        set:html={siGithub.svg}
-        fill={siGithub.hex}
-      />
+      <svg class={ICONS_STYLES} set:html={siGithub.svg} fill={siGithub.hex} />
     </a>
     <!-- Mail -->
     <a
@@ -86,11 +96,7 @@ import Copy from '@components/icons/copy.astro'
       class='hover:scale-110'
       title='Mail'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-        set:html={siGmail.svg}
-        fill={siGmail.hex}
-      />
+      <svg class={ICONS_STYLES} set:html={siGmail.svg} fill={siGmail.hex} />
     </a>
     <!-- LinkedIn -->
     <a
@@ -101,21 +107,21 @@ import Copy from '@components/icons/copy.astro'
       title='Linkedin'
     >
       <svg
-        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+        class={ICONS_STYLES}
         set:html={siLinkedin.svg}
         fill={siLinkedin.hex}
       />
     </a>
     <!-- CV -->
     <a
-      href='https://my-portfolio-jamerrq.netlify.app/assets/pdf/CV_JamerRebolledo.pdf'
+      href={lang === 'en' ? '/docs/cv_en.pdf' : '/docs/cv_es.pdf'}
       target='_blank'
       rel='noopener noreferrer'
       class='hover:scale-110'
       title='CV'
     >
       <svg
-        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+        class={ICONS_STYLES}
         set:html={siAdobeacrobatreader.svg}
         fill={siAdobeacrobatreader.hex}
       />
@@ -128,11 +134,7 @@ import Copy from '@components/icons/copy.astro'
       class='hover:scale-110'
       title='Lichess'
     >
-      <svg
-        class='w-8 h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
-        set:html={siLichess.svg}
-        fill={siLichess.hex}
-      />
+      <svg class={ICONS_STYLES} set:html={siLichess.svg} fill={siLichess.hex} />
     </a>
   </div>
 </article>
