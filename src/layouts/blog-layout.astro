@@ -1,4 +1,5 @@
 ---
+import Footer from '@components/main/footer.astro'
 import Layout from './layout.astro'
 interface Props {
   frontmatter: {
@@ -11,7 +12,7 @@ import Buttons from '@components/main/buttons.astro'
 
 <Layout title={frontmatter.title}>
   <main
-    class='dark:bg-[#1b383c] bg-[#BFD8AF] w-[95dvw] min-h-[100dvh] mx-auto p-4 font-merriweather dark:text-emerald-50 font-semibold'
+    class='dark:bg-[#1b383c] bg-[#BFD8AF] w-[95dvw] min-h-[95dvh] mx-auto p-4 dark:text-emerald-50 font-serif [&>*]:text-balance'
   >
     <Buttons />
     <br />
@@ -25,6 +26,9 @@ import Buttons from '@components/main/buttons.astro'
       </h1>
     </header>
     <br />
-    <slot />
+    <div class='[&>h1]:font-bold [&>h1]:text-emerald-950 [&>h1]:dark:text-emerald-300 [&>h1]:text-xl [&>p]:text-pretty [&>ul]:m-4 [&>ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-emerald-950 [&_a]:dark:text-emerald-300 flex flex-col gap-1 mb-8'>
+      <slot />
+    </div>
   </main>
+  <Footer />
 </Layout>

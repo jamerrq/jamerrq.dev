@@ -46,7 +46,7 @@ import Shuffle from '@components/icons/shuffle.astro'
 import GoBack from '@components/icons/go-back.astro'
 
 const BOARD_BUTTON_STYLE =
-  process.env.NODE_ENV !== 'development' ? '' : 'hidden'
+  process.env.NODE_ENV === 'development' ? '' : 'hidden'
 
 // {SVGS_STYLES}
 const SVGS_STYLES = [

@@ -12,5 +12,5 @@ const { lang = 'en' }: Props = Astro.props
 <Bento>
   <Buttons href={lang === 'en' ? '/es/blog' : '/blog'} />
   <BlogAbout lang={lang} />
-  <LastEntries client:load />
+  <LastEntries lang={lang} client:load />
 </Bento>

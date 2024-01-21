@@ -1,4 +1,6 @@
 ---
+import OpenToWork from '@components/badges/open-to-work.astro'
+
 interface Props {
   lang: string
 }
@@ -23,14 +25,18 @@ const ABOUT_ME_STYLES = [
   'dark:border-emerald-300',
   'flex-col',
   'text-base',
-  'p-2'
+  'p-2',
+  'relative'
 ].join(' ')
 ---
 
 <article class={ABOUT_ME_STYLES} title='Get to know me'>
-  <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl'>
-    {lang === 'en' ? 'Get to know me' : 'Conóceme'}
-  </h1>
+  <header class="flex flex-col xl:flex-row gap-2 items-center">
+    <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl'>
+      {lang === 'en' ? 'Get to know me' : 'Conóceme'}
+    </h1>
+    <OpenToWork lang={lang} />
+  </header>
   <div
     class='flex items-center p-3 justify-around w-full font-merriweather xl:text-base text-sm relative'
   >

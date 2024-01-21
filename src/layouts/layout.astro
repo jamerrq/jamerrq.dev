@@ -36,7 +36,11 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
   </head>
   <body class={BODY_CLASS}>
     <Background />
-    <slot />
+    <main
+      class='min-h-[100dvh] w-[98dvw] p-2 grid items-center mx-auto justify-center'
+    >
+      <slot />
+    </main>
     <style is:global>
       /* Reset by @souporserious */
       * {

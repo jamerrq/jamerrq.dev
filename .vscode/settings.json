@@ -18,7 +18,11 @@
     "typescript",
     // "typescriptreact"
   ],
+  "eslint.run": "onSave",
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
   "cSpell.words": [
     "altano",
     "astro",

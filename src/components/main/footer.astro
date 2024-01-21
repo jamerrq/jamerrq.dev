@@ -1,5 +1,6 @@
 ---
-import { siAstro, siPreact } from 'simple-icons'
+import Copyright from '@components/icons/copyright.astro'
+import { siAstro, siPreact, siTailwindcss, siMarkdown } from 'simple-icons'
 ---
 
 <style>
@@ -9,31 +10,43 @@ import { siAstro, siPreact } from 'simple-icons'
     left: 0;
     width: 100%;
     height: fit-content;
-    padding: 1rem;
+    padding: 0.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     text-align: center;
     align-items: center;
     display: flex;
     justify-content: center;
-    gap: 0.2rem;
+    gap: 0.5rem;
     font-size: 0.8rem;
     color: #fff;
     background-color: #000;
-    font-family: 'Merriweather', monospace;
   }
 </style>
 
-<a href='/'>
-  <footer>
-    Powered by
-    <svg
-      class='w-6 h-6 inline'
-      set:html={siAstro.svg}
-      fill={`#${siAstro.hex}`}
-    />
-    <svg
-      class='w-6 h-6 inline'
-      set:html={siPreact.svg}
-      fill={`#${siPreact.hex}`}
-    />
-  </footer>
-</a>
+<footer class='font-merriweather'>
+  <span> Powered by</span>
+  <svg class='w-6 h-6 inline' set:html={siAstro.svg} fill={`#${siAstro.hex}`} />
+  <svg
+    class='w-6 h-6 inline'
+    set:html={siPreact.svg}
+    fill={`#${siPreact.hex}`}
+  />
+  <svg
+    class='w-6 h-6 inline'
+    set:html={siTailwindcss.svg}
+    fill={`#${siTailwindcss.hex}`}
+  />
+  <svg class='w-6 h-6 inline' set:html={siMarkdown.svg} fill={`#fff`} />
+  <aside class=''>
+    <a
+      href='https://github.com/jamerrq'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='text-emerald-300 flex gap-1 items-center ml-2'
+    >
+      <Copyright />
+      <span> @jamerrq</span>
+    </a>
+  </aside>
+</footer>
