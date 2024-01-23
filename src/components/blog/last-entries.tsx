@@ -87,15 +87,20 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
               <li class='font-merriweather text-sm xl:text-base text-center'>
                 {entry.date}
               </li>
-              <li class='font-merriweather text-sm xl:text-base dark:bg-emerald-900 bg-emerald-300 py-1 px-2 rounded-sm cursor-pointer hover:scale-[1.02] transition-all ease-in-out flex flex-col gap-2'>
-                <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
-                  {lang === 'en' ? entry.title : entry.titleEs}
-                </a>
-                <div>
-                  <ReadTimeBadge readTime={entry.readTimeMins} lang={lang} />
-                </div>
-                <Badges badges={entry.tags} />
-              </li>
+              <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
+                <li class='font-merriweather text-sm xl:text-base dark:bg-emerald-900 bg-emerald-300 py-1 px-2 rounded-sm cursor-pointer hover:scale-[1.02] transition-all ease-in-out flex flex-col gap-2 border'>
+                  <div class='flex flex-col xl:flex-row gap-1'>
+                    <span>{lang === 'en' ? entry.title : entry.titleEs}</span>
+                    <div class='xl:ml-auto'>
+                      <ReadTimeBadge
+                        readTime={entry.readTimeMins}
+                        lang={lang}
+                      />
+                    </div>
+                  </div>
+                  <Badges badges={entry.tags} />
+                </li>
+              </a>
             </Fragment>
           )
         })}

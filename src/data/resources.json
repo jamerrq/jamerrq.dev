@@ -69,6 +69,19 @@
     {
       "title": "Color Palettes",
       "website": "https://colorhunt.co/"
+    },
+    {
+      "title": "Awesome Lists",
+      "repository": "https://github.com/sindresorhus/awesome"
+    },
+    {
+      "title": "Oh My Zsh",
+      "website": "https://ohmyz.sh/",
+      "repository": "https://github.com/ohmyzsh/ohmyzsh"
+    },
+    {
+      "title": "Multithreading Tutorials",
+      "repository": "https://github.com/thanhit95/multi-threading"
     }
   ]
 }

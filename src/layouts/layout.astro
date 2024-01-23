@@ -88,8 +88,14 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
           lightIcon.classList.remove('hidden')
           // en caso que se haya configurado previamente
           document.documentElement.classList.add('dark')
+          // remover la clase light si está presente
+          document.documentElement.classList.remove('light')
         } else {
           darkIcon.classList.remove('hidden')
+          // en caso que se haya configurado previamente
+          document.documentElement.classList.add('light')
+          // remover la clase dark si está presente
+          document.documentElement.classList.remove('dark')
         }
 
         const themeToggleBtn = document.getElementById('theme-toggle')
@@ -102,18 +108,23 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
           if (localStorage.getItem('color-theme')) {
             if (localStorage.getItem('color-theme') === 'light') {
               document.documentElement.classList.add('dark')
+              // remover la clase light si está presente
+              document.documentElement.classList.remove('light')
               localStorage.setItem('color-theme', 'dark')
             } else {
               document.documentElement.classList.remove('dark')
+              // remover la clase dark si está presente
               localStorage.setItem('color-theme', 'light')
             }
 
             // se comprueba si el sistema operativo tiene configurado el tema oscuro
           } else if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark')
+            document.documentElement.classList.add('light')
             localStorage.setItem('color-theme', 'light')
           } else {
             document.documentElement.classList.add('dark')
+            document.documentElement.classList.remove('light')
             localStorage.setItem('color-theme', 'dark')
           }
         })
