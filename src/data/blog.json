@@ -4,8 +4,15 @@
       "title": "Building this awesome website with Astro and Tailwind CSS",
       "date": "2024-Jan-01",
       "titleEs": "El proceso de crear este sitio web con Astro y Tailwind CSS",
-      "href": "building-this-website",
-      "hrefEs": "construyendo-este-sitio-web"
+      "href": "blog/building-this-website",
+      "hrefEs": "blog/acerca-de-esta-web",
+      "readTimeMins": "5",
+      "tags": [
+        "astro",
+        "tailwindcss",
+        "preact",
+        "portfolio"
+      ]
     },
     {
       "title": "5+ years using Linux: My experience and setup",

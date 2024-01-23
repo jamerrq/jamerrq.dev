@@ -1,46 +1,49 @@
 ---
 layout: '@layouts/blog-layout.astro'
-title: About this awesome website
-hrefLang: ../es/blog/acerca-de-esta-web/
+title: Sobre esta maravillosa página web
+hrefLang: ../../../blog/building-this-website
 ---
 
-# Introduction
+# Introducción
 
-Every developer needs a website. It's a place to showcase your work, your
-skills, and your personality. It's a place to share your thoughts and ideas.
-It's a place to connect with others. It's a place to be found.
+Todo desarrollador necesita una página web. Es un lugar para mostrar tu trabajo,
+tus habilidades y tu personalidad. Es un lugar para compartir tus pensamientos e
+ideas. Es un lugar para conectarse con otros. Es un lugar para ser encontrado.
 
-Indeed, before this one, I «developed» a couple of websites for myself. They
-were all made from a template, and I just changed the content. I didn't like
-that. I wanted to build my own website from scratch. I wanted to have full
-control over it. I wanted to have fun and learn from it.
+De hecho, antes de esta, desarrollé un par de páginas web para mí. Todas fueron
+hechas a partir de una plantilla, y solo cambié el contenido. No me gustó eso.
+Quería construir mi propia página web desde cero. Quería tener control total
+sobre ella. Quería divertirme y aprender de ella.
 
-That's why at the beginning of 2024 I decided to build my own website. There
-were specific requirements I wanted to meet:
+Es por eso que a principios de 2024 decidí construir mi propia página web. Había
+requisitos específicos que quería cumplir:
 
-- It should be fast. I wanted to have a score of 100 on all Lighthouse metrics.
-- It should be accessible, so everyone can use it.
-- It should be responsive, so it looks good on all devices.
-- It should be SEO-friendly, so people can find it.
-- It should be easy to maintain, so I can focus on writing content.
-- It should be fun to build, so I can learn from it.
+- Debería ser rápida. Quería tener una puntuación de 100 en todas las métricas de
+  Lighthouse.
+- Debería ser accesible, para que todos puedan usarla.
+- Debería ser responsive, para que se vea bien en todos los dispositivos.
+- Debería ser SEO-friendly, para que la gente pueda encontrarla.
+- Debería ser fácil de mantener, para que pueda centrarme en escribir contenido.
+- Debería ser divertido de construir, para que pueda aprender de ello.
 
-# The Framework
+# El Framework
 
-Any developer who has faced the task of building a website should know that
-there are many options available. Just in the JavaScript ecosystem, there are
-many tools that help you accomplish this task. For example, you can use a
-framework like React, Vue or Svelte. Or a framework of a framework like Gatsby,
-Next.js or Nuxt.js. It's up to you and the task you want to accomplish.
+Cualquier desarrollador que se haya enfrentado a la tarea de construir una
+página web debería saber que hay muchas opciones disponibles. Solo en el
+ecosistema de JavaScript, hay muchas herramientas que te ayudan a lograr esta
+tarea. Por ejemplo, puedes usar un framework como React, Vue o Svelte. O un
+framework de un framework como Gatsby, Next.js o Nuxt.js. Depende de ti y de la
+tarea que quieras realizar.
 
 ## Astro
 
-I decided to use <a href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</a>. Astro is a framework that allows
-you to build websites using components. That is, you can create reusable
-components and combine them to build your website. In addition, Astro is
-framework-agnostic. This means that you can use almost any JavaScript framework
-to build your components in case you need interactivity. It's very easy to use
-and has very complete documentation.
+Decidí usar <a href="https://astro.build" target="_blank" rel="noopener
+noreferrer">Astro</a>. Astro es un framework que te permite
+construir páginas web usando componentes. Es decir, puedes crear componentes
+reutilizables y combinarlos para construir tu página web. Además, Astro es
+framework-agnostic. Esto significa que puedes usar casi cualquier framework de
+JavaScript para construir tus componentes en caso de que necesites
+interactividad. Es muy fácil de usar y tiene una documentación muy completa.
 
 <a href="https://astro.build" target="_blank" rel="noopener noreferrer">
 <div align="center" class="m-4">
@@ -63,42 +66,35 @@ and has very complete documentation.
 </div>
 </a>
 
-There are many reasons why I decided to use Astro. This list summarizes them
-very well but I will give more details throughout the article.
+# El Diseño
 
-- Server-side rendering (SSR)
-- Integrations with development tools (Tailwind, Prettier, ESLint, etc.)
-- Component reusability
-- Framework-agnostic
-- Really easy to learn and use specially if you are familiar with HTML, CSS,
-  and/or JavaScript frameworks like React, Vue, or Svelte.
+Una vez tomada la decisión de usar Astro, el siguiente paso fue definir el
+diseño de la página web. Para esto, decidí inspirarme en un diseño de Bento
+pensando también que esto me facilitaría adaptarlo a dispositivos móviles.
+Además, decidí usar Tailwind CSS para darle estilo a la página web.
 
-# The Design
+Este artículo sobre Bento boxes habla con más detalle sobre este tipo de diseño.
+<a href="https://bootcamp.uxdesign.cc/web-design-trend-bento-box-95814d99ac62"
+target="_blank" rel="noopener noreferrer">Web design trend: bento box</a>
 
-Once the decision to use Astro was made, the next step was to define the design
-of the website. For this, I decided to get inspired by a Bento design thinking
-also that this would make it easy for me to adapt it to mobile devices. In
-addition, I decided to use Tailwind CSS to style the website.
+# El Desarrollo
 
-This article about Bento boxes talks in more detail about this type of design.
-<a href="https://bootcamp.uxdesign.cc/web-design-trend-bento-box-95814d99ac62" target="_blank" rel="noopener noreferrer">Web design trend: bento box</a>
+## Gestor de paquetes: Bun
 
-# The Development
+Una vez definido el diseño, era hora de ponerse manos a la obra. Lo primero que
+sueles hacer cuando empiezas un proyecto es crear la estructura del proyecto
+usando tu gestor de paquetes favorito. Desde hace un tiempo he estado usando
+<a href="https://pnpm.io" rel="noopener noreferrer" target="_blank">pnpm</a> y
+me gusta mucho. Es muy rápido y eficiente, tiene un muy buen sistema de
+caché y es muy fácil de usar.
 
-## Package Manager: Bun
-
-Once the design was defined, it was time to get to start the job. The first
-thing you usually do when you start a project is to create the project structure
-using your favorite package manager. Since a while ago I have been using
-<a href="https://pnpm.io" rel="noopener noreferrer" target="_blank">pnpm</a> and I really like it. It's very fast and efficient, it
-has a very good caching system, and it's very easy to use.
-
-Indeed it is my preferred package manager for all my TS/JS projects. However,
-since this is a personal project, I felt free to continue exploring the new JS
-runtime tool <a href="https://bun.sh" rel="noopener noreferrer"
-target="_blank">Bun</a>. Bun is a new package manager that is still in
-its early stages. It's very fast and efficient, it has a very good caching
-system, and it's easy to use and setup.
+De hecho, es mi gestor de paquetes preferido para todos mis proyectos de TS/JS.
+Sin embargo, como este es un proyecto personal, me sentí libre de seguir
+explorando la nueva herramienta de tiempo de ejecución de JS
+<a href="https://bun.sh" rel="noopener noreferrer" target="_blank">Bun</a>. Bun
+es un nuevo gestor de paquetes que todavía está en sus primeras etapas. Es muy
+rápido y eficiente, tiene un muy buen sistema de caché y es fácil de usar y
+configurar.
 
 <a href="https://bun.sh" rel="noopener noreferrer"
 target="_blank">
@@ -108,16 +104,19 @@ target="_blank">
 </a>
 
 > <a href="https://bun.sh" rel="noopener noreferrer"
-> target="_blank">Bun</a> is an all-in-one JavaScript runtime & toolkit designed for speed,
-> complete with a bundler, test runner, and Node.js-compatible package manager.
+> target="_blank">Bun</a> es un tiempo de ejecución y un conjunto de herramientas de JavaScript todo en uno diseñado para la velocidad,
+> completo con un empaquetador, un corredor de pruebas y un administrador de paquetes compatible con Node.js.
 
-## Development tools
+## Herramientas de desarrollo
 
-### Rules and Syntax: ESLint
+### Reglas y sintaxis: ESLint
 
-<a href="https://eslint.org/" rel="noopener noreferrer" target="_blank">ESLint</a> is a tool for identifying and reporting on patterns found in
-ECMAScript/JavaScript code, with the goal of making code more consistent and
-avoiding bugs.
+<a href="https://eslint.org/" rel="noopener noreferrer"
+target="_blank">ESLint</a> es una herramienta para identificar y reportar
+patrones encontrados en
+ECMAScript/JavaScript código, con el objetivo de hacer el código más consistente
+y
+evitar errores.
 
 <div align="center" class="m-4">
 <a href="https://eslint.org/" rel="noopener noreferrer" target="_blank">
@@ -134,30 +133,26 @@ avoiding bugs.
 </a>
 </div>
 
-<!--
 Eslint es parte de mis herramientas infaltables a la hora de desarrollar casi cualquier proyecto de JS, tener tu código formateado no sólo te ayuda a hacerlo más mantenible y legible, sino que también te ayuda a evitar errores y a escribir código más limpio. Lo cuál también es muy útil cuando trabajas en equipo.
--->
 
-EsLint is part of my infallible tools when developing almost any JS project,
-having your code formatted not only helps you make it more maintainable and
-readable, but it also helps you avoid errors and write cleaner code. Which is
-also very useful when working as a team.
+### Formato: Prettier
 
-### Formatting: Prettier
+<a href="https://prettier.io" target="_blank" rel="noopener
+noreferrer">Prettier</a> es un formateador de código con opiniones. Aplica un
+estilo consistente analizando tu código y volviéndolo a imprimir con sus propias
+reglas que tienen en cuenta la longitud máxima de línea, envolviendo el código
+cuando sea necesario.
 
-<a href="https://prettier.io" target="_blank" rel="noopener noreferrer">Prettier</a> is an opinionated code formatter. It enforces a consistent style by
-parsing your code and re-printing it with its own rules that take the maximum
-line length into account, wrapping code when necessary.
+Si usas la extensión de VsCode de Astro, formateará automáticamente tu código
+con Prettier.
 
-If you use the Astro VsCode extension, it will automatically format your code
-with Prettier.
+### Estilos: Tailwind CSS
 
-### Styles: Tailwind CSS
-
-<a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">Tailwind CSS</a> is a CSS framework that allows you to create styles quickly and
-easily. It's very easy to learn and use. In addition, it's very flexible and
-allows you to create custom styles. For example, you can create your own colors,
-sizes, spacings, etc.
+<a href="https://tailwindcss.com" target="_blank" rel="noopener
+noreferrer">Tailwind CSS</a> es un framework CSS que te permite crear estilos
+rápida y fácilmente. Es muy fácil de aprender y usar. Además, es muy flexible y
+te permite crear estilos personalizados. Por ejemplo, puedes crear tus propios
+colores, tamaños, espaciados, etc.
 
 <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">
 <div align="center" class="m-4">
@@ -165,40 +160,42 @@ sizes, spacings, etc.
 </div>
 </a>
 
-The truth about Tailwind CSS could write a whole article. It's just fascinating.
-If you want to know more about Tailwind CSS, I recommend the following article
-with 7 benefits that the framework offers:
-<a href="https://medium.com/@ccsstudios/embracing-the-utility-first-paradigm-benefits-of-tailwind-css-47f7922cf3fa"
+Lo cierto sobre Tailwind CSS podría escribir un artículo entero. Es simplemente
+fascinante. Si quieres saber más sobre Tailwind CSS, te recomiendo el siguiente
+artículo con 7 beneficios que ofrece el framework:
+
+<a
+href="https://medium.com/@ccsstudios/embracing-the-utility-first-paradigm-benefits-of-tailwind-css-47f7922cf3fa"
 target="_blank" rel="noopener noreferrer">Embracing the Utility-First Paradigm:
 Benefits of Tailwind CSS</a>
 
-By my side, I can say that I love Tailwind CSS. Overall, it's very practical and
-fast to integrate into any project. The optimizations it offers are just the
-icing on the cake.
+Por mi parte, puedo decir que me encanta Tailwind CSS. En general, es muy
+práctico y rápido de integrar en cualquier proyecto. Las optimizaciones que
+ofrece son la guinda del pastel.
 
 ### Husky
 
 <a href="https://typicode.github.io/husky/#/" target="_blank" rel="noopener
-noreferrer">Husky</a> is a tool that allows you to run scripts when you commit or push code to
-your repository. This is very useful to run tests, linting, or any other
-pre-commit/pre-push task.
+noreferrer">Husky</a> es una herramienta que te permite ejecutar scripts cuando
+haces commit o push a tu repositorio. Esto es muy útil para ejecutar tests,
+linting, o cualquier otra tarea pre-commit/pre-push.
 
-Check out the <a href="https://typicode.github.io/husky/#/" target="_blank" rel="noopener
-noreferrer">Husky documentation</a> for more information.
+Revisa la <a href="https://typicode.github.io/husky/#/" target="_blank"
+rel="noopener
+noreferrer">documentación de Husky</a> para más información.
 
-### Fonts: Fontsource
+### Fuentes: Fontsource
 
 <a href="https://fontsource.org/" target="_blank" rel="noopener
-noreferrer">Fontsource</a> is a collection of open-source fonts that are
-packaged into
-individual NPM packages for self-hosting in your web applications.
-Check out the <a href="https://fontsource.org/docs/getting-started/introduction"
-target="_blank" rel="noopener noreferrer">Fontsource documentation</a> for
-more information about the benefits and advantages of using this tool.
+noreferrer">Fontsource</a> es una colección de fuentes de código abierto que se
+empaquetan en paquetes NPM individuales para autohospedaje en tus aplicaciones
+web. Revisa la <a
+href="https://fontsource.org/docs/getting-started/introduction" target="_blank"
+rel="noopener noreferrer">documentación de Fontsource</a> para más información
+sobre los beneficios y ventajas de usar esta herramienta.
 
-### Client Components: Preact
+### Componentes interactivos: Preact
 
-<!--
 En un principio no me planteaba la idea de usar componentes en el cliente,
 ya que asumía que no iba a necesitarlos dada la naturaleza estática de la web.
 Sin embargo, era menester poder presentar mis proyectos de una forma más
@@ -213,33 +210,15 @@ Preact viene también con una implementación de las modernas signals que
 permiten crear componentes con estado muy fácilmente.
 
 Para ser más específico, necesitaba un componente que renderizara mis proyectos mediante una sección que se pudiera iterar, y poder cargar los datos de manera dinámica con facilidad.
--->
 
-At first, I didn't consider the idea of using client-side components, since I
-assumed that I wouldn't need them given the static nature of the web. However,
-it was necessary to be able to present my projects in a more dynamic way and I
-found myself in the need to use interactive components.
-
-One way to do this was to use React, which is a framework that I like and feel
-comfortable with, but which is not very light and for the purposes of this
-project I could do with something lighter. That's why I decided to use Preact,
-which is an alternative to React that weighs only 3kB and has the same modern
-API.
-
-<a href="https://preactjs.com/" target="_blank" rel="noopener noreferrer">Preact</a> also comes with an implementation of the modern signals that allow you
-to create stateful components very easily.
-
-To be more specific, I needed a component that would render my projects through
-a section that could be iterated, and to be able to load the data dynamically
-with ease.
-
-<a href="https://preactjs.com/" target="_blank" rel="noopener noreferrer">Preact</a> is a fast 3kB alternative to React with the same modern API. It provides
-the thinnest possible Virtual DOM abstraction on top of the DOM. The web is a
-stable platform, it's time we stopped reimplementing it in the name of
-portability. Preact is also a first-class citizen of the web platform. It
-differs from other frameworks in that it's meant to be included in your other
-assets and deployed as part of your site instead of being used to create a
-single-page application (SPA).
+<a href="https://preactjs.com/" target="_blank" rel="noopener
+noreferrer">Preact</a> es una alternativa rápida de 3kB a React con la misma API
+moderna. Proporciona la abstracción de Virtual DOM más delgada posible sobre el
+DOM. La web es una plataforma estable, es hora de que dejemos de re implementarla
+en nombre de la portabilidad. Preact también es un ciudadano de primera clase
+de la plataforma web. Se diferencia de otros frameworks en que está destinado a
+ser incluido en tus otros activos y desplegado como parte de tu sitio en lugar
+de ser utilizado para crear una aplicación de página única (SPA).
 
 <a href="https://preactjs.com/" target="_blank" rel="noopener noreferrer">
 <div align="center" class="m-4">
@@ -249,17 +228,23 @@ single-page application (SPA).
 
 ### Blog: Markdown
 
-For the blog, I decided to use Markdown. It's a very simple and easy to use
-language. In addition, it's very easy to read and write and in addition
-with Tailwind CSS it's very easy to style.
+Para el blog, decidí usar Markdown. Es un lenguaje muy simple y fácil de usar.
+Además, es muy fácil de leer y escribir y además con Tailwind CSS es muy fácil
+de estilizar.
 
-I haven't felt the need to use MDX for now, but I don't rule out the
-possibility of using it in the future.
+No he sentido la necesidad de usar MDX por ahora, pero no descarto la
+posibilidad de usarlo en el futuro.
 
 ### Hosting: Deno Deploy
 
-<a href="https://deno.com/deploy" target="_blank" rel="noopener noreferrer">Deno
-Deploy</a> is a globally distributed platform for serverless JavaScript applications. Your JavaScript, TypeScript, and WebAssembly code runs on managed servers geographically close to your users, enabling low latency and faster response times. Deploy applications run on fast, light-weight V8 isolates rather than virtual machines, powered by the Deno runtime.
+<a href="https://deno.com/deploy" target="_blank" rel="noopener
+noreferrer">Deno Deploy</a> es una plataforma distribuida globalmente para
+aplicaciones JavaScript sin servidor. Tu código JavaScript, TypeScript y
+WebAssembly se ejecuta en servidores administrados geográficamente cerca de tus
+usuarios, lo que permite una baja latencia y tiempos de respuesta más rápidos.
+Las aplicaciones de despliegue se ejecutan en aislamientos V8 rápidos y
+ligeros en lugar de máquinas virtuales, alimentadas por el tiempo de ejecución
+de Deno.
 
 <a href="https://deno.com/deploy" target="_blank" rel="noopener noreferrer">
 <div align="center" class="m-4 text-[#000]">
@@ -268,8 +253,5 @@ Deploy</a> is a globally distributed platform for serverless JavaScript applicat
 </div>
 </a>
 
-I decided to use Deno Deploy because it's very easy to use and it's
-free. I don't have to worry about the server, I just have to worry about
-the code.
-
-##
+Decidí usar Deno Deploy porque es muy fácil de usar y es gratis. No tengo que
+preocuparme por el servidor, solo tengo que preocuparme por el código.
