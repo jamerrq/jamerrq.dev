@@ -149,4 +149,15 @@ export default {
   plugins: [
     require('tailwindcss-debug-screens'),
   ],
+  safelist: [
+    'fill-[#BC52EE]', 'fill-[#3FCF8E]',
+    'fill-[#000000]', 'fill-[#06B6D4]',
+    'fill-[#3178C6]', 'fill-[#512BD4]',
+    'fill-[#512BD4]', 'fill-[#000000]',
+    'fill-[#52B0E7]', 'fill-[#4169E1]',
+    'fill-[#61DAFB]', 'fill-[#3776AB]',
+    'fill-[#F37626]', 'fill-[#008080]',
+    'fill-[#E34F26]', 'fill-[#F7DF1E]',
+    'fill-[#777BB4]', 'fill-[#1572B6]'
+  ]
 }

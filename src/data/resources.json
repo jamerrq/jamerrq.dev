@@ -82,6 +82,15 @@
     {
       "title": "Multithreading Tutorials",
       "repository": "https://github.com/thanhit95/multi-threading"
+    },
+    {
+      "title": "GitLens — Git supercharged",
+      "repository": "https://github.com/gitkraken/vscode-gitlens",
+      "website": "https://www.gitkraken.com/gitlens"
+    },
+    {
+      "title": "Awesome Bun",
+      "repository": "https://github.com/oven-sh/awesome-bun"
     }
   ]
 }

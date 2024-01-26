@@ -85,8 +85,7 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
         // Cambia los iconos dentro del botón en función de la configuración anterior
         if (
           localStorage.getItem('color-theme') === 'dark' ||
-          (!('color-theme' in localStorage) &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches)
+          !('color-theme' in localStorage)
         ) {
           lightIcon.classList.remove('hidden')
           // en caso que se haya configurado previamente

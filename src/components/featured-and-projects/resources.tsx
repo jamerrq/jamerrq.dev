@@ -111,7 +111,7 @@ export default function Resources({ n = 3 }: ResourceProps) {
             {i === 0 && <DoubleLeftButton _f={goLeft} />}
             {i === 1 && <DoubleUpButton _f={goLeft} />}
             <span>{resource?.title}</span>
-            <div class='flex gap-2'>
+            <div class='flex gap-2 items-center justify-center'>
               {resource?.repository && (
                 <Link href={resource.repository} title='Repository' />
               )}

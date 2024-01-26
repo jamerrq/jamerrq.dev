@@ -20,9 +20,31 @@ import {
   siCss3
 } from 'simple-icons'
 
+export const ICONS_SAFE_LIST_TAILWIND = [
+  siAstro,
+  siSupabase,
+  siNextdotjs,
+  siTailwindcss,
+  siTypescript,
+  siCsharp,
+  siDotnet,
+  siExpress,
+  siSequelize,
+  siPostgresql,
+  siReact,
+  siPython,
+  siJupyter,
+  siLatex,
+  siHtml5,
+  siJavascript,
+  siPhp,
+  siCss3
+].map((icon) => `fill-[#${icon.hex}]`)
+
 export interface SimpleIconProps {
   class?: string
   __html: string
+  fill?: string
 }
 
 const TECH_ICON_STYLES = [
@@ -32,92 +54,99 @@ const TECH_ICON_STYLES = [
   'xl:h-10',
   'hover:scale-110',
   'transition-all',
-  'dark:bg-emerald-300',
-  'bg-emerald-900',
   'p-1',
-  'rounded-md',
-  `fill-[#fff] dark:fill-[#000]`
+  'rounded-md'
 ].join(' ')
 
-function SimpleIcon({ __html }: SimpleIconProps) {
+function SimpleIcon({ __html, fill }: SimpleIconProps) {
   return h('div', {
     dangerouslySetInnerHTML: { __html },
-    class: TECH_ICON_STYLES
+    class: TECH_ICON_STYLES + (fill ? ` fill-[${fill}]` : '')
   })
 }
 
 function AstroLogo() {
-  return SimpleIcon({ __html: siAstro.svg })
+  return SimpleIcon({ __html: siAstro.svg, fill: `#${siAstro.hex}` })
 }
 
 function SupabaseLogo() {
-  return SimpleIcon({ __html: siSupabase.svg })
+  return SimpleIcon({ __html: siSupabase.svg, fill: `#${siSupabase.hex}` })
 }
 
 function NextLogo() {
-  return SimpleIcon({ __html: siNextdotjs.svg })
+  return SimpleIcon({ __html: siNextdotjs.svg, fill: `#${siNextdotjs.hex}` })
 }
 
 function TailwindLogo() {
   return SimpleIcon({
-    __html: siTailwindcss.svg
+    __html: siTailwindcss.svg,
+    fill: `#${siTailwindcss.hex}`
   })
 }
 
 function TypeScriptLogo() {
-  return SimpleIcon({ __html: siTypescript.svg })
+  return SimpleIcon({ __html: siTypescript.svg, fill: `#${siTypescript.hex}` })
 }
 
 function CSharpLogo() {
-  return SimpleIcon({ __html: siCsharp.svg })
+  return SimpleIcon({
+    __html: siCsharp.svg,
+    fill: `#${siAstro.hex}`
+  })
 }
 
 function DotnetLogo() {
-  return SimpleIcon({ __html: siDotnet.svg })
+  return SimpleIcon({
+    __html: siDotnet.svg,
+    fill: `#${siAstro.hex}`
+  })
 }
 
 function ExpressLogo() {
-  return SimpleIcon({ __html: siExpress.svg })
+  return SimpleIcon({ __html: siExpress.svg, fill: `#${siExpress.hex}` })
 }
 
 function SequelizeLogo() {
-  return SimpleIcon({ __html: siSequelize.svg })
+  return SimpleIcon({ __html: siSequelize.svg, fill: `#${siSequelize.hex}` })
 }
 
 function PostgreSQLLogo() {
-  return SimpleIcon({ __html: siPostgresql.svg })
+  return SimpleIcon({ __html: siPostgresql.svg, fill: `#${siPostgresql.hex}` })
 }
 
 function ReactLogo() {
-  return SimpleIcon({ __html: siReact.svg })
+  return SimpleIcon({
+    __html: siReact.svg,
+    fill: `#${siTypescript.hex}] dark:fill-[#${siReact.hex}`
+  })
 }
 
 function PythonLogo() {
-  return SimpleIcon({ __html: siPython.svg })
+  return SimpleIcon({ __html: siPython.svg, fill: `#${siPython.hex}` })
 }
 
 function JupyterLogo() {
-  return SimpleIcon({ __html: siJupyter.svg })
+  return SimpleIcon({ __html: siJupyter.svg, fill: `#${siJupyter.hex}` })
 }
 
 function LatexLogo() {
-  return SimpleIcon({ __html: siLatex.svg })
+  return SimpleIcon({ __html: siLatex.svg, fill: `#${siLatex.hex}` })
 }
 
 function HtmlLogo() {
-  return SimpleIcon({ __html: siHtml5.svg })
+  return SimpleIcon({ __html: siHtml5.svg, fill: `#${siHtml5.hex}` })
 }
 
 function JavaScriptLogo() {
-  return SimpleIcon({ __html: siJavascript.svg })
+  return SimpleIcon({ __html: siJavascript.svg, fill: `#${siJavascript.hex}` })
 }
 
 function CssLogo() {
-  return SimpleIcon({ __html: siCss3.svg })
+  return SimpleIcon({ __html: siCss3.svg, fill: `#${siCss3.hex}` })
 }
 
 function PhpLogo() {
-  return SimpleIcon({ __html: siPhp.svg })
+  return SimpleIcon({ __html: siPhp.svg, fill: `#${siPhp.hex}` })
 }
 
 const toExport = {

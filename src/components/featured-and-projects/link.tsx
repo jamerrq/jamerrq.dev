@@ -2,7 +2,8 @@ const ANCHOR_STYLES = [
   'font-thin',
   'responsive-text',
   'dark:text-amber-300',
-  'text-amber-950'
+  'text-amber-950',
+  'flex'
 ].join(' ')
 
 type LinkProps = {
@@ -12,11 +13,17 @@ type LinkProps = {
 
 import {
   WebIcon,
-  GithubIcon,
-  TwitterIcon,
-  TwitchIcon,
-  YoutubeIcon,
-  DiscordServerIcon
+  // GithubIcon,
+  // TwitterIcon,
+  // TwitchIcon,
+  // YoutubeIcon,
+  YoutubeColorLogo,
+  TwitchColorLogo,
+  // DiscordServerIcon,
+  DiscordColorLogo,
+  FirefoxIcon,
+  GithubColorLogo,
+  TwitterColorLogo
 } from './icons'
 
 export default function Link({ href, title }: LinkProps) {
@@ -29,17 +36,17 @@ export default function Link({ href, title }: LinkProps) {
       title={title}
     >
       {title === 'Website' ? (
-        <WebIcon />
+        <FirefoxIcon />
       ) : title === 'Repository' ? (
-        <GithubIcon />
+        <GithubColorLogo />
       ) : title === 'Twitter Account' ? (
-        <TwitterIcon />
+        <TwitterColorLogo />
       ) : title === 'Twitch Channel' ? (
-        <TwitchIcon />
+        <TwitchColorLogo />
       ) : title === 'Youtube Channel' ? (
-        <YoutubeIcon />
+        <YoutubeColorLogo />
       ) : title === 'Discord Server' ? (
-        <DiscordServerIcon />
+        <DiscordColorLogo />
       ) : (
         <WebIcon />
       )}

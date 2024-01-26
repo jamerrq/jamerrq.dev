@@ -45,9 +45,7 @@ import Translator from '@components/icons/translator.astro'
 import Shuffle from '@components/icons/shuffle.astro'
 import GoBack from '@components/icons/go-back.astro'
 
-console.log(process.env.NODE_ENV)
-const BOARD_BUTTON_STYLE =
-  process.env.NODE_ENV === 'development' ? 'hidden' : 'hidden'
+const BOARD_BUTTON_STYLE = import.meta.env.DEV ? 'block' : 'hidden'
 
 // {SVGS_STYLES}
 const SVGS_STYLES = [
