@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config'
-import tailwind from "@astrojs/tailwind"
+import tailwind from '@astrojs/tailwind'
 import deno from '@astrojs/deno'
-import robotsTxt from "astro-robots-txt"
-import preact from "@astrojs/preact"
+import robotsTxt from 'astro-robots-txt'
+import preact from '@astrojs/preact'
 
 // https://astro-critters.nikolahristov.tech/
-import critters from "astro-critters"
+import critters from 'astro-critters'
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,7 +16,8 @@ export default defineConfig({
     locales: ['en', 'es'],
     defaultLocale: 'en',
     routing: {
-      prefixDefaultLocale: false
+      prefixDefaultLocale: false,
+      strategy: 'pathname'
     }
   },
   site: 'https://jamerrq.deno.dev/'

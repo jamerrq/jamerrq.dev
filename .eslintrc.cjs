@@ -17,6 +17,7 @@ module.exports = {
       },
       rules: {
         "react/self-closing-comp": "off",
+        "react/jsx-key": "off"
       }
     }
   ]

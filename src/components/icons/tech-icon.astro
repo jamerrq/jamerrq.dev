@@ -1,0 +1,29 @@
+---
+interface Props {
+  obj: {
+    __html: string
+    href?: string
+    name?: string
+  }
+}
+
+const { __html, href = '#', name: title = 'Icon' } = Astro.props.obj
+
+const TECH_ICON_STYLES = [
+  'xl:w-10 w-8',
+  'xl:h-10 h-8',
+  'hover:scale-110',
+  'transition-all',
+  'dark:bg-slate-300',
+  'bg-slate-900',
+  'p-1',
+  'rounded-md',
+  'border-2',
+  'fill-slate-50',
+  'dark:fill-slate-900'
+].join(' ')
+---
+
+<a href={href} target='_blank' rel='noopener noreferrer' title={title}>
+  <svg class={TECH_ICON_STYLES} set:html={__html} />
+</a>

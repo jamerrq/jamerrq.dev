@@ -17,42 +17,18 @@ const DEV_TOOLS_STYLES = [
   'border-2',
   'border-cyan-950',
   'dark:border-cyan-300',
-  'text-cyan-950',
+  'text-blue-950',
   'dark:bg-slate-900',
-  'dark:text-cyan-300',
+  'dark:text-blue-300',
   'text-2xl',
   'font-bold',
   'p-2'
 ].join(' ')
-import {
-  siVisualstudiocode,
-  siPostman,
-  siEslint,
-  siGit,
-  siBiome,
-  siPrettier,
-  siMarkdown,
-  siLatex,
-  siNotion,
-  siGnubash,
-  siZsh,
-  siNeovim,
-  siInsomnia,
-  siGithub,
-  siGithubactions
-} from 'simple-icons'
-const DEV_ICONS_STYLES = [
-  'xl:w-10 w-8',
-  'xl:h-10 h-8',
-  'hover:scale-110',
-  'transition-all',
-  'dark:bg-slate-300',
-  'bg-slate-900',
-  'p-1',
-  'rounded-md',
-  'border-2',
-  'border-slate-800'
-].join(' ')
+
+import TechIcon from '@components/icons/tech-icon.astro'
+import TechIcons, { type IconProps } from '@data/tech-icons'
+const { ides, apis, linters, dvc, others } = TechIcons
+
 interface Props {
   lang?: string
 }
@@ -65,40 +41,23 @@ const { lang = 'en' }: Props = Astro.props
     <!-- <p class='font-thin'></p> -->
   </header>
   <ul
-    class='text-xl w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-sm [&>li>main>a>img]:border-2'
+    class='text-xl w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-sm [&_header]:text-amber-950 [&_header]:dark:text-amber-300'
   >
     <li>
       <header class='flex gap-2'>
         <h2>IDEs</h2>
         <!-- <p class='font-thin'>󰨞</p> -->
       </header>
-      <main class='flex gap-1'>
-        <!-- VS Code -->
-        <a
-          href='https://code.visualstudio.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Visual Studio Code'
-        >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siVisualstudiocode.svg}
-            fill={`#${siVisualstudiocode.hex}`}
-          />
-        </a>
-        <!-- Neovim -->
-        <a
-          href='https://neovim.io/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Neovim'
-        >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siNeovim.svg}
-            fill={`#${siNeovim.hex}`}
-          />
-        </a>
+      <main>
+        <ul class='flex gap-1 w-full flex-wrap p-1 rounded-sm'>
+          {
+            ides.map((tech: IconProps) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
+        </ul>
       </main>
     </li>
     <li>
@@ -106,123 +65,54 @@ const { lang = 'en' }: Props = Astro.props
         <h2>APIs</h2>
         <!-- <p class='font-thin'>󰒍</p> -->
       </header>
-      <main class='flex gap-1'>
-        <!-- Postman -->
-        <a
-          href='https://www.postman.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Postman'
+      <main class='flex'>
+        <ul
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siPostman.svg}
-            fill={`#${siPostman.hex}`}
-          />
-        </a>
-        <!-- Insomnia -->
-        <a
-          href='https://insomnia.rest/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Insomnia'
-        >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siInsomnia.svg}
-            fill={`#${siInsomnia.hex}`}
-          />
-        </a>
+          {
+            apis.map((tech: IconProps) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
+        </ul>
       </main>
     </li>
     <li>
       <header class='flex gap-2'>
         <h2>Linters</h2>
       </header>
-      <main class='flex gap-1'>
-        <!-- EsLint -->
-        <a
-          href='https://eslint.org/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='EsLint'
+      <main>
+        <ul
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siEslint.svg}
-            fill={`#${siEslint.hex}`}
-          />
-        </a>
-        <!-- Biome -->
-        <a
-          href='https://biomejs.dev/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Biome'
-        >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siBiome.svg}
-            fill={`#${siBiome.hex}`}
-          />
-        </a>
-        <!-- Prettier -->
-        <a
-          href='https://prettier.io/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Prettier'
-        >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siPrettier.svg}
-            fill='#ff9900'
-          />
-        </a>
+          {
+            linters.map((tech: IconProps) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
+        </ul>
       </main>
     </li>
     <li>
       <header class='flex gap-2'>
         <h2>DVC</h2>
       </header>
-      <main class='flex gap-1'>
-        <!-- Git -->
-        <a
-          href='https://git-scm.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Git'
+      <main>
+        <ul
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siGit.svg}
-            fill={`#${siGit.hex}`}
-          />
-        </a>
-        <!-- GitHub -->
-        <a
-          href='https://github.com'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='GitHub'
-        >
-          <svg
-            class={`${DEV_ICONS_STYLES} fill-[#fff] dark:fill-[#000]`}
-            set:html={siGithub.svg}
-          />
-        </a>
-        <!-- GitHub Actions -->
-        <a
-          href='https://docs.github.com/en/actions'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='GitHub Actions'
-        >
-          <svg
-            class={`${DEV_ICONS_STYLES} fill-[#fff] dark:fill-[#000]`}
-            set:html={siGithubactions.svg}
-          />
-        </a>
+          {
+            dvc.map((tech: IconProps) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
+        </ul>
       </main>
     </li>
     <li class='col-span-2 -mt-2'>
@@ -233,57 +123,17 @@ const { lang = 'en' }: Props = Astro.props
         <!-- <p class='font-thin'></p> -->
       </header>
       <main class='flex gap-1'>
-        <!-- Markdown -->
-        <a
-          href='https://www.markdownguide.org/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Markdown'
+        <ul
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siMarkdown.svg}
-            fill={`#${siVisualstudiocode.hex}`}
-          />
-        </a>
-        <!-- LaTeX -->
-        <a
-          href='https://www.latex-project.org/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='LaTeX'
-        >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siLatex.svg}
-            fill={`#${siLatex.hex}`}
-          />
-        </a>
-        <!-- Notion -->
-        <a
-          href='https://www.notion.so/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Notion'
-        >
-          <svg
-            class={`${DEV_ICONS_STYLES} fill-[#fff] dark:fill-[#000]`}
-            set:html={siNotion.svg}
-          />
-        </a>
-        <!-- ZSH -->
-        <a
-          href='https://ohmyz.sh/'
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Oh My Zsh'
-        >
-          <svg
-            class={DEV_ICONS_STYLES}
-            set:html={siGnubash.svg}
-            fill={`#${siZsh.hex}`}
-          />
-        </a>
+          {
+            others.map((tech: IconProps) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
+        </ul>
       </main>
     </li>
   </ul>

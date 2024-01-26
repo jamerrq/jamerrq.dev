@@ -1,6 +1,6 @@
 ---
 layout: '@layouts/blog-layout.astro'
-title: Sobre esta maravillosa página web
+title: Sobre esta increíble página web
 hrefLang: ../../../blog/building-this-website
 ---
 
@@ -13,12 +13,13 @@ tus habilidades y tu personalidad. Es un lugar para compartir tus pensamientos e
 ideas. Es un lugar para conectarse con otros. Es un lugar para ser encontrado.
 
 De hecho, antes de esta, desarrollé un par de páginas web para mí. Todas fueron
-hechas a partir de una plantilla, y solo cambié el contenido. No me gustó eso.
+hechas a partir de una plantilla, y solo cambié el contenido. No me gustaba
+tanto eso. No me convencía del todo.
 Quería construir mi propia página web desde cero. Quería tener control total
 sobre ella. Quería divertirme y aprender de ella.
 
-Es por eso que a principios de 2024 decidí construir mi propia página web. Había
-requisitos específicos que quería cumplir:
+Es por eso que a principios de 2024 decidí construir mi propia página web. Estos
+son algunos de los requisitos específicos que quería cumplir:
 
 - Debería ser rápida. Quería tener una puntuación de 100 en todas las métricas de
   Lighthouse.

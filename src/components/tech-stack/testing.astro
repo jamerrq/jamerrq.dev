@@ -1,5 +1,5 @@
 ---
-const OS_STYLES = [
+const TESTING_STYLES = [
   'col-span-1 xl:col-span-1',
   'row-span-2',
   'gap-2',
@@ -26,20 +26,9 @@ const OS_STYLES = [
   'p-2'
 ].join(' ')
 
-const DEV_ICONS_STYLES = [
-  'xl:w-10 w-8',
-  'xl:h-10 h-8',
-  'hover:scale-110',
-  'transition-all',
-  'dark:bg-slate-300',
-  'bg-slate-900',
-  'p-1',
-  'rounded-md',
-  'border-2',
-  'border-slate-800'
-].join(' ')
-
-import { siVitest, siMocha, siChai, siJest, siGit } from 'simple-icons'
+import TechIcon from '@components/icons/tech-icon.astro'
+import TechIcons, { type IconProps } from '@data/tech-icons'
+const { testing } = TechIcons
 
 interface Props {
   lang?: string
@@ -47,7 +36,7 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 ---
 
-<article class={OS_STYLES}>
+<article class={TESTING_STYLES}>
   <header class='flex gap-2'>
     <h1>
       {lang === 'en' ? 'Testing' : 'Pruebas'}
@@ -56,57 +45,6 @@ const { lang = 'en' }: Props = Astro.props
   <main
     class='xl:grid flex place-items-center gap-2 grid-cols-2 grid-rows-2 [&>a>img]:rounded-sm [&>a>img]:border-2'
   >
-    <!-- Vitest -->
-    <a
-      href='https://vitest.dev/'
-      target='_blank'
-      rel='noopener noreferrer'
-      title='Vitest'
-    >
-      <svg
-        class={DEV_ICONS_STYLES}
-        set:html={siVitest.svg}
-        fill={`#${siVitest.hex}`}
-      />
-    </a>
-    <!-- Mocha -->
-    <a
-      href='https://mochajs.org/'
-      target='_blank'
-      rel='noopener noreferrer'
-      title='Mocha'
-    >
-      <svg
-        class={DEV_ICONS_STYLES}
-        set:html={siMocha.svg}
-        fill={`#${siMocha.hex}`}
-      />
-    </a>
-    <!-- Chai -->
-    <a
-      href='https://www.chaijs.com/'
-      target='_blank'
-      rel='noopener noreferrer'
-      title='Chai'
-    >
-      <svg
-        class={DEV_ICONS_STYLES}
-        set:html={siChai.svg}
-        fill={`#${siGit.hex}`}
-      />
-    </a>
-    <!-- Jest -->
-    <a
-      href='https://jestjs.io/'
-      target='_blank'
-      rel='noopener noreferrer'
-      title='Jest'
-    >
-      <svg
-        class={DEV_ICONS_STYLES}
-        set:html={siJest.svg}
-        fill={`#${siJest.hex}`}
-      />
-    </a>
+    {testing.map((icon: IconProps) => <TechIcon obj={icon} />)}
   </main>
 </article>

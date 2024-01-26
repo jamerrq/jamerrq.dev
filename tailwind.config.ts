@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss'
+
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class', // or 'media' or 'class
@@ -23,8 +24,8 @@ export default {
     extend: {
       fontFamily: {
         'rubik-doodle': ['Rubik Doodle Shadow', 'system-ui'],
-        merriweather: ['Merriweather', 'serif'],
-      },
+        merriweather: ['Merriweather', 'serif']
+      }
     },
     colors: {
       emerald: {
@@ -38,7 +39,7 @@ export default {
         700: '#047857',
         800: '#065f46',
         900: '#064e3b',
-        950: '#022c22',
+        950: '#022c22'
       },
       indigo: {
         50: '#eef2ff',
@@ -51,7 +52,7 @@ export default {
         700: '#4338ca',
         800: '#3730a3',
         900: '#312e81',
-        950: '#1e1b4b',
+        950: '#1e1b4b'
       },
       blue: {
         50: '#eff6ff',
@@ -64,7 +65,7 @@ export default {
         700: '#1d4ed8',
         800: '#1e40af',
         900: '#1e3a8a',
-        950: '#172554',
+        950: '#172554'
       },
       teal: {
         50: '#f0fdfa',
@@ -77,7 +78,7 @@ export default {
         700: '#0f766e',
         800: '#115e59',
         900: '#134e4a',
-        950: '#042f2e',
+        950: '#042f2e'
       },
       slate: {
         50: '#f8fafc',
@@ -90,7 +91,7 @@ export default {
         700: '#334155',
         800: '#1e293b',
         900: '#0f172a',
-        950: '#020617',
+        950: '#020617'
       },
       amber: {
         50: '#fffbeb',
@@ -103,7 +104,7 @@ export default {
         700: '#b45309',
         800: '#92400e',
         900: '#78350f',
-        950: '#451a03',
+        950: '#451a03'
       },
       red: {
         50: '#fef2f2',
@@ -116,7 +117,7 @@ export default {
         700: '#b91c1c',
         800: '#991b1b',
         900: '#7f1d1d',
-        950: '#450a0a',
+        950: '#450a0a'
       },
       yellow: {
         50: '#fefce8',
@@ -129,7 +130,7 @@ export default {
         700: '#a16207',
         800: '#854d0e',
         900: '#713f12',
-        950: '#422006',
+        950: '#422006'
       },
       cyan: {
         50: '#ecfeff',
@@ -142,22 +143,29 @@ export default {
         700: '#0e7490',
         800: '#155e75',
         900: '#164e63',
-        950: '#083344',
-      },
+        950: '#083344'
+      }
     }
   },
-  plugins: [
-    require('tailwindcss-debug-screens'),
-  ],
+  plugins: [require('tailwindcss-debug-screens')],
   safelist: [
-    'fill-[#BC52EE]', 'fill-[#3FCF8E]',
-    'fill-[#000000]', 'fill-[#06B6D4]',
-    'fill-[#3178C6]', 'fill-[#512BD4]',
-    'fill-[#512BD4]', 'fill-[#000000]',
-    'fill-[#52B0E7]', 'fill-[#4169E1]',
-    'fill-[#61DAFB]', 'fill-[#3776AB]',
-    'fill-[#F37626]', 'fill-[#008080]',
-    'fill-[#E34F26]', 'fill-[#F7DF1E]',
-    'fill-[#777BB4]', 'fill-[#1572B6]'
+    'fill-[#BC52EE]',
+    'fill-[#3FCF8E]',
+    'fill-[#000000]',
+    'fill-[#06B6D4]',
+    'fill-[#3178C6]',
+    'fill-[#512BD4]',
+    'fill-[#512BD4]',
+    'fill-[#000000]',
+    'fill-[#52B0E7]',
+    'fill-[#4169E1]',
+    'fill-[#61DAFB]',
+    'fill-[#3776AB]',
+    'fill-[#F37626]',
+    'fill-[#008080]',
+    'fill-[#E34F26]',
+    'fill-[#F7DF1E]',
+    'fill-[#777BB4]',
+    'fill-[#1572B6]'
   ]
-}
+} satisfies Config

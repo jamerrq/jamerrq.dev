@@ -26,39 +26,9 @@ const WEB_DEV_STYLES = [
   'p-2'
 ].join(' ')
 
-import {
-  siNodedotjs,
-  siExpress,
-  siPostgresql,
-  siMongodb,
-  siSqlite,
-  siSequelize,
-  siDjango,
-  siAstro,
-  siNextdotjs,
-  siReact,
-  siRedux,
-  siTailwindcss,
-  // siSass,
-  siCss3,
-  siHtml5,
-  siSupabase,
-  siAzuredevops,
-  siAmazonaws,
-  siGooglecloud
-} from 'simple-icons'
-
-const TECH_ICON_STYLES = [
-  'xl:w-10 w-8',
-  'xl:h-10 h-8',
-  'hover:scale-110',
-  'transition-all',
-  'dark:bg-slate-300',
-  'bg-slate-900',
-  'p-1',
-  'rounded-md',
-  'border-2'
-].join(' ')
+import TechIcon from '@components/icons/tech-icon.astro'
+import TechIcons from '@data/tech-icons'
+const { backend, frontend, cloud } = TechIcons
 
 interface Props {
   lang?: string
@@ -67,14 +37,6 @@ const { lang = 'en' }: Props = Astro.props
 ---
 
 <article class={WEB_DEV_STYLES}>
-  <!-- <div class="flex gap-2">
-      <p>Backend</p>
-      <p class="font-thin">󰒋</p>
-    </div>
-    <div>
-      <p>Frontend</p>
-      <p class="font-thin">󰒋</p>
-    </div> -->
   <header class='flex gap-2 text-2xl'>
     <h1>
       {
@@ -84,7 +46,6 @@ const { lang = 'en' }: Props = Astro.props
         }[lang]
       }
     </h1>
-    <!-- <p class='font-thin'>󰜫</p> -->
   </header>
   <ul class='text-xl items-center p-1 w-full flex flex-col gap-1'>
     <li>
@@ -92,116 +53,18 @@ const { lang = 'en' }: Props = Astro.props
         class='flex gap-2 justify-center dark:text-amber-300 text-amber-950'
       >
         <h2>Backend</h2>
-        <!-- <p class='font-thin'>󰒍</p> -->
       </header>
       <main>
         <ul
           class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
-          <li>
-            <!-- Node -->
-            <a
-              href='https://nodejs.org/en'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Node.js'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siNodedotjs.svg}
-                fill={`#${siNodedotjs.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- Express -->
-            <a
-              href='https://expressjs.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Express.js'
-            >
-              <svg
-                class={`${TECH_ICON_STYLES} fill-[#fff] dark:fill-[#000]`}
-                set:html={siExpress.svg}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- PostgreSQL -->
-            <a
-              href='https://www.postgresql.org/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='PostgreSQL'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siPostgresql.svg}
-                fill={`#${siPostgresql.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- MongoDB -->
-            <a
-              href='https://www.mongodb.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='MongoDB'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siMongodb.svg}
-                fill={`#${siMongodb.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- SQLite -->
-            <a
-              href='https://www.sqlite.org/index.html'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='SQLite'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siSqlite.svg}
-                fill={`#${siTailwindcss.hex}`}
-              />
-            </a>
-          </li>
-          <!-- Sequelize -->
-          <li>
-            <a
-              href='https://sequelize.org/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Sequelize'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siSequelize.svg}
-                fill={`#${siSequelize.hex}`}
-              />
-            </a>
-          </li>
-          <!-- Django -->
-          <li>
-            <a
-              href='https://www.djangoproject.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Django'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siDjango.svg}
-                fill={`#${siAstro.hex}`}
-              />
-            </a>
-          </li>
+          {
+            backend.map((tech) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
         </ul>
       </main>
       <li>
@@ -212,125 +75,13 @@ const { lang = 'en' }: Props = Astro.props
           <!-- <p class='font-thin'></p> -->
         </header>
         <ul class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2'>
-          <li>
-            <!-- Astro -->
-            <a
-              href='https://astro.build/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Astro'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siAstro.svg}
-                fill={`#${siAstro.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- Next -->
-            <a
-              href='https://nextjs.org/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Next.js'
-            >
-              <svg
-                class={`${TECH_ICON_STYLES} fill-[#fff] dark:fill-[#000]`}
-                set:html={siNextdotjs.svg}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- React -->
-            <a
-              href='https://reactjs.org/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='React'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siReact.svg}
-                fill={`#${siCss3.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- Redux -->
-            <a
-              href='https://redux.js.org/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Redux'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siRedux.svg}
-                fill={`#${siRedux.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- Tailwind -->
-            <a
-              href='https://tailwindcss.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Tailwind CSS'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siTailwindcss.svg}
-                fill={`#${siTailwindcss.hex}`}
-              />
-            </a>
-          </li>
-          <!-- SASS -->
-          <!-- <li>
-            <a
-              href='https://sass-lang.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <img
-                src='https://img.shields.io/badge/Sass-%23CC6699.svg?style=for-the-badge&logo=sass&logoColor=white'
-                alt='sass'
-                title='SASS'
-                class='hover:scale-110 transition-all'
-              />
-            </a>
-          </li> -->
-          <!-- CSS -->
-          <li>
-            <a
-              href='https://developer.mozilla.org/en-US/docs/Web/CSS'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Cascade Style Sheets'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siCss3.svg}
-                fill={`#${siCss3.hex}`}
-              />
-            </a>
-          </li>
-          <!-- HTML -->
-          <li>
-            <a
-              href='https://developer.mozilla.org/en-US/docs/Web/HTML'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='HyperText Markup Language'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siHtml5.svg}
-                fill={`#${siHtml5.hex}`}
-              />
-            </a>
-          </li>
+          {
+            frontend.map((tech) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
         </ul>
       </li>
       <li>
@@ -348,80 +99,15 @@ const { lang = 'en' }: Props = Astro.props
           <!-- <p class='font-thin'>󰅟</p> -->
         </header>
         <ul class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2'>
-          <li>
-            <!-- Supabase -->
-            <a
-              href='https://supabase.io/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Supabase'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siSupabase.svg}
-                fill={`#${siSupabase.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- Azure -->
-            <a
-              href='https://azure.microsoft.com/en-us/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Azure'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siAzuredevops.svg}
-                fill={`#${siAzuredevops.hex}`}
-              />
-            </a>
-          </li>
-          <li>
-            <!-- AWS -->
-            <a
-              href='https://aws.amazon.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Amazon Web Services'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siAmazonaws.svg}
-                fill='#ff9900'
-              />
-            </a>
-          </li>
-          <li>
-            <!-- Google Cloud -->
-            <a
-              href='https://cloud.google.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Google Cloud'
-            >
-              <svg
-                class={TECH_ICON_STYLES}
-                set:html={siGooglecloud.svg}
-                fill='#4285f4'
-              />
-            </a>
-          </li>
+          {
+            cloud.map((tech) => (
+              <li>
+                <TechIcon obj={tech} />
+              </li>
+            ))
+          }
         </ul>
       </li>
-      <!-- <li>
-        <header class="flex gap-2">
-          <h2>Tools</h2>
-          <p class="font-thin">󰦬</p>
-        </header>
-      </li>
-      <li>
-        <header class="flex gap-2">
-          <h2>OS</h2>
-          <p class="font-thin"></p>
-        </header>
-      </li> -->
     </li>
   </ul>
 </article>

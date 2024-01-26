@@ -23,7 +23,7 @@
         "src/utils/index.ts"
       ]
     },
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "jsxImportSource": "preact",
   }
 }
