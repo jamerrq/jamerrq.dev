@@ -1,5 +1,3 @@
-import type { Config } from 'tailwindcss'
-
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class', // or 'media' or 'class
@@ -168,4 +166,4 @@ export default {
     'fill-[#777BB4]',
     'fill-[#1572B6]'
   ]
-} satisfies Config
+}
