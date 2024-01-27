@@ -17,7 +17,9 @@ jobs:
       - name: Install dependencies
         run: curl -fsSL https://bun.sh/install | bash && ~/.bun/bin/bun install
 
-      # Not using npm? Change `npm run build` to `yarn build` or `pnpm run build`
+      - name: Check Tsx
+        run: ~/.bun/bin/bun run check-tsx
+
       - name: Build Astro
         run: ~/.bun/bin/bun run build
 

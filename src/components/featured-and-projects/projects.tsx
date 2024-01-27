@@ -2,7 +2,7 @@ import { data } from '@data/projects.json'
 
 import { shuffle } from '@utils'
 
-const shuffledData = shuffle(data)
+const shuffledData = shuffle([...data])
 
 const PROJECT_STYLES: string = [
   'col-span-6',
@@ -94,13 +94,13 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
     <>
       {/* <DoubleLeftButton _f={goLeft} /> */}
       {Array.from(Array(n).keys()).map((i) => {
-        const project = shuffledData.at((i + index.value) % data.length)!
+        const project = shuffledData.at((i + index.value) % data.length)
         return (
           <article class={PROJECT_STYLES} key={i}>
             {i === 0 && <DoubleLeftButton _f={goLeft} />}
-            <h1 class='xl:text-3xl text-xl'>{project.title}</h1>
+            <h1 class='xl:text-3xl text-xl'>{project?.title}</h1>
             <p class='font-bold font-merriweather dark:text-slate-200 text-xs xl:text-base max-w-[400px] text-balance'>
-              {project.description[lang as 'es' | 'en']}
+              {project?.description[lang as 'es' | 'en']}
             </p>
             {/* <span class='responsive-text-xs font-semibold'>Stack</span> */}
             <ul class='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-sm flex-wrap'>
