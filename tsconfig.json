@@ -3,6 +3,7 @@
   "exclude": [
     "node_modules",
     "dist",
+    "astro.config.ts"
   ],
   "compilerOptions": {
     "baseUrl": ".",

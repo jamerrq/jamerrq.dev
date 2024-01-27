@@ -258,3 +258,113 @@ de Deno.
 
 Decidí usar Deno Deploy porque es muy fácil de usar y es gratis. No tengo que
 preocuparme por el servidor, solo tengo que preocuparme por el código.
+
+Además, es el único adaptador (en mi conocimiento) que me permite levantar una preview local sin tener que hacer un deploy. Esto junto con las herramientas de
+desarrollo me permiten obtener una experiencia de desarrollo muy similar a la
+que tendría con un servidor local una vez que haya hecho mandado el código a
+producción. A decir verdad mi experiencia tanto con Deno como Deno Deploy ha sido muy buena y me
+gustaría seguir usándolo en el futuro. Un gran trabajo de Ryan Dahl y todo el
+equipo de Deno.
+
+## Qué incluir?
+
+Una vez definida toda la estructura del sitio, me puse a pensar que es lo que
+quería incluir en el sitio. Era evidente que debía tener un espacio para
+mostrar mis proyectos, así que fue la primera sección que agregué. Las secciones
+de contacto, información sobre mí y proyectos en los que estoy trabajando
+también debían ocupar un lugar. Finalmente luego de pensarlo un poco decidí
+también incluir un blog. Si bien no me considero un maestro en el arte de
+escribir, creo que es una buena forma de compartir conocimiento y de aprender
+más sobre los temas que me interesan.
+
+En este artículo: 'Technical Writing for Developers – Why You Should Have a Blog and How to Start One' se explica muy bien los beneficios de tener un blog y como empezar uno. Fué una de las razones por las que decidí incluir un blog en mi sitio.
+
+## Revisión por MoureDev
+
+El 5 de enero, cuando apenas llevaba unos 4 escasos días con el desarrollo de
+este sitio, pude participar en una revisión en vivo de portafolios por parte de
+<a
+href="https://moure.dev/" target="_blank" rel="noopener noreferrer"
+title="MoureDev">MoureDev</a>. En esta revisión se analizaron varios portafolios y se dieron
+consejos para mejorarlos. En mi caso, creo que la revisión fue muy positiva y
+me sirvió mucho para mejorar el diseño y la estructura del sitio. A continuación
+dejo el video de la revisión por si alguien quiere verla.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zFbTXe1yFGA?si=QFmUL3GfvU1C69aK&amp;start=818" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Cosas que quedaron afuera
+
+No todo lo que se me ocurrió incluir en el sitio terminó siendo incluido. Acá
+un resumen de las cosas que decidí no incluir y porque.
+
+
+### Fira Code Nerd Font
+
+Fira Code Nerd Font es una fuente que incluye iconos de programación. De hecho es mi fuente favorita para programar. La idea
+era usarla para mostrar los iconos de las tecnologías que uso en el sitio y al
+mismo tiempo usarla para tener cualquier variedad de iconos que me hicieran
+falta en el sitio, como por ejemplo los iconos de las redes sociales o los
+botones del menú. Sin embargo, esta hacía que el sitio pesara mucho más, incluso
+después de haberla optimizado. Por lo tanto, decidí no usarla, ya que iba en
+contra de mi objetivo de tener un sitio lo más liviano posible.
+
+Para reemplazar los iconos estuve usando tanto svgs de licencia libre como
+los de la librería <a href='https://www.npmjs.com/package/simple-icons' target='_blank' rel='noopener noreferrer' title=''>simple-icons</a>, los cuales son muy fáciles de usar y resultan muy livianos.
+
+### CSS Peeps
+
+CSS Peeps es una librería que permite agregar personajes animados a un sitio
+web. La idea era usarla para agregar un personaje animado que me representara
+en el sitio. Sin embargo, por más que me gustara la idea, esto hacía que
+me costará obtener un puntaje ideal en rendimiento en la herramienta de
+Lighthouse. Sin embargo, al ser un proyecto que me gustó bastante, lo he
+usado para crear tanto las imágenes de open graph como las imágenes de twitter
+de este sitio.
+
+Más información sobre CSS Peeps en: <a href='https://csspeeps.com/' target='_blank' rel='noopener noreferrer' title=''>https://csspeeps.com/</a>
+
+### Typed CSS
+
+Typed CSS es una librería que permite agregar animaciones de texto a un sitio
+web. La usé para agregar animaciones de texto en el sitio, pero finalmente
+decidí no usarla porque hacía que la carga inicial de CSS fuera muy pesada.
+
+No obstante, es una librería que vale la pena probar y que puede ser muy útil
+para agregar animaciones de texto a un sitio web en caso de que se necesiten.
+
+Más información sobre Typed CSS en: <a href='https://typedcss.com/' target='_blank' rel='noopener noreferrer' title=''>https://typedcss.com/</a>
+
+## El resultado final
+
+Luego de varios días de desarrollo, el sitio ya estaba listo para ser publicado.
+El resultado final es el que se puede ver en el sitio actualmente. Si bien
+siempre hay cosas que se pueden mejorar, estoy muy contento con el resultado
+final, ya que creo que cumple con todos los objetivos que me había propuesto
+al principio.
+
+![Lighthouse Preview Report](../../../../lib/lighthouse/preview-report.png)
+
+## Conclusiones
+
+Este sitio es un proyecto que me ha gustado mucho desarrollar. Me ha permitido
+aprender mucho sobre el desarrollo de sitios web y sobre las tecnologías que
+he usado para desarrollarlo. Además, me ha permitido aprender sobre temas que
+no había tocado antes, como por ejemplo el SEO. Por último, me ha permitido
+tener un sitio web personal que me representa y que me permite mostrar mis
+proyectos y compartir mis conocimientos con el mundo.
+
+Siéntete libre de revisar el código fuente del sitio en: <a href='
+https://github.com/jamerrq/jamerrq.dev' target='_blank' rel='noopener noreferrer'
+title='Repositorio'>GitHub</a> y de contactarme si tienes alguna duda o sugerencia.
+
+Feliz código! Ten un buen día!
+
+<br>
+
+## Referencias
+
+- <a
+  href="https://www.freecodecamp.org/news/technical-writing-for-developers-why-you-should-have-a-blog-and-how-to-start-one/"
+  target="_blank" rel="noopener noreferrer" title="Technical Writing for
+  Developers – Why You Should Have a Blog and How to Start One">Technical
+  Writing for Developers – Why You Should Have a Blog and How to Start One</a>
