@@ -191,7 +191,7 @@ información.
 
 <a href="https://fontsource.org/" target="_blank" rel="noopener
 noreferrer" title="Fontsource">Fontsource</a> es una colección de fuentes de código abierto que se
-empaquetan en paquetes NPM individuales para autohospedaje en tus aplicaciones
+empaquetan en paquetes NPM individuales para auto hospedaje en tus aplicaciones
 web. Revisa la <a
 href="https://fontsource.org/docs/getting-started/introduction" target="_blank"
 rel="noopener noreferrer" title="Fontsource docs">documentación de Fontsource</a> para más información
@@ -285,18 +285,14 @@ El 5 de enero, cuando apenas llevaba unos 4 escasos días con el desarrollo de
 este sitio, pude participar en una revisión en vivo de portafolios por parte de
 <a
 href="https://moure.dev/" target="_blank" rel="noopener noreferrer"
-title="MoureDev">MoureDev</a>. En esta revisión se analizaron varios portafolios y se dieron
-consejos para mejorarlos. En mi caso, creo que la revisión fue muy positiva y
-me sirvió mucho para mejorar el diseño y la estructura del sitio. A continuación
-dejo el video de la revisión por si alguien quiere verla.
+title="MoureDev">MoureDev</a>. Él es una voz importante en la comunidad de desarrolladores de habla hispana y ha sido catalogado por Microsoft y GitHub como uno de los desarrolladores más influyentes con categorías como `Most Valuable Professional (Microsoft)` y `GitHub Star`. En esta revisión se analizaron varios portafolios y se dieron consejos para mejorarlos. En mi caso, creo que la revisión fue muy positiva y me ayudó mucho a mejorar el diseño y la estructura del sitio. A continuación se muestra el video de la revisión por si alguien quiere verlo.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zFbTXe1yFGA?si=QFmUL3GfvU1C69aK&amp;start=818" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="xl:w-[560px] xl:h-[315px] self-center xl:m-2" src="https://www.youtube.com/embed/zFbTXe1yFGA?si=QFmUL3GfvU1C69aK&amp;start=818" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Cosas que quedaron afuera
 
 No todo lo que se me ocurrió incluir en el sitio terminó siendo incluido. Acá
 un resumen de las cosas que decidí no incluir y porque.
-
 
 ### Fira Code Nerd Font
 
@@ -342,7 +338,7 @@ siempre hay cosas que se pueden mejorar, estoy muy contento con el resultado
 final, ya que creo que cumple con todos los objetivos que me había propuesto
 al principio.
 
-![Lighthouse Preview Report](../../../../lib/lighthouse/preview-report.png)
+![Lighthouse Preview Report](https://raw.githubusercontent.com/jamerrq/jamerrq.dev/26345c40eb52575aaed3d94b593af4d93fe9cec5/lib/lighthouse/preview-report.png)
 
 ## Conclusiones
 

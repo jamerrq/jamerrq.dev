@@ -340,12 +340,14 @@ In resume, I decided to include the following sections:
 On January 5th, when I had only been developing this site for about 4 short
 days, I was able to participate in a live portfolio review by <a
 href="https://moure.dev/" target="_blank" rel="noopener noreferrer"
-title="MoureDev">MoureDev</a>. In this review several portfolios were analyzed
+title="MoureDev">MoureDev</a>. He is an important voice in the Spanish-speaking developer community and has
+been cataloged by Microsoft and GitHub as one of the most influential developers
+with categories such as `Most Valuable Professional (Microsoft)` and `GitHub Star`. In this review several portfolios were analyzed
 and tips were given to improve them. In my case, I think the review was very
 positive and it helped me a lot to improve the design and structure of the site.
 Below is the video of the review in case anyone wants to see it.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zFbTXe1yFGA?si=QFmUL3GfvU1C69aK&amp;start=818" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="xl:w-[560px] xl:h-[315px] self-center xl:m-2" src="https://www.youtube.com/embed/zFbTXe1yFGA?si=QFmUL3GfvU1C69aK&amp;start=818" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Removals
 
@@ -399,7 +401,7 @@ final result is what can be seen on the site currently. Although there are
 always things that can be improved, I am very happy with the final result,
 because I think it meets all the goals I had set for myself at the beginning.
 
-![Lighthouse Preview Report](../../../lib/lighthouse/preview-report.png)
+![Lighthouse Preview Report](https://raw.githubusercontent.com/jamerrq/jamerrq.dev/26345c40eb52575aaed3d94b593af4d93fe9cec5/lib/lighthouse/preview-report.png)
 
 ## Conclusion
 

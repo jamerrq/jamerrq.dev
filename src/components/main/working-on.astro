@@ -47,7 +47,7 @@ import {
 } from 'simple-icons'
 
 // {ICONS_STYLES}
-const ICONS_STYLES = ['w-4', 'h-4', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
+const ICONS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
   ' '
 )
 
@@ -59,7 +59,7 @@ const { lang = 'en' }: Props = Astro.props
 
 <article class={EXPERIENCE_STYLES} title="Projects I'm working on">
   <div
-    class='text-xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
+    class='text-2xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
   >
     <p>
       <!-- Working on -->
@@ -164,7 +164,7 @@ const { lang = 'en' }: Props = Astro.props
             title='PostgreSQL'
           >
             <svg
-              class='w-3 xl:w-5 h-3 xl:h-6 hover:scale-110'
+              class='w-4 xl:w-5 h-4 xl:h-6 hover:scale-110'
               set:html={siPostgresql.svg}
               fill={`#${siPostgresql.hex}`}
             />
