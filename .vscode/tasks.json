@@ -12,7 +12,7 @@
       "type": "npm",
       "script": "dev",
       "problemMatcher": [],
-      "label": "astro: dev",
+      "label": "dev",
       "detail": "astro dev --host"
     },
     {
@@ -20,8 +20,15 @@
       "script": "local-build-and-preview",
       "group": "build",
       "problemMatcher": [],
-      "label": "npm: local-build-and-preview",
+      "label": "local-build-and-preview",
       "detail": "bun lint && bun run build && bun run preview"
+    },
+    {
+      "type": "npm",
+      "script": "install",
+      "problemMatcher": [],
+      "label": "install",
+      "detail": "bun i"
     }
   ]
 }
