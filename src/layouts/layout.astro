@@ -52,7 +52,17 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     >
       <slot />
     </main>
-    <a href='https://librecounter.org/referer/show' class='hidden'></a>
+    <a
+      href='https://librecounter.org/referer/show'
+      target='_blank'
+      rel='noreferrer'
+      class='hidden'
+    >
+      <img
+        src='https://librecounter.org/counter.svg'
+        referrerpolicy='unsafe-url'
+      />
+    </a>
     <style is:global>
       /* Reset by @souporserious */
       * {
