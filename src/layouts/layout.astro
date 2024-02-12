@@ -10,6 +10,9 @@ import '@fontsource/rubik-doodle-shadow'
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
+const libreCounterEndpoint =
+  'https://librecounter.org/count?url=http://jamerrq.deno.dev&userAgent=roboto/1.0'
+fetch(libreCounterEndpoint)
 ---
 
 <!doctype html>
@@ -58,10 +61,7 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
       rel='noreferrer'
       class='hidden'
     >
-      <img
-        src='https://librecounter.org/counter.svg'
-        referrerpolicy='unsafe-url'
-      />
+      <img src='' referrerpolicy='unsafe-url' />
     </a>
     <style is:global>
       /* Reset by @souporserious */
