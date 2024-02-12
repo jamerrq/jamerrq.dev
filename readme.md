@@ -39,19 +39,7 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 
 ![404](./lib/pages/404.png)
 
-<details closed>
-
-<summary>
-
-## New! Mobile version 📱
-
-</summary>
-
-![Mobile](./lib/snaps/mobile2.png)
-
-</details>
-
-### All shipped into less than 1MB ⚡
+### All shipped into less than 500 kB ⚡
 
 ![Alt text](lib/snaps/resources-loaded.png)
 
@@ -75,7 +63,7 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=
 
 ## Development 🤖
 
-- [Nerd Fonts Cheat Sheet](https://www.nerdfonts.com/cheat-sheet)
+- [Nerd Fonts Cheat Sheet (removed)](https://www.nerdfonts.com/cheat-sheet)
 - [Tailwind CSS Debug Screens](https://github.com/jorenvanhee/tailwindcss-debug-screens)
 - [Typed CSS (removed)](https://typedcss.com/)
 - [CSS Peeps (removed)](https://css-peeps.com/)
@@ -84,3 +72,4 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat-square&logo=
 - [Astro View Transitions - Lifecycle Events](https://docs.astro.build/en/guides/view-transitions/#lifecycle-events)
 - [🦔 AstroCritters](https://github.com/astro-community/AstroCritters)
 - [@astrojs/preact](https://docs.astro.build/en/guides/integrations-guide/preact/)
+- [Unlighthouse](https://unlighthouse.dev/)

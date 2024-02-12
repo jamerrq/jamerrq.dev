@@ -92,7 +92,6 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
 
   return (
     <>
-      {/* <DoubleLeftButton _f={goLeft} /> */}
       {Array.from(Array(n).keys()).map((i) => {
         const project = shuffledData.at((i + index.value) % data.length)
         return (
@@ -102,7 +101,6 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
             <p class='font-bold font-merriweather dark:text-slate-200 text-xs xl:text-base max-w-[400px] text-balance'>
               {project?.description[lang as 'es' | 'en']}
             </p>
-            {/* <span class='responsive-text-xs font-semibold'>Stack</span> */}
             <ul class='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-sm flex-wrap'>
               {project?.stack?.map((tech, index) => (
                 <li key={index}>{SimpleIcon(tech)}</li>
@@ -134,7 +132,6 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
           </article>
         )
       })}
-      {/* <DoubleRightButton _f={goRight} /> */}
     </>
   )
 }

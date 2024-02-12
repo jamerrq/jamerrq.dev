@@ -37,7 +37,7 @@
       "hrefEs": "blog/proyectos-2024"
     },
     {
-      "title": "Creating the most secure server in the world with Node.js",
+      "title": "Creating a secure Node.js server with Express",
       "date": "Coming soon",
       "titleEs": "Creando el servidor más seguro del mundo con Node.js",
       "href": "creating-the-most-secure-server-in-the-world-with-nodejs",
@@ -49,6 +49,13 @@
       "titleEs": "Open Source: ¿Bendición o Maldición?",
       "href": "open-source-blessing-or-curse",
       "hrefEs": "open-source-bendicion-o-maldicion"
+    },
+    {
+      "title": "My take on the impostor syndrome",
+      "date": "Coming soon",
+      "titleEs": "Mi opinión sobre el síndrome del impostor",
+      "href": "impostor-syndrome",
+      "hrefEs": "sindrome-del-impostor"
     }
   ]
 }

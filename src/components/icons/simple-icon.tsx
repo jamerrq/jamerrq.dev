@@ -17,7 +17,8 @@ import {
   siHtml5,
   siJavascript,
   siPhp,
-  siCss3
+  siCss3,
+  siVisualstudiocode
 } from 'simple-icons'
 
 export const ICONS_SAFE_LIST_TAILWIND = [
@@ -149,6 +150,13 @@ function PhpLogo() {
   return SimpleIcon({ __html: siPhp.svg, fill: `#${siPhp.hex}` })
 }
 
+function VisualStudioCodeLogo() {
+  return SimpleIcon({
+    __html: siVisualstudiocode.svg,
+    fill: `#${siVisualstudiocode.hex}`
+  })
+}
+
 const toExport = {
   Astro: AstroLogo,
   Supabase: SupabaseLogo,
@@ -167,7 +175,8 @@ const toExport = {
   Html: HtmlLogo,
   Css: CssLogo,
   Javascript: JavaScriptLogo,
-  Php: PhpLogo
+  Php: PhpLogo,
+  'Visual Studio Code': VisualStudioCodeLogo
 }
 
 export type toExportType = typeof toExport

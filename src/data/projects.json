@@ -108,6 +108,18 @@
         "Php"
       ],
       "private": true
+    },
+    {
+      "title": "Checkbox Enhancement",
+      "description": {
+        "en": "Visual Studio Code extension to improve the enhancement when using checboxes, specially in markdown"
+      },
+      "stack": [
+        "TypeScript",
+        "Visual Studio Code"
+      ],
+      "repository": "https://github.com/jamerrq/checkbox-md-enhancement",
+      "demo": "https://marketplace.visualstudio.com/items?itemName=jamerrq.checkbox-counter"
     }
   ],
   "logos": [
