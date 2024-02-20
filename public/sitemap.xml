@@ -9,13 +9,78 @@
 
 <url>
   <loc>https://jamerrq.deno.dev/</loc>
-  <lastmod>2024-01-14T06:42:42+00:00</lastmod>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://jamerrq.deno.dev/tech-stack</loc>
-  <lastmod>2024-01-14T06:42:42+00:00</lastmod>
+  <loc>https://jamerrq.deno.dev/es</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/board</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/tech-stack</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/featured</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/docs/cv_Jamer_Rebolledo_en.pdf</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/blog</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/es/tech-stack</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/es/destacados-y-proyectos</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/docs/cv_Jamer_Rebolledo_es.pdf</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/es/blog</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/blog/building-this-website</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/blog/projects-2024</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/es/blog/acerca-de-esta-web</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jamerrq.deno.dev/es/blog/acerca-de-esta-web/</loc>
+  <lastmod>2024-02-20T07:39:40+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 
