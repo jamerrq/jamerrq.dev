@@ -22,8 +22,8 @@ const PROJECT_STYLES: string = [
   'xl:h-[400px] h-[300px]',
   'xl:h-full',
   'transition-all',
-  'border-2',
-  'border-emerald-500',
+  // 'border-2',
+  // 'border-emerald-500',
   'text-emerald-950',
   'dark:text-emerald-300',
   'dark:bg-emerald-900',
@@ -58,7 +58,7 @@ function SimpleIcon(key: string) {
 const BUTTONS_STYLES = [
   'absolute',
   'bg-cyan-300',
-  'rounded-sm',
+  'rounded-md',
   'flex',
   'items-center',
   'p-1'

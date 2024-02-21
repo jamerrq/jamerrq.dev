@@ -13,7 +13,7 @@ const LAST_ENTRIES_STYLES = [
   'w-full',
   'h-full',
   'transition-all',
-  'border-2',
+  // 'border-2',
   'dark:border-slate-300',
   'border-slate-950',
   'responsive-text-xs',
@@ -37,7 +37,7 @@ function ReadTimeBadge({
 }) {
   if (!readTime) return null
   return (
-    <span class='bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-800 border border-blue-400'>
+    <span class='bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded  border border-blue-400'>
       <svg
         class='w-2.5 h-2.5 me-1.5'
         aria-hidden='true'
@@ -54,7 +54,7 @@ function ReadTimeBadge({
 function Badges({ badges }: { badges?: string[] }) {
   if (!badges) return null
   return (
-    <div class='flex flex-wrap gap-2'>
+    <div class='flex flex-wrap gap-2 mt-2'>
       {badges.map((badge, index) => (
         <GenericBadge key={index} text={badge} />
       ))}
@@ -63,10 +63,17 @@ function Badges({ badges }: { badges?: string[] }) {
 }
 
 function GenericBadge({ text }: { text: string }) {
+  const COLORS = [
+    // 'indigo',
+    'yellow',
+    // 'amber',
+    'red',
+    'teal',
+    'pink',
+  ]
+  const index = Math.floor(Math.random() * COLORS.length)
   return (
-    <span
-      class={`bg-amber-100 text-amber-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-gray-700 border border-amber-400`}
-    >
+    <span class={`bg-${COLORS[index]}-100 text-${COLORS[index]}-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-${COLORS[index]}-900 dark:text-${COLORS[index]}-300`}>
       {text}
     </span>
   )
@@ -87,9 +94,9 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
               <li class='font-merriweather text-sm xl:text-base text-center'>
                 {entry.date}
               </li>
-              <li class='font-merriweather text-sm xl:text-base dark:bg-emerald-900 bg-emerald-300 py-1 px-2 rounded-sm cursor-pointer hover:scale-[1.02] transition-all ease-in-out flex flex-col gap-2 border-2'>
+              <li class='font-merriweather text-sm xl:text-base  py-1 px-2 rounded-sm cursor-pointer hover:scale-[1.02] transition-all ease-in-out flex flex-col gap-2'>
                 <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
-                  <div class='flex flex-col xl:flex-row gap-1'>
+                  <div class='flex flex-col xl:flex-row gap-4'>
                     <span>{lang === 'en' ? entry.title : entry.titleEs}</span>
                     <div class='xl:ml-auto'>
                       <ReadTimeBadge

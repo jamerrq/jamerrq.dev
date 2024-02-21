@@ -16,7 +16,7 @@ const WEB_DEV_STYLES = [
   'w-full',
   'h-full',
   'transition-all',
-  'border-2',
+  // 'border-2',
   'border-blue-950',
   'dark:border-blue-300',
   'dark:bg-slate-900',
@@ -56,7 +56,7 @@ const { lang = 'en' }: Props = Astro.props
       </header>
       <main>
         <ul
-          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
+          class='flex gap-1 w-full flex-wrap  p-1 rounded-sm'
         >
           {
             backend.map((tech) => (

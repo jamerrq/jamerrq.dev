@@ -153,7 +153,7 @@ function PhpLogo() {
 function VisualStudioCodeLogo() {
   return SimpleIcon({
     __html: siVisualstudiocode.svg,
-    fill: `#${siVisualstudiocode.hex}`
+    fill: `#${siTypescript.hex}`
   })
 }
 
