@@ -23,8 +23,7 @@ export default {
       fontFamily: {
         'rubik-doodle': ['Rubik Doodle Shadow', 'system-ui'],
         merriweather: ['Merriweather', 'serif']
-      },
-      
+      }
     }
   },
   plugins: [require('tailwindcss-debug-screens')],
@@ -71,6 +70,6 @@ export default {
     'bg-pink-100',
     'bg-pink-900',
     'text-pink-800',
-    'text-pink-300',
+    'text-pink-300'
   ]
 }

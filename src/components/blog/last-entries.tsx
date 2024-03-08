@@ -69,11 +69,13 @@ function GenericBadge({ text }: { text: string }) {
     // 'amber',
     'red',
     'teal',
-    'pink',
+    'pink'
   ]
   const index = Math.floor(Math.random() * COLORS.length)
   return (
-    <span class={`bg-${COLORS[index]}-100 text-${COLORS[index]}-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-${COLORS[index]}-900 dark:text-${COLORS[index]}-300`}>
+    <span
+      class={`bg-${COLORS[index]}-100 text-${COLORS[index]}-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-${COLORS[index]}-900 dark:text-${COLORS[index]}-300`}
+    >
       {text}
     </span>
   )

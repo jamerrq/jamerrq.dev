@@ -12,7 +12,7 @@
       "type": "npm",
       "script": "dev",
       "problemMatcher": [],
-      "label": "dev",
+      "label": "npm: dev",
       "detail": "astro dev --host"
     },
     {

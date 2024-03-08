@@ -31,25 +31,25 @@ const EXPERIENCE_STYLES = [
 ].join(' ')
 
 import {
-  siNodedotjs,
-  siExpress,
-  siPostgresql,
-  siSequelize,
-  siJsonwebtokens,
-  siPostman,
-  siReact,
-  siRedux,
-  siTailwindcss,
-  siVercel,
-  siVite,
-  siAuth0,
+  // siNodedotjs,
+  // siExpress,
+  // siPostgresql,
+  // siSequelize,
+  // siJsonwebtokens,
+  // siPostman,
+  // siReact,
+  // siRedux,
+  // siTailwindcss,
+  // siVercel,
+  // siVite,
+  // siAuth0,
   siGitkraken
 } from 'simple-icons'
 
 // {ICONS_STYLES}
-const ICONS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
-  ' '
-)
+// const ICONS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
+//   ' '
+// )
 
 interface Props {
   lang: string
@@ -58,7 +58,7 @@ const { lang = 'en' }: Props = Astro.props
 ---
 
 <article class={EXPERIENCE_STYLES} title="Projects I'm working on">
-  <div
+  <header
     class='text-2xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
   >
     <p>
@@ -70,278 +70,23 @@ const { lang = 'en' }: Props = Astro.props
       set:html={siGitkraken.svg}
       fill={`#${siGitkraken.hex}`}
     />
-  </div>
-  <div class='h-full w-full gap-2'>
-    <ul
-      class='flex gap-2 text-base flex-col justify-around h-full font-merriweather font-bold'
+  </header>
+
+  <div role='status'>
+    <svg
+      aria-hidden='true'
+      class='w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600'
+      viewBox='0 0 100 101'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
     >
-      <li
-        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'
-      >
-        <a
-          class='col-span-2'
-          href='https://pinturas-app-back.onrender.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <!-- Backend Server for IDE Pinturerias -->
-          <h1 class='text-sm xl:text-base'>
-            {
-              lang === 'en'
-                ? 'Backend Server for IDE Pinturerias'
-                : 'Servidor Backend para IDE Pinturerias'
-            }
-          </h1>
-        </a>
-        <span class='text-sm xl:text-base'>
-          <!-- Time -->
-          {lang === 'en' ? 'Time' : 'Tiempo'}
-        </span>
-        <span>
-          {lang === 'en' ? '7+ months' : '7+ meses'}
-        </span>
-        <span>
-          <!-- Repository -->
-          {lang === 'en' ? 'Repository' : 'Repositorio'}
-        </span>
-        <a
-          href='https://github.com/Ide-Pinturerias/pinturas-app-back'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <span class='text-xs xl:text-base'> pinturas-app-back</span>
-        </a>
-        <span>
-          <!-- Live Demo -->
-          {lang === 'en' ? 'Preview' : 'Avance'}
-        </span>
-        <a
-          href='https://pinturas-app-back.onrender.com/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <span class='text-sm xl:text-base'> onrender.com</span>
-        </a>
-        <span>
-          <!-- Technologies -->
-          {lang === 'en' ? 'Technologies' : 'Tecnologías'}
-        </span>
-        <div
-          class='flex w-full overflow-hidden bg-emerald-100 gap-2 p-1 items-center justify-center'
-        >
-          <!-- Node -->
-          <a
-            href='https://nodejs.org/en/about'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='Node.js'
-          >
-            <svg
-              class={ICONS_STYLES}
-              set:html={siNodedotjs.svg}
-              fill={`#${siNodedotjs.hex}`}
-            />
-          </a>
-          <!-- Express -->
-          <a
-            href='https://expressjs.com/'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='Express'
-          >
-            <svg
-              class={ICONS_STYLES}
-              set:html={siExpress.svg}
-              fill={`#${siExpress.hex}`}
-            />
-          </a>
-          <!-- PostgreSQL -->
-          <a
-            href='https://www.postgresql.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='PostgreSQL'
-          >
-            <svg
-              class='w-4 xl:w-5 h-4 xl:h-6 hover:scale-110'
-              set:html={siPostgresql.svg}
-              fill={`#${siPostgresql.hex}`}
-            />
-          </a>
-          <!-- Sequelize -->
-          <a
-            href='https://sequelize.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='Sequelize'
-          >
-            <svg
-              class={ICONS_STYLES}
-              set:html={siSequelize.svg}
-              fill={`#${siSequelize.hex}`}
-            />
-          </a>
-          <!-- JWT -->
-          <a
-            href='https://jwt.io/'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='Json Web Tokens'
-          >
-            <svg
-              class={ICONS_STYLES}
-              set:html={siJsonwebtokens.svg}
-              fill={`#${siJsonwebtokens.hex}`}
-            />
-          </a>
-          <!-- Postman -->
-          <a
-            href='https://www.postman.com/'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='Postman'
-          >
-            <svg
-              class='w-5 h-5 hover:scale-110'
-              set:html={siPostman.svg}
-              fill={`#${siPostman.hex}`}
-            />
-          </a>
-        </div>
-      </li>
-      <li
-        class='grid grid-rows-2 grid-cols-2 justify-items-center gap-1 [&>*]:w-full [&>*]:text-center [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'
-      >
-        <a
-          href='https://pinturas-app-front.vercel.app/'
-          target='_blank'
-          rel='noopener noreferrer'
-          class='col-span-2 text-sm xl:text-base'
-        >
-          <!-- Frontend UI for IDE Pinturerias -->
-          {
-            lang === 'en'
-              ? 'Frontend UI for IDE Pinturerias'
-              : 'Interfaz de Usuario para IDE Pinturerias'
-          }
-        </a>
-        <span>
-          <!-- Time -->
-          {lang === 'en' ? 'Time' : 'Tiempo'}
-        </span>
-        <span>
-          <!-- 6+ months -->
-          {lang === 'en' ? '7+ months' : '7+ meses'}
-        </span>
-        <span>
-          <!-- Repository -->
-          {lang === 'en' ? 'Repository' : 'Repositorio'}
-        </span>
-        <a
-          href='https://github.com/Ide-Pinturerias/pinturas-app-front'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <span class='text-xs xl:text-base'> pinturas-app-front</span>
-        </a>
-        <span>
-          <!-- Live Demo -->
-          {lang === 'en' ? 'Preview' : 'Avance'}
-        </span>
-        <a
-          href='https://pinturas-app-front.vercel.app/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <span class='text-sm xl:text-base'> vercel.app</span>
-        </a>
-        <span>
-          <!-- Technologies -->
-          {lang === 'en' ? 'Technologies' : 'Tecnologías'}
-        </span>
-        <div
-          class='flex w-full bg-emerald-100 gap-2 p-1 items-center justify-center'
-        >
-          <!-- React -->
-          <a
-            href='https://reactjs.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='React'
-          >
-            <svg
-              class={ICONS_STYLES}
-              set:html={siReact.svg}
-              fill={`#${siSequelize.hex}`}
-            />
-          </a>
-          <!-- Redux -->
-          <a
-            href='https://redux.js.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-            title='Redux'
-          >
-            <svg
-              class={ICONS_STYLES}
-              set:html={siRedux.svg}
-              fill={`#${siRedux.hex}`}
-            />
-            <!-- Tailwind -->
-            <a
-              href='https://tailwindcss.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-              title='Tailwind CSS'
-            >
-              <svg
-                class={ICONS_STYLES}
-                set:html={siTailwindcss.svg}
-                fill={`#${siTailwindcss.hex}`}
-              />
-              <!-- Vercel -->
-              <a
-                href='https://vercel.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-                title='Vercel'
-              >
-                <svg
-                  class={ICONS_STYLES}
-                  set:html={siVercel.svg}
-                  fill={`#${siVercel.hex}`}
-                />
-                <!-- Vite -->
-                <a
-                  href='https://vitejs.dev/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  title='Vite'
-                >
-                  <svg
-                    class={ICONS_STYLES}
-                    set:html={siVite.svg}
-                    fill={`#${siVite.hex}`}
-                  />
-                  <!-- Auth0 -->
-                  <a
-                    href='https://auth0.com/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    title='Auth0'
-                  >
-                    <svg
-                      class={ICONS_STYLES}
-                      set:html={siAuth0.svg}
-                      fill={`#${siAuth0.hex}`}
-                    />
-                  </a>
-                </a>
-              </a>
-            </a>
-          </a>
-        </div>
-      </li>
-    </ul>
+      <path
+        d='M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z'
+        fill='currentColor'></path>
+      <path
+        d='M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z'
+        fill='currentFill'></path>
+    </svg>
+    <span class='sr-only'>Loading...</span>
   </div>
 </article>
