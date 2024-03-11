@@ -18,7 +18,9 @@ import {
   siJavascript,
   siPhp,
   siCss3,
-  siVisualstudiocode
+  siVisualstudiocode,
+  siDeno,
+  siNodedotjs
 } from 'simple-icons'
 
 export const ICONS_SAFE_LIST_TAILWIND = [
@@ -39,7 +41,8 @@ export const ICONS_SAFE_LIST_TAILWIND = [
   siHtml5,
   siJavascript,
   siPhp,
-  siCss3
+  siCss3,
+  siNodedotjs
 ].map((icon) => `fill-[#${icon.hex}]`)
 
 export interface SimpleIconProps {
@@ -157,6 +160,14 @@ function VisualStudioCodeLogo() {
   })
 }
 
+function DenoLogo() {
+  return SimpleIcon({ __html: siDeno.svg, fill: `#${siDeno.hex}` })
+}
+
+function NodeLogo() {
+  return SimpleIcon({ __html: siNodedotjs.svg, fill: `#${siNodedotjs.hex}` })
+}
+
 const toExport = {
   Astro: AstroLogo,
   Supabase: SupabaseLogo,
@@ -174,9 +185,11 @@ const toExport = {
   React: ReactLogo,
   Html: HtmlLogo,
   Css: CssLogo,
-  Javascript: JavaScriptLogo,
+  JavaScript: JavaScriptLogo,
   Php: PhpLogo,
-  'Visual Studio Code': VisualStudioCodeLogo
+  'Visual Studio Code': VisualStudioCodeLogo,
+  Deno: DenoLogo,
+  NodeJS: NodeLogo
 }
 
 export type toExportType = typeof toExport

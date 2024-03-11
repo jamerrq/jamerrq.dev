@@ -74,7 +74,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
     <div class={SUBTITLE_STYLES}>
       <p class='font-semibold text-xl xl:text-3xl'>Backend</p>
     </div>
-    <div class={`${ICON_BLOCKS_STYLES} bg-emerald-100`}>
+    <div class={`${ICON_BLOCKS_STYLES}`}>
       <!-- Node -->
       <svg
         class={SVGS_STYLES}
@@ -85,7 +85,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
       <svg
         class={SVGS_STYLES}
         set:html={siExpress.svg}
-        fill={`#${siExpress.hex}`}
+        fill={`#${siSequelize.hex}`}
       />
       <!-- PostgreSQL -->
       <svg
@@ -105,7 +105,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
         {lang === 'en' ? 'Languages' : 'Dialectos'}
       </p>
     </div>
-    <div class={`${ICON_BLOCKS_STYLES} bg-emerald-200`}>
+    <div class={`${ICON_BLOCKS_STYLES} `}>
       <!-- TypeScript -->
       <svg
         class={SVGS_STYLES}
@@ -132,7 +132,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
         {lang === 'en' ? 'Tools' : 'Misc'}
       </p>
     </div>
-    <div class={`${ICON_BLOCKS_STYLES} bg-emerald-300`}>
+    <div class={`${ICON_BLOCKS_STYLES} `}>
       <!-- Git -->
       <svg class={SVGS_STYLES} set:html={siGit.svg} fill={`#${siGit.hex}`} />
       <!-- Visual Studio Code -->
@@ -156,7 +156,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
       class='font-bold text-sm xl:text-base font-merriweather dark:text-emerald-300 text-slate-900 border-b-2'
     >
       <!-- Tap to see more -->
-      {lang === 'en' ? 'Tap to see more' : 'Toca para ver más'}
+      {lang === 'en' ? '❯ Tap to see more' : '❯ Toca para ver más'}
     </p>
   </aside>
 </a>

@@ -48,7 +48,7 @@ const { lang = 'en' }: Props = Astro.props
         <h2>IDEs</h2>
         <!-- <p class='font-thin'>󰨞</p> -->
       </header>
-      <main>
+      <section>
         <ul class='flex gap-1 w-full flex-wrap p-1 rounded-sm'>
           {
             ides.map((tech: IconProps) => (
@@ -58,14 +58,14 @@ const { lang = 'en' }: Props = Astro.props
             ))
           }
         </ul>
-      </main>
+      </section>
     </li>
     <li>
       <header class='flex gap-2'>
         <h2>APIs</h2>
         <!-- <p class='font-thin'>󰒍</p> -->
       </header>
-      <main class='flex'>
+      <section class='flex'>
         <ul
           class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
@@ -77,13 +77,13 @@ const { lang = 'en' }: Props = Astro.props
             ))
           }
         </ul>
-      </main>
+      </section>
     </li>
     <li>
       <header class='flex gap-2'>
         <h2>Linters</h2>
       </header>
-      <main>
+      <section>
         <ul
           class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
@@ -95,13 +95,13 @@ const { lang = 'en' }: Props = Astro.props
             ))
           }
         </ul>
-      </main>
+      </section>
     </li>
     <li>
       <header class='flex gap-2'>
         <h2>DVC</h2>
       </header>
-      <main>
+      <section>
         <ul
           class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
@@ -113,7 +113,7 @@ const { lang = 'en' }: Props = Astro.props
             ))
           }
         </ul>
-      </main>
+      </section>
     </li>
     <li class='col-span-2 -mt-2'>
       <header class='flex gap-2'>
@@ -122,7 +122,7 @@ const { lang = 'en' }: Props = Astro.props
         </h2>
         <!-- <p class='font-thin'></p> -->
       </header>
-      <main class='flex gap-1'>
+      <section class='flex gap-1'>
         <ul
           class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
         >
@@ -134,7 +134,7 @@ const { lang = 'en' }: Props = Astro.props
             ))
           }
         </ul>
-      </main>
+      </section>
     </li>
   </ul>
 </article>

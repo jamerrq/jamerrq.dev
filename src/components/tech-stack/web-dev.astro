@@ -54,7 +54,7 @@ const { lang = 'en' }: Props = Astro.props
       >
         <h2>Backend</h2>
       </header>
-      <main>
+      <section>
         <ul class='flex gap-1 w-full flex-wrap p-1 rounded-sm'>
           {
             backend.map((tech) => (
@@ -64,7 +64,7 @@ const { lang = 'en' }: Props = Astro.props
             ))
           }
         </ul>
-      </main>
+      </section>
       <li>
         <header
           class='flex gap-2 justify-center dark:text-amber-300 text-amber-950'

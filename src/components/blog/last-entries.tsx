@@ -90,29 +90,31 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
       <ul class='grid grid-cols-[1fr_5fr] gap-3 w-full p-2 responsive-text-sm'>
         <li />
         <li class='dark:text-cyan-400 text-cyan-950 text-xl' />
-        {entries.map((entry, index) => {
-          return (
-            <Fragment key={index}>
-              <li class='font-merriweather text-sm xl:text-base text-center'>
-                {entry.date}
-              </li>
-              <li class='font-merriweather text-sm xl:text-base  py-1 px-2 rounded-sm cursor-pointer hover:scale-[1.02] transition-all ease-in-out flex flex-col gap-2'>
-                <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
-                  <div class='flex flex-col xl:flex-row gap-4'>
-                    <span>{lang === 'en' ? entry.title : entry.titleEs}</span>
-                    <div class='xl:ml-auto'>
-                      <ReadTimeBadge
-                        readTime={entry.readTimeMins}
-                        lang={lang}
-                      />
+        {entries
+          .filter((entry) => entry.active !== 'false')
+          .map((entry, index) => {
+            return (
+              <Fragment key={index}>
+                <li class='font-merriweather text-sm xl:text-base text-center'>
+                  {entry.date}
+                </li>
+                <li class='font-merriweather text-sm xl:text-base  py-1 px-2 rounded-sm cursor-pointer hover:scale-[1.02] transition-all ease-in-out flex flex-col gap-2'>
+                  <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
+                    <div class='flex flex-col xl:flex-row gap-4'>
+                      <span>{lang === 'en' ? entry.title : entry.titleEs}</span>
+                      <div class='xl:ml-auto'>
+                        <ReadTimeBadge
+                          readTime={entry.readTimeMins}
+                          lang={lang}
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <Badges badges={entry.tags} />
-                </a>
-              </li>
-            </Fragment>
-          )
-        })}
+                    <Badges badges={entry.tags} />
+                  </a>
+                </li>
+              </Fragment>
+            )
+          })}
       </ul>
     </article>
   )

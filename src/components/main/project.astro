@@ -1,0 +1,74 @@
+---
+interface Props {
+  lang?: string
+  index?: number
+  project?: {
+    title: string
+    time: string
+    repository?: string
+    preview?: string
+    technologies: string[]
+  }
+}
+
+import { siAstro, siSupabase, siNextdotjs, siTailwindcss } from 'simple-icons'
+
+const { lang = 'en', index = 0 }: Props = Astro.props
+interface Project {
+  title: { en: string; es: string }
+  image: string
+  time: string
+  repository?: string
+  preview?: string
+  technologies: string[]
+}
+import { projects } from '@data/working-on.json'
+const project = projects.at(index) as Project
+const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
+  ' '
+)
+---
+
+<li
+  class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'
+>
+  <div
+    class='absolute bottom-0 right-2 font-mono text-xs bg-emerald-400 text-emerald-950 px-1'
+  >
+    {project?.time}+ {lang === 'en' ? 'months' : 'meses'}
+  </div>
+  <a
+    href='https://pinturas-app-back.onrender.com/'
+    target='_blank'
+    rel='noopener noreferrer'
+    class='w-full'
+  >
+    <h1 class='text-sm xl:text-base'>
+      {lang === 'en' ? project?.title.en : project?.title.es}
+    </h1>
+  </a>
+  <section class='bg-transparent w-full flex items-center'>
+    <img src={project?.image} class='w-5/12' alt='' />
+    <aside class='flex flex-col items'>
+      <div class='flex gap-2 items-center justify-center'>
+        {
+          project.technologies.map((t) => {
+            const a =
+              {
+                astro: siAstro,
+                supabase: siSupabase,
+                nextjs: siNextdotjs,
+                tailwindcss: siTailwindcss
+              }[t.toLowerCase().replaceAll(' ', '')] || siAstro
+            return (
+              <svg class={SVGS_STYLES} set:html={a.svg} fill={`#${a.hex}`} />
+            )
+          })
+        }
+      </div>
+      <span>
+        Demo: {project?.preview ? '' : 'coming soon'}
+      </span>
+    </aside>
+  </section>
+</li>

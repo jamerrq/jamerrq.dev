@@ -53,35 +53,6 @@
       "demo": "https://exercism.org/tracks/typescript"
     },
     {
-      "title": "Foundational C#",
-      "description": {
-        "en": ".NET course with Microsoft, where I am learning the basics of C# and .NET (in progress).",
-        "es": "Curso de .NET con Microsoft, donde estoy aprendiendo los fundamentos de C# y .NET (en progreso)."
-      },
-      "stack": [
-        "C#",
-        ".NET"
-      ],
-      "repository": "https://github.com/jamerrq/Foundational-CSharp-with-Microsoft",
-      "demo": "https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/"
-    },
-    {
-      "title": "User Managment API",
-      "description": {
-        "en": "Full Stack application to manage users, with features like filtering, sorting, CRUD operations and user interface in React.",
-        "es": "Aplicación Full Stack para administrar usuarios, con características como filtrado, ordenamiento, operaciones CRUD e interfaz de usuario en React."
-      },
-      "stack": [
-        "Express",
-        "TypeScript",
-        "Sequelize",
-        "PostgreSQL",
-        "React"
-      ],
-      "repository": "https://github.com/jamerrq/wks-typescript",
-      "demo": "https://wks-typescript.vercel.app/"
-    },
-    {
       "title": "Sport Scheduling",
       "description": {
         "en": "Investigation Project. Scheduling of Colombian professional soccer league: A comparison of models and algorithms.",
@@ -112,7 +83,8 @@
     {
       "title": "Checkbox Enhancement",
       "description": {
-        "en": "Visual Studio Code extension to improve the enhancement when using checboxes, specially in markdown"
+        "en": "Visual Studio Code extension to improve the enhancement when using checboxes, specially in markdown (working on the v1)",
+        "es": "Extensión de Visual Studio Code para mejorar la mejora al usar casillas de verificación, especialmente en markdown (trabajando en la v1)"
       },
       "stack": [
         "TypeScript",
@@ -120,6 +92,65 @@
       ],
       "repository": "https://github.com/jamerrq/checkbox-md-enhancement",
       "demo": "https://marketplace.visualstudio.com/items?itemName=jamerrq.checkbox-counter"
+    },
+    {
+      "title": "Lumina - PWA Starter Template for Astro",
+      "description": {
+        "en": "A simple and beautiful PWA starter template for Astro, with a focus on performance and best practices.",
+        "es": "Una plantilla de inicio PWA simple y hermosa para Astro, con un enfoque en el rendimiento y las mejores prácticas."
+      },
+      "stack": [
+        "Astro",
+        "Tailwind CSS",
+        "TypeScript"
+      ],
+      "repository": "https://github.com/jamerrq/lumina",
+      "demo": "https://lumina-sigma.vercel.app/"
+    },
+    {
+      "title": "Advent JS - Console Edition",
+      "description": {
+        "en": "Deno module to get the Advent JS challenges and test the solutions directly from the console.",
+        "es": "Módulo de Deno para obtener los desafíos de Advent JS y probar las soluciones directamente desde la consola."
+      },
+      "stack": [
+        "Deno",
+        "TypeScript",
+        "JavaScript"
+      ],
+      "demo": "https://deno.land/x/adventjs",
+      "repository": "https://github.com/jamerrq/advent-js-cli"
+    },
+    {
+      "title": "HTML 30 Days Challenge",
+      "description": {
+        "en": "30 days of HTML and CSS challenges by ManzDev.",
+        "es": "30 días de desafíos de HTML y CSS por ManzDev."
+      },
+      "stack": [
+        "Html",
+        "Css",
+        "JavaScript",
+        "Astro"
+      ],
+      "demo": "https://html-30-days-challenge.vercel.app/",
+      "repository": "https://github.com/jamerrq/html-30-days-challenge"
+    },
+    {
+      "title": "IDE Pinturerías Full Stack Web App",
+      "description": {
+        "en": "Full stack web application for the management of a paint store, with features such as inventory management, sales, reports and blog. Official website coming soon.",
+        "es": "Aplicación web full stack para la gestión de una tienda de pinturas, con características como gestión de inventario, ventas, informes y blog. Sitio web oficial próximamente."
+      },
+      "stack": [
+        "React",
+        "Tailwind CSS",
+        "Express",
+        "PostgresSql",
+        "NodeJS"
+      ],
+      "private": true,
+      "featured": true
     }
   ],
   "logos": [

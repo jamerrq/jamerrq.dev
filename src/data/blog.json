@@ -34,28 +34,52 @@
       "date": "Coming soon",
       "titleEs": "Proyectos a desarrollar en 2024",
       "href": "blog/projects-2024",
-      "hrefEs": "blog/proyectos-2024"
+      "hrefEs": "blog/proyectos-2024",
+      "readTimeMins": "5",
+      "tags": [
+        "projects",
+        "2024",
+        "nextjs",
+        "astro",
+        "supabase",
+        "rust"
+      ]
     },
     {
       "title": "Creating a secure Node.js server with Express",
       "date": "Coming soon",
-      "titleEs": "Creando el servidor más seguro del mundo con Node.js",
-      "href": "creating-the-most-secure-server-in-the-world-with-nodejs",
-      "hrefEs": "creando-el-servidor-mas-seguro-del-mundo-con-nodejs"
+      "titleEs": "Creando un servidor seguro con Node.js y Express",
+      "href": "creating-a-secure-server-with-nodejs",
+      "hrefEs": "creando-un-servidor-seguro-con-nodejs",
+      "readTimeMins": "15",
+      "tags": [
+        "nodejs",
+        "express",
+        "security",
+        "jwt",
+        "testing"
+      ],
+      "active": "false"
     },
     {
-      "title": "Open Source: Blessing or Curse?",
+      "title": "Open Source: What a time to be alive!",
       "date": "Coming soon",
-      "titleEs": "Open Source: ¿Bendición o Maldición?",
+      "titleEs": "Open Source: ¡Qué momento para estar vivo!",
       "href": "open-source-blessing-or-curse",
-      "hrefEs": "open-source-bendicion-o-maldicion"
+      "hrefEs": "open-source-bendicion-o-maldicion",
+      "readTimeMins": "10",
+      "tags": [
+        "open-source",
+        "community",
+        "github"
+      ]
     },
     {
-      "title": "My take on the impostor syndrome",
+      "title": "How to convert your astro app to a PWA",
       "date": "Coming soon",
-      "titleEs": "Mi opinión sobre el síndrome del impostor",
-      "href": "impostor-syndrome",
-      "hrefEs": "sindrome-del-impostor"
+      "titleEs": "Cómo convertir tu app de astro en una PWA",
+      "href": "convert-astro-app-to-pwa",
+      "hrefEs": "convertir-app-astro-a-pwa"
     }
   ]
 }

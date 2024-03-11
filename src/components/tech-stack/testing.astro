@@ -42,9 +42,9 @@ const { lang = 'en' }: Props = Astro.props
       {lang === 'en' ? 'Testing' : 'Pruebas'}
     </h1>
   </header>
-  <main
+  <section
     class='xl:grid flex place-items-center gap-2 grid-cols-2 grid-rows-2 [&>a>img]:rounded-sm [&>a>img]:border-2'
   >
     {testing.map((icon: IconProps) => <TechIcon obj={icon} />)}
-  </main>
+  </section>
 </article>

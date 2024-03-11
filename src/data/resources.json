@@ -91,6 +91,15 @@
     {
       "title": "Awesome Bun",
       "repository": "https://github.com/oven-sh/awesome-bun"
+    },
+    {
+      "title": "Foundational C# - Microsoft",
+      "website": "https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/",
+      "repository": "https://github.com/jamerrq/Foundational-CSharp-with-Microsoft"
+    },
+    {
+      "title": "Traducciones FreeCodeCamp",
+      "website": "https://www.freecodecamp.org/espanol/news/author/jamerrq"
     }
   ]
 }

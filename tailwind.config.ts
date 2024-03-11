@@ -46,6 +46,7 @@ export default {
     'fill-[#F7DF1E]',
     'fill-[#777BB4]',
     'fill-[#1572B6]',
+    'fill-[#339933]',
     // 'indigo', 'yellow', 'amber', 'red', 'purple', 'pink',
     'bg-indigo-100',
     'bg-indigo-900',
