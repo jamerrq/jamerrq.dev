@@ -92,6 +92,13 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
         <li class='dark:text-cyan-400 text-cyan-950 text-xl' />
         {entries
           .filter((entry) => entry.active !== 'false')
+          .sort((a, b) => {
+            const dateA = new Date(a.date).getTime()
+            if (isNaN(dateA)) return 1
+            const dateB = new Date(b.date).getTime()
+            if (isNaN(dateB)) return -1
+            return -dateB + dateA
+          })
           .map((entry, index) => {
             return (
               <Fragment key={index}>

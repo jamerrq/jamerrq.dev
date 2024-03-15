@@ -44,6 +44,7 @@ import SEO from '@components/head/seo.astro'
     <meta name='googlebot' content='index, follow' />
     <meta name='google' content='notranslate' />
     <link rel='sitemap' href='/sitemap-index.xml' />
+    <link href='/css/prism-nord.css' rel='stylesheet' />
     <title>{title}</title>
     <ViewTransitions />
   </head>
@@ -182,5 +183,14 @@ import SEO from '@components/head/seo.astro'
       document.addEventListener('astro:after-preparation', setHomeRandomButton)
       document.addEventListener('astro:after-swap', setHomeRandomButton)
     </script>
+    <script is:inline src='/prism.js'></script>
+    <a
+      href='https://librecounter.org/referer/show'
+      target='_blank'
+      rel='noreferrer'
+      class='fixed bottom-1 right-1 opacity-50 hover:opacity-100 transition-opacity duration-300'
+    >
+      <img src='https://librecounter.org/counter.svg' width='24' />
+    </a>
   </body>
 </html>

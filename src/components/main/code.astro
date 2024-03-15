@@ -1,0 +1,9 @@
+---
+import { Prism } from '@astrojs/prism'
+interface Props {
+  input: string
+}
+const { input }: Props = Astro.props
+---
+
+<Prism lang='html' code={input.trim()} class='overflow-x-hidden' />

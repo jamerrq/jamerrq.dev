@@ -49,8 +49,8 @@
       "title": "Creating a secure Node.js server with Express",
       "date": "Coming soon",
       "titleEs": "Creando un servidor seguro con Node.js y Express",
-      "href": "creating-a-secure-server-with-nodejs",
-      "hrefEs": "creando-un-servidor-seguro-con-nodejs",
+      "href": "blog/creating-a-secure-server-with-nodejs",
+      "hrefEs": "blog/creando-un-servidor-seguro-con-nodejs",
       "readTimeMins": "15",
       "tags": [
         "nodejs",
@@ -65,8 +65,8 @@
       "title": "Open Source: What a time to be alive!",
       "date": "Coming soon",
       "titleEs": "Open Source: ¡Qué momento para estar vivo!",
-      "href": "open-source-blessing-or-curse",
-      "hrefEs": "open-source-bendicion-o-maldicion",
+      "href": "blog/open-source-blessing-or-curse",
+      "hrefEs": "blog/open-source-bendicion-o-maldicion",
       "readTimeMins": "10",
       "tags": [
         "open-source",
@@ -76,10 +76,16 @@
     },
     {
       "title": "How to convert your astro app to a PWA",
-      "date": "Coming soon",
+      "date": "2024-Mar-14",
       "titleEs": "Cómo convertir tu app de astro en una PWA",
-      "href": "convert-astro-app-to-pwa",
-      "hrefEs": "convertir-app-astro-a-pwa"
+      "href": "blog/convert-astro-app-to-pwa",
+      "hrefEs": "blog/convertir-app-astro-a-pwa",
+      "readTimeMins": "5",
+      "tags": [
+        "astro",
+        "pwa",
+        "webdev"
+      ]
     }
   ]
 }
