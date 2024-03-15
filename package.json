@@ -7,7 +7,8 @@
     "@astrojs/preact": "^3.1.0",
     "@astrojs/tailwind": "^5.0.4",
     "@fontsource/merriweather": "^5.0.8",
-    "astro": "4.0.8",
+    "astro": "^4.0.8",
+    "astro-page-insight": "^0.4.1",
     "astro-robots-txt": "^1.0.0",
     "preact": "^10.19.3",
     "sharp": "^0.33.2",
@@ -16,7 +17,7 @@
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "dev": "astro dev --host",
+    "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
@@ -31,6 +32,7 @@
     "@fontsource/handlee": "^5.0.18",
     "@fontsource/redressed": "^5.0.18",
     "@fontsource/rubik-doodle-shadow": "^5.0.1",
+    "@midudev/tailwind-animations": "^0.0.7",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "^8.56.0",

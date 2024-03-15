@@ -34,6 +34,7 @@ export default function Link({ href, title }: LinkProps) {
       rel='noopener noreferrer'
       class={ANCHOR_STYLES}
       title={title}
+      aria-label={title}
     >
       {title === 'Website' ? (
         <FirefoxIcon />

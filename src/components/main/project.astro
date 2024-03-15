@@ -27,6 +27,8 @@ const project = projects.at(index) as Project
 const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
   ' '
 )
+
+import { Image } from 'astro:assets'
 ---
 
 <li
@@ -48,7 +50,13 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
     </h1>
   </a>
   <section class='bg-transparent w-full flex items-center'>
-    <img src={project?.image} class='w-5/12' alt='' />
+    <Image
+      src={project?.image}
+      alt={`snap for ${project?.title.en}`}
+      width='150'
+      height='50'
+      loading='eager'
+    />
     <aside class='flex flex-col items'>
       <div class='flex gap-2 items-center justify-center'>
         {

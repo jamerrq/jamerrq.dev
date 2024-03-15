@@ -4,9 +4,11 @@ import deno from '@astrojs/deno'
 import robotsTxt from 'astro-robots-txt'
 import preact from '@astrojs/preact'
 
+import pageInsight from 'astro-page-insight'
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), robotsTxt(), preact()],
+  integrations: [tailwind(), robotsTxt(), preact(), pageInsight()],
   adapter: deno(),
   output: 'server',
   i18n: {

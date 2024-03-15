@@ -9,9 +9,6 @@ interface Props {
 }
 const { frontmatter }: Props = Astro.props
 import Buttons from '@components/main/buttons.astro'
-const libreCounterEndpoint =
-  'https://librecounter.org/count?url=http://jamerrq.deno.dev&userAgent=roboto/1.0'
-fetch(libreCounterEndpoint)
 ---
 
 <Layout title={frontmatter.title}>

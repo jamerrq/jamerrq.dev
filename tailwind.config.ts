@@ -26,7 +26,10 @@ export default {
       }
     }
   },
-  plugins: [require('tailwindcss-debug-screens')],
+  plugins: [
+    require('tailwindcss-debug-screens'),
+    require('@midudev/tailwind-animations')
+  ],
   safelist: [
     'fill-[#BC52EE]',
     'fill-[#3FCF8E]',

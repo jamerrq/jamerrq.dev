@@ -4,7 +4,7 @@ title: About this awesome website
 hrefLang: ../es/blog/acerca-de-esta-web/
 ---
 
-![og-image](https://jamerrq.deno.dev/og-image.png)
+![jamerrq.dev](https://jamerrq.deno.dev/og-image.png)
 
 # Introduction
 

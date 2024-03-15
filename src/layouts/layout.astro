@@ -10,9 +10,6 @@ import '@fontsource/rubik-doodle-shadow'
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
-const libreCounterEndpoint =
-  'https://librecounter.org/count?url=http://jamerrq.deno.dev&userAgent=roboto/1.0'
-fetch(libreCounterEndpoint)
 ---
 
 <!doctype html>
@@ -27,7 +24,7 @@ fetch(libreCounterEndpoint)
     <meta name='twitter:card' content='summary_large_image' />
     <meta name='twitter:site' content='@jamerrq' />
     <meta name='twitter:title' content='jamerrq.dev' />
-    <meta name='twitter:description' content='Software Engineer' />
+    <meta name='twitter:description' content='Software Development' />
     <meta
       name='twitter:image'
       content='https://jamerrq.deno.dev/og-image2.png'
@@ -39,7 +36,7 @@ fetch(libreCounterEndpoint)
       property='og:image'
       content='https://jamerrq.deno.dev/og-image2.png'
     />
-    <meta property='og:description' content='Software Developer.' />
+    <meta property='og:description' content='Software Development' />
     <meta property='og:site_name' content='jamerrq.dev' />
     <!-- Robots -->
     <meta name='robots' content='index, follow' />
@@ -55,14 +52,6 @@ fetch(libreCounterEndpoint)
     >
       <slot />
     </main>
-    <a
-      href='https://librecounter.org/referer/show'
-      target='_blank'
-      rel='noreferrer'
-      class='hidden'
-    >
-      <img src='' referrerpolicy='unsafe-url' />
-    </a>
     <style is:global>
       /* Reset by @souporserious */
       * {
