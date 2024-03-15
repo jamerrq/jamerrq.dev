@@ -23,4 +23,6 @@ jobs:
         with:
           node-version: 20
       - uses: jaid/action-npm-install@v1.2.1
+        with:
+          packageManager: 'auto'
       - uses: withastro/action-studio@main
