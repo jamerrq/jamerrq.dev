@@ -74,10 +74,11 @@ const { lang }: Props = Astro.props
     >
       jamerrq@gmail.com
     </span>
-    <Copy
-      class='w-8 h-8 dark:bg-slate-300 bg-slate-950 fill-slate-300 dark:fill-slate-950 p-2 rounded-sm cursor-pointer hover:scale-110 transition-all'
-      onclick="navigator.clipboard.writeText('jamerrq@gmail.com'); alert('Email shipped into clipboard!');"
-    />
+    <button id='copyMailButton'>
+      <Copy
+        class='w-8 h-8 dark:bg-slate-300 bg-slate-950 fill-slate-300 dark:fill-slate-950 p-2 rounded-sm cursor-pointer hover:scale-110 transition-all'
+      />
+    </button>
   </div>
   <div class='flex justify-around [&>a]:'>
     <!-- GitHub -->
@@ -142,3 +143,16 @@ const { lang }: Props = Astro.props
     </a>
   </div>
 </article>
+<script>
+  import { toast } from 'wc-toast'
+  const copyMailButton = document.getElementById('copyMailButton')
+  copyMailButton?.addEventListener('click', () => {
+    navigator.clipboard.writeText('jamerrq@gmail.com')
+    toast('email shipped into your clipboard 🥳', {
+      duration: 2000,
+      theme: {
+        type: 'light'
+      }
+    })
+  })
+</script>

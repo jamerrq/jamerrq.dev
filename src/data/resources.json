@@ -6,7 +6,7 @@
       "repository": "https://github.com/jamerrq/resources-app"
     },
     {
-      "title": "Midu.dev",
+      "title": "MiduDev",
       "website": "https://midu.dev/",
       "repository": "https://github.com/midudev",
       "links": [
@@ -25,6 +25,29 @@
         {
           "site": "Discord Server",
           "url": "https://discord.com/invite/midudev"
+        }
+      ]
+    },
+    {
+      "title": "ManzDev",
+      "website": "https://manz.dev/",
+      "repository": "https://github.com/ManzDev",
+      "links": [
+        {
+          "site": "Twitch Channel",
+          "url": "https://www.twitch.tv/ManzDev"
+        },
+        {
+          "site": "Youtube Channel",
+          "url": "https://www.youtube.com/@ManzDev"
+        },
+        {
+          "site": "Twitter Account",
+          "url": "https://twitter.com/Manz"
+        },
+        {
+          "site": "Discord Server",
+          "url": "https://discord.com/invite/2psv38AhSA"
         }
       ]
     },

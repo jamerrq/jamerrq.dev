@@ -2,6 +2,20 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class', // or 'media' or 'class
   theme: {
+    debugScreens: {
+      style: {
+        backgroundColor: 'white',
+        color: 'black',
+        position: 'absolute',
+        borderRadius: '5px',
+        fontFamily: 'monospace',
+        fontSize: '10px',
+        fontWeight: 'bold',
+        margin: '5px'
+        // ...
+      },
+      position: ['top', 'left']
+    },
     screens: {
       xs: { min: '300px', max: '639px' },
       sm: { min: '640px', max: '767px' },

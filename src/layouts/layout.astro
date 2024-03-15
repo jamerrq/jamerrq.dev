@@ -9,7 +9,7 @@ import '@fontsource/merriweather'
 import '@fontsource/rubik-doodle-shadow'
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
-const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
+import SEO from '@components/head/seo.astro'
 ---
 
 <!doctype html>
@@ -18,7 +18,7 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     <meta charset='UTF-8' />
     <meta name='description' content='jamerrq.dev' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image' href='/favicon.png' />
+    <link rel='icon' type='image/png' href='/favicon.png' />
     <meta name='generator' content={Astro.generator} />
     <!-- Open Graph -->
     <meta name='twitter:card' content='summary_large_image' />
@@ -38,18 +38,19 @@ const BODY_CLASS = import.meta.env.MODE === 'development' ? 'debug-screens' : ''
     />
     <meta property='og:description' content='Software Development' />
     <meta property='og:site_name' content='jamerrq.dev' />
+    <SEO />
     <!-- Robots -->
     <meta name='robots' content='index, follow' />
     <meta name='googlebot' content='index, follow' />
     <meta name='google' content='notranslate' />
+    <link rel='sitemap' href='/sitemap-index.xml' />
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class={BODY_CLASS}>
+  <body data-dev={import.meta.env.DEV} class='data-[dev]:debug-screens'>
+    <wc-toast></wc-toast>
     <Background />
-    <main
-      class='min-h-[100dvh] w-full grid items-center mx-auto justify-center'
-    >
+    <main class='min-h-[100dvh] grid items-center justify-center'>
       <slot />
     </main>
     <style is:global>
