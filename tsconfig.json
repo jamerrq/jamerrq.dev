@@ -3,7 +3,8 @@
   "exclude": [
     "node_modules",
     "dist",
-    "astro.config.ts"
+    "astro.config.ts",
+    "public/prism.js"
   ],
   "compilerOptions": {
     "baseUrl": ".",

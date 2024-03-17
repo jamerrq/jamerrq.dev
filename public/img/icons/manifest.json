@@ -1,7 +1,7 @@
 {
-  "name": "My App",
-  "description": "My App description",
-  "short_name": "My App",
+  "name": "jamerrq.dev",
+  "description": "Jamer José Desarrollo Web y Backend",
+  "short_name": "jamerrq.dev",
   "icons": [
     {
       "src": "/favicon-72x72.png",
@@ -54,7 +54,7 @@
   ],
   "scope": "/",
   "start_url": "/?source=pwa",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "display": "fullscreen",
+  "theme_color": "#0f0f0f",
+  "background_color": "#0f0f0f"
 }
