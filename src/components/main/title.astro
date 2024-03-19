@@ -6,7 +6,7 @@ const { lang = 'en' }: Props = Astro.props
 ---
 
 <div
-  class='row-span-2 col-span-1 xl:col-span-2 title dark:bg-emerald-900/90 text-emerald-300 bg-emerald-400/50 p-2 rounded-sm w-full flex items-center flex-row animate-blurred-fade-in relative'
+  class='row-span-2 col-span-1 xl:col-span-2 title dark:bg-emerald-900/80 text-emerald-300 bg-emerald-400/50 p-2 rounded-sm w-full flex items-center flex-row animate-blurred-fade-in relative'
 >
   <div class='flex flex-col animate-fade-in z-10'>
     <a href={lang !== 'en' ? '/' : 'es'}>
@@ -19,16 +19,9 @@ const { lang = 'en' }: Props = Astro.props
     </span>
   </div>
   <div
-    class='fixed -z-10 top-0 left-0 origin-top-left w-full xl:flex place-content-center hidden'
+    class='fixed -z-10 top-0 left-0 origin-top-left w-full xl:flex place-content-center flex overflow-hidden h-[200%]'
     id='animation-container'
   >
-    <!-- <canvas id='c' class='grow'
-      ><svg
-        id='x'
-        onload='setInterval("for(t+=.1,R=T=C=Math.cos,c.width=w=128,i=9986,V=t/9&3;Y=i--/w;c.getContext`2d`.fillRect(X,Y,(C(t/6)*T^V*i/1e4*T+t)%20?(R=T++,1):(T=9,19/R),5/Z))for(Z=5,X=i%w+4/R;0<(V*95+C(t/3)+Z*X/64-Z^Z|(60-Y)*Z/58)%13;Z+=.2);",t=9)'
-      >
-      </svg></canvas
-    > -->
   </div>
 </div>
 

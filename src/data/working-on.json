@@ -9,7 +9,7 @@
         "en": "A website for a small business that sells natural products.",
         "es": "Un sitio web para un pequeño negocio que vende productos naturales."
       },
-      "image": "https://res.cloudinary.com/dm064xuo5/image/upload/f_auto,q_auto/v1/jamerrq.dev/gfv6gz76xwssvmfd1mxo",
+      "image": "/img/working-on/fedora.webp",
       "technologies": [
         "Astro",
         "Supabase",
@@ -27,7 +27,7 @@
         "en": "E commerce website for a small business that sells multiple products.",
         "es": "Sitio web de comercio electrónico para un pequeño negocio que vende múltiples productos."
       },
-      "image": "https://res.cloudinary.com/dm064xuo5/image/upload/f_auto,q_auto/v1/jamerrq.dev/fnsren4gp2v82mtxztkj",
+      "image": "/img/working-on/kali.webp",
       "technologies": [
         "Next JS",
         "Supabase",
