@@ -4,7 +4,7 @@ const SOCIALS_STYLES: string = [
   'col-span-2',
   'row-span-2',
   // 'gap-2',
-  'bg-slate-300',
+  'bg-slate-300/70',
   'rounded-sm',
   'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
   'flex',
@@ -23,7 +23,7 @@ const SOCIALS_STYLES: string = [
   // 'dark:border-emerald-300',
   // 'border-2',
   // 'hover:border-slate-100',
-  'dark:bg-slate-900',
+  'dark:bg-slate-900/95',
   'dark:text-emerald-300',
   // 'hover:scale-[1.02]',
   // 'hover:duration-200',
@@ -66,18 +66,18 @@ interface Props {
 const { lang }: Props = Astro.props
 ---
 
-<article class={SOCIALS_STYLES} title='My Links'>
+<article class={SOCIALS_STYLES}>
   <header class='flex gap-2 justify-center items-center'>
     <p class='font-semibold text-3xl xl:text-4xl'>Contact</p>
     <svg class={ICONS_STYLES} set:html={siMaildotru.svg} />
   </header>
   <div class='flex h-fit w-full items-center justify-center gap-2'>
     <span
-      class='font-merriweather font-bold text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-300 p-2 rounded shadow-sm shadow-black'
+      class='font-bold text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-500 p-2 rounded shadow-sm shadow-black'
     >
       jamerrq@gmail.com
     </span>
-    <button id='copyMailButton' aria-label='copy mail button'>
+    <button id='copyMailButton' aria-label='copy mail button' title='copy mail'>
       <Copy
         class='w-8 h-8 dark:bg-slate-300 bg-slate-950 fill-slate-300 dark:fill-slate-950 p-1.5 rounded-full cursor-pointer hover:scale-110 transition-all shadow-sm shadow-black'
       />
