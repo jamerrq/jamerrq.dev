@@ -10,6 +10,7 @@ import '@fontsource/rubik-doodle-shadow'
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 import SEO from '@components/head/seo.astro'
+import { Image } from 'astro:assets'
 ---
 
 <!doctype html>
@@ -191,10 +192,12 @@ import SEO from '@components/head/seo.astro'
       aria-label='librecounter'
       class='fixed bottom-1 right-1 opacity-50 hover:opacity-100 transition-opacity duration-300'
     >
-      <img
+      <Image
         src='https://librecounter.org/counter.svg'
         alt='librecounter logo'
         width='24'
+        height='24'
+        loading='eager'
       />
     </a>
   </body>

@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # temporal files
 tmp.json
+
+# action file (for now)
+_studio.yml

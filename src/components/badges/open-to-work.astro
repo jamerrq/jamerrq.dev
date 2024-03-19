@@ -5,17 +5,26 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 ---
 
-<span
-  class='bg-emerald-100 text-emerald-800 text-xs font-bold inline-flex items-center px-2.5 py-0.5 rounded-sm font-merriweather xl:absolute top-1.5 right-1.5 animate-slide-in-top animate-delay-200'
+<div
+  class='flex items-center animate-slide-in-top animate-delay-200 absolute top-1 right-1'
 >
-  <svg viewBox='0 0 512 512' class='w-2.5 h-2.5 me-1.5' fill='currentColor'
-    ><title></title><g data-name='1' id='_1'
-      ><path
-        d='M291.48,449.94A15,15,0,0,1,278,441.5L207.5,296.57,62.57,226.08a15,15,0,0,1,1-27.41L435.48,49.08A15,15,0,0,1,455,68.6L305.4,440.54A15,15,0,0,1,292,449.93Zm-185.38-236,119.18,58a15,15,0,0,1,6.93,6.93l58,119.18L414,90Z'
-      ></path><path
-        d='M218.72,300.35a15,15,0,0,1-10.6-25.61L430.47,52.39a15,15,0,1,1,21.21,21.22L229.33,296A15,15,0,0,1,218.72,300.35Z'
-      ></path></g
-    ></svg
-  >
-  {lang === 'en' ? 'Open to work' : 'Abierto a ofertas'}
-</span>
+  <span class='relative inline-flex overflow-hidden rounded-full p-[1px]'>
+    <span
+      class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]'
+    ></span>
+    <div
+      class='inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap'
+    >
+      <svg viewBox='0 0 512 512' class='w-2.5 h-2.5 me-1.5' fill='currentColor'
+        ><title></title><g data-name='1' id='_1'
+          ><path
+            d='M291.48,449.94A15,15,0,0,1,278,441.5L207.5,296.57,62.57,226.08a15,15,0,0,1,1-27.41L435.48,49.08A15,15,0,0,1,455,68.6L305.4,440.54A15,15,0,0,1,292,449.93Zm-185.38-236,119.18,58a15,15,0,0,1,6.93,6.93l58,119.18L414,90Z'
+          ></path><path
+            d='M218.72,300.35a15,15,0,0,1-10.6-25.61L430.47,52.39a15,15,0,1,1,21.21,21.22L229.33,296A15,15,0,0,1,218.72,300.35Z'
+          ></path></g
+        ></svg
+      >
+      {lang === 'en' ? 'Open to work' : 'Abierto a ofertas'}
+    </div>
+  </span>
+</div>

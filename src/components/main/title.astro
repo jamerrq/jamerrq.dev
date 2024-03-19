@@ -6,9 +6,9 @@ const { lang = 'en' }: Props = Astro.props
 ---
 
 <div
-  class='row-span-2 col-span-1 xl:col-span-2 title dark:bg-emerald-900 dark:text-emerald-300 text-emerald-950 bg-emerald-400 p-2 rounded-sm w-full flex items-center flex-row animate-fade-in-up'
+  class='row-span-2 col-span-1 xl:col-span-2 title dark:bg-emerald-900 text-emerald-300 bg-emerald-400 p-2 rounded-sm w-full flex items-center flex-row animate-fade-in-up relative'
 >
-  <div class='flex flex-col animate-fade-in'>
+  <div class='flex flex-col animate-fade-in z-10'>
     <a href={lang !== 'en' ? '/' : 'es'}>
       <p class='font-rubik-doodle font-semibold text-2xl xl:text-4xl'>
         @jamerrq.dev
@@ -17,6 +17,18 @@ const { lang = 'en' }: Props = Astro.props
     <span class='block font-merriweather text-sm text-center'>
       {lang === 'en' ? 'Software Developer' : 'Desarrollador de Software'}
     </span>
+  </div>
+  <div
+    class='fixed -z-10 top-0 left-0 origin-top-left w-full flex place-content-center'
+  >
+    <canvas id='c' class='grow' style='display: flex; align-items: center;'
+      ><svg
+        class='grow'
+        style=''
+        onload='setInterval("for(t+=.1,R=T=C=Math.cos,c.width=w=128,i=9986,V=t/9&3;Y=i--/w;c.getContext`2d`.fillRect(X,Y,(C(t/6)*T^V*i/1e4*T+t)%20?(R=T++,1):(T=9,19/R),5/Z))for(Z=5,X=i%w+4/R;0<(V*95+C(t/3)+Z*X/64-Z^Z|(60-Y)*Z/58)%13;Z+=.2);",t=9)'
+      >
+      </svg></canvas
+    >
   </div>
 </div>
 

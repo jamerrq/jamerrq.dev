@@ -20,7 +20,7 @@ export const pwaSeoConfig = `
 <link rel="icon" type="image/png" sizes="256x256" href="/img/icons/favicon-256x256.png" />
 <!-- 512 -->
 <link rel="icon" type="image/png" sizes="512x512" href="/img/icons/favicon-512x512.png" />
-<link rel="shortcut icon" type="image/x-icon" href="/img/icons/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
 <!-- Sitemap -->
 <meta name="msapplication-config" content="/browserconfig.xml" />
