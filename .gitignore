@@ -27,3 +27,6 @@ tmp.json
 
 # action file (for now)
 _studio.yml
+
+# ignored files
+ignored/

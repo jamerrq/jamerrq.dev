@@ -11,6 +11,9 @@ import '@fontsource/merriweather'
 import '@fontsource/rubik-doodle-shadow'
 import '@fontsource/averia-serif-libre'
 
+// Styles
+import '@styles/index.css'
+
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 import SEO from '@components/head/seo.astro'
@@ -205,7 +208,8 @@ import { Image } from 'astro:assets'
     </a>
     <script is:inline defer>
       // if screen is too small, don't render the animation
-      if (window.innerWidth > 1) {
+      const disabled = true
+      if (!disabled && window.innerWidth > 240) {
         const x = document.createElement('canvas')
         x.id = 'c'
         x.setAttribute('class', 'grow')
