@@ -3,28 +3,26 @@ interface Props {
   lang?: string
 }
 const { lang = 'en' }: Props = Astro.props
+import Badge from './badge.astro'
 ---
 
-<div
-  class='flex items-center animate-slide-in-top animate-delay-200 absolute top-1 right-1'
->
-  <span class='relative inline-flex overflow-hidden rounded-full p-[1px]'>
-    <span
-      class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]'
-    ></span>
-    <div
-      class='inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap'
-    >
-      <svg viewBox='0 0 512 512' class='w-2.5 h-2.5 me-1.5' fill='currentColor'
-        ><title></title><g data-name='1' id='_1'
-          ><path
-            d='M291.48,449.94A15,15,0,0,1,278,441.5L207.5,296.57,62.57,226.08a15,15,0,0,1,1-27.41L435.48,49.08A15,15,0,0,1,455,68.6L305.4,440.54A15,15,0,0,1,292,449.93Zm-185.38-236,119.18,58a15,15,0,0,1,6.93,6.93l58,119.18L414,90Z'
-          ></path><path
-            d='M218.72,300.35a15,15,0,0,1-10.6-25.61L430.47,52.39a15,15,0,1,1,21.21,21.22L229.33,296A15,15,0,0,1,218.72,300.35Z'
-          ></path></g
-        ></svg
-      >
-      {lang === 'en' ? 'Open to work' : 'Abierto a ofertas'}
-    </div>
-  </span>
-</div>
+<Badge>
+  <svg
+    class='w-4 h-4 me-2 text-gray-100 dark:text-white'
+    aria-hidden='true'
+    xmlns='http://www.w3.org/2000/svg'
+    width='12'
+    height='12'
+    fill='none'
+    viewBox='0 0 24 24'
+  >
+    <path
+      stroke='currentColor'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      stroke-width='2'
+      d='M8 7H5a2 2 0 0 0-2 2v4m5-6h8M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m0 0h3a2 2 0 0 1 2 2v4m0 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6m18 0s-4 2-9 2-9-2-9-2m9-2h.01'
+    ></path>
+  </svg>
+  {lang === 'en' ? 'Open To Work' : 'Disponible Para Ofertas'}
+</Badge>

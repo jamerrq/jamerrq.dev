@@ -36,7 +36,8 @@ export default {
     extend: {
       fontFamily: {
         'rubik-doodle': ['Rubik Doodle Shadow', 'system-ui'],
-        merriweather: ['Merriweather', 'serif']
+        merriweather: ['Merriweather', 'serif'],
+        averia: ['Averia Serif Libre', 'system-ui']
       }
     }
   },

@@ -4,8 +4,6 @@ const TECH_STACK_STYLES: string = [
   'row-span-3',
   'bg-slate-300/80',
   'rounded-sm',
-  // 'shadow-[0_0_0.3rem_rgb(69_26_3)]', // rgb(69, 26, 3)
-  // 'dark:shadow-[0_0_0.3rem_rgb(253_230_138)]', // rgb(253, 230, 138)
   'flex',
   'flex-col',
   'p-2',
@@ -15,17 +13,14 @@ const TECH_STACK_STYLES: string = [
   'w-full',
   'h-full',
   'transition-all',
-  // 'border-2',
-  // 'border-amber-500',
   'text-amber-950',
   'dark:text-amber-300',
   'dark:bg-slate-900/95',
   'hover:scale-[1.02]',
   'hover:transition-all',
   'text-2xl'
-  // 'animate-blurred-fade-in',
-  // 'animate-delay-300'
 ].join(' ')
+
 import {
   siNodedotjs,
   siExpress,
@@ -40,7 +35,7 @@ import {
   siDocker,
   siUbuntu as siLinux
 } from 'simple-icons'
-// class='flex gap-2 [&>img]:rounded-sm bg-emerald-300 p-1 rounded-sm'
+
 const ICON_BLOCKS_STYLES = [
   'flex',
   'gap-2',
@@ -51,11 +46,11 @@ const ICON_BLOCKS_STYLES = [
 interface Props {
   lang?: string
 }
+
 const { lang = 'en' }: Props = Astro.props
 
 const SUBTITLE_STYLES = ['flex', 'flex-row', 'gap-2', 'text-2xl'].join(' ')
 
-// {SVGS_STYLES}
 const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
   ' '
 )
@@ -87,7 +82,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
       <svg
         class={SVGS_STYLES}
         set:html={siExpress.svg}
-        fill={`#${siSequelize.hex}`}
+        fill={`#${siDocker.hex}`}
       />
       <!-- PostgreSQL -->
       <svg
@@ -99,7 +94,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
       <svg
         class={SVGS_STYLES}
         set:html={siSequelize.svg}
-        fill={`#${siSequelize.hex}`}
+        fill={`#${siDocker.hex}`}
       />
     </div>
     <div class={SUBTITLE_STYLES}>
@@ -118,7 +113,7 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
       <svg
         class={SVGS_STYLES}
         set:html={siGnubash.svg}
-        fill={`#${siGnubash.hex}`}
+        fill={`#${siNodedotjs.hex}`}
       />
       <!-- Python -->
       <svg class={SVGS_STYLES} set:html={siPython.svg} fill='#ff9900' />
@@ -155,10 +150,10 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
   </div>
   <aside class='p-2 rounded-sm flex gap-2 justify-center items-center'>
     <p
-      class='font-bold text-sm xl:text-base font-merriweather dark:text-emerald-300 text-slate-900 border-b-2'
+      class='font-bold text-sm xl:text-base dark:text-emerald-300 text-slate-900 font-averia'
     >
-      <!-- Tap to see more -->
-      {lang === 'en' ? '❯ Tap to see more' : '❯ Toca para ver más'}
+      <span class='-mt-5'> ❯</span>
+      {lang === 'en' ? 'Tap to see more' : 'Toca para ver más'}
     </p>
   </aside>
 </a>

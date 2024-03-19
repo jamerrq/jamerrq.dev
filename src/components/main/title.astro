@@ -14,24 +14,21 @@ const { lang = 'en' }: Props = Astro.props
         @jamerrq.dev
       </p>
     </a>
-    <span class='block font-merriweather text-sm text-center'>
-      {lang === 'en' ? 'Software Developer' : 'Desarrollador de Software'}
+    <span class='block font-averia text-sm text-center'>
+      {lang === 'en' ? 'Software Dev' : 'Desarrollador Backend'}
     </span>
   </div>
   <div
-    class='fixed -z-10 top-0 left-0 origin-top-left w-full flex place-content-center'
+    class='fixed -z-10 top-0 left-0 origin-top-left w-full xl:flex place-content-center hidden'
+    id='animation-container'
   >
-    <canvas
-      id='c'
-      class='grow'
-      style='display: flex; align-items: center; overflow: hidden;'
+    <!-- <canvas id='c' class='grow'
       ><svg
-        class='grow'
-        style=''
+        id='x'
         onload='setInterval("for(t+=.1,R=T=C=Math.cos,c.width=w=128,i=9986,V=t/9&3;Y=i--/w;c.getContext`2d`.fillRect(X,Y,(C(t/6)*T^V*i/1e4*T+t)%20?(R=T++,1):(T=9,19/R),5/Z))for(Z=5,X=i%w+4/R;0<(V*95+C(t/3)+Z*X/64-Z^Z|(60-Y)*Z/58)%13;Z+=.2);",t=9)'
       >
       </svg></canvas
-    >
+    > -->
   </div>
 </div>
 

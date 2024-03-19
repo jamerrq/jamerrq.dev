@@ -1,6 +1,13 @@
 ---
 import Copyright from '@components/icons/copyright.astro'
-import { siAstro, siPreact, siTailwindcss, siMarkdown } from 'simple-icons'
+import {
+  siAstro,
+  siPreact,
+  siTailwindcss,
+  siMarkdown,
+  siMdx
+} from 'simple-icons'
+import { Image } from 'astro:assets'
 ---
 
 <style>
@@ -38,7 +45,7 @@ import { siAstro, siPreact, siTailwindcss, siMarkdown } from 'simple-icons'
     set:html={siTailwindcss.svg}
     fill={`#${siTailwindcss.hex}`}
   />
-  <svg class='w-6 h-6 inline' set:html={siMarkdown.svg} fill={`#fff`} />
+  <svg class='w-6 h-6 inline' set:html={siMdx.svg} fill={`#fff`} />
   <aside class=''>
     <a
       href='https://github.com/jamerrq'
@@ -55,10 +62,15 @@ import { siAstro, siPreact, siTailwindcss, siMarkdown } from 'simple-icons'
       href='https://librecounter.org/referer/show'
       target='_blank'
       rel='noreferrer'
+      aria-label='librecounter'
     >
-      <img
+      <Image
         class='w-2/3 hidden md:block lg:block xl:block'
         src='https://librecounter.org/oldStyle.svg'
+        alt='librecounter'
+        width='100'
+        height='30'
+        loading='eager'
       />
     </a>
   </aside>

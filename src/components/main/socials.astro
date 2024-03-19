@@ -73,7 +73,7 @@ const { lang }: Props = Astro.props
   </header>
   <div class='flex h-fit w-full items-center justify-center gap-2'>
     <span
-      class='font-bold text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-500 p-2 rounded shadow-sm shadow-black'
+      class='font-bold font-averia text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-500 p-2 rounded shadow-sm shadow-black'
     >
       jamerrq@gmail.com
     </span>
@@ -151,7 +151,7 @@ const { lang }: Props = Astro.props
   const copyMailButton = document.getElementById('copyMailButton')
   copyMailButton?.addEventListener('click', () => {
     navigator.clipboard.writeText('jamerrq@gmail.com')
-    toast('email shipped into your clipboard 🥳', {
+    toast('email shipped into your clipboard 📬', {
       duration: 2000,
       theme: {
         type: 'light'

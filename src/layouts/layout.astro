@@ -5,8 +5,12 @@ interface Props {
 }
 
 const { title, lang = 'en' }: Props = Astro.props
+
+// Fonts
 import '@fontsource/merriweather'
 import '@fontsource/rubik-doodle-shadow'
+import '@fontsource/averia-serif-libre'
+
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 import SEO from '@components/head/seo.astro'
@@ -87,7 +91,7 @@ import { Image } from 'astro:assets'
         font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
       }
     </style>
-    <script defer define:vars={{ lang }}>
+    <script defer is:inline define:vars={{ lang }}>
       // Theme switch
       function setTheme() {
         const darkIcon = document.getElementById('theme-toggle-dark-icon')
@@ -184,7 +188,6 @@ import { Image } from 'astro:assets'
       document.addEventListener('astro:after-preparation', setHomeRandomButton)
       document.addEventListener('astro:after-swap', setHomeRandomButton)
     </script>
-    <script is:inline src='/prism.js'></script>
     <a
       href='https://librecounter.org/referer/show'
       target='_blank'
@@ -200,5 +203,17 @@ import { Image } from 'astro:assets'
         loading='eager'
       />
     </a>
+    <script is:inline defer>
+      // if screen is too small, don't render the animation
+      if (window.innerWidth > 1024) {
+        const x = document.createElement('canvas')
+        x.id = 'c'
+        x.setAttribute('class', 'grow')
+        x.innerHTML = `<svg id='x' onload='setInterval("for(t+=.1,R=T=C=Math.cos,c.width=w=128,i=9986,V=t/9&3;Y=i--/w;c.getContext\`2d\`.fillRect(X,Y,(C(t/6)*T^V*i/1e4*T+t)%20?(R=T++,1):(T=9,19/R),5/Z))for(Z=5,X=i%w+4/R;0<(V*95+C(t/3)+Z*X/64-Z^Z|(60-Y)*Z/58)%13;Z+=.2);",t=9)'></svg>`
+        document.addEventListener('DOMContentLoaded', () => {
+          document.getElementById('animation-container').appendChild(x)
+        })
+      }
+    </script>
   </body>
 </html>

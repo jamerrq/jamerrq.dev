@@ -9,6 +9,7 @@
     "@astrojs/prism": "^3.0.0",
     "@astrojs/sitemap": "^3.1.1",
     "@astrojs/tailwind": "^5.0.4",
+    "@fontsource/averia-serif-libre": "^5.0.18",
     "@fontsource/merriweather": "^5.0.8",
     "astro": "^4.0.8",
     "astro-compress": "^2.2.15",
