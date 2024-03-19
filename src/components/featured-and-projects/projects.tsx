@@ -70,7 +70,8 @@ const BUTTONS_STYLES = [
   'rounded-md',
   'flex',
   'items-center',
-  'p-1'
+  'p-1',
+  'shadow-md shadow-black/90'
 ].join(' ')
 
 const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
@@ -103,13 +104,25 @@ function ResourceCard({
   const goRight = () => {
     index.value++
     if (index.value > data.length - 1) index.value = 0
+    // insert the 'animate-fade-in-left' class
+    const el = document.querySelector('#project-card')
+    el?.classList.add('animate-fade-in-left')
+    el?.addEventListener('animationend', () => {
+      el?.classList.remove('animate-fade-in-left')
+    })
   }
   const goLeft = () => {
     index.value--
     if (index.value < 0) index.value = data.length - 1
+    // insert the 'animate-fade-in-left' class
+    const el = document.querySelector('#project-card')
+    el?.classList.add('animate-fade-in-left')
+    el?.addEventListener('animationend', () => {
+      el?.classList.remove('animate-fade-in-left')
+    })
   }
   return (
-    <article class={PROJECT_STYLES} key={i}>
+    <article class={PROJECT_STYLES} key={i} id='project-card'>
       {i === 0 && <DoubleLeftButton _f={goLeft} />}
       {project?.featured && (
         <span class='absolute top-1 right-2 dark:text-amber-300 text-amber-800 underline'>

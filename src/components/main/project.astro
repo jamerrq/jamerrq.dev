@@ -35,20 +35,15 @@ import { Image } from 'astro:assets'
   class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'
 >
   <div
-    class='absolute bottom-0 right-2 font-mono text-xs bg-emerald-400 text-emerald-950 px-1'
+    class='absolute bottom-0 right-2 font-rubik-doodle text-xs dark:bg-emerald-900 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90'
   >
     {project?.time}+ {lang === 'en' ? 'months' : 'meses'}
   </div>
-  <a
-    href='https://pinturas-app-back.onrender.com/'
-    target='_blank'
-    rel='noopener noreferrer'
-    class='w-full'
+  <h1
+    class='text-sm xl:text-base font-rubik-doodle dark:text-emerald-100 text-emerald-950 bg-emerald-400 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'
   >
-    <h1 class='text-sm xl:text-base'>
-      {lang === 'en' ? project?.title.en : project?.title.es}
-    </h1>
-  </a>
+    {lang === 'en' ? project?.title.en : project?.title.es}
+  </h1>
   <section class='bg-transparent w-full flex justify-center items-center'>
     <Image
       src={project?.image}

@@ -4,7 +4,7 @@ const RESOURCE_STYLES: string = [
   'col-span-2',
   'row-span-4',
   'rounded-sm',
-  'shadow-[0_0_0.3rem_rgb(8_51_68)]', // rgb(8, 51, 68)
+  'shadow-[0_0_0.1rem_rgb(8_51_68)]', // rgb(8, 51, 68)
   'flex',
   'flex-col',
   'gap-2',
@@ -49,7 +49,8 @@ const BUTTONS_STYLES = [
   'items-center',
   'justify-center',
   'py-1',
-  'px-0.5'
+  'px-0.5',
+  'shadow-md shadow-black/90'
 ].join(' ')
 
 import { shuffle } from '@utils'
@@ -92,10 +93,20 @@ export default function Resources({ n = 3 }: ResourceProps) {
   const goRight = () => {
     index.value++
     if (index.value > data.length - 1) index.value = 0
+    const lastResource = document.getElementById('last-resource')
+    lastResource?.classList.add('animate-fade-in-left')
+    lastResource?.addEventListener('animationend', () => {
+      lastResource?.classList.remove('animate-fade-in-left')
+    })
   }
   const goLeft = () => {
     index.value--
     if (index.value < 0) index.value = data.length - 1
+    const firstResource = document.getElementById('first-resource')
+    firstResource?.classList.add('animate-fade-in-right')
+    firstResource?.addEventListener('animationend', () => {
+      firstResource?.classList.remove('animate-fade-in-right')
+    })
   }
 
   return (
@@ -107,6 +118,15 @@ export default function Resources({ n = 3 }: ResourceProps) {
           <article
             class={`${RESOURCE_STYLES} ${i === 1 ? 'px-5' : ''}`}
             key={i}
+            id={
+              i == 2
+                ? 'last-resource'
+                : i == 1
+                  ? 'middle-resource'
+                  : i == 0
+                    ? 'first-resource'
+                    : ''
+            }
           >
             {i === 0 && <DoubleLeftButton _f={goLeft} />}
             {i === 1 && <DoubleUpButton _f={goLeft} />}
