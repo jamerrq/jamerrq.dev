@@ -11,6 +11,11 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev).
 CSS](https://img.shields.io/badge/-Tailwind%20CSS-lightblue?style=flat-square&logo=tailwind-css&logoColor=blue)
 ![Preact](https://img.shields.io/badge/-Preact-673AB8?style=flat-square&logo=preact&logoColor=white)
 
+## Previews
+
+![Desktop](./lib/snaps/preview.png)
+![Mobile](./lib/snaps/preview-mobile.png)
+
 ### Tooling 🛠️
 
 ![Bun](https://img.shields.io/badge/-Bun-orange?style=flat-square&logo=bun&logoColor=white)
