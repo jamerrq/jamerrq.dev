@@ -1,3 +1,10 @@
 #title-movie {
     opacity: 0.75;
 }
+
+@font-face {
+    font-family: 'Rubik Doodle Subset';
+    src: url('/fonts/rubik-patched.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}

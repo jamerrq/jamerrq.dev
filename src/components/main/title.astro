@@ -3,21 +3,23 @@ interface Props {
   lang: string
 }
 const { lang = 'en' }: Props = Astro.props
+
+import BitwiseLiminal from '@movies/bitwise-liminal.astro'
 ---
 
 <div
-  class='row-span-2 col-span-1 xl:col-span-2 title dark:bg-slate-900/80 text-emerald-400 bg-slate-400/50 p-2 rounded-sm w-full flex items-center flex-row animate-blurred-fade-in relative'
+  class='row-span-2 col-span-1 xl:col-span-2 title bg-transparent text-emerald-400 p-2 rounded-sm w-full h-full flex items-center flex-row animate-blurred-fade-in relative'
 >
   <div class='flex flex-col gap-1 animate-fade-in z-10'>
     <a href={lang !== 'en' ? '/' : 'es'}>
       <p
-        class='font-rubik-doodle font-semibold text-2xl xl:text-4xl dark:bg-gray-500/70 bg-gray-600/80 px-2 py-1 rounded'
+        class='font-rubik-doodle font-semibold text-2xl xl:text-4xl dark:bg-gray-500/80 bg-gray-600/80 px-2 py-1 rounded'
       >
         @jamerrq.dev
       </p>
     </a>
     <span
-      class='block font-averia text-sm rounded w-fit mx-auto px-1 py-0.5 text-center dark:bg-gray-500/70 bg-gray-600/80'
+      class='block font-averia text-sm rounded w-fit mx-auto px-1 py-0.5 text-center dark:bg-gray-500/80 bg-gray-600/80'
     >
       {lang === 'en' ? 'Software Dev' : 'Desarrollador Backend'}
     </span>
@@ -26,16 +28,7 @@ const { lang = 'en' }: Props = Astro.props
     class='fixed -z-10 top-0 left-0 origin-top-left w-full xl:flex place-content-center flex overflow-hidden h-full bg-opacity-10'
     id='animation-container'
   >
-    <video
-      src='/img/movies/lost_loop_comp.webm'
-      autoplay
-      style='width: 100%; height: 100%'
-      muted
-      loop
-      playsinline
-      preload='auto'
-      class='object-cover w-full h-full'
-      id='animation'></video>
+    <BitwiseLiminal />
   </div>
 </div>
 

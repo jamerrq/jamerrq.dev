@@ -8,7 +8,7 @@ const { title, lang = 'en' }: Props = Astro.props
 
 // Fonts
 import '@fontsource/merriweather'
-import '@fontsource/rubik-doodle-shadow'
+// import '@fontsource/rubik-doodle-shadow'
 import '@fontsource/averia-serif-libre'
 
 // Styles
@@ -17,7 +17,6 @@ import '@styles/index.css'
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 import SEO from '@components/head/seo.astro'
-import { Image } from 'astro:assets'
 ---
 
 <!doctype html>
@@ -46,12 +45,15 @@ import { Image } from 'astro:assets'
     />
     <meta property='og:description' content='Software Development' />
     <meta property='og:site_name' content='jamerrq.dev' />
+    <meta name='theme-color' content='##10B981' />
     <SEO />
     <!-- Robots -->
     <meta name='robots' content='index, follow' />
     <meta name='googlebot' content='index, follow' />
     <meta name='google' content='notranslate' />
     <link rel='sitemap' href='/sitemap-index.xml' />
+
+    <!-- Others -->
     <link href='/css/prism-nord.css' rel='stylesheet' />
     <title>{title}</title>
     <ViewTransitions />
@@ -191,21 +193,6 @@ import { Image } from 'astro:assets'
       document.addEventListener('astro:after-preparation', setHomeRandomButton)
       document.addEventListener('astro:after-swap', setHomeRandomButton)
     </script>
-    <a
-      href='https://librecounter.org/referer/show'
-      target='_blank'
-      rel='noreferrer'
-      aria-label='librecounter'
-      class='fixed bottom-1 right-1 opacity-50 hover:opacity-100 transition-opacity duration-300'
-    >
-      <Image
-        src='https://librecounter.org/counter.svg'
-        alt='librecounter logo'
-        width='24'
-        height='24'
-        loading='eager'
-      />
-    </a>
     <script is:inline defer>
       // if screen is too small, don't render the animation
       const disabled = true

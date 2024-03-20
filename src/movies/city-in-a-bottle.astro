@@ -1,12 +1,20 @@
-<div
-  class='w-full h-52 relative border-dashed hover:border rounded mx-auto self-center'
+<a
+  href='https://killedbyapixel.github.io/TinyCode/256B/CityInABottle/'
+  target='_blank'
+  rel='noopener noreferrer'
+  class='w-full h-full grid place-content-center'
+  title='City in a Bottle by KilledByAPixel'
 >
-  <canvas
-    class=''
-    style='width:100%; z-index: -1; height: 250%;'
-    id='c'
-    onclick="setInterval('for(c.width=w=99,++t,i=6e3;i--;c.getContext`2d`.fillRect(i%w,i/w|0,1-d*Z/w+s,1))for(a=i%w/50-1,s=b=1-i/4e3,X=t,Y=Z=d=1;++Z<w&(Y<6-(32<Z&27<X%w&&X/9^Z/8)*8%46||d|(s=(X&Y&Z)%3/Z,a=b=1,d=Z/w));Y-=b)X+=a',t=9)"
+  <video
+    src='/movies/city_in_a_bottle.webm'
+    autoplay
+    style='width: 100%; height: 100%;'
+    muted
+    loop
+    playsinline
+    preload='auto'
+    class='object-cover w-full h-full rounded'
+    id='animation'
   >
-  </canvas>
-  <span class='absolute z-10 top-1 right-3 text-xs'>click me</span>
-</div>
+  </video>
+</a>

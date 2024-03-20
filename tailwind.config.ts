@@ -4,17 +4,18 @@ export default {
   theme: {
     debugScreens: {
       style: {
-        backgroundColor: 'white',
+        backgroundColor: 'grey',
         color: 'black',
-        position: 'absolute',
+        position: 'fixed',
         borderRadius: '5px',
-        fontFamily: 'monospace',
+        fontFamily: 'Fira Code',
+        fontStyle: 'italic',
         fontSize: '10px',
         fontWeight: 'bold',
-        margin: '5px'
-        // ...
+        margin: '5px',
+        opacity: '0.9'
       },
-      position: ['top', 'left']
+      position: ['bottom', 'right']
     },
     screens: {
       xs: { min: '300px', max: '639px' },
@@ -35,7 +36,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'rubik-doodle': ['Rubik Doodle Shadow', 'system-ui'],
+        'rubik-doodle': ['Rubik Doodle Subset', 'system-ui'],
         merriweather: ['Merriweather', 'serif'],
         averia: ['Averia Serif Libre', 'system-ui']
       }

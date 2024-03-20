@@ -30,6 +30,9 @@
       "@styles/*": [
         "src/styles/*"
       ],
+      "@imgs/*": [
+        "src/imgs/*"
+      ]
     },
     "jsx": "preserve",
     "jsxImportSource": "preact",
