@@ -1,8 +1,8 @@
 const LAST_ENTRIES_STYLES = [
   'col-span-6',
   'row-span-5',
-  'bg-slate-300',
-  'dark:bg-slate-900',
+  'bg-slate-300/80',
+  'dark:bg-slate-900/90',
   'dark:text-slate-300',
   'rounded-sm',
   'flex',
@@ -87,7 +87,7 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
       <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-4xl text-center'>
         - {lang === 'en' ? 'Last Entries' : 'Últimas Entradas'} -
       </h1>
-      <ul class='grid grid-cols-[1fr_5fr] gap-3 w-full p-2 responsive-text-sm'>
+      <ul class='grid grid-cols-[1fr_5fr] gap-3 w-full h-full p-2 responsive-text-sm'>
         <li />
         <li class='dark:text-cyan-400 text-cyan-950 text-xl' />
         {entries
@@ -105,7 +105,7 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
                 <li class='font-merriweather text-sm xl:text-base text-center'>
                   {entry.date}
                 </li>
-                <li class='font-merriweather text-sm xl:text-base  py-1 px-2 rounded-sm cursor-pointer hover:scale-[1.02] transition-all ease-in-out flex flex-col gap-2'>
+                <li class='font-merriweather text-sm xl:text-base  py-1 px-2 rounded-sm cursor-pointer hover:border-2 transition-all ease-in-out flex flex-col gap-2'>
                   <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
                     <div class='flex flex-col xl:flex-row gap-4'>
                       <span>{lang === 'en' ? entry.title : entry.titleEs}</span>

@@ -1,33 +1,4 @@
 ---
-const EXPERIENCE_STYLES = [
-  'col-span-1 xl:col-span-2',
-  'row-span-4',
-  'gap-2',
-  'bg-slate-300/70',
-  'rounded-sm',
-  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
-  'flex',
-  'items-center',
-  'justify-center',
-  'align-center',
-  'font-semibold',
-  'text-slate-950',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  'dark:bg-slate-900/95',
-  'dark:text-slate-200',
-  'flex',
-  'flex-col',
-  'pt-2',
-  'px-2',
-  '[&>div>ul>li]:dark:text-slate-200',
-  '[&>div>ul>li>a]:bg-emerald-500',
-  '[&>div>ul>li>a]:dark:bg-emerald-400',
-  '[&>div>ul>li>a]:dark:text-emerald-950',
-  '[&>div>ul>li>a]:text-slate-950'
-].join(' ')
-
 import { siGitkraken } from 'simple-icons'
 
 interface Props {
@@ -36,9 +7,10 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 
 import ProjectCard from './project.astro'
+import Box from '@components/boxes/box.astro'
 ---
 
-<article class={EXPERIENCE_STYLES} title="Projects I'm working on">
+<Box title="Projects I'm working on" otherStyles='xl:col-span-2 xl:row-span-4'>
   <header
     class='text-2xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
   >
@@ -47,7 +19,7 @@ import ProjectCard from './project.astro'
       {lang === 'en' ? 'Working on' : 'Trabajando en'}
     </p>
     <svg
-      class='w-6 h-6 inline-flex'
+      class='w-8 h-8 inline-flex shadow bg-white/50 p-1 rounded dark:bg-slate-900/80'
       set:html={siGitkraken.svg}
       fill={`#${siGitkraken.hex}`}
     />
@@ -60,4 +32,4 @@ import ProjectCard from './project.astro'
       <ProjectCard lang={lang} index={1} />
     </ul>
   </div>
-</article>
+</Box>

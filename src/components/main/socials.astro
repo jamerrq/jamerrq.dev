@@ -1,75 +1,27 @@
 ---
-const SOCIALS_STYLES: string = [
-  'z-10',
-  'col-span-2',
-  'row-span-2',
-  // 'gap-2',
-  'bg-slate-300/70',
-  'rounded-sm',
-  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
-  'flex',
-  'items-center',
-  'justify-center',
-  'text-4xl',
-  // 'font-bold',
-  'text-slate-950',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  'transition-all',
-  'duration-200',
-  'dark:transition-all',
-  // 'border-emerald-950',
-  // 'dark:border-emerald-300',
-  // 'border-2',
-  // 'hover:border-slate-100',
-  'dark:bg-slate-900/95',
-  'dark:text-emerald-300',
-  // 'hover:scale-[1.02]',
-  // 'hover:duration-200',
-  // 'hover:ease-in-out',
-  'grid',
-  'grid-rows-3',
-  'grid-cols-1',
-  'p-2'
-  // 'animate-blurred-fade-in',
-  // 'animate-delay-400'
-].join(' ')
-
-import {
-  siMaildotru,
-  siGithub,
-  siGmail,
-  siLichess,
-  siLinkedin,
-  siAdobeacrobatreader
-} from 'simple-icons'
+import { siMaildotru } from 'simple-icons'
 
 import Copy from '@components/icons/copy.astro'
-
-// {ICONS_STYLES}
-const ICONS_STYLES = [
-  'w-6',
-  'h-6',
-  'xl:w-8',
-  'xl:h-8',
-  'inline-flex',
-  'fill-slate-950',
-  'dark:fill-emerald-300',
-  'drop-shadow-sm',
-  'drop-shadow-black'
-].join(' ')
+import GenericIcon from '@components/icons/icon.astro'
 
 interface Props {
   lang: string
 }
+
 const { lang }: Props = Astro.props
+
+import Box from '@components/boxes/box.astro'
+
+import getIconsFn from '@data/socials.ts'
+const socials = getIconsFn(lang)
 ---
 
-<article class={SOCIALS_STYLES}>
-  <header class='flex gap-2 justify-center items-center'>
+<Box title='Contact Section' otherStyles='xl:col-span-2 xl:row-span-2 gap-6'>
+  <header
+    class='flex gap-2 justify-center items-center dark:text-emerald-300 text-slate-950'
+  >
     <p class='font-semibold text-3xl xl:text-4xl'>Contact</p>
-    <svg class={ICONS_STYLES} set:html={siMaildotru.svg} />
+    <GenericIcon svg={siMaildotru.svg} />
   </header>
   <div class='flex h-fit w-full items-center justify-center gap-2'>
     <span
@@ -83,79 +35,11 @@ const { lang }: Props = Astro.props
       />
     </button>
   </div>
-  <div class='flex justify-around [&>a]:'>
-    <!-- GitHub -->
-    <a
-      href='https://github.com/jamerrq'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='hover:scale-110'
-      title='GitHub'
-    >
-      <svg class={ICONS_STYLES} set:html={siGithub.svg} fill={siGithub.hex} />
-    </a>
-    <!-- Mail -->
-    <a
-      href='mailto:jamerrq@gmail.com'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='hover:scale-110'
-      title='Mail'
-    >
-      <svg class={ICONS_STYLES} set:html={siGmail.svg} fill={siGmail.hex} />
-    </a>
-    <!-- LinkedIn -->
-    <a
-      href='https://www.linkedin.com/in/jamerrq/'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='hover:scale-110'
-      title='Linkedin'
-    >
-      <svg
-        class={ICONS_STYLES}
-        set:html={siLinkedin.svg}
-        fill={siLinkedin.hex}
-      />
-    </a>
-    <!-- CV -->
-    <a
-      href={lang === 'en'
-        ? '/docs/cv_Jamer_Rebolledo_en.pdf'
-        : '/docs/cv_Jamer_Rebolledo_es.pdf'}
-      target='_blank'
-      rel='noopener noreferrer'
-      class='hover:scale-110'
-      title='CV'
-    >
-      <svg
-        class={ICONS_STYLES}
-        set:html={siAdobeacrobatreader.svg}
-        fill={siAdobeacrobatreader.hex}
-      />
-    </a>
-    <!-- Lichess -->
-    <a
-      href='https://lichess.org/@/jamerrq'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='hover:scale-110'
-      title='Lichess'
-    >
-      <svg class={ICONS_STYLES} set:html={siLichess.svg} fill={siLichess.hex} />
-    </a>
+  <div class='flex justify-around gap-4 w-[90%]'>
+    {
+      socials.map((s) => (
+        <GenericIcon title={s.title} href={s.href} svg={s.svg} />
+      ))
+    }
   </div>
-</article>
-<script>
-  import { toast } from 'wc-toast'
-  const copyMailButton = document.getElementById('copyMailButton')
-  copyMailButton?.addEventListener('click', () => {
-    navigator.clipboard.writeText('jamerrq@gmail.com')
-    toast('email shipped into your clipboard 📬', {
-      duration: 2000,
-      theme: {
-        type: 'light'
-      }
-    })
-  })
-</script>
+</Box>

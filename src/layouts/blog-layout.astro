@@ -9,26 +9,44 @@ interface Props {
 }
 const { frontmatter }: Props = Astro.props
 import Buttons from '@components/main/buttons.astro'
+
+import src from '@media/background.webm'
 ---
 
 <Layout title={frontmatter.title}>
   <style>
-    html {
+    * {
       scroll-behavior: smooth;
-      scrollbar-width: none;
-      background-image: url('/noise-light.png');
+      scrollbar-width: thin;
     }
   </style>
-  <main
-    class='dark:bg-[#1b383c] bg-[#9DBC98] min-h-[95dvh] lg:w-[80dvw] md:w-[95dvw] w-[65dvw] xs:w-[95dvw] mx-auto p-4 dark:text-emerald-50 [&>*]:text-balance overflow-y-auto max-h-[100dvh] [scrollbar-color:#1b383c_#9DBC98] [scrollbar-width:thin]'
+  <div
+    class='dark:bg-[#1b383c]/95 py-8 bg-[#D6DAC8]/80 xl:h-[100dvh] h-[95dvh] lg:w-[80dvw] md:w-[95dvw] w-[65dvw] xs:w-[95dvw] mx-auto px-4 dark:text-emerald-50 [&>*]:text-balance overflow-y-auto max-h-[100dvh] [scrollbar-color:#1b383c_#9DBC98] [scrollbar-width:thin] relative'
   >
+    <div
+      class='fixed -z-10 top-0 left-0 w-full h-full opacity-5'
+      id='blog-container'
+    >
+      <video
+        src={src}
+        autoplay
+        style='width: 100%; height: 100%; opacity: 65%;'
+        muted
+        loop
+        playsinline
+        preload='auto'
+        class='object-cover w-full h-full rounded'
+        id='noise-video'
+      >
+      </video>
+    </div>
     <div class='sticky top-1'>
       <Buttons href={frontmatter.hrefLang} />
     </div>
     <br />
     <header
       transition:name='blog-title'
-      class='flex font-merriweather text-slate-950 bg-emerald-500 p-2 cursor-pointer font-bold'
+      class='flex font-averia text-slate-950 bg-[#BE7B72] dark:bg-[#FFFDD7] p-2 cursor-pointer font-bold'
       onclick='window.history.back()'
     >
       <h1>
@@ -37,10 +55,16 @@ import Buttons from '@components/main/buttons.astro'
     </header>
     <br />
     <div
-      class='[&>h1]:font-bold font-merriweather font-semibold text-sm [&_h1]:text-emerald-900 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-900 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-cyan-700 [&_a]:dark:text-cyan-300 flex flex-col gap-2 mb-8 [&_blockquote]:[font-merriweather] [&_code]:[font-merriweather] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden'
+      class='[&>h1]:font-bold font-averia font-semibold text-sm [&_h1]:text-emerald-900 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-900 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#5755FE] [&_a]:dark:text-cyan-300 flex flex-col gap-2 mb-8 [&_blockquote]:[font-merriweather] [&_code]:[font-merriweather] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden'
     >
       <slot />
     </div>
-  </main>
+  </div>
+  <script>
+    const noiseVideo = document.getElementById(
+      'noise-video'
+    ) as HTMLVideoElement
+    noiseVideo.playbackRate = 0.2
+  </script>
   <Footer />
 </Layout>

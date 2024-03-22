@@ -1,0 +1,23 @@
+---
+interface Props {
+  ncols?: number
+  nrows?: number
+  animated?: boolean
+  delay?: number
+  title: string
+  href: string
+  otherStyles?: string
+}
+
+const { props }: { props: Props } = Astro
+const { href, title } = props
+---
+
+<a
+  href={href}
+  title={title}
+  data-animated={props.animated}
+  class=`bg-slate-300/70 dark:bg-slate-900/95 rounded-sm flex items-center justify-center font-bold dark:text-slate-300 font-rubik-doodle w-full h-full  text-base py-3 px-2 relative hover:border-2 hover:border-amber-500/60 [&_p]:text-amber-950 [&_p]:dark:text-amber-300 data-[animated]:animate-blurred-fade-in ${props?.otherStyles}`
+>
+  <slot />
+</a>

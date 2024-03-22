@@ -1,38 +1,13 @@
 ---
 import OpenToWork from '@components/badges/open-to-work.astro'
-
+import Box from '@components/boxes/box.astro'
 interface Props {
   lang: string
 }
 const { lang = 'en' }: Props = Astro.props
-const ABOUT_ME_STYLES = [
-  'col-span-1 xl:col-span-4',
-  'row-span-2',
-  'bg-slate-300/70',
-  'dark:bg-slate-900/95',
-  'rounded-sm',
-  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
-  'flex',
-  'items-center',
-  'justify-center',
-  'font-bold',
-  'dark:text-slate-300',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  // 'border-2',
-  // 'border-emerald-950',
-  // 'dark:border-emerald-300',
-  'flex-col',
-  'text-base',
-  'py-3',
-  'px-2',
-  'relative'
-  // 'animate-blurred-fade-in'
-].join(' ')
 ---
 
-<article class={ABOUT_ME_STYLES} title='Get to know me'>
+<Box title='Get to know me' otherStyles='xl:col-span-4 xl:row-span-2'>
   <header class='flex flex-col xl:flex-row gap-1 items-center'>
     <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl'>
       {lang === 'en' ? 'Get To Know Me' : 'Conóceme'}
@@ -42,9 +17,9 @@ const ABOUT_ME_STYLES = [
   <div
     class='flex items-center p-3 justify-around w-full font-averia xl:text-lg text-sm relative'
   >
-    <ul class='w-full text-center p-2 gap-1.5 flex flex-col'>
+    <ul class='w-full text-center p-2 gap-1.5 flex flex-col [&_p]:text-balance'>
       <li>
-        <p class='text-balance'>
+        <p>
           {
             lang === 'en'
               ? "My name is Jamer José, I'm a Mathematical Engineer from"
@@ -60,10 +35,8 @@ const ABOUT_ME_STYLES = [
           </a>
         </p>
       </li>
-      <!-- <p class='font-fira inline'>󰜐</p> -->
       <li>
-        <!-- Currently working as part time Backend Developer at -->
-        <p class='text-balance'>
+        <p>
           {
             lang === 'en'
               ? 'Currently working as part time Backend Developer at'
@@ -80,9 +53,7 @@ const ABOUT_ME_STYLES = [
         </p>
       </li>
       <li>
-        <p class='text-balance'>
-          <!-- Big fan of the open source and the web, as well as the great
-          possibilities they offer. -->
+        <p>
           {
             lang === 'en'
               ? 'Big fan of the open source and the web, as well as the great possibilities they offer'
@@ -90,22 +61,6 @@ const ABOUT_ME_STYLES = [
           }
         </p>
       </li>
-      <li class='hidden'>
-        <p class='text-balance hidden'>
-          <!-- I strongly believe that the best way to achieve something is to start
-          it. -->
-          <!-- {
-            lang === 'en'
-              ? 'I strongly believe that the best way to achieve something is to start it'
-              : 'Creo firmemente que la mejor manera de lograr algo es comenzarlo'
-          } -->
-          <!-- {
-            lang === 'en'
-              ? 'Currently focused on web development, with a strong interest in the backend'
-              : 'Actualmente enfocado en el desarrollo web, con un fuerte interés en el backend'
-          } -->
-        </p>
-      </li>
     </ul>
   </div>
-</article>
+</Box>

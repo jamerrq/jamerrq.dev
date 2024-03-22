@@ -1,34 +1,5 @@
 ---
-const SOCIALS_STYLES: string = [
-  'col-span-1 xl:col-span-2',
-  'row-span-2',
-  'gap-2',
-  'bg-slate-300/70',
-  'rounded-sm',
-  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
-  'flex',
-  'items-center',
-  'justify-center',
-  'text-2xl xl:text-4xl',
-  'font-bold',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  'transition-all',
-  'duration-200',
-  'dark:transition-all',
-  'border-indigo-950',
-  'dark:border-indigo-300',
-  // 'border-2',
-  'dark:bg-slate-900',
-  'text-indigo-950',
-  'dark:text-indigo-300',
-  'grid',
-  'grid-rows-2',
-  'grid-cols-1',
-  'p-2'
-].join(' ')
-
+import Box from '@components/boxes/box.astro'
 import {
   siPython,
   siJavascript,
@@ -51,13 +22,17 @@ const SVGS_STYLES = [
 ].join(' ')
 ---
 
-<article class={SOCIALS_STYLES} title='My Links'>
+<Box
+  title='My Social Links'
+  animated
+  otherStyles='xl:col-span-2 xl:row-span-2 gap-4 animate-delay-200'
+>
   <div class='flex gap-2 justify-center'>
-    <p>
+    <h2 class='text-3xl'>
       {lang === 'en' ? 'Languages' : 'Lenguajes'}
-    </p>
+    </h2>
   </div>
-  <div class='flex justify-around [&>a]: [&>a]:font-thin'>
+  <div class='flex justify-around w-full [&>a]: [&>a]:font-thin'>
     <!-- Python -->
     <a
       href='https://www.python.org/'
@@ -109,4 +84,4 @@ const SVGS_STYLES = [
       <svg class={SVGS_STYLES} set:html={siCsharp.svg} />
     </a>
   </div>
-</article>
+</Box>

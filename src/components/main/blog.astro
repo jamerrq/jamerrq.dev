@@ -1,32 +1,5 @@
 ---
-const BLOG_STYLES = [
-  'col-span-1 xl:col-span-1',
-  'row-span-2',
-  'gap-2',
-  'bg-slate-300/80',
-  'rounded-sm',
-  'flex',
-  'items-center',
-  'justify-center',
-  'xl:text-4xl text-2xl',
-  'font-bold',
-  'text-amber-950',
-  'dark:text-amber-300',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  'transition-all',
-  'duration-200',
-  'dark:transition-all',
-  'dark:bg-slate-900/90',
-  'hover:scale-[1.02]',
-  'hover:duration-200',
-  'hover:ease-in-out',
-  'p-2',
-  'hover:border-2',
-  'hover:border-amber-500'
-].join(' ')
-
+import Hbox from '@components/boxes/hbox.astro'
 import { siGitbook } from 'simple-icons'
 
 interface Props {
@@ -35,15 +8,16 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 ---
 
-<a
-  class={BLOG_STYLES}
-  title='Personal Blog'
+<Hbox
+  title='Blog'
   href={lang === 'en' ? '/blog' : '/es/blog'}
-  transition:name='blog'
+  otherStyles='xl:row-span-2 [&_p]:text-3xl'
 >
-  <p>Blog</p>
-  <svg
-    class='w-8 h-8 inline-flex dark:fill-amber-300 fill-amber-950'
-    set:html={siGitbook.svg}
-  />
-</a>
+  <div class='flex gap-2' transition:name='blog'>
+    <p>Blog</p>
+    <svg
+      class='w-8 h-8 inline-flex dark:fill-amber-300 fill-amber-950'
+      set:html={siGitbook.svg}
+    />
+  </div>
+</Hbox>

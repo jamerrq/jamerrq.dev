@@ -1,6 +1,6 @@
 ---
 import Copyright from '@components/icons/copyright.astro'
-import { siAstro, siPreact, siTailwindcss, siMdx } from 'simple-icons'
+import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
 ---
 
 <style>
@@ -17,15 +17,16 @@ import { siAstro, siPreact, siTailwindcss, siMdx } from 'simple-icons'
     text-align: center;
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #fff;
     background-color: #000;
+    opacity: 1;
   }
 </style>
 
-<footer class='font-merriweather'>
+<footer class='font-averia'>
   <span> Powered by</span>
   <svg class='w-6 h-6 inline' set:html={siAstro.svg} fill={`#${siAstro.hex}`} />
   <svg
@@ -39,7 +40,8 @@ import { siAstro, siPreact, siTailwindcss, siMdx } from 'simple-icons'
     fill={`#${siTailwindcss.hex}`}
   />
   <svg class='w-6 h-6 inline' set:html={siMdx.svg} fill={`#fff`} />
-  <aside class=''>
+  <svg class='w-6 h-6 inline' set:html={siBun.svg} fill={`#fff`} />
+  <aside>
     <a
       href='https://github.com/jamerrq'
       target='_blank'

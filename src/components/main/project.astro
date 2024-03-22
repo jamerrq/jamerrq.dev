@@ -24,9 +24,14 @@ interface Project {
 }
 import { projects } from '@data/working-on.json'
 const project = projects.at(index) as Project
-const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
-  ' '
-)
+const SVGS_STYLES = [
+  'w-5',
+  'h-5',
+  'xl:w-7',
+  'xl:h-7',
+  'hover:scale-110',
+  'shadow bg-white/50 p-1 rounded dark:bg-slate-900/80'
+].join(' ')
 
 import { Image } from 'astro:assets'
 ---

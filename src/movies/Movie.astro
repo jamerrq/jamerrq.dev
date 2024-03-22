@@ -1,0 +1,30 @@
+---
+interface Props {
+  href: string
+  title?: string
+  src: string
+}
+
+const { href, title = 'Generic Movie', src }: Props = Astro.props
+---
+
+<a
+  href={href}
+  target='_blank'
+  rel='noopener noreferrer'
+  class='w-full h-full grid place-content-center'
+  title={title}
+  aria-label={title}
+>
+  <video
+    src={src}
+    autoplay
+    style='width: 100%; height: 100%;'
+    muted
+    loop
+    playsinline
+    preload='auto'
+    class='object-cover w-full h-full rounded'
+  >
+  </video>
+</a>

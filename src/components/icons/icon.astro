@@ -1,0 +1,34 @@
+---
+interface Props {
+  svg: string
+  hex?: string
+  href?: string
+  title?: string
+}
+
+const { svg, hex = '#000', href = '', title = 'Generic Icon' } = Astro.props
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      target='_blank'
+      rel='noopener noreferrer'
+      class='hover:scale-110'
+      title={title}
+    >
+      <svg
+        class='w-6 h-6 xl:w-8 xl:h-8 inline-flex fill-slate-950 dark:fill-emerald-300 drop-shadow-black drop-shadow-2xl'
+        set:html={svg}
+        fill={hex}
+      />
+    </a>
+  ) : (
+    <svg
+      class='w-6 h-6 xl:w-8 xl:h-8 inline-flex fill-slate-950 dark:fill-emerald-300'
+      set:html={svg}
+      fill={hex}
+    />
+  )
+}

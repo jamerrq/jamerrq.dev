@@ -32,6 +32,9 @@
       ],
       "@imgs/*": [
         "src/imgs/*"
+      ],
+      "@media/*": [
+        "src/media/*"
       ]
     },
     "jsx": "preserve",

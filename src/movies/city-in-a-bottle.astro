@@ -1,20 +1,9 @@
-<a
-  href='https://killedbyapixel.github.io/TinyCode/256B/CityInABottle/'
-  target='_blank'
-  rel='noopener noreferrer'
-  class='w-full h-full grid place-content-center'
-  title='City in a Bottle by KilledByAPixel'
->
-  <video
-    src='/movies/city_in_a_bottle.webm'
-    autoplay
-    style='width: 100%; height: 100%;'
-    muted
-    loop
-    playsinline
-    preload='auto'
-    class='object-cover w-full h-full rounded'
-    id='animation'
-  >
-  </video>
-</a>
+---
+import Movie from './Movie.astro'
+
+const href = 'https://killedbyapixel.github.io/TinyCode/256B/CityInABottle/'
+const title = 'City in a Bottle by KilledByAPixel'
+const src = '/movies/city_in_a_bottle.webm'
+---
+
+<Movie href={href} title={title} src={src} />

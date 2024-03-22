@@ -1,33 +1,9 @@
 ---
-const DEV_TOOLS_STYLES = [
-  'col-span-2',
-  'row-span-3',
-  'bg-slate-300/70',
-  'rounded-sm',
-  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
-  'flex',
-  'flex-col',
-  'gap-2',
-  'items-center',
-  'justify-center',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  'transition-all',
-  // 'border-2',
-  'border-cyan-950',
-  'dark:border-cyan-300',
-  'text-blue-950',
-  'dark:bg-slate-900',
-  'dark:text-blue-300',
-  'text-2xl',
-  'font-bold',
-  'p-2'
-].join(' ')
-
 import TechIcon from '@components/icons/tech-icon.astro'
 import TechIcons, { type IconProps } from '@data/tech-icons'
 const { ides, apis, linters, dvc, others } = TechIcons
+
+import Box from '@components/boxes/box.astro'
 
 interface Props {
   lang?: string
@@ -35,10 +11,13 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 ---
 
-<article title='The tools I (love) work with' class={DEV_TOOLS_STYLES}>
+<Box
+  title='The tools I (love) work with'
+  otherStyles='xl:row-span-3 xl:col-span-2 animate-delay-300'
+  animated
+>
   <header class='flex gap-2 text-2xl'>
     <h1 class=''>Dev Tools</h1>
-    <!-- <p class='font-thin'></p> -->
   </header>
   <ul
     class='text-xl w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-sm [&_header]:text-amber-950 [&_header]:dark:text-amber-300'
@@ -137,4 +116,4 @@ const { lang = 'en' }: Props = Astro.props
       </section>
     </li>
   </ul>
-</article>
+</Box>

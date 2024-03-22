@@ -1,40 +1,14 @@
 ---
-const OS_STYLES = [
-  'col-span-1 xl:col-span-1',
-  'row-span-2',
-  'gap-2',
-  'bg-slate-300/70',
-  'rounded-sm',
-  'shadow-[0_0_0.5rem_rgba(0_0_0_0.5)]',
-  'flex',
-  'flex-col',
-  'items-center',
-  'justify-center',
-  'font-bold',
-  'dark:text-amber-600',
-  'text-amber-900',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  'transition-all',
-  'duration-200',
-  'border-amber-950',
-  'dark:border-amber-600',
-  // 'border-2',
-  'dark:bg-slate-900',
-  'hover:scale-[1.02]',
-  'p-2'
-].join(' ')
+import Hbox from '@components/boxes/hbox.astro'
 
 import { siLinux, siUbuntu } from 'simple-icons'
 ---
 
-<a
-  class={OS_STYLES}
+<Hbox
   title='My OS'
   href='https://releases.ubuntu.com/focal/'
-  target='_blank'
-  rel='noopener noreferrer'
+  animated
+  otherStyles='xl:row-span-2 flex-col animate-delay-200'
 >
   <header class='flex gap-2 items-center text-3xl'>
     <h1>OS</h1>
@@ -53,4 +27,4 @@ import { siLinux, siUbuntu } from 'simple-icons'
     <p>Ubuntu 20.04.6 LTS</p>
     <p>Focal Fossa</p>
   </section>
-</a>
+</Hbox>

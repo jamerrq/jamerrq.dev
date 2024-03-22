@@ -66,7 +66,6 @@ export default {
     'fill-[#777BB4]',
     'fill-[#1572B6]',
     'fill-[#339933]',
-    // 'indigo', 'yellow', 'amber', 'red', 'purple', 'pink',
     'bg-indigo-100',
     'bg-indigo-900',
     'text-indigo-800',
@@ -90,6 +89,8 @@ export default {
     'bg-pink-100',
     'bg-pink-900',
     'text-pink-800',
-    'text-pink-300'
+    'text-pink-300',
+    'animate-delay-100',
+    'animate-delay-200'
   ]
 }

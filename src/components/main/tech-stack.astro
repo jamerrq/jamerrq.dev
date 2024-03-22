@@ -1,28 +1,5 @@
 ---
-const TECH_STACK_STYLES: string = [
-  'col-span-2',
-  'row-span-3',
-  'bg-slate-300/80',
-  'rounded-sm',
-  'flex',
-  'flex-col',
-  'p-2',
-  'items-center',
-  'justify-around',
-  'font-rubik-doodle',
-  'w-full',
-  'h-full',
-  'transition-all',
-  'text-amber-950',
-  'dark:text-amber-300',
-  'dark:bg-slate-900/95',
-  'hover:scale-[1.02]',
-  'hover:border-2',
-  'hover:border-amber-500',
-  'text-2xl'
-].join(' ')
-
-// import Hbox from '@components/main/hbox.astro'
+import Hbox from '@components/boxes/hbox.astro'
 
 import {
   siNodedotjs,
@@ -44,7 +21,12 @@ const ICON_BLOCKS_STYLES = [
   'gap-2',
   '[&>img]:rounded-sm',
   'p-1',
-  'rounded-sm'
+  'rounded-sm',
+  '[&_svg]:shadow',
+  '[&_svg]:p-1',
+  '[&_svg]:bg-white/50',
+  '[&_svg]:dark:bg-slate-900/80',
+  '[&_svg]:rounded'
 ].join(' ')
 interface Props {
   lang?: string
@@ -54,21 +36,23 @@ const { lang = 'en' }: Props = Astro.props
 
 const SUBTITLE_STYLES = ['flex', 'flex-row', 'gap-2', 'text-2xl'].join(' ')
 
-const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
+const SVGS_STYLES = ['w-6', 'h-6', 'xl:w-8', 'xl:h-8', 'hover:scale-110'].join(
   ' '
 )
 ---
 
-<a
+<Hbox
   title='The tools I (love) work with'
-  class={TECH_STACK_STYLES}
   href={lang === 'en' ? 'tech-stack' : '/es/tech-stack'}
-  transition:name='tech-stack'
+  otherStyles='xl:row-span-3 xl:col-span-2 flex-col gap-4'
 >
-  <div class='gap-2 flex font-bold text-2xl xl:text-4xl'>
-    <p>
+  <div
+    class='gap-2 flex font-bold text-2xl xl:text-4xl text-amber-950 dark:text-amber-300'
+    transition:name='tech-stack'
+  >
+    <h2>
       {lang === 'en' ? 'Tech Stack' : 'Tecnologías'}
-    </p>
+    </h2>
   </div>
   <div class='grid grid-cols-2 gap-2 items-center justify-items-center'>
     <div class={SUBTITLE_STYLES}>
@@ -152,11 +136,11 @@ const SVGS_STYLES = ['w-5', 'h-5', 'xl:w-6', 'xl:h-6', 'hover:scale-110'].join(
     </div>
   </div>
   <aside class='p-2 rounded-sm flex gap-2 justify-center items-center'>
-    <p
+    <span
       class='font-bold text-sm xl:text-base dark:text-emerald-300 text-slate-900 font-averia'
     >
       <span class='-mt-5'> ❯</span>
       {lang === 'en' ? 'Tap to see more' : 'Toca para ver más'}
-    </p>
+    </span>
   </aside>
-</a>
+</Hbox>

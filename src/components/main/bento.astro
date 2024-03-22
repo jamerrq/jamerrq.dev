@@ -1,29 +1,5 @@
----
-const BENTO_STYLES = [
-  'bg-transparent',
-  'flex',
-  'flex-col',
-  'xl:grid',
-  'items-center',
-  'justify-center',
-  // 'min-w-[95dvw]',
-  'xl:h-[95dvh]',
-  'w-[95dvw]',
-  'lg:w-[75dvw]',
-  'xl:h-[95dvh]',
-  'content-center',
-  'rounded-sm',
-  'shadow-xl',
-  // 'border-2',
-  'grid-cols-1',
-  'auto-cols-auto',
-  'grid-cols-6',
-  'grid-rows-6',
-  'gap-2',
-  'p-2'
-].join(' ')
----
-
-<section class={BENTO_STYLES}>
+<section
+  class='bg-transparent flex flex-col xl:grid items-center justify-center xl:h-[95dvh] w-[95dvw] lg:w-[85dvw] rounded-sm shadow-xl auto-cols-auto grid-cols-6 grid-rows-6 gap-2 px-2 py-8 xl:py-4'
+>
   <slot />
 </section>

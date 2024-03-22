@@ -1,20 +1,9 @@
-<a
-  href='https://killedbyapixel.github.io/TinyCode/256B/BitwiseLiminal/'
-  target='_blank'
-  rel='noopener noreferrer'
-  class='block w-full h-full'
-  title='Bitwise Liminal by KilledByAPixel'
->
-  <video
-    src='/movies/bitwise_liminal.webm'
-    autoplay
-    style='width: 100%; height: 100%'
-    muted
-    loop
-    playsinline
-    preload='auto'
-    class='object-cover w-full h-full'
-    id='animation'
-  >
-  </video>
-</a>
+---
+import Movie from './Movie.astro'
+
+const href = 'https://killedbyapixel.github.io/TinyCode/256B/BitwiseLiminal/'
+const title = 'Bitwise Liminal by KilledByAPixel'
+const src = '/movies/bitwise_liminal.webm'
+---
+
+<Movie href={href} title={title} src={src} />

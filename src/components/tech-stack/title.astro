@@ -1,26 +1,5 @@
 ---
-// import TechPeep from '@components/css-peeps/tech-peep.astro'
-// import TechPeepLight from '@components/css-peeps/tech-peep-light.astro'
-const TITLE_STYLES: string = [
-  'row-span-2',
-  'col-span-2',
-  'dark:bg-emerald-900',
-  'dark:text-emerald-300',
-  'text-emerald-950',
-  'bg-emerald-300',
-  'p-4',
-  'rounded-sm',
-  'w-full',
-  'flex',
-  'h-full',
-  'items-center',
-  'justify-center',
-  'flex-row',
-  'font-rubik-doodle'
-  // 'shadow-[0_0_0.5rem_rgba(0_0_0)]'
-  // 'shadow-[0_0_0.15rem_rgb(69_26_3)]', // rgb(69, 26, 3)
-  // 'shadow-[0_0_0.25rem_rgb(253_230_138)]' // rgb(253, 230, 138)
-].join(' ')
+import Hbox from '@components/boxes/hbox.astro'
 
 interface Props {
   lang?: string
@@ -28,17 +7,19 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 ---
 
-<a
-  class={TITLE_STYLES}
-  transition:name='tech-stack'
+<Hbox
+  title='Back Home'
+  otherStyles='xl:col-span-2 xl:row-span-2'
   href={lang === 'en' ? '/' : '/es'}
 >
-  <div class='flex flex-col font-merriweather min-w-[50%]'>
+  <div
+    class='flex flex-col font-merriweather min-w-[50%]'
+    transition:name='tech-stack'
+  >
     <p class='font-semibold text-2xl font-rubik-doodle'>
       {lang === 'en' ? 'Tech Stack' : 'Mi Stack'}
     </p>
     <p class='font-semibold text-balance text-sm xl:text-base'>
-      <!-- Painters have brushes, <br /> I got these. -->
       {
         lang === 'en'
           ? 'Painters have brushes, I got these <3'
@@ -46,6 +27,4 @@ const { lang = 'en' }: Props = Astro.props
       }
     </p>
   </div>
-  <!-- <TechPeep />
-  <TechPeepLight /> -->
-</a>
+</Hbox>

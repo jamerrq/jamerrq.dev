@@ -14,198 +14,26 @@ import '@fontsource/averia-serif-libre'
 // Styles
 import '@styles/index.css'
 
+// Others
 import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 import SEO from '@components/head/seo.astro'
+import Scripts from '@components/head/scripts.astro'
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='jamerrq.dev' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/png' href='/favicon.png' />
-    <meta name='generator' content={Astro.generator} />
-    <!-- Open Graph -->
-    <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:site' content='@jamerrq' />
-    <meta name='twitter:title' content='jamerrq.dev' />
-    <meta name='twitter:description' content='Software Development' />
-    <meta
-      name='twitter:image'
-      content='https://jamerrq.deno.dev/og-image2.png'
-    />
-    <meta property='og:title' content='jamerrq.dev' />
-    <meta property='og:type' content='personal website' />
-    <meta property='og:url' content='https://jamerrq.deno.dev' />
-    <meta
-      property='og:image'
-      content='https://jamerrq.deno.dev/og-image2.png'
-    />
-    <meta property='og:description' content='Software Development' />
-    <meta property='og:site_name' content='jamerrq.dev' />
-    <meta name='theme-color' content='##10B981' />
     <SEO />
-    <!-- Robots -->
-    <meta name='robots' content='index, follow' />
-    <meta name='googlebot' content='index, follow' />
-    <meta name='google' content='notranslate' />
-    <link rel='sitemap' href='/sitemap-index.xml' />
-
-    <!-- Others -->
-    <link href='/css/prism-nord.css' rel='stylesheet' />
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body data-dev={import.meta.env.DEV} class='data-[dev]:debug-screens'>
     <wc-toast></wc-toast>
     <Background />
-    <main class='min-h-[100dvh] grid items-center justify-center'>
+    <main class='min-h-[100dvh] grid place-content-center'>
       <slot />
     </main>
-    <style is:global>
-      /* Reset by @souporserious */
-      * {
-        box-sizing: border-box;
-        /* position: relative; */
-        min-width: 0;
-      }
-
-      body {
-        min-height: 100dvh;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4 {
-        text-wrap: balance;
-      }
-
-      p {
-        text-wrap: pretty;
-      }
-
-      /* @font-face {
-        src: url('/fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.woff2');
-        font-family: 'Rubik Doodle Shadow';
-      } */
-
-      .responsive-text {
-        font-size: clamp(1.5rem, 8vw - 2rem, 3rem);
-      }
-    </style>
-    <script defer is:inline define:vars={{ lang }}>
-      // Theme switch
-      function setTheme() {
-        const darkIcon = document.getElementById('theme-toggle-dark-icon')
-        const lightIcon = document.getElementById('theme-toggle-light-icon')
-
-        // Cambia los iconos dentro del botón en función de la configuración anterior
-        if (
-          localStorage.getItem('color-theme') === 'dark' ||
-          !('color-theme' in localStorage)
-        ) {
-          lightIcon.classList.remove('hidden')
-          // en caso que se haya configurado previamente
-          document.documentElement.classList.add('dark')
-          // remover la clase light si está presente
-          document.documentElement.classList.remove('light')
-        } else {
-          darkIcon.classList.remove('hidden')
-          // en caso que se haya configurado previamente
-          document.documentElement.classList.add('light')
-          // remover la clase dark si está presente
-          document.documentElement.classList.remove('dark')
-        }
-
-        const themeToggleBtn = document.getElementById('theme-toggle')
-
-        themeToggleBtn.addEventListener('click', () => {
-          darkIcon.classList.toggle('hidden')
-          lightIcon.classList.toggle('hidden')
-
-          // se comprueba si se ha configurado previamente
-          if (localStorage.getItem('color-theme')) {
-            if (localStorage.getItem('color-theme') === 'light') {
-              document.documentElement.classList.add('dark')
-              // remover la clase light si está presente
-              document.documentElement.classList.remove('light')
-              localStorage.setItem('color-theme', 'dark')
-            } else {
-              document.documentElement.classList.remove('dark')
-              // remover la clase dark si está presente
-              localStorage.setItem('color-theme', 'light')
-            }
-
-            // se comprueba si el sistema operativo tiene configurado el tema oscuro
-          } else if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark')
-            document.documentElement.classList.add('light')
-            localStorage.setItem('color-theme', 'light')
-          } else {
-            document.documentElement.classList.add('dark')
-            document.documentElement.classList.remove('light')
-            localStorage.setItem('color-theme', 'dark')
-          }
-        })
-      }
-
-      setTheme()
-      document.addEventListener('astro:after-preparation', setTheme)
-      document.addEventListener('astro:after-swap', setTheme)
-
-      // Home & Random Place buttons
-      const setHomeRandomButton = () => {
-        const homeButton = document.getElementById('home-button')
-        const randomPlaceButton = document.getElementById('random-place-button')
-
-        // Show home button only if not in home
-        // Otherwise show random place button
-        if (
-          window.location.pathname === '/' ||
-          window.location.pathname === '/es'
-        ) {
-          homeButton.classList.add('hidden')
-          randomPlaceButton.classList.remove('hidden')
-        } else {
-          homeButton.classList.remove('hidden')
-          randomPlaceButton.classList.add('hidden')
-        }
-
-        // Add click event to home button
-        homeButton.addEventListener('click', () => {
-          // window.location.href = '/'
-          lang === 'es'
-            ? (window.location.href = '/es')
-            : (window.location.href = '/')
-        })
-
-        randomPlaceButton.addEventListener('click', () => {
-          const places = ['/blog', '/tech-stack', '/featured']
-          window.location.href =
-            places[Math.floor(Math.random() * places.length)]
-        })
-      }
-
-      setHomeRandomButton()
-      document.addEventListener('astro:after-preparation', setHomeRandomButton)
-      document.addEventListener('astro:after-swap', setHomeRandomButton)
-    </script>
-    <script is:inline defer>
-      // if screen is too small, don't render the animation
-      const disabled = true
-      if (!disabled && window.innerWidth > 240) {
-        const x = document.createElement('canvas')
-        x.id = 'c'
-        x.setAttribute('class', 'grow')
-        x.innerHTML = `<svg id='x' loading='lazy' onload='setInterval("for(t+=.1,R=T=C=Math.cos,c.width=w=128,i=9986,V=t/9&3;Y=i--/w;c.getContext\`2d\`.fillRect(X,Y,(C(t/6)*T^V*i/1e4*T+t)%20?(R=T++,1):(T=9,19/R),5/Z))for(Z=5,X=i%w+4/R;0<(V*95+C(t/3)+Z*X/64-Z^Z|(60-Y)*Z/58)%13;Z+=.2);",t=9)'></svg>`
-        document.addEventListener('DOMContentLoaded', () => {
-          document.getElementById('animation-container').appendChild(x)
-        })
-        x.style.height = '100%'
-      }
-    </script>
+    <Scripts />
   </body>
 </html>

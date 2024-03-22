@@ -12,10 +12,8 @@ const concatedData = featured.concat(notFeatured)
 const PROJECT_STYLES: string = [
   'col-span-6',
   'row-span-4',
-  'bg-emerald-300',
+  'bg-emerald-300/80',
   'rounded-sm',
-  'shadow-[0_0_0.3rem_rgb(0_0_0)]', // rgb(69, 26, 3)
-  'dark:shadow-[0_0_0.1rem_rgb(255_255_255)]', // rgb(253, 230, 138)
   'flex',
   'flex-col',
   'gap-3',
@@ -27,11 +25,9 @@ const PROJECT_STYLES: string = [
   'xl:h-[400px] h-[300px]',
   'xl:h-full',
   'transition-all',
-  // 'border-2',
-  // 'border-emerald-500',
   'text-emerald-950',
   'dark:text-emerald-300',
-  'dark:bg-emerald-900',
+  'dark:bg-emerald-900/95',
   'responsive-text-xs',
   'p-2',
   'pb-4',
