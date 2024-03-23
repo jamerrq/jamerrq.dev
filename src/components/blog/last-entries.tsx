@@ -13,10 +13,8 @@ const LAST_ENTRIES_STYLES = [
   'w-full',
   'h-full',
   'transition-all',
-  // 'border-2',
   'dark:border-slate-300',
   'border-slate-950',
-  'responsive-text-xs',
   'gap-2',
   'text-slate-900',
   'dark:text-slate-300',
@@ -87,11 +85,11 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
       <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-4xl text-center'>
         - {lang === 'en' ? 'Last Entries' : 'Últimas Entradas'} -
       </h1>
-      <ul class='grid grid-cols-[1fr_5fr] gap-3 w-full h-full p-2 responsive-text-sm'>
-        <li />
-        <li class='dark:text-cyan-400 text-cyan-950 text-xl' />
+      <ul class='xl:grid xl:grid-cols-[1fr_5fr] flex flex-col gap-5 w-full h-full p-2'>
         {entries
-          .filter((entry) => entry.active !== 'false')
+          .filter(
+            (entry) => entry.active !== 'false' && entry.date !== 'Coming soon'
+          )
           .sort((a, b) => {
             const dateA = new Date(a.date).getTime()
             if (isNaN(dateA)) return 1
@@ -102,10 +100,12 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
           .map((entry, index) => {
             return (
               <Fragment key={index}>
-                <li class='font-merriweather text-sm xl:text-base text-center'>
-                  {entry.date}
+                <li class='font-averia uppercase text-sm xl:text-base text-center rounded-sm xl:h-full dark:text-emerald-100 text-emerald-950 items-center flex w-full'>
+                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded'>
+                    {entry.date}
+                  </span>
                 </li>
-                <li class='font-merriweather text-sm xl:text-base  py-1 px-2 rounded-sm cursor-pointer hover:border-2 transition-all ease-in-out flex flex-col gap-2'>
+                <li class='font-averia uppercase text-sm xl:text-base py-2 px-2 rounded-sm cursor-pointer hover:bg-emerald-300/40 border-emerald-200 transition-all ease-in-out flex flex-col gap-2'>
                   <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
                     <div class='flex flex-col xl:flex-row gap-4'>
                       <span>{lang === 'en' ? entry.title : entry.titleEs}</span>

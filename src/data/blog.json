@@ -11,7 +11,8 @@
         "astro",
         "tailwindcss",
         "preact",
-        "portfolio"
+        "portfolio",
+        "ssr"
       ]
     },
     {

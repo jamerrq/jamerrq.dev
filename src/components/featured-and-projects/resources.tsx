@@ -13,7 +13,8 @@ const RESOURCE_STYLES: string = [
   'font-bold',
   'font-rubik-doodle',
   'w-full',
-  'h-full',
+  'xl:h-full',
+  'h-[10%]',
   'transition-all',
   'text-cyan-950',
   'dark:text-cyan-300',
@@ -91,18 +92,18 @@ export default function Resources({ n = 3 }: ResourceProps) {
     index.value++
     if (index.value > data.length - 1) index.value = 0
     const lastResource = document.getElementById('last-resource')
-    lastResource?.classList.add('animate-fade-in-left')
+    lastResource?.classList.add('xl:animate-fade-in-left')
     lastResource?.addEventListener('animationend', () => {
-      lastResource?.classList.remove('animate-fade-in-left')
+      lastResource?.classList.remove('xl:animate-fade-in-left')
     })
   }
   const goLeft = () => {
     index.value--
     if (index.value < 0) index.value = data.length - 1
     const firstResource = document.getElementById('first-resource')
-    firstResource?.classList.add('animate-fade-in-right')
+    firstResource?.classList.add('xl:animate-fade-in-right')
     firstResource?.addEventListener('animationend', () => {
-      firstResource?.classList.remove('animate-fade-in-right')
+      firstResource?.classList.remove('xl:animate-fade-in-right')
     })
   }
 

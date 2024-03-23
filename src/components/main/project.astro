@@ -27,8 +27,8 @@ const project = projects.at(index) as Project
 const SVGS_STYLES = [
   'w-5',
   'h-5',
-  'xl:w-7',
-  'xl:h-7',
+  'xl:w-8',
+  'xl:h-8',
   'hover:scale-110',
   'shadow bg-white/50 p-1 rounded dark:bg-slate-900/80'
 ].join(' ')
@@ -49,13 +49,14 @@ import { Image } from 'astro:assets'
   >
     {lang === 'en' ? project?.title.en : project?.title.es}
   </h1>
-  <section class='bg-transparent w-full flex justify-center items-center'>
+  <section class='bg-transparent w-full flex items-center'>
     <Image
       src={project?.image}
       alt={`snap for ${project?.title.en}`}
-      width='150'
-      height='50'
+      width='960'
+      height='720'
       loading='eager'
+      class='aspect-[4/3] w-40'
     />
     <aside class='flex flex-col items'>
       <div class='flex gap-2 items-center justify-center'>
@@ -74,7 +75,7 @@ import { Image } from 'astro:assets'
           })
         }
       </div>
-      <span>
+      <span class='font-averia'>
         Demo: {project?.preview ? '' : 'coming soon'}
       </span>
     </aside>

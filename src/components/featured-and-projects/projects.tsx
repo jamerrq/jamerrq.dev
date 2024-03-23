@@ -22,7 +22,7 @@ const PROJECT_STYLES: string = [
   'font-bold',
   'font-rubik-doodle',
   'w-full',
-  'xl:h-[400px] h-[300px]',
+  'h-[50%]',
   'xl:h-full',
   'transition-all',
   'text-emerald-950',
@@ -100,21 +100,21 @@ function ResourceCard({
   const goRight = () => {
     index.value++
     if (index.value > data.length - 1) index.value = 0
-    // insert the 'animate-fade-in-left' class
+    // insert the 'xl:animate-fade-in-left' class
     const el = document.querySelector('#project-card')
-    el?.classList.add('animate-fade-in-left')
+    el?.classList.add('xl:animate-fade-in-left')
     el?.addEventListener('animationend', () => {
-      el?.classList.remove('animate-fade-in-left')
+      el?.classList.remove('xl:animate-fade-in-left')
     })
   }
   const goLeft = () => {
     index.value--
     if (index.value < 0) index.value = data.length - 1
-    // insert the 'animate-fade-in-left' class
+    // insert the 'xl:animate-fade-in-left' class
     const el = document.querySelector('#project-card')
-    el?.classList.add('animate-fade-in-left')
+    el?.classList.add('xl:animate-fade-in-left')
     el?.addEventListener('animationend', () => {
-      el?.classList.remove('animate-fade-in-left')
+      el?.classList.remove('xl:animate-fade-in-left')
     })
   }
   return (
