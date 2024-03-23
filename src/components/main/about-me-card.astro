@@ -1,6 +1,7 @@
 ---
 import OpenToWork from '@components/badges/open-to-work.astro'
 import Box from '@components/boxes/box.astro'
+import Dice from '@icons/dice.astro'
 interface Props {
   lang: string
 }
@@ -62,5 +63,13 @@ const { lang = 'en' }: Props = Astro.props
         </p>
       </li>
     </ul>
+    <a
+      href='/games'
+      title='games section'
+      aria-label='games section'
+      class='animate-vertical-bounce animate-iteration-count-thrice animate-delay-500 hover:animate-iteration-count-infinite'
+    >
+      <Dice />
+    </a>
   </div>
 </Box>

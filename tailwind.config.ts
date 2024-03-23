@@ -44,7 +44,8 @@ export default {
   },
   plugins: [
     require('tailwindcss-debug-screens'),
-    require('@midudev/tailwind-animations')
+    require('@midudev/tailwind-animations'),
+    'prettier-plugin-tailwindcss'
   ],
   safelist: [
     'fill-[#BC52EE]',

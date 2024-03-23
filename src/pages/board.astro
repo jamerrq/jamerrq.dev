@@ -9,6 +9,56 @@ import Buttons from '@components/main/buttons.astro'
   <main class='flex flex-col w-[100dvw] h-[100dvh]'></main>
   <div class='absolute top-1 w-full mx-auto'>
     <Buttons />
+    <style>
+      button {
+        --timing: linear(0, 0.3, 0.75, 1);
+
+        font-family: Jost, sans-serif;
+        font-size: 1rem;
+
+        padding: 1rem 2rem;
+        background: none;
+        color: #fff;
+
+        border-image-source: conic-gradient(
+          from var(--a),
+          indigo,
+          purple,
+          hotpink
+        );
+        border-image-slice: 1 1 1 1;
+        border-image-width: 0.25rem;
+
+        animation: move 1s infinite var(--timing);
+
+        &.fill {
+          border-image-slice: 1 1 1 1 fill;
+        }
+
+        box-shadow: 5px 5px 0 #0006;
+
+        &:active {
+          transform: translate(5px, 5px);
+          box-shadow: none;
+        }
+      }
+
+      @keyframes move {
+        from {
+          --a: 0deg;
+        }
+        to {
+          --a: 360deg;
+        }
+      }
+
+      @property --a {
+        syntax: '<angle>';
+        inherits: true;
+        initial-value: 0deg;
+      }
+    </style>
+    <button>A</button>
   </div>
   <Footer />
 </Layout>

@@ -35,6 +35,9 @@
       ],
       "@media/*": [
         "src/media/*"
+      ],
+      "@icons/*": [
+        "src/components/icons/*"
       ]
     },
     "jsx": "preserve",
