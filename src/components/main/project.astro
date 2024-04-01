@@ -76,7 +76,9 @@ import { Image } from 'astro:assets'
         }
       </div>
       <span class='font-averia'>
-        Demo: {project?.preview ? '' : 'coming soon'}
+        Demo: {
+          project?.preview ? '' : lang === 'en' ? 'Coming soon' : 'Próximamente'
+        }
       </span>
     </aside>
   </section>

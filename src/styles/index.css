@@ -5,7 +5,6 @@
 /* Reset by @souporserious */
 * {
     box-sizing: border-box;
-    /* position: relative; */
     min-width: 0;
 }
 
@@ -22,6 +21,11 @@ h4 {
 
 p {
     text-wrap: pretty;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: gray black;
 }
 
 @font-face {

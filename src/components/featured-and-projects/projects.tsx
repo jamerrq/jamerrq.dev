@@ -15,14 +15,14 @@ const PROJECT_STYLES: string = [
   'bg-emerald-300/80',
   'rounded-sm',
   'flex',
-  'flex-col',
+  'xl:flex-row ',
   'gap-3',
   'items-center',
   'justify-center',
   'font-bold',
   'font-rubik-doodle',
   'w-full',
-  'h-[50%]',
+  'h-80',
   'xl:h-full',
   'transition-all',
   'text-emerald-950',
@@ -37,6 +37,7 @@ const PROJECT_STYLES: string = [
 
 import { signal } from '@preact/signals'
 const index = signal(0)
+const imagesIndex = signal(0)
 
 type ResourcesProps = {
   n?: number
@@ -70,8 +71,49 @@ const BUTTONS_STYLES = [
   'shadow-md shadow-black/90'
 ].join(' ')
 
+export function IndexPicker({
+  n,
+  reference
+}: {
+  n: number
+  reference: typeof index
+}) {
+  function goToIndex(i: number) {
+    reference.value = i
+  }
+  return (
+    <div className='absolute flex bottom-3 left-1/2 transform -translate-x-1/2'>
+      {Array.from(Array(n).keys()).map((i) => (
+        <button
+          key={i}
+          onClick={() => goToIndex(i)}
+          className={`w-3 h-3 rounded-full mx-1 ${
+            i === reference.value ? 'bg-cyan-300' : 'bg-cyan-950'
+          }`}
+        />
+      ))}
+    </div>
+  )
+}
+
+function ImageCarousel({ images }: { images: string[] }) {
+  return (
+    <div className='relative w-full h-full'>
+      <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+        <img
+          src={`/img/projects/${images[imagesIndex.value]}`}
+          alt='project'
+          class='w-full rounded-md border-2 shadow shadow-black'
+          loading='lazy'
+        />
+      </div>
+      <IndexPicker n={images?.length ?? 0} reference={imagesIndex} />
+    </div>
+  )
+}
+
 const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
-  <div class={`bottom-1 left-1 ${BUTTONS_STYLES}`}>
+  <div className={`bottom-1 left-1 ${BUTTONS_STYLES}`}>
     <button onClick={_f} title={'iterate over'}>
       <DoubleLeft />
     </button>
@@ -79,7 +121,7 @@ const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
 )
 
 const DoubleRightButton = ({ _f }: { _f: () => void }) => (
-  <div class={`bottom-1 right-1 ${BUTTONS_STYLES}`}>
+  <div className={`bottom-1 right-1 ${BUTTONS_STYLES}`}>
     <button onClick={_f} title={'iterate over'}>
       <DoubleRight />
     </button>
@@ -106,6 +148,7 @@ function ResourceCard({
     el?.addEventListener('animationend', () => {
       el?.classList.remove('xl:animate-fade-in-left')
     })
+    imagesIndex.value = 0
   }
   const goLeft = () => {
     index.value--
@@ -116,47 +159,55 @@ function ResourceCard({
     el?.addEventListener('animationend', () => {
       el?.classList.remove('xl:animate-fade-in-left')
     })
+    imagesIndex.value = 0
   }
   return (
-    <article class={PROJECT_STYLES} key={i} id='project-card'>
+    <article className={PROJECT_STYLES} key={i} id='project-card'>
       {i === 0 && <DoubleLeftButton _f={goLeft} />}
-      {project?.featured && (
-        <span class='absolute top-1 right-2 dark:text-amber-300 text-amber-800 underline'>
-          {lang === 'es' ? 'Destacado' : 'Featured'}
-        </span>
-      )}
-      <h1 class='xl:text-3xl text-xl max-w-md'>{project?.title}</h1>
-      <p class='font-bold font-merriweather dark:text-slate-200 text-xs xl:text-base max-w-[400px] text-balance'>
-        {project?.description[lang as 'es' | 'en']}
-      </p>
-      <ul class='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-sm flex-wrap'>
-        {project?.stack?.map((tech, index) => (
-          <li key={index}>{SimpleIcon(tech)}</li>
-        ))}
-      </ul>
-      <div class='flex gap-2'>
-        {project?.repository && (
-          <a
-            href={project.repository}
-            class='border-b-2 font-merriweather text-sm xl:text-base'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            {lang === 'es' ? 'Repositorio' : 'Repository'}
-          </a>
+      <div className='lg:w-1/2 xl:w-1/2 h-full grid place-content-center justify-items-center gap-4'>
+        <h1 className='xl:text-3xl text-xl max-w-md'>{project?.title}</h1>
+        {project?.featured && (
+          <span className='xl:absolute top-1 right-2 dark:text-amber-300 text-amber-800 underline bg-amber-300/30 px-2 py-1 rounded'>
+            {lang === 'es' ? 'Destacado' : 'Featured'}
+          </span>
         )}
-        {project?.demo && (
-          <a
-            href={project.demo}
-            class='border-b-2 font-merriweather text-sm xl:text-base'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            {lang === 'es' ? 'Demo' : 'Preview'}
-          </a>
-        )}
+        <p className='font-bold font-averia dark:text-slate-200 text-xs xl:text-base max-w-[400px] text-balance'>
+          {project?.description[lang as 'es' | 'en']}
+        </p>
+        <ul className='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-sm flex-wrap'>
+          {project?.stack?.map((tech, index) => (
+            <li key={index}>{SimpleIcon(tech)}</li>
+          ))}
+        </ul>
+        <div className='flex gap-2'>
+          {project?.repository && (
+            <a
+              href={project.repository}
+              className='border-b-2 font-averia text-sm xl:text-base'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {lang === 'es' ? 'Repositorio' : 'Repository'}
+            </a>
+          )}
+          {project?.demo && (
+            <a
+              href={project.demo}
+              className='border-b-2 font-averia text-sm xl:text-base'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {lang === 'es' ? 'Demo' : 'Preview'}
+            </a>
+          )}
+        </div>
+      </div>
+      <div className='w-1/2 h-full hidden lg:block xl:block'>
+        {/* <h1>Images</h1> */}
+        {project?.images && <ImageCarousel images={project.images} />}
       </div>
       {i === n - 1 && <DoubleRightButton _f={goRight} />}
+      <IndexPicker n={concatedData.length} reference={index} />
     </article>
   )
 }

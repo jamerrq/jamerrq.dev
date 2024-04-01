@@ -38,7 +38,10 @@
       ],
       "@icons/*": [
         "src/components/icons/*"
-      ]
+      ],
+      "@scripts/*": [
+        "src/scripts/*"
+      ],
     },
     "jsx": "preserve",
     "jsxImportSource": "preact",

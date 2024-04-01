@@ -14,6 +14,8 @@ import src from '@media/background.webm'
 ---
 
 <Layout title={frontmatter.title}>
+  <script src='https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js'
+  ></script>
   <style>
     * {
       scroll-behavior: smooth;
@@ -40,22 +42,22 @@ import src from '@media/background.webm'
       >
       </video>
     </div>
-    <div class='sticky top-1'>
+    <aside class='sticky -top-5'>
       <Buttons href={frontmatter.hrefLang} />
-    </div>
+    </aside>
     <br />
     <header
       transition:name='blog-title'
       class='flex font-averia text-slate-950 bg-[#BE7B72] dark:bg-[#FFFDD7] p-2 cursor-pointer font-bold'
       onclick='window.history.back()'
     >
-      <h1>
+      <h1 class='-z-10'>
         {frontmatter.title}
       </h1>
     </header>
     <br />
     <div
-      class='[&>h1]:font-bold font-averia font-semibold text-sm [&_h1]:text-emerald-900 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-900 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#5755FE] [&_a]:dark:text-cyan-300 flex flex-col gap-2 mb-8 [&_blockquote]:[font-merriweather] [&_code]:[font-merriweather] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden'
+      class='[&>h1]:font-bold font-averia font-semibold text-sm [&_h1]:text-emerald-900 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-900 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#5755FE] [&_a]:dark:text-cyan-300 flex flex-col gap-2 mb-8 [&_blockquote]:[font-averia] [&_code]:[font-mono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden'
     >
       <slot />
     </div>

@@ -19,7 +19,6 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
     display: flex;
     justify-content: space-around;
     gap: 0.5rem;
-    font-size: 1rem;
     color: #fff;
     background-color: #000;
     opacity: 1;
@@ -27,20 +26,32 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
 </style>
 
 <footer class='font-averia'>
-  <span> Powered by</span>
-  <svg class='w-6 h-6 inline' set:html={siAstro.svg} fill={`#${siAstro.hex}`} />
+  <span class='text-xs xl:text-xl'>Powered by</span>
   <svg
-    class='w-6 h-6 inline'
+    class='w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 inline'
+    set:html={siAstro.svg}
+    fill={`#${siAstro.hex}`}
+  />
+  <svg
+    class='w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 inline'
     set:html={siPreact.svg}
     fill={`#${siPreact.hex}`}
   />
   <svg
-    class='w-6 h-6 inline'
+    class='w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 inline'
     set:html={siTailwindcss.svg}
     fill={`#${siTailwindcss.hex}`}
   />
-  <svg class='w-6 h-6 inline' set:html={siMdx.svg} fill={`#fff`} />
-  <svg class='w-6 h-6 inline' set:html={siBun.svg} fill={`#fff`} />
+  <svg
+    class='w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 inline'
+    set:html={siMdx.svg}
+    fill={`#fff`}
+  />
+  <svg
+    class='w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 inline'
+    set:html={siBun.svg}
+    fill={`#fff`}
+  />
   <aside>
     <a
       href='https://github.com/jamerrq'
@@ -49,7 +60,7 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
       class='text-emerald-300 flex gap-1 items-center ml-2'
     >
       <Copyright />
-      <span> @jamerrq</span>
+      <span class='text-xs xl:text-xl'>@jamerrq</span>
     </a>
   </aside>
 </footer>

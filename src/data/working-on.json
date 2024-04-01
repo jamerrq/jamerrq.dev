@@ -16,7 +16,8 @@
         "Tailwind CSS"
       ],
       "private": "false",
-      "time": "2"
+      "time": "3",
+      "preview": ""
     },
     {
       "title": {
@@ -33,8 +34,63 @@
         "Supabase",
         "Tailwind CSS"
       ],
+      "preview": "",
       "private": "true",
-      "time": "2"
+      "time": "3"
+    },
+    {
+      "title": {
+        "en": "Leetcode 75 - Study Plan",
+        "es": "Leetcode 75 - Plan de estudio"
+      },
+      "description": {
+        "en": "A study plan to ace coding interviews by solving top 75 Leetcode problems.",
+        "es": "Un plan de estudio para aprobar entrevistas de programación resolviendo los 75 mejores problemas de Leetcode."
+      },
+      "image": "/img/working-on/leetcode.png",
+      "technologies": [
+        "Python",
+        "JavaScript"
+      ],
+      "private": "false",
+      "time": "2",
+      "preview": "https://github.com/jamerrq/LeetCode-75"
+    },
+    {
+      "title": {
+        "en": "C# Roadmap",
+        "es": "Ruta de Estudio de C#"
+      },
+      "description": {
+        "en": "Ruta de ejercicios por @mouredev para fortalecer habilidades en programación.",
+        "es": "Ruta de ejercicios por @mouredev para fortalecer habilidades en programación."
+      },
+      "image": "/img/working-on/roadmap.png",
+      "technologies": [
+        "csharp",
+        "dotnet"
+      ],
+      "private": "false",
+      "time": "4",
+      "preview": "https://github.com/jamerrq/roadmap-csharp"
+    },
+    {
+      "title": {
+        "en": "AI Skills Challenge - Microsoft",
+        "es": "Desafío IA - Microsoft"
+      },
+      "description": {
+        "en": "A series of challenges to test your AI skills by Microsoft.",
+        "es": "Una serie de desafíos para poner a prueba tus habilidades en IA por Microsoft."
+      },
+      "image": "/img/working-on/aichallenge.png",
+      "technologies": [
+        "azure",
+        "microsoft"
+      ],
+      "private": "false",
+      "time": "1",
+      "preview": ""
     }
   ]
 }

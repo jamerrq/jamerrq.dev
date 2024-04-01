@@ -59,7 +59,10 @@ const TECH_ICON_STYLES = [
   'hover:scale-110',
   'transition-all',
   'p-1',
-  'rounded-md'
+  'rounded-md',
+  'shadow-md',
+  'shadow-black/90',
+  'bg-emerald-100'
 ].join(' ')
 
 function SimpleIcon({ __html, fill }: SimpleIconProps) {

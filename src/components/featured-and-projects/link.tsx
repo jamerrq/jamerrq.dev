@@ -3,7 +3,9 @@ const ANCHOR_STYLES = [
   'responsive-text',
   'dark:text-amber-300',
   'text-amber-950',
-  'flex'
+  'flex',
+  'w-6 h-6',
+  'xl:w-8 xl:h-8'
 ].join(' ')
 
 type LinkProps = {
@@ -13,13 +15,8 @@ type LinkProps = {
 
 import {
   WebIcon,
-  // GithubIcon,
-  // TwitterIcon,
-  // TwitchIcon,
-  // YoutubeIcon,
   YoutubeColorLogo,
   TwitchColorLogo,
-  // DiscordServerIcon,
   DiscordColorLogo,
   FirefoxIcon,
   GithubColorLogo,

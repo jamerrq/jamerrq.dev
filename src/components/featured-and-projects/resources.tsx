@@ -7,21 +7,21 @@ const RESOURCE_STYLES: string = [
   'shadow-[0_0_0.1rem_rgb(8_51_68)]', // rgb(8, 51, 68)
   'flex',
   'flex-col',
-  'gap-2',
+  'gap-0',
   'items-center',
   'justify-center',
   'font-bold',
   'font-rubik-doodle',
   'w-full',
   'xl:h-full',
-  'h-[10%]',
+  'h-[15%]',
   'transition-all',
   'text-cyan-950',
   'dark:text-cyan-300',
   'bg-slate-300/70',
   'dark:bg-slate-900/90',
   'text-base xl:text-2xl',
-  'p-2',
+  'px-2 py-1',
   'relative'
 ].join(' ')
 
@@ -110,7 +110,6 @@ export default function Resources({ n = 3 }: ResourceProps) {
   return (
     <Fragment>
       {Array.from(Array(n).keys()).map((i) => {
-        // Array.from(Array(n).keys())
         const resource = shuffleData.at((i + index.value) % data.length)
         return (
           <article

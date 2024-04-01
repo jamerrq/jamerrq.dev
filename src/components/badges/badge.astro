@@ -1,3 +1,11 @@
+---
+interface Props {
+  class: string
+}
+
+const { props } = Astro
+---
+
 <style>
   .badge {
     --timing: linear(0, 0.3, 0.75, 1);
@@ -23,8 +31,6 @@
       border-image-slice: 1 1 1 1 fill;
     }
 
-    /* box-shadow: 5px 5px 0 #0006; */
-
     &:active {
       transform: translate(5px, 5px);
       box-shadow: none;
@@ -46,7 +52,9 @@
     initial-value: 0deg;
   }
 </style>
-<div class='xl:absolute top-2 right-2 animate-slide-in-top rounded'>
+<div
+  class=`xl:absolute top-2 right-2 animate-slide-in-top rounded ${props.class}`
+>
   <span class='relative flex overflow-hidden rounded shadow shadow-black'>
     <div
       class='flex items-center h-full w-full cursor-pointer justify-center rounded px-3 py-1 text-sm font-bold text-slate-900 bg-emerald-500 backdrop-blur-3xl shadow shadow-black dark:shadow-gray-300 badge'

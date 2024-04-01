@@ -1,4 +1,10 @@
 import { defineConfig } from 'astro/config'
+
+// PWA Support
+import { VitePWA } from 'vite-plugin-pwa'
+import { manifest } from './src/utils/seoConfig'
+
+// Integrations
 import tailwind from '@astrojs/tailwind'
 import deno from '@astrojs/deno'
 import robotsTxt from 'astro-robots-txt'
@@ -6,8 +12,6 @@ import preact from '@astrojs/preact'
 import pageInsight from 'astro-page-insight'
 import sitemap from '@astrojs/sitemap'
 import compress from 'astro-compress'
-import { VitePWA } from 'vite-plugin-pwa'
-import { manifest } from './src/utils/seoConfig'
 import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
@@ -49,7 +53,7 @@ export default defineConfig({
         manifest,
         workbox: {
           globDirectory: 'dist/client',
-          globPatterns: ['**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff2,}'],
+          globPatterns: ['**/*.{js,css,woff2}'],
           // Don't fallback on document based (e.g. `/some-page`) requests
           // This removes an errant console.log message from showing up.
           navigateFallback: null

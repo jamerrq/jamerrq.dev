@@ -106,7 +106,10 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
                   </span>
                 </li>
                 <li class='font-averia uppercase text-sm xl:text-base py-2 px-2 rounded-sm cursor-pointer hover:bg-emerald-300/40 border-emerald-200 transition-all ease-in-out flex flex-col gap-2'>
-                  <a href={`${lang === 'en' ? entry.href : entry.hrefEs}`}>
+                  <a
+                    href={`${lang === 'en' ? entry.href : entry.hrefEs}`}
+                    class='h-full'
+                  >
                     <div class='flex flex-col xl:flex-row gap-4'>
                       <span>{lang === 'en' ? entry.title : entry.titleEs}</span>
                       <div class='xl:ml-auto'>
