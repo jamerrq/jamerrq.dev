@@ -42,8 +42,11 @@ interface ProjectCardProps {
 }
 
 function getRandomBasedOnDay() {
-  const date = new Date()
-  return date.getDate() % projects.length
+  const date = new Date().toLocaleString('es-CO', {
+    timeZone: 'America/Bogota'
+  })
+  const day = +(date?.at(0) ?? 0)
+  return day % projects.length
 }
 
 const index = signal(getRandomBasedOnDay())
