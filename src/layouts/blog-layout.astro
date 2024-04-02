@@ -9,13 +9,9 @@ interface Props {
 }
 const { frontmatter }: Props = Astro.props
 import Buttons from '@components/main/buttons.astro'
-
-import src from '@media/background.webm'
 ---
 
 <Layout title={frontmatter.title}>
-  <script src='https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js'
-  ></script>
   <style>
     * {
       scroll-behavior: smooth;
@@ -25,23 +21,6 @@ import src from '@media/background.webm'
   <div
     class='dark:bg-[#1b383c]/95 py-8 bg-[#D6DAC8]/80 xl:h-[100dvh] h-[95dvh] lg:w-[80dvw] md:w-[95dvw] w-[65dvw] xs:w-[95dvw] mx-auto px-4 dark:text-emerald-50 [&>*]:text-balance overflow-y-auto max-h-[100dvh] [scrollbar-color:#1b383c_#9DBC98] [scrollbar-width:thin] relative'
   >
-    <div
-      class='fixed -z-10 top-0 left-0 w-full h-full opacity-5'
-      id='blog-container'
-    >
-      <video
-        src={src}
-        autoplay
-        style='width: 100%; height: 100%; opacity: 65%;'
-        muted
-        loop
-        playsinline
-        preload='auto'
-        class='object-cover w-full h-full rounded'
-        id='noise-video'
-      >
-      </video>
-    </div>
     <aside class='sticky -top-5'>
       <Buttons href={frontmatter.hrefLang} />
     </aside>

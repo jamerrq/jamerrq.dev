@@ -167,7 +167,7 @@ function ResourceCard({
       <div className='lg:w-1/2 xl:w-1/2 h-full grid place-content-center justify-items-center gap-4'>
         <h1 className='xl:text-3xl text-xl max-w-md'>{project?.title}</h1>
         {project?.featured && (
-          <span className='xl:absolute top-1 right-2 dark:text-amber-300 text-amber-800 underline bg-amber-300/30 px-2 py-1 rounded'>
+          <span className='xl:absolute top-1 right-2 dark:text-amber-300 text-amber-800 underline bg-amber-300/30 px-2 py-1 rounded border dark:border-amber-200 border-amber-800 badge'>
             {lang === 'es' ? 'Destacado' : 'Featured'}
           </span>
         )}

@@ -17,6 +17,7 @@ import mdx from '@astrojs/mdx'
 // https://astro.build/config
 export default defineConfig({
   adapter: deno(),
+  compressHTML: true,
   integrations: [
     tailwind(),
     robotsTxt(),
@@ -43,9 +44,12 @@ export default defineConfig({
   image: {
     domains: ['https://github.com/']
   },
+  build: {
+    inlineStylesheets: 'always'
+  },
   vite: {
-    // ssr: {
-    //   external:[]
+    // build: {
+    //   cssMinify: "lightningcss"
     // },
     plugins: [
       VitePWA({
@@ -53,10 +57,38 @@ export default defineConfig({
         manifest,
         workbox: {
           globDirectory: 'dist/client',
-          globPatterns: ['**/*.{js,css,woff2}'],
+          globPatterns: [
+            '**/*.{webm,woff2}',
+            'pizarra.webp',
+            'bitwise_liminal_compressed_240p.webm'
+          ],
           // Don't fallback on document based (e.g. `/some-page`) requests
           // This removes an errant console.log message from showing up.
-          navigateFallback: null
+          navigateFallback: null,
+          runtimeCaching: [
+            {
+              urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'images',
+                expiration: {
+                  maxEntries: 100,
+                  maxAgeSeconds: 30 * 24 * 60 * 60
+                }
+              }
+            },
+            {
+              urlPattern: /\.(?:woff|woff2|ttf|eot|ico)$/,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'fonts',
+                expiration: {
+                  maxEntries: 10,
+                  maxAgeSeconds: 30 * 24 * 60 * 60
+                }
+              }
+            }
+          ]
         }
       })
     ]

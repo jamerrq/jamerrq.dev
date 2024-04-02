@@ -1,0 +1,15 @@
+---
+import Badge from './badge.astro'
+
+interface Props {
+  lang?: string
+}
+
+const { lang = 'en' } = Astro.props
+---
+
+<Badge
+  class='animate-fade-in group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md font-medium text-neutral-200 duration-500'
+>
+  {lang === 'en' ? 'Featured' : 'Destacado'}
+</Badge>

@@ -12,7 +12,9 @@ import {
   siCsharp,
   siDotnet,
   siMicrosoftazure,
-  siMicrosoft
+  siMicrosoft,
+  siFreecodecamp,
+  siMarkdown
 } from 'simple-icons'
 
 const SVGS_STYLES = [
@@ -21,7 +23,7 @@ const SVGS_STYLES = [
   'xl:w-8',
   'xl:h-8',
   'hover:scale-110',
-  'shadow bg-white/50 p-1 rounded dark:bg-slate-900/80'
+  'shadow bg-white/50 p-1 rounded dark:bg-emerald-950/80'
 ].join(' ')
 
 interface ProjectCardProps {
@@ -35,18 +37,27 @@ interface ProjectCardProps {
     technologies: string[]
     preview: string
     time: string
+    start: string
   }
 }
 
-const index = signal(0)
+function getRandomBasedOnDay() {
+  const date = new Date()
+  return date.getDate() % projects.length
+}
+
+const index = signal(getRandomBasedOnDay())
 
 import { IndexPicker } from '@components/featured-and-projects/projects'
 
 function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
+  const date = new Date(project.start)
+  // get number of days since the project started
+  const days = Math.floor((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24))
   return (
     <li class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'>
       <div class='absolute bottom-0 right-2 font-averia text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90'>
-        {project?.time}+ {lang === 'en' ? 'months' : 'meses'}
+        {days}+ {lang === 'en' ? 'days' : 'días'}
       </div>
       <h1 class='text-sm xl:text-base font-rubik-doodle dark:text-emerald-100 text-emerald-950 bg-emerald-400 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'>
         {lang === 'en' ? project?.title.en : project?.title.es}
@@ -74,7 +85,9 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
                   csharp: siCsharp,
                   dotnet: siDotnet,
                   azure: siMicrosoftazure,
-                  microsoft: siMicrosoft
+                  microsoft: siMicrosoft,
+                  freecodecamp: siFreecodecamp,
+                  markdown: siMarkdown
                 }[t.toLowerCase().replaceAll(' ', '')] || siAstro
               return (
                 <svg
@@ -83,6 +96,7 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
                   // eslint-disable-next-line react/no-danger
                   dangerouslySetInnerHTML={{ __html: a.svg }}
                   fill={`#${a.hex}`}
+                  title={t}
                 />
               )
             })}
@@ -124,11 +138,17 @@ export default function WorkingOn({ lang = 'en' }) {
       </header>
       <div class='h-full w-full gap-2'>
         <ul class='flex gap-2 text-base flex-col justify-around h-full font-averia font-bold py-2'>
-          {/* Show only two in loop, use index to get the right items */}
-          {Array.from(Array(2).keys()).map((i) => {
-            const project = projects[(i + index.value) % projects.length]
-            return <ProjectCard key={i} lang={lang} project={project} />
-          })}
+          {/* Show only two, use index to get the right items */}
+          {Array.from({ length: 2 }, (_, i) => i + index.value).map(
+            (i) =>
+              i < projects.length && (
+                <ProjectCard
+                  lang={lang}
+                  project={projects[i]}
+                  key={projects[i].title.en}
+                />
+              )
+          )}
         </ul>
         <IndexPicker n={projects.length} reference={index} />
       </div>

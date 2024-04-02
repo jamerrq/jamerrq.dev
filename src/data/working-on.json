@@ -2,25 +2,6 @@
   "projects": [
     {
       "title": {
-        "en": "Fedora - Naturist products",
-        "es": "Fedora - Productos naturistas"
-      },
-      "description": {
-        "en": "A website for a small business that sells natural products.",
-        "es": "Un sitio web para un pequeño negocio que vende productos naturales."
-      },
-      "image": "/img/working-on/fedora.webp",
-      "technologies": [
-        "Astro",
-        "Supabase",
-        "Tailwind CSS"
-      ],
-      "private": "false",
-      "time": "3",
-      "preview": ""
-    },
-    {
-      "title": {
         "en": "Kali - Multiproduct store",
         "es": "Kali - Tienda multiproductos"
       },
@@ -36,7 +17,28 @@
       ],
       "preview": "",
       "private": "true",
-      "time": "3"
+      "time": "3",
+      "start": "2024-02-24"
+    },
+    {
+      "title": {
+        "en": "Fedora - Naturist products",
+        "es": "Fedora - Productos naturistas"
+      },
+      "description": {
+        "en": "A website for a small business that sells natural products.",
+        "es": "Un sitio web para un pequeño negocio que vende productos naturales."
+      },
+      "image": "/img/working-on/fedora.webp",
+      "technologies": [
+        "Astro",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "private": "false",
+      "time": "3",
+      "preview": "",
+      "start": "2024-02-16"
     },
     {
       "title": {
@@ -47,14 +49,15 @@
         "en": "A study plan to ace coding interviews by solving top 75 Leetcode problems.",
         "es": "Un plan de estudio para aprobar entrevistas de programación resolviendo los 75 mejores problemas de Leetcode."
       },
-      "image": "/img/working-on/leetcode.png",
+      "image": "/img/working-on/leetcode.webp",
       "technologies": [
         "Python",
         "JavaScript"
       ],
       "private": "false",
       "time": "2",
-      "preview": "https://github.com/jamerrq/LeetCode-75"
+      "preview": "https://github.com/jamerrq/LeetCode-75",
+      "start": "2024-03-03"
     },
     {
       "title": {
@@ -65,14 +68,15 @@
         "en": "Ruta de ejercicios por @mouredev para fortalecer habilidades en programación.",
         "es": "Ruta de ejercicios por @mouredev para fortalecer habilidades en programación."
       },
-      "image": "/img/working-on/roadmap.png",
+      "image": "/img/working-on/roadmap.webp",
       "technologies": [
         "csharp",
         "dotnet"
       ],
       "private": "false",
       "time": "4",
-      "preview": "https://github.com/jamerrq/roadmap-csharp"
+      "preview": "https://github.com/jamerrq/roadmap-csharp",
+      "start": "2024-01-01"
     },
     {
       "title": {
@@ -83,14 +87,52 @@
         "en": "A series of challenges to test your AI skills by Microsoft.",
         "es": "Una serie de desafíos para poner a prueba tus habilidades en IA por Microsoft."
       },
-      "image": "/img/working-on/aichallenge.png",
+      "image": "/img/working-on/aichallenge.webp",
       "technologies": [
         "azure",
         "microsoft"
       ],
       "private": "false",
       "time": "1",
-      "preview": ""
+      "preview": "",
+      "start": "2024-03-27"
+    },
+    {
+      "title": {
+        "en": "FreeCodeCamp Spanish Translations",
+        "es": "Traducciones al Español - FreeCodeCamp"
+      },
+      "description": {
+        "en": "Contributing to the Spanish translations of FreeCodeCamp.",
+        "es": "Contribuyendo a las traducciones al Español de FreeCodeCamp."
+      },
+      "image": "/img/working-on/fcc.webp",
+      "technologies": [
+        "markdown",
+        "freecodecamp"
+      ],
+      "private": "false",
+      "time": "1",
+      "preview": "https://www.freecodecamp.org/espanol/news/author/jamerrq/",
+      "start": "2024-02-05"
+    },
+    {
+      "title": {
+        "en": "Parrot - Habits Tracker",
+        "es": "Parrot - Seguidor de hábitos"
+      },
+      "description": {
+        "en": "Simple, minimalist habits tracker.",
+        "es": "Seguidor de hábitos simple y minimalista."
+      },
+      "image": "/img/working-on/parrot.webp",
+      "technologies": [
+        "Astro"
+      ],
+      "private": "false",
+      "time": "1",
+      "preview": "",
+      "start": "2024-03-10"
     }
   ]
 }

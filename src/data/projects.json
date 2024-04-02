@@ -14,8 +14,8 @@
       "demo": "https://json-forms-app.vercel.app/",
       "repository": "https://github.com/jamerrq/json-forms-app",
       "images": [
-        "json-forms-app-1.png",
-        "json-forms-app-2.png"
+        "json-forms-app-1.webp",
+        "json-forms-app-2.webp"
       ]
     },
     {
@@ -31,9 +31,9 @@
       "demo": "https://rocket-launches.deno.dev/",
       "repository": "https://github.com/jamerrq/rocket-launches",
       "images": [
-        "rocket-launches-1.png",
-        "rocket-launches-2.png",
-        "rocket-launches-3.png"
+        "rocket-launches-1.webp",
+        "rocket-launches-2.webp",
+        "rocket-launches-3.webp"
       ]
     },
     {
@@ -49,10 +49,10 @@
       "demo": "https://reading-list-app-ecru.vercel.app/",
       "repository": "https://github.com/jamerrq/reading-list-app",
       "images": [
-        "reading-list-app-1.png",
-        "reading-list-app-2.png",
-        "reading-list-app-3.png",
-        "reading-list-app-4.png"
+        "reading-list-app-1.webp",
+        "reading-list-app-2.webp",
+        "reading-list-app-3.webp",
+        "reading-list-app-4.webp"
       ]
     },
     {
@@ -67,7 +67,7 @@
       "repository": "https://github.com/jamerrq/typescriptExercisesOnExercism",
       "demo": "https://exercism.org/tracks/typescript",
       "images": [
-        "typescript-exercism.png"
+        "typescript-exercism.webp"
       ]
     },
     {
@@ -84,7 +84,7 @@
       "repository": "https://github.com/jamerrq/20201-Sport-Scheduling",
       "demo": "https://github.com/jamerrq/20192-Sport-Scheduling",
       "images": [
-        "sport-scheduling.png"
+        "sport-scheduling.webp"
       ]
     },
     {
@@ -101,7 +101,7 @@
       ],
       "private": true,
       "images": [
-        "ahp-forms-app.png"
+        "ahp-forms-app.webp"
       ]
     },
     {
@@ -117,8 +117,8 @@
       "repository": "https://github.com/jamerrq/checkbox-md-enhancement",
       "demo": "https://marketplace.visualstudio.com/items?itemName=jamerrq.checkbox-counter",
       "images": [
-        "checkbox-md-enhancement-1.png",
-        "checkbox-md-enhancement-2.png"
+        "checkbox-md-enhancement-1.webp",
+        "checkbox-md-enhancement-2.webp"
       ]
     },
     {
@@ -135,8 +135,8 @@
       "repository": "https://github.com/jamerrq/lumina",
       "demo": "https://lumina-sigma.vercel.app/",
       "images": [
-        "lumina-1.png",
-        "lumina-2.png"
+        "lumina-1.webp",
+        "lumina-2.webp"
       ]
     },
     {
@@ -153,7 +153,7 @@
       "demo": "https://deno.land/x/adventjs",
       "repository": "https://github.com/jamerrq/advent-js-cli",
       "images": [
-        "adventjs-cli-1.png"
+        "adventjs-cli-1.webp"
       ]
     },
     {
@@ -171,9 +171,9 @@
       "demo": "https://html-30-days-challenge.vercel.app/",
       "repository": "https://github.com/jamerrq/html-30-days-challenge",
       "images": [
-        "html-30-days-1.png",
-        "html-30-days-2.png",
-        "html-30-days-3.png"
+        "html-30-days-1.webp",
+        "html-30-days-2.webp",
+        "html-30-days-3.webp"
       ]
     },
     {
@@ -192,11 +192,11 @@
       "private": true,
       "featured": true,
       "images": [
-        "ide-pinturerias-1.png",
-        "ide-pinturerias-2.png",
-        "ide-pinturerias-3.png",
-        "ide-pinturerias-4.png",
-        "ide-pinturerias-5.png"
+        "ide-pinturerias-1.webp",
+        "ide-pinturerias-2.webp",
+        "ide-pinturerias-3.webp",
+        "ide-pinturerias-4.webp",
+        "ide-pinturerias-5.webp"
       ]
     },
     {
@@ -215,7 +215,7 @@
       "demo": "https://www.freecodecamp.org/certification/jamerrq/foundational-c-sharp-with-microsoft",
       "repository": "https://github.com/jamerrq/Foundational-CSharp-with-Microsoft",
       "images": [
-        "foundational-csharp-microsoft.png"
+        "foundational-csharp-microsoft.webp"
       ]
     },
     {
@@ -231,7 +231,7 @@
       "demo": "https://www.freecodecamp.org/certification/jamerrq/javascript-algorithms-and-data-structures",
       "repository": "https://github.com/jamerrq/javascript-algorithms-and-data-structures",
       "images": [
-        "js-algorithms.png"
+        "js-algorithms.webp"
       ]
     },
     {
@@ -248,7 +248,7 @@
       "demo": "https://www.freecodecamp.org/certification/jamerrq/responsive-web-design",
       "repository": "https://github.com/jamerrq/responsive-web-design/",
       "images": [
-        "responsive-web-design.png"
+        "responsive-web-design.webp"
       ]
     }
   ]
