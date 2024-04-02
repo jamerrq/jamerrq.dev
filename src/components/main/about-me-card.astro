@@ -8,6 +8,19 @@ const { lang = 'en' }: Props = Astro.props
 ---
 
 <Box title='Get to know me' otherStyles='xl:col-span-4 xl:row-span-2'>
+  <style>
+    .phrase {
+      font-style: italic;
+    }
+
+    .phrase::before {
+      content: '« ';
+    }
+
+    .phrase::after {
+      content: ' »';
+    }
+  </style>
   <header class='flex flex-col xl:flex-row gap-1 items-center'>
     <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl'>
       {lang === 'en' ? 'Get To Know Me' : 'Conóceme'}
@@ -53,14 +66,30 @@ const { lang = 'en' }: Props = Astro.props
         </p>
       </li>
       <li>
-        <p>
+        <p class='phrase dark:text-emerald-200'>
           {
             lang === 'en'
-              ? 'Big fan of the open source and the web, as well as the great possibilities they offer'
-              : 'Gran fan del código abierto y la web, así como de las grandes posibilidades que ofrecen'
+              ? 'The best way to achieve something is by starting it'
+              : 'La mejor forma de lograr algo es comenzándolo'
           }
         </p>
       </li>
     </ul>
   </div>
+  <!-- <script define:vars={{ lang }}>
+    const phrases = [
+      {
+        en: 'As long as I can continue learning, i will feel alive',
+        es: 'Mientras pueda seguir aprendiendo, me sentiré vivo'
+      },
+      {
+        en: 'Open source has become the best way to learn and share knowledge',
+        es: 'El código abierto se ha convertido en la mejor forma de aprender y compartir conocimiento'
+      }
+    ]
+    setInterval(() => {
+      const phrase = phrases[Math.floor(Math.random() * phrases.length)]
+      document.querySelector('.phrase').textContent = phrase[lang]
+    }, 5000)
+  </script> -->
 </Box>

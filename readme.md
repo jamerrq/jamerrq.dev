@@ -43,3 +43,4 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-lightblue?style=flat-square&lo
 - [Vite Plugin PWA](https://vite-pwa-org.netlify.app/)
 - [Fontsource](https://fontsource.org/)
 - [Tiny Code by Killedbyapixel](https://github.com/KilledByAPixel/TinyCode)
+- [Shots - Create Amazing Mockups](https://shots.so/)

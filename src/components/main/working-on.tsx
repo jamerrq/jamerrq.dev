@@ -1,5 +1,5 @@
 import { projects } from '@data/working-on.json'
-import { signal } from '@preact/signals'
+import { signal, effect } from '@preact/signals'
 
 import {
   siAstro,
@@ -17,13 +17,15 @@ import {
   siMarkdown
 } from 'simple-icons'
 
+siMicrosoft.hex = siMicrosoftazure.hex
+
 const SVGS_STYLES = [
-  'w-5',
-  'h-5',
+  'w-7',
+  'h-7',
   'xl:w-8',
   'xl:h-8',
   'hover:scale-110',
-  'shadow bg-white/50 p-1 rounded dark:bg-emerald-950/80'
+  'shadow bg-white/80 p-1 rounded'
 ].join(' ')
 
 interface ProjectCardProps {
@@ -41,15 +43,16 @@ interface ProjectCardProps {
   }
 }
 
-function getRandomBasedOnDay() {
+function getIndexBasedOnDay() {
   const date = new Date().toLocaleString('es-CO', {
     timeZone: 'America/Bogota'
   })
-  const day = +(date?.at(0) ?? 0)
+  const day = +(date.replace(/,(.*)/g, '')?.split('/')?.at(0) ?? 0)
   return day % projects.length
 }
 
-const index = signal(getRandomBasedOnDay())
+const index = signal(getIndexBasedOnDay())
+const n = projects?.length ?? 0
 
 import { IndexPicker } from '@components/featured-and-projects/projects'
 
@@ -62,7 +65,7 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
       <div class='absolute bottom-0 right-2 font-averia text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90'>
         {days}+ {lang === 'en' ? 'days' : 'días'}
       </div>
-      <h1 class='text-sm xl:text-base font-rubik-doodle dark:text-emerald-100 text-emerald-950 bg-emerald-400 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'>
+      <h1 class='text-sm xl:text-base font-rubik-doodle dark:text-emerald-100 text-emerald-950 bg-emerald-500 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'>
         {lang === 'en' ? project?.title.en : project?.title.es}
       </h1>
       <section class='bg-transparent w-full flex items-center'>
@@ -74,7 +77,7 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
           loading='lazy'
           class='aspect-[4/3] w-40'
         />
-        <aside class='flex flex-col items'>
+        <aside class='flex flex-col gap-2 items-center'>
           <div class='flex gap-2 items-center justify-center'>
             {project.technologies.map((t) => {
               const a =
@@ -104,28 +107,37 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
               )
             })}
           </div>
-          <span class='font-averia'>
-            {lang === 'en' ? 'Preview' : 'Vista previa'}:{' '}
+          <span class='font-averia hover:scale-105 ease-in-out transition-transform text-emerald-950 bg-white/50 dark:bg-white/10 px-2 py-1 rounded dark:text-emerald-300'>
             {project?.preview ? (
               <a
                 href={project.preview}
                 target='_blank'
                 rel='noopener noreferrer'
-                class='text-emerald-950 dark:text-emerald-300'
+                class=''
+                aria-label={`Preview for ${project.title.en}`}
+                title={`Preview for ${project.title.en}`}
               >
-                {lang === 'en' ? 'here' : 'aquí'}
+                {lang === 'en' ? 'Project Preview' : 'Demo del Proyecto'}
               </a>
-            ) : lang === 'en' ? (
-              'soon'
-            ) : (
-              'próximamente'
-            )}
+            ) : null}
           </span>
         </aside>
       </section>
     </li>
   )
 }
+
+effect(() => {
+  let interval = setInterval(() => {
+    index.value++
+    if (index.value >= n) {
+      index.value = 0
+    }
+  }, 7000)
+  return function () {
+    clearInterval(interval)
+  }
+})
 
 export default function WorkingOn({ lang = 'en' }) {
   return (
@@ -141,19 +153,15 @@ export default function WorkingOn({ lang = 'en' }) {
       </header>
       <div class='h-full w-full gap-2'>
         <ul class='flex gap-2 text-base flex-col justify-around h-full font-averia font-bold py-2'>
-          {/* Show only two, use index to get the right items */}
-          {Array.from({ length: 2 }, (_, i) => i + index.value).map(
-            (i) =>
-              i < projects.length && (
-                <ProjectCard
-                  lang={lang}
-                  project={projects[i]}
-                  key={projects[i].title.en}
-                />
-              )
-          )}
+          {Array.from({ length: 2 }, (_, i) => i + index.value).map((i) => (
+            <ProjectCard
+              lang={lang}
+              project={projects[i % n]}
+              key={projects[i % n].title.en}
+            />
+          ))}
         </ul>
-        <IndexPicker n={projects.length} reference={index} />
+        <IndexPicker n={n} reference={index} />
       </div>
     </article>
   )

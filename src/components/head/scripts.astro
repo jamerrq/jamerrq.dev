@@ -4,9 +4,14 @@ interface Props {
 }
 
 const { lang = 'en' } = Astro.props
+import blobs from '@data/blobs/blobs.txt?raw'
+const rawBlobs = blobs.split('- SEP -')
+const index = Math.floor(Math.random() * rawBlobs.length)
+const blob = rawBlobs[index]
 ---
 
-<script defer is:inline define:vars={{ lang }}>
+<script defer is:inline define:vars={{ lang, blob }}>
+  console.log(blob)
   // Theme switch
   function setTheme() {
     const darkIcon = document.getElementById('theme-toggle-dark-icon')

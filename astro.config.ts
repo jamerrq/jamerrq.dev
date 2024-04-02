@@ -58,7 +58,7 @@ export default defineConfig({
         workbox: {
           globDirectory: 'dist/client',
           globPatterns: [
-            '**/*.{webm,woff2}',
+            '**/*.{woff2}',
             'pizarra.webp',
             'bitwise_liminal_compressed_240p.webm'
           ],

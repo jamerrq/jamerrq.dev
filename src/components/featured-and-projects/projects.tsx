@@ -87,6 +87,7 @@ export function IndexPicker({
         <button
           key={i}
           onClick={() => goToIndex(i)}
+          aria-label={`subpage ${i}`}
           className={`w-3 h-3 rounded-full mx-1 ${
             i === reference.value ? 'bg-cyan-300' : 'bg-cyan-950'
           }`}

@@ -3,9 +3,15 @@ interface Props {
   href: string
   title?: string
   src: string
+  absolute?: boolean
 }
 
-const { href, title = 'Generic Movie', src }: Props = Astro.props
+const {
+  href,
+  title = 'Generic Movie',
+  src,
+  absolute = false
+}: Props = Astro.props
 ---
 
 <a
@@ -24,7 +30,8 @@ const { href, title = 'Generic Movie', src }: Props = Astro.props
     loop
     playsinline
     preload='auto'
-    class='object-cover w-full h-full rounded'
+    data-abs={absolute}
+    class='object-cover rounded data-[abs]:absolute'
   >
   </video>
 </a>
