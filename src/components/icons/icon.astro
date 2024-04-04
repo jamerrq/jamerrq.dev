@@ -23,6 +23,9 @@ const { svg, hex = '#000', href = '', title = 'Generic Icon' } = Astro.props
         set:html={svg}
         fill={hex}
       />
+      <span class='text-xs font-averia'>
+        {title === 'Curriculum Vitae' ? 'CV' : title}
+      </span>
     </a>
   ) : (
     <svg

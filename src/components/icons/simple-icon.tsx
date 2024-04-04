@@ -181,7 +181,7 @@ const toExport = {
   '.NET': DotnetLogo,
   Express: ExpressLogo,
   Sequelize: SequelizeLogo,
-  PostgresSql: PostgreSQLLogo,
+  PostgreSQL: PostgreSQLLogo,
   Python: PythonLogo,
   'Jupyter Notebook': JupyterLogo,
   LaTeX: LatexLogo,

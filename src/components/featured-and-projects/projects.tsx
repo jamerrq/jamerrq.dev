@@ -9,6 +9,9 @@ const featured = shuffledData.filter((project) => project.featured)
 const notFeatured = shuffledData.filter((project) => !project.featured)
 const concatedData = featured.concat(notFeatured)
 
+const screenWidth = window.innerWidth
+const isScreenWidthEnough = screenWidth >= 1024
+
 const PROJECT_STYLES: string = [
   'col-span-6',
   'row-span-4',
@@ -22,7 +25,7 @@ const PROJECT_STYLES: string = [
   'font-bold',
   'font-rubik-doodle',
   'w-full',
-  'h-80',
+  'h-72',
   'xl:h-full',
   'transition-all',
   'text-emerald-950',
@@ -35,7 +38,8 @@ const PROJECT_STYLES: string = [
   'text-center'
 ].join(' ')
 
-import { signal } from '@preact/signals'
+import { signal, effect } from '@preact/signals'
+
 const index = signal(0)
 const imagesIndex = signal(0)
 
@@ -56,7 +60,15 @@ function SimpleIcon(key: string) {
   }
   const Icon = simpleIcons[key as keyof toExportType]
   if (typeof Icon === 'function') {
-    return <Icon />
+    // return icon with title
+    return (
+      <div className='flex flex-col items-center gap-1 mx-2'>
+        <Icon />
+        <span className='text-xs font-averia font-bold lowercase'>
+          {key.split(' ').at(0)}
+        </span>
+      </div>
+    )
   }
   return h('fragment', {})
 }
@@ -65,7 +77,7 @@ const BUTTONS_STYLES = [
   'absolute',
   'bg-cyan-300',
   'rounded-md',
-  'flex',
+  'hidden xl:flex',
   'items-center',
   'p-1',
   'shadow-md shadow-black/90'
@@ -203,15 +215,38 @@ function ResourceCard({
           )}
         </div>
       </div>
-      <div className='w-1/2 h-full hidden lg:block xl:block'>
-        {/* <h1>Images</h1> */}
-        {project?.images && <ImageCarousel images={project.images} />}
-      </div>
+      {isScreenWidthEnough && (
+        <div className='w-1/2 h-full hidden lg:block xl:block'>
+          {/* <h1>Images</h1> */}
+          {project?.images && <ImageCarousel images={project.images} />}
+        </div>
+      )}
       {i === n - 1 && <DoubleRightButton _f={goRight} />}
       <IndexPicker n={concatedData.length} reference={index} />
     </article>
   )
 }
+
+const n = concatedData.length
+
+effect(() => {
+  let mainInterval = setInterval(() => {
+    index.value++
+    if (index.value >= n) {
+      index.value = 0
+    }
+  }, 21000)
+  let imagesInterval = setInterval(() => {
+    imagesIndex.value++
+    if (imagesIndex.value >= concatedData[index.value].images.length) {
+      imagesIndex.value = 0
+    }
+  }, 7000)
+  return function () {
+    clearInterval(mainInterval)
+    clearInterval(imagesInterval)
+  }
+})
 
 export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
   return (

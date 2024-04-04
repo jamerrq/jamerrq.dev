@@ -186,7 +186,7 @@
         "React",
         "Tailwind CSS",
         "Express",
-        "PostgresSql",
+        "PostgreSQL",
         "NodeJS"
       ],
       "private": true,
@@ -215,7 +215,8 @@
       "demo": "https://www.freecodecamp.org/certification/jamerrq/foundational-c-sharp-with-microsoft",
       "repository": "https://github.com/jamerrq/Foundational-CSharp-with-Microsoft",
       "images": [
-        "foundational-csharp-microsoft.webp"
+        "foundational-csharp-microsoft.webp",
+        "foundational-csharp-microsoft-2.webp"
       ]
     },
     {

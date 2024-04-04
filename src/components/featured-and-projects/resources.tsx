@@ -6,15 +6,15 @@ const RESOURCE_STYLES: string = [
   'rounded-sm',
   'shadow-[0_0_0.1rem_rgb(8_51_68)]', // rgb(8, 51, 68)
   'flex',
-  'flex-col',
-  'gap-0',
+  'xl:flex-col',
+  'gap-5',
   'items-center',
   'justify-center',
   'font-bold',
   'font-rubik-doodle',
   'w-full',
   'xl:h-full',
-  'h-[15%]',
+  'h-16',
   'transition-all',
   'text-cyan-950',
   'dark:text-cyan-300',
@@ -25,7 +25,7 @@ const RESOURCE_STYLES: string = [
   'relative'
 ].join(' ')
 
-import { signal } from '@preact/signals'
+import { signal, effect } from '@preact/signals'
 const index = signal(0)
 
 import { Fragment } from 'preact/jsx-runtime'
@@ -86,6 +86,20 @@ const DoubleRightButton = ({ _f }: { _f: () => void }) => (
     </button>
   </div>
 )
+
+const n = data.length
+
+effect(() => {
+  let interval = setInterval(() => {
+    index.value++
+    if (index.value >= n) {
+      index.value = 0
+    }
+  }, 14000)
+  return function () {
+    clearInterval(interval)
+  }
+})
 
 export default function Resources({ n = 3 }: ResourceProps) {
   const goRight = () => {
