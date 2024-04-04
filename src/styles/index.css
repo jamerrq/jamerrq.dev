@@ -29,7 +29,7 @@ p {
 }
 
 @font-face {
-    font-family: 'Rubik Doodle Subset';
+    font-family: 'Rubik Doodle Subset', sans-serif;
     src: url('/fonts/rubik-doodle-shadow-latin-400-patched.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
