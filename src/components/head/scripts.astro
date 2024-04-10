@@ -8,6 +8,9 @@ import blobs from '@data/blobs/blobs.txt?raw'
 const rawBlobs = blobs.split('- SEP -')
 const index = Math.floor(Math.random() * rawBlobs.length)
 const blob = rawBlobs[index]
+
+// @ts-ignore
+import { pwaInfo } from 'virtual:pwa-info'
 ---
 
 <script defer is:inline define:vars={{ lang, blob }}>
@@ -22,46 +25,46 @@ const blob = rawBlobs[index]
       localStorage.getItem('color-theme') === 'dark' ||
       !('color-theme' in localStorage)
     ) {
-      lightIcon.classList.remove('hidden')
+      lightIcon?.classList?.remove('hidden')
       // en caso que se haya configurado previamente
-      document.documentElement.classList.add('dark')
+      document.documentElement?.classList?.add('dark')
       // remover la clase light si está presente
-      document.documentElement.classList.remove('light')
+      document.documentElement?.classList?.remove('light')
     } else {
-      darkIcon.classList.remove('hidden')
+      darkIcon?.classList?.remove('hidden')
       // en caso que se haya configurado previamente
-      document.documentElement.classList.add('light')
+      document.documentElement?.classList?.add('light')
       // remover la clase dark si está presente
-      document.documentElement.classList.remove('dark')
+      document.documentElement?.classList?.remove('dark')
     }
 
     const themeToggleBtn = document.getElementById('theme-toggle')
 
-    themeToggleBtn.addEventListener('click', () => {
-      darkIcon.classList.toggle('hidden')
-      lightIcon.classList.toggle('hidden')
+    themeToggleBtn?.addEventListener('click', () => {
+      darkIcon?.classList?.toggle('hidden')
+      lightIcon?.classList?.toggle('hidden')
 
       // se comprueba si se ha configurado previamente
       if (localStorage.getItem('color-theme')) {
         if (localStorage.getItem('color-theme') === 'light') {
-          document.documentElement.classList.add('dark')
+          document.documentElement?.classList?.add('dark')
           // remover la clase light si está presente
-          document.documentElement.classList.remove('light')
+          document.documentElement?.classList?.remove('light')
           localStorage.setItem('color-theme', 'dark')
         } else {
-          document.documentElement.classList.remove('dark')
+          document.documentElement?.classList?.remove('dark')
           // remover la clase dark si está presente
           localStorage.setItem('color-theme', 'light')
         }
 
         // se comprueba si el sistema operativo tiene configurado el tema oscuro
-      } else if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark')
-        document.documentElement.classList.add('light')
+      } else if (document.documentElement?.classList?.contains('dark')) {
+        document.documentElement?.classList?.remove('dark')
+        document.documentElement?.classList?.add('light')
         localStorage.setItem('color-theme', 'light')
       } else {
-        document.documentElement.classList.add('dark')
-        document.documentElement.classList.remove('light')
+        document.documentElement?.classList?.add('dark')
+        document.documentElement?.classList?.remove('light')
         localStorage.setItem('color-theme', 'dark')
       }
     })
@@ -82,22 +85,22 @@ const blob = rawBlobs[index]
       window.location.pathname === '/' ||
       window.location.pathname === '/es'
     ) {
-      homeButton.classList.add('hidden')
-      randomPlaceButton.classList.remove('hidden')
+      homeButton?.classList?.add('hidden')
+      randomPlaceButton?.classList?.remove('hidden')
     } else {
-      homeButton.classList.remove('hidden')
-      randomPlaceButton.classList.add('hidden')
+      homeButton?.classList?.remove('hidden')
+      randomPlaceButton?.classList?.add('hidden')
     }
 
     // Add click event to home button
-    homeButton.addEventListener('click', () => {
+    homeButton?.addEventListener('click', () => {
       // window.location.href = '/'
       lang === 'es'
         ? (window.location.href = '/es')
         : (window.location.href = '/')
     })
 
-    randomPlaceButton.addEventListener('click', () => {
+    randomPlaceButton?.addEventListener('click', () => {
       const places = ['/blog', '/tech-stack', '/featured']
       window.location.href = places[Math.floor(Math.random() * places.length)]
     })
@@ -121,3 +124,8 @@ const blob = rawBlobs[index]
     })
   })
 </script>
+<script src='/src/pwa.ts'></script>
+{
+  // eslint-disable-next-line
+  pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />
+}

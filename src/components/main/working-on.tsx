@@ -55,7 +55,7 @@ interface ProjectCardProps {
 const index = signal(0)
 const n = projects?.length ?? 0
 
-import { IndexPicker } from '@components/featured-and-projects/projects'
+import IndexPicker from '@components/featured-and-projects/indexPicker'
 
 function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
   const date = new Date(project.start)

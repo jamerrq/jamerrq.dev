@@ -17,6 +17,7 @@ import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 import SEO from '@components/head/seo.astro'
 import Scripts from '@components/head/scripts.astro'
+import ReloadPrompt from '@components/main/ReloadPrompt.astro'
 ---
 
 <!doctype html>
@@ -33,5 +34,6 @@ import Scripts from '@components/head/scripts.astro'
       <slot />
     </main>
     <Scripts />
+    <ReloadPrompt />
   </body>
 </html>

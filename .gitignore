@@ -2,6 +2,7 @@
 dist/
 .vercel/
 .unlighthouse/
+dev-dist/
 
 # generated types
 .astro/

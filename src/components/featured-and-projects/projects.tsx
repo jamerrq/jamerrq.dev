@@ -2,7 +2,7 @@ import { data } from '@data/projects.json'
 
 import { shuffle } from '@utils'
 
-const shuffledData = shuffle([...data])
+const shuffledData = import.meta.env.DEV ? data : shuffle([...data])
 
 // featured projects go first
 const featured = shuffledData.filter((project) => project.featured)
@@ -83,42 +83,21 @@ const BUTTONS_STYLES = [
   'shadow-md shadow-black/90'
 ].join(' ')
 
-export function IndexPicker({
-  n,
-  reference
-}: {
-  n: number
-  reference: typeof index
-}) {
-  function goToIndex(i: number) {
-    reference.value = i
-  }
-  return (
-    <div className='absolute flex bottom-3 left-1/2 transform -translate-x-1/2'>
-      {Array.from(Array(n).keys()).map((i) => (
-        <button
-          key={i}
-          onClick={() => goToIndex(i)}
-          aria-label={`subpage ${i}`}
-          className={`w-3 h-3 rounded-full mx-1 ${
-            i === reference.value ? 'bg-cyan-300' : 'bg-cyan-950'
-          }`}
-        />
-      ))}
-    </div>
-  )
-}
+import IndexPicker from './indexPicker'
 
 function ImageCarousel({ images }: { images: string[] }) {
+  const currentImage = images[imagesIndex.value]
   return (
     <div className='relative w-full h-full'>
       <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-        <img
-          src={`/img/projects/${images[imagesIndex.value]}`}
-          alt='project'
-          class='w-full rounded-md border-2 shadow shadow-black'
-          loading='lazy'
-        />
+        {currentImage && (
+          <img
+            src={`/img/projects/${images[imagesIndex.value]}`}
+            alt='project'
+            class='w-full rounded-md border-2 shadow shadow-black'
+            loading='lazy'
+          />
+        )}
       </div>
       <IndexPicker n={images?.length ?? 0} reference={imagesIndex} />
     </div>

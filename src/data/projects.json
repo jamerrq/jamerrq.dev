@@ -3,7 +3,7 @@
     {
       "title": "Json Forms App",
       "description": {
-        "en": "This application allows you to convert a JSON file to a web form interface, as well as register the answers in a database.",
+        "en": "[Technical test]. This application allows you to convert a JSON file to a web form interface, as well as register the answers in a database. Currently down for maintenance.",
         "es": "Esta aplicación permite convertir un archivo JSON a una interfaz de formulario web, así como registrar las respuestas en una base de datos."
       },
       "stack": [
@@ -39,7 +39,7 @@
     {
       "title": "Reading List App",
       "description": {
-        "en": "Technical test for an interview, the challenge was to design and implement a small web application of a book list and bookmarks.",
+        "en": "[Technical test]. The challenge was to design and implement a small web application of a book list and bookmarks.",
         "es": "Prueba técnica para una entrevista, el reto fue diseñar e implementar una pequeña aplicación web de una lista de libros y marcadores."
       },
       "stack": [
@@ -202,8 +202,8 @@
     {
       "title": "Foundational C# with Microsoft & FreeCodeCamp",
       "description": {
-        "en": "Foundational C# course with Microsoft and FreeCodeCamp.",
-        "es": "Curso de C# fundamental con Microsoft y FreeCodeCamp."
+        "en": "Foundational C# certification with Microsoft and FreeCodeCamp.",
+        "es": "Certificación de C# fundamental con Microsoft y FreeCodeCamp."
       },
       "stack": [
         "C#",
@@ -222,7 +222,7 @@
     {
       "title": "JavaScript Algorithms and Data Structures",
       "description": {
-        "en": "JavaScript Algorithms and Data Structures course with FreeCodeCamp.",
+        "en": "JavaScript Algorithms and Data Structures certification with FreeCodeCamp.",
         "es": "Curso de Algoritmos y Estructuras de Datos en JavaScript con FreeCodeCamp."
       },
       "stack": [
@@ -238,8 +238,8 @@
     {
       "title": "Responsive Web Design",
       "description": {
-        "en": "Responsive Web Design course with FreeCodeCamp.",
-        "es": "Curso de Diseño Web Responsivo con FreeCodeCamp."
+        "en": "Responsive Web Design certification with FreeCodeCamp.",
+        "es": "Certificación de Diseño Web Responsivo con FreeCodeCamp."
       },
       "stack": [
         "Html",

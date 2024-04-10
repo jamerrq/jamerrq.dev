@@ -13,6 +13,6 @@ const { lang = 'en' }: Props = Astro.props
 <Bento>
   <About lang={lang} />
   <Buttons href={lang === 'en' ? '/es/destacados-y-proyectos' : '/featured'} />
-  <ProjectsPreact lang={lang} client:only />
-  <ResourcesPreact client:only />
+  <ProjectsPreact lang={lang} client:only='preact' />
+  <ResourcesPreact client:only='preact' />
 </Bento>

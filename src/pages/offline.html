@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jamerrq.dev - Offline Mode</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        font-family: inherit;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Rubik Subset', sans-serif;
+        color: #6ee7b7;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        justify-content: center;
+        height: 100dvh;
+        width: 100dvw;
+        margin: 0;
+        font-family: 'Rubik Subset', sans-serif;
+        color: #6ee7b7;
+        font-size: 2em;
+        gap: 1em;
+      }
+
+      .background {
+        background-image: url('/pizarra.webp');
+        min-height: 100%;
+        width: 100vw;
+        background-position: center;
+        background-repeat: repeat;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -50;
+        inset: 0;
+        filter: blur(5px);
+      }
+
+      @font-face {
+        font-family: 'Rubik Subset';
+        src: url('/fonts/rubik-doodle-shadow-latin-400-patched.woff2')
+          format('woff2');
+      }
+
+      /* HTML: <div class="loader"></div> */
+      .loader {
+        width: fit-content;
+        font-weight: bold;
+        font-size: 0.65em;
+        background: radial-gradient(circle closest-side, #000 94%, #0000)
+          right/calc(200% - 1em) 100%;
+        animation: l24 1s infinite alternate linear;
+        background-color: #34d399cc;
+        border-radius: 0.5em;
+        padding: 0.5em 0.5em;
+      }
+
+      .loader::before {
+        content: '* Checking your internet connection *';
+        color: #0000;
+        line-height: 1em;
+        background: inherit;
+        background-image: radial-gradient(circle closest-side, #fff 94%, #000);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      video {
+        border-radius: 0.125em;
+      }
+
+      span {
+        font-size: 2.5em;
+        color: #6ee7b7;
+        /* background-color: #0D9488cc; */
+        border-radius: 5px;
+        padding: 0.08em 0.125em;
+      }
+
+      @keyframes l24 {
+        100% {
+          background-position: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <main>
+      <span>You're offline!</span>
+      <a
+        href="https://killedbyapixel.github.io/TinyCode/256B/BitwiseLiminal/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Bitwise Liminal by KilledByAPixel"
+        aria-label="Bitwise Liminal by KilledByAPixel"
+      >
+        <video
+          src="/movies/bitwise_liminal_compressed_240p.webm"
+          autoplay
+          style="width: 100%; height: 100%"
+          muted
+          loop
+          playsinline
+          preload="auto"
+          class="object-cover rounded"
+        ></video>
+      </a>
+      <script>
+        window.addEventListener('online', () => {
+          alert('You are back online')
+          window.location.href = '/'
+        })
+      </script>
+      <div class="loader"></div>
+    </main>
+  </body>
+</html>

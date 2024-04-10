@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 
-// PWA Support
-import { VitePWA } from 'vite-plugin-pwa'
+// PWA
+import AstroPWA from '@vite-pwa/astro'
 import { manifest } from './src/utils/seoConfig'
 
 // Integrations
@@ -11,7 +11,6 @@ import robotsTxt from 'astro-robots-txt'
 import preact from '@astrojs/preact'
 import pageInsight from 'astro-page-insight'
 import sitemap from '@astrojs/sitemap'
-import compress from 'astro-compress'
 import mdx from '@astrojs/mdx'
 
 // https://astro.build/config
@@ -29,7 +28,54 @@ export default defineConfig({
         page !== 'https://jamerrq.deno.dev/es/board/'
     }),
     mdx(),
-    compress()
+    AstroPWA({
+      registerType: 'autoUpdate',
+      manifest,
+      devOptions: {
+        enabled: true
+      },
+      workbox: {
+        globDirectory: 'dist/client',
+        globPatterns: [
+          '**/*.woff2',
+          'pizarra.webp',
+          'img/this_is_fine.webp',
+          'movies/bitwise_liminal_compressed_240p.webm',
+          '_astro/*.module.*.js',
+          '_astro/client.*.js',
+          '_astro/hoisted.*.js',
+          '_astro/*icons.*.js'
+          // 'offline.html',
+        ],
+        // Don't fallback on document based (e.g. `/some-page`) requests
+        // This removes an errant console.log message from showing up.
+        navigateFallback: null, // 'offline.html' <- working on this
+        runtimeCaching: [
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 30 * 24 * 60 * 60
+              }
+            }
+          },
+          {
+            urlPattern: /\.(?:woff|woff2|ttf|eot|ico)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fonts',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 30 * 24 * 60 * 60
+              }
+            }
+          }
+        ]
+      }
+    })
   ],
   output: 'server',
   i18n: {
@@ -48,49 +94,8 @@ export default defineConfig({
     inlineStylesheets: 'always'
   },
   vite: {
-    // build: {
-    //   cssMinify: "lightningcss"
-    // },
-    plugins: [
-      VitePWA({
-        registerType: 'autoUpdate',
-        manifest,
-        workbox: {
-          globDirectory: 'dist/client',
-          globPatterns: [
-            '**/*.{woff2}',
-            'pizarra.webp',
-            'bitwise_liminal_compressed_240p.webm'
-          ],
-          // Don't fallback on document based (e.g. `/some-page`) requests
-          // This removes an errant console.log message from showing up.
-          navigateFallback: null,
-          runtimeCaching: [
-            {
-              urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/,
-              handler: 'CacheFirst',
-              options: {
-                cacheName: 'images',
-                expiration: {
-                  maxEntries: 100,
-                  maxAgeSeconds: 30 * 24 * 60 * 60
-                }
-              }
-            },
-            {
-              urlPattern: /\.(?:woff|woff2|ttf|eot|ico)$/,
-              handler: 'CacheFirst',
-              options: {
-                cacheName: 'fonts',
-                expiration: {
-                  maxEntries: 10,
-                  maxAgeSeconds: 30 * 24 * 60 * 60
-                }
-              }
-            }
-          ]
-        }
-      })
-    ]
+    build: {
+      cssMinify: 'lightningcss'
+    }
   }
 })
