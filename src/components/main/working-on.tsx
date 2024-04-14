@@ -6,7 +6,6 @@ import {
   siSupabase,
   siNextdotjs,
   siTailwindcss,
-  siGitkraken,
   siPython,
   siJavascript,
   siCsharp,
@@ -38,22 +37,12 @@ interface ProjectCardProps {
     image: string
     technologies: string[]
     preview: string
-    time: string
     start: string
   }
 }
 
-// function getIndexBasedOnMonth() {
-//   const date = new Date().toLocaleString('es-CO', {
-//     timeZone: 'America/Bogota'
-//   })
-//   const month = +(date.replace(/,(.*)/g, '')?.split('/')?.at(1) ?? 0)
-//   const index = month % projects.length
-//   return index
-// }
-
-const index = signal(0)
 const n = projects?.length ?? 0
+const index = signal(Math.floor(Math.random() * n))
 
 import IndexPicker from '@components/featured-and-projects/indexPicker'
 
@@ -145,28 +134,17 @@ effect(() => {
 
 export default function WorkingOn({ lang = 'en' }) {
   return (
-    <article className='bg-slate-300/70 dark:bg-slate-900/95 rounded-sm flex items-center justify-center font-bold dark:text-slate-300 font-rubik-doodle w-full h-full flex-col text-base py-3 px-2 relative xl:col-span-2 xl:row-span-4'>
-      <header class='text-2xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'>
-        <p>{lang === 'en' ? 'Working on' : 'Trabajando en'}</p>
-        <svg
-          class='w-8 h-8 inline-flex shadow bg-white/50 p-1 rounded dark:bg-slate-900/80'
-          fill={`#${siGitkraken.hex}`}
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: siGitkraken.svg }}
-        />
-      </header>
-      <div class='h-full w-full gap-2'>
-        <ul class='flex gap-2 text-base flex-col justify-around h-full font-averia font-bold py-2'>
-          {Array.from({ length: 2 }, (_, i) => i + index.value).map((i) => (
-            <ProjectCard
-              lang={lang}
-              project={projects[i % n]}
-              key={projects[i % n].title.en}
-            />
-          ))}
-        </ul>
-        <IndexPicker n={n} reference={index} />
-      </div>
-    </article>
+    <div class='h-full w-full gap-2' id='working-on-client'>
+      <ul class='flex gap-2 text-base flex-col justify-around h-full font-averia font-bold py-2'>
+        {Array.from({ length: 2 }, (_, i) => i + index.value).map((i) => (
+          <ProjectCard
+            lang={lang}
+            project={projects[i % n]}
+            key={projects[i % n].title.en}
+          />
+        ))}
+      </ul>
+      <IndexPicker n={n} reference={index} />
+    </div>
   )
 }

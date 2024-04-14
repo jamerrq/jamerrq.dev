@@ -5,21 +5,20 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 import AboutMe from './about-me-card.astro'
 import TechTitle from './title.astro'
-// import WorkingOn from './working-on.astro'
+import WorkingOn from './working-on.astro'
 import Buttons from './buttons.astro'
 import TechStack from './tech-stack.astro'
 import Featured from './featured.astro'
 import Blog from './blog.astro'
 import Socials from './socials.astro'
 import Bento from './bento.astro'
-import WorkingOnTsx from './working-on.tsx'
 ---
 
 <Bento>
   <AboutMe lang={lang} />
   <Buttons href={lang === 'en' ? '/es' : '/'} />
   <TechStack lang={lang} />
-  <WorkingOnTsx lang={lang} client:idle />
+  <WorkingOn lang={lang} />
   <TechTitle lang={lang} />
   <Featured lang={lang} />
   <Socials lang={lang} />

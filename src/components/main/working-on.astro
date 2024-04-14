@@ -6,8 +6,8 @@ interface Props {
 }
 const { lang = 'en' }: Props = Astro.props
 
-import ProjectCard from './project.astro'
 import Box from '@components/boxes/box.astro'
+import WorkingOnTsx from './working-on.tsx'
 ---
 
 <Box title="Projects I'm working on" otherStyles='xl:col-span-2 xl:row-span-4'>
@@ -24,12 +24,5 @@ import Box from '@components/boxes/box.astro'
       fill={`#${siGitkraken.hex}`}
     />
   </header>
-  <div class='h-full w-full gap-2'>
-    <ul
-      class='flex gap-2 text-base flex-col justify-around h-full font-averia font-bold py-2'
-    >
-      <ProjectCard lang={lang} index={0} />
-      <ProjectCard lang={lang} index={1} />
-    </ul>
-  </div>
+  <WorkingOnTsx lang={lang} client:only='preact' />
 </Box>

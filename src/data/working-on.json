@@ -17,7 +17,6 @@
       ],
       "preview": "",
       "private": "true",
-      "time": "3",
       "start": "2024-02-24"
     },
     {
@@ -36,27 +35,8 @@
         "Tailwind CSS"
       ],
       "private": "false",
-      "time": "3",
       "preview": "",
       "start": "2024-02-16"
-    },
-    {
-      "title": {
-        "en": "Leetcode 75 - Study Plan",
-        "es": "Leetcode 75 - Plan de Estudio"
-      },
-      "description": {
-        "en": "A study plan to ace coding interviews by solving top 75 Leetcode problems.",
-        "es": "Un plan de estudio para aprobar entrevistas de programación resolviendo los 75 mejores problemas de Leetcode."
-      },
-      "image": "/img/working-on/leetcode.webp",
-      "technologies": [
-        "Python"
-      ],
-      "private": "false",
-      "time": "2",
-      "preview": "https://github.com/jamerrq/LeetCode-75",
-      "start": "2024-03-03"
     },
     {
       "title": {
@@ -73,7 +53,6 @@
         "dotnet"
       ],
       "private": "false",
-      "time": "4",
       "preview": "https://github.com/jamerrq/roadmap-csharp",
       "start": "2024-01-01"
     },
@@ -92,28 +71,8 @@
         "microsoft"
       ],
       "private": "false",
-      "time": "1",
       "preview": "https://learn.microsoft.com/en-us/collections/moqrtod2e2z7?WT.mc_id=cloudskillschallenge_3ef5d197-cdef-49bc-a8bc-954bcd9e88cc&sharingId=C74FED9E989834A",
       "start": "2024-03-27"
-    },
-    {
-      "title": {
-        "en": "FreeCodeCamp Spanish Translations",
-        "es": "Traducciones al Español - FreeCodeCamp"
-      },
-      "description": {
-        "en": "Contributing to the Spanish translations of FreeCodeCamp.",
-        "es": "Contribuyendo a las traducciones al Español de FreeCodeCamp."
-      },
-      "image": "/img/working-on/fcc.webp",
-      "technologies": [
-        "markdown",
-        "freecodecamp"
-      ],
-      "private": "false",
-      "time": "1",
-      "preview": "https://www.freecodecamp.org/espanol/news/author/jamerrq/",
-      "start": "2024-02-05"
     },
     {
       "title": {
@@ -129,7 +88,6 @@
         "Astro"
       ],
       "private": "false",
-      "time": "1",
       "preview": "",
       "start": "2024-03-10"
     }

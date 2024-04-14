@@ -1,3 +1,4 @@
+// Astro config file
 import { defineConfig } from 'astro/config'
 
 // PWA
@@ -37,7 +38,8 @@ export default defineConfig({
       workbox: {
         globDirectory: 'dist/client',
         globPatterns: [
-          '**/*.woff2',
+          '**/*.{woff2}',
+          'img/working_on/*.webp',
           'pizarra.webp',
           'img/this_is_fine.webp',
           'movies/bitwise_liminal_compressed_240p.webm',
@@ -45,7 +47,6 @@ export default defineConfig({
           '_astro/client.*.js',
           '_astro/hoisted.*.js',
           '_astro/*icons.*.js'
-          // 'offline.html',
         ],
         // Don't fallback on document based (e.g. `/some-page`) requests
         // This removes an errant console.log message from showing up.

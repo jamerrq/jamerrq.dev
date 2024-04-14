@@ -2,7 +2,7 @@
 
 Source code for my personal website, [jamerrq.dev](https://jamerrq.dev)
 
-![](https://img.shields.io/badge/Made%20with-Astro%20💙-orange?style=for-the-badge&logo=astro&logoColor=orange)
+![](https://img.shields.io/badge/Made%20with-Astro-orange?style=for-the-badge&logo=astro&logoColor=orange)
 
 ## Stack 🥞
 
