@@ -26,11 +26,17 @@ import ReloadPrompt from '@components/main/ReloadPrompt.astro'
     <SEO />
     <title>{title}</title>
     <!-- Analytics by Umami -->
-    <script
-      is:inline
-      defer
-      src='https://analytics.us.umami.is/script.js'
-      data-website-id='69d89d94-e4e2-42cc-a3c7-c40048915156'></script>
+    {
+      !import.meta.env.DEV && (
+        <script
+          is:inline
+          async
+          defer
+          data-website-id='69d89d94-e4e2-42cc-a3c7-c40048915156'
+          src='https://analytics.us.umami.is/umami.js'
+        />
+      )
+    }
     <ViewTransitions />
   </head>
   <body data-dev={import.meta.env.DEV} class='data-[dev]:debug-screens'>
