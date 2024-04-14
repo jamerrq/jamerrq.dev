@@ -31,7 +31,8 @@
     "build": "astro check && astro build",
     "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
     "astro": "astro",
-    "lint": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+    "lint": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+    "lint:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
     "check-tsx": "tsc --noEmit --skipLibCheck --project tsconfig.json",
     "local-build-and-preview": "bun lint && bun check-tsx && bun run build && bun run preview",
     "build-unlighthouse-report": "unlighthouse --site jamerrq.deno.dev --build-static"
