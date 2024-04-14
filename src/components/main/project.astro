@@ -17,7 +17,6 @@ const { lang = 'en', index = 0 }: Props = Astro.props
 interface Project {
   title: { en: string; es: string }
   image: string
-  time: string
   repository?: string
   preview?: string
   technologies: string[]
@@ -42,7 +41,7 @@ import { Image } from 'astro:assets'
   <div
     class='absolute bottom-0 right-2 font-averia text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90'
   >
-    {project?.time}+ {lang === 'en' ? 'months' : 'meses'}
+    <!-- {project?.time}+ {lang === 'en' ? 'months' : 'meses'} -->
   </div>
   <h1
     class='text-sm xl:text-base font-rubik-doodle dark:text-emerald-100 text-emerald-950 bg-emerald-400 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'
