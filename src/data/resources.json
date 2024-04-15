@@ -123,6 +123,29 @@
     {
       "title": "Traducciones FreeCodeCamp",
       "website": "https://www.freecodecamp.org/espanol/news/author/jamerrq"
+    },
+    {
+      "title": "MoureDev",
+      "website": "https://moure.dev/",
+      "repository": "https://github.com/mouredev",
+      "links": [
+        {
+          "site": "Twitch Channel",
+          "url": "https://www.twitch.tv/mouredev"
+        },
+        {
+          "site": "Youtube Channel",
+          "url": "https://www.youtube.com/@mouredev"
+        },
+        {
+          "site": "Twitter Account",
+          "url": "https://twitter.com/mouredev"
+        },
+        {
+          "site": "Discord Server",
+          "url": "https://discord.com/invite/mouredev"
+        }
+      ]
     }
   ]
 }

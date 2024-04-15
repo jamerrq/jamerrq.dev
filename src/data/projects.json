@@ -251,6 +251,24 @@
       "images": [
         "responsive-web-design.webp"
       ]
+    },
+    {
+      "title": "LeetCode 75 - Python",
+      "description": {
+        "en": "Ace Coding Interview with 75 Qs. My solutions to the 75 LeetCode problems in Python.",
+        "es": "Domina la entrevista de codificación con 75 preguntas. Mis soluciones a los 75 problemas de LeetCode en Python."
+      },
+      "stack": [
+        "Python",
+        "LeetCode"
+      ],
+      "demo": "https://leetcode.com/studyplan/leetcode-75/",
+      "repository": "https://github.com/jamerrq/LeetCode-75",
+      "images": [
+        "leetcode75-1.webp",
+        "leetcode75-2.webp",
+        "leetcode75-3.webp"
+      ]
     }
   ]
 }

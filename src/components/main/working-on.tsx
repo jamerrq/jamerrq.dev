@@ -13,7 +13,8 @@ import {
   siMicrosoftazure,
   siMicrosoft,
   siFreecodecamp,
-  siMarkdown
+  siMarkdown,
+  siAmazondocumentdb
 } from 'simple-icons'
 
 siMicrosoft.hex = siMicrosoftazure.hex
@@ -84,7 +85,8 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
                   azure: siMicrosoftazure,
                   microsoft: siMicrosoft,
                   freecodecamp: siFreecodecamp,
-                  markdown: siMarkdown
+                  markdown: siMarkdown,
+                  astrodb: siAmazondocumentdb
                 }[t.toLowerCase().replaceAll(' ', '')] || siAstro
               return (
                 <svg

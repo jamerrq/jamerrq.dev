@@ -83,12 +83,13 @@
         "en": "Simple, minimalist habits tracker.",
         "es": "Seguidor de hábitos simple y minimalista."
       },
-      "image": "/img/working-on/parrot.webp",
+      "image": "/img/working-on/parrot2.webp",
       "technologies": [
-        "Astro"
+        "Astro",
+        "Astro DB"
       ],
       "private": "false",
-      "preview": "",
+      "preview": "https://parrot-mu.vercel.app/",
       "start": "2024-03-10"
     }
   ]
