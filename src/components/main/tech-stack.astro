@@ -19,9 +19,9 @@ import {
 const ICON_BLOCKS_STYLES = [
   'flex',
   'gap-2',
-  '[&>img]:rounded-sm',
+  '[&>img]:rounded-[10px]',
   'p-1',
-  'rounded-sm',
+  'rounded-[10px]',
   '[&_svg]:shadow',
   '[&_svg]:p-1',
   '[&_svg]:bg-white/50',
@@ -135,12 +135,11 @@ const SVGS_STYLES = ['w-6', 'h-6', 'xl:w-8', 'xl:h-8', 'hover:scale-110'].join(
       <svg class={SVGS_STYLES} set:html={siLinux.svg} fill={`#FE7A36`} />
     </div>
   </div>
-  <aside class='p-2 rounded-sm flex gap-2 justify-center items-center'>
+  <aside class='p-2 rounded-[10px] flex gap-2 justify-center items-center'>
     <span
-      class='font-bold text-sm xl:text-base dark:text-emerald-300 text-slate-900 font-averia'
+      class='font-bold text-sm xl:text-base dark:text-emerald-300 text-slate-900 font-secondary'
     >
-      <span class='-mt-5'> ❯</span>
-      {lang === 'en' ? 'Tap to see more' : 'Presiona para ver más'}
+      - {lang === 'en' ? 'Tap to see more' : 'Presiona para ver más'} -
     </span>
   </aside>
 </Hbox>

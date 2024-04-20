@@ -4,22 +4,36 @@ interface Props {
 }
 const { lang = 'en' }: Props = Astro.props
 
-import BitwiseLiminal from '@movies/bitwise-liminal.astro'
+// import BitwiseLiminal from '@movies/bitwise-liminal.astro'
 ---
 
+<style>
+  .title {
+    /* background: rgba(15, 23, 42, 0.25); */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    @media (prefers-color-scheme: light) {
+      background: rgb(255, 255, 255, 0.25);
+    }
+  }
+</style>
 <div
-  class='row-span-2 xl:col-span-2 title bg-transparent text-emerald-400 p-2 rounded w-full h-full flex items-center flex-row animate-blurred-fade-in relative'
+  class='bg-slate-500/70 dark:bg-slate-900/95 row-span-2 xl:col-span-2 title text-emerald-400 p-2 rounded w-full h-full flex items-center flex-row animate-blurred-fade-in relative card'
 >
   <div class='flex flex-col gap-1 animate-fade-in z-10'>
     <a href={lang !== 'en' ? '/' : 'es'}>
       <p
-        class='font-rubik-doodle font-semibold text-2xl xl:text-4xl dark:bg-gray-500/90 bg-gray-600/80 px-2 py-1 rounded'
+        class='font-primary font-semibold text-2xl xl:text-4xl px-2 py-1 rounded'
       >
         @jamerrq.dev
       </p>
     </a>
     <span
-      class='block font-averia text-sm rounded w-fit mx-auto px-1 py-0.5 text-center dark:bg-gray-500/90 bg-gray-600/80'
+      class='block font-secondary uppercase text-sm rounded w-fit mx-auto px-1 py-0.5 text-center'
     >
       Backend Dev
     </span>
@@ -28,7 +42,7 @@ import BitwiseLiminal from '@movies/bitwise-liminal.astro'
     class='fixed -z-10 top-0 left-0 origin-top-left w-full xl:flex place-content-center flex overflow-hidden h-full bg-opacity-10 rounded'
     id='animation-container'
   >
-    <BitwiseLiminal />
+    <!-- <BitwiseLiminal /> -->
   </div>
 </div>
 

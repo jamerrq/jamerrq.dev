@@ -18,7 +18,7 @@ const socials = getIconsFn(lang)
 
 <Box
   title='Contact Section'
-  otherStyles='xl:col-span-2 xl:row-span-2 justify-between min-h-48'
+  otherStyles='xl:col-span-2 xl:row-span-2 justify-around'
 >
   <header class='flex gap-2 dark:text-emerald-300 text-slate-950'>
     <p class='font-semibold text-3xl xl:text-4xl'>Contact Links</p>
@@ -26,13 +26,13 @@ const socials = getIconsFn(lang)
   </header>
   <div class='flex h-fit w-full items-center justify-center gap-2'>
     <span
-      class='font-bold font-averia text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-500 p-2 rounded shadow-sm shadow-black'
+      class='font-bold font-secondary text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-500 p-2 rounded shadow-sm shadow-black'
     >
       jamerrq@gmail.com
     </span>
     <button id='copyMailButton' aria-label='copy mail button' title='copy mail'>
       <Copy
-        class='w-8 h-8 dark:bg-emerald-300 bg-slate-900 fill-slate-300 dark:fill-slate-950 p-1 rounded cursor-pointer hover:scale-110 transition-all shadow-sm shadow-black'
+        class='w-8 h-8 dark:bg-emerald-300 bg-slate-900 fill-slate-300 dark:fill-slate-950 px-2 py-1 rounded cursor-pointer hover:scale-110 transition-all shadow-sm shadow-black'
       />
     </button>
   </div>

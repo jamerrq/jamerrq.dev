@@ -20,7 +20,7 @@ const { lang = 'en' }: Props = Astro.props
     <h1 class=''>Dev Tools</h1>
   </header>
   <ul
-    class='text-xl w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-sm [&_header]:text-amber-950 [&_header]:dark:text-amber-300'
+    class='text-xl w-full grid place-items-center grid-cols-2 grid-rows-3 gap-1 [&>li]:grid [&>li]:place-items-center [&>li>main>a>img]:rounded-[10px] [&_header]:text-amber-950 [&_header]:dark:text-amber-300'
   >
     <li>
       <header class='flex gap-2'>
@@ -28,7 +28,7 @@ const { lang = 'en' }: Props = Astro.props
         <!-- <p class='font-thin'>󰨞</p> -->
       </header>
       <section>
-        <ul class='flex gap-1 w-full flex-wrap p-1 rounded-sm'>
+        <ul class='flex gap-1 w-full flex-wrap p-1 rounded-[10px]'>
           {
             ides.map((tech: IconProps) => (
               <li>
@@ -46,7 +46,7 @@ const { lang = 'en' }: Props = Astro.props
       </header>
       <section class='flex'>
         <ul
-          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-[10px]'
         >
           {
             apis.map((tech: IconProps) => (
@@ -64,7 +64,7 @@ const { lang = 'en' }: Props = Astro.props
       </header>
       <section>
         <ul
-          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-[10px]'
         >
           {
             linters.map((tech: IconProps) => (
@@ -82,7 +82,7 @@ const { lang = 'en' }: Props = Astro.props
       </header>
       <section>
         <ul
-          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-[10px]'
         >
           {
             dvc.map((tech: IconProps) => (
@@ -103,7 +103,7 @@ const { lang = 'en' }: Props = Astro.props
       </header>
       <section class='flex gap-1'>
         <ul
-          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-sm'
+          class='flex gap-1 w-full flex-wrap [&>li>a>img]:border-2 p-1 rounded-[10px]'
         >
           {
             others.map((tech: IconProps) => (

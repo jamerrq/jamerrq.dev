@@ -43,6 +43,9 @@
       "@scripts/*": [
         "src/scripts/*"
       ],
+      "@slides/*": [
+        "src/slides/*"
+      ]
     },
     "jsx": "preserve",
     "jsxImportSource": "preact",

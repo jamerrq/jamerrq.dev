@@ -1,0 +1,120 @@
+<article class='text-black font-primary flex gap-2 flex-col items-center'>
+  <style>
+    .wave {
+      animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+      animation-duration: 2.5s; /* Change to speed up or slow down */
+      animation-iteration-count: infinite; /* Never stop waving :) */
+      transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+      display: inline-block;
+    }
+
+    @keyframes wave-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      10% {
+        transform: rotate(14deg);
+      } /* The following five values can be played with to make the waving more or less extreme */
+      20% {
+        transform: rotate(-8deg);
+      }
+      30% {
+        transform: rotate(14deg);
+      }
+      40% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      60% {
+        transform: rotate(0deg);
+      } /* Reset for the last half to pause */
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <span
+    class='px-2 py-1 rounded text-center font-primary font-bold animate-slide-in-top text-xl bg-[#FFC470] w-fit'
+  >
+    ¡Hola! <span class='wave'>👋🏾</span><br /> Bienvenidos a
+  </span>
+  <img
+    src='https://www.bes.au/wp-content/uploads/2022/01/Open-source.png'
+    alt='open source illustration'
+    class='animate-fade-in-right animate-delay-500 w-24 drop-shadow-lg'
+  />
+  <h1
+    class='text-5xl font-bold animate-slide-in-bottom text-black bg-gradient-to-r from-green-500 to-emerald-500 rounded px-2 py-1'
+    id='slide-title'
+  >
+    Open Source Para Principiantes
+  </h1>
+  <h2
+    class='text-base text-center font-semibold font-secondary animate-fade-in-left animate-delay-500 bg-gradient-to-r from-orange-500 to-red-500 rounded px-2 py-1'
+  >
+    Aprendamos acerca del mundo del código abierto, cómo contribuir y colaborar
+    en proyectos de software libre
+  </h2>
+  <h3
+    class='text-base text-center font-semibold font-secondary animate-fade-in-right animate-delay-800 bg-gradient-to-r from-green-500 to-emerald-500 rounded px-2 py-1'
+  >
+    ¿Conoces el código Konami? 🎮👾
+  </h3>
+</article>
+<script>
+  const h1 = document.querySelector('#slide-title')!
+  // add the class animate-blink after 2 seconds
+  // and also remove the class animate-slide-in-bottom while
+  // adding the class animate-iteration-count-thrice
+  setTimeout(() => {
+    h1.classList.add('animate-blink')
+    h1.classList.remove('animate-slide-in-bottom')
+    h1.classList.add('animate-iteration-count-thrice')
+  }, 1000)
+
+  // every 5 seconds, recreate the blinking effect
+  setInterval(() => {
+    h1.classList.add('animate-blink')
+  }, 5000)
+
+  // konami code will play a sound
+  const konamiCode = [
+    'ArrowUp',
+    'ArrowUp',
+    'ArrowDown',
+    'ArrowDown',
+    'ArrowLeft',
+    'ArrowRight',
+    'ArrowLeft',
+    'ArrowRight',
+    'b',
+    'a'
+  ]
+  let konamiCodePosition = 0
+  document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiCodePosition]) {
+      konamiCodePosition++
+      if (konamiCodePosition === konamiCode.length) {
+        playKonamiSound()
+        konamiCodePosition = 0
+      }
+    } else {
+      konamiCodePosition = 0
+    }
+  })
+  const playKonamiSound = () => {
+    const audio = new Audio('/songs/strad.mp3')
+    audio.play()
+  }
+</script>

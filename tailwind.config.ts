@@ -36,9 +36,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        'rubik-doodle': ['Rubik Doodle Subset', 'system-ui'],
+        calistoga: ['Calistoga', 'system-ui'],
+        rubikDoodle: ['Rubik Doodle Subset', 'system - ui'],
         merriweather: ['Merriweather', 'serif'],
-        averia: ['Averia Serif Libre', 'system-ui']
+        averia: ['Averia Serif Libre', 'system-ui'],
+        firaSans: ['Fira Sans', 'sans-serif'],
+        primary: ['Fira Sans', 'sans-serif'], // <- primary font
+        secondary: ['Fira Sans', 'system-ui'] // <- secondary font
       }
     }
   },

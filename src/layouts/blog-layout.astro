@@ -27,7 +27,7 @@ import Buttons from '@components/main/buttons.astro'
     <br />
     <header
       transition:name='blog-title'
-      class='flex font-averia text-slate-950 bg-[#BE7B72] dark:bg-[#FFFDD7] p-2 cursor-pointer font-bold'
+      class='flex font-secondary text-slate-950 bg-[#BE7B72] dark:bg-[#FFFDD7] p-2 cursor-pointer font-bold'
       onclick='window.history.back()'
     >
       <h1 class='-z-10'>
@@ -36,7 +36,7 @@ import Buttons from '@components/main/buttons.astro'
     </header>
     <br />
     <div
-      class='[&>h1]:font-bold font-averia font-semibold text-sm [&_h1]:text-emerald-900 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-900 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#5755FE] [&_a]:dark:text-cyan-300 flex flex-col gap-2 mb-8 [&_blockquote]:[font-averia] [&_code]:[font-mono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden'
+      class='[&>h1]:font-bold font-secondary font-semibold text-sm [&_h1]:text-emerald-900 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-900 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#5755FE] [&_a]:dark:text-cyan-300 flex flex-col gap-2 mb-8 [&_blockquote]:[font-secondary] [&_code]:[font-mono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden'
     >
       <slot />
     </div>

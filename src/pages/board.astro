@@ -1,107 +1,155 @@
 ---
 import Layout from '@layouts/layout.astro'
+import Buttons from '@components/main/buttons.astro'
+
+import Page1 from '@slides/oss/page1.astro'
+
+// const dev = !import.meta.env.DEV
 ---
 
 <Layout title='Board - jamerrq.dev'>
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      font-family: inherit;
-    }
-
-    body {
-      display: grid;
-      place-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Rubik Subset', sans-serif;
-      color: #6ee7b7;
-      font-size: 5rem;
-    }
-
     .background {
-      background-image: url('/pizarra.webp');
-      min-height: 100%;
-      width: 100vw;
-      background-position: center;
-      background-repeat: repeat;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -50;
-      inset: 0;
-      filter: blur(10px);
-    }
+      --s: 100px; /* control the size */
+      --c1: #c3ccaf;
+      --c2: #67434f;
 
-    @font-face {
-      font-family: 'Rubik Subset';
-      src: url('/fonts/rubik-doodle-shadow-latin-400-patched.woff2')
-        format('woff2');
+      --_s: calc(2 * var(--s)) calc(2 * var(--s));
+      --_g: var(--_s) conic-gradient(at 40% 40%, #0000 75%, var(--c1) 0);
+      --_p: var(--_s) conic-gradient(at 20% 20%, #0000 75%, var(--c2) 0);
+      background:
+        calc(0.9 * var(--s)) calc(0.9 * var(--s)) / var(--_p),
+        calc(-0.1 * var(--s)) calc(-0.1 * var(--s)) / var(--_p),
+        calc(0.7 * var(--s)) calc(0.7 * var(--s)) / var(--_g),
+        calc(-0.3 * var(--s)) calc(-0.3 * var(--s)) / var(--_g),
+        conic-gradient(from 90deg at 20% 20%, var(--c2) 25%, var(--c1) 0) 0 0 /
+          var(--s) var(--s);
+      animation: m 3s infinite;
+      opacity: 0.9;
     }
-
-    /* HTML: <div class="loader"></div> */
-    .loader {
-      width: fit-content;
-      font-weight: bold;
-      font-size: 20px;
-      background: radial-gradient(circle closest-side, #000 94%, #0000)
-        right/calc(200% - 1em) 100%;
-      animation: l24 1s infinite alternate linear;
-      background-color: #34d399;
-      border-radius: 0.5em;
-      padding: 0.25em 0.5em;
-    }
-
-    .loader::before {
-      content: 'Checking your internet connection...';
-      color: #0000;
-      line-height: 1em;
-      background: inherit;
-      background-image: radial-gradient(circle closest-side, #fff 94%, #000);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    @keyframes l24 {
-      100% {
-        background-position: left;
+    @keyframes m {
+      0% {
+        background-position:
+          calc(0.9 * var(--s)) calc(0.9 * var(--s)),
+          calc(-0.1 * var(--s)) calc(-0.1 * var(--s)),
+          calc(0.7 * var(--s)) calc(0.7 * var(--s)),
+          calc(-0.3 * var(--s)) calc(-0.3 * var(--s)),
+          0 0;
       }
+      25% {
+        background-position:
+          calc(1.9 * var(--s)) calc(0.9 * var(--s)),
+          calc(-1.1 * var(--s)) calc(-0.1 * var(--s)),
+          calc(1.7 * var(--s)) calc(0.7 * var(--s)),
+          calc(-1.3 * var(--s)) calc(-0.3 * var(--s)),
+          0 0;
+      }
+      50% {
+        background-position:
+          calc(1.9 * var(--s)) calc(-0.1 * var(--s)),
+          calc(-1.1 * var(--s)) calc(0.9 * var(--s)),
+          calc(1.7 * var(--s)) calc(-0.3 * var(--s)),
+          calc(-1.3 * var(--s)) calc(0.7 * var(--s)),
+          0 0;
+      }
+      75% {
+        background-position:
+          calc(2.9 * var(--s)) calc(-0.1 * var(--s)),
+          calc(-2.1 * var(--s)) calc(0.9 * var(--s)),
+          calc(2.7 * var(--s)) calc(-0.3 * var(--s)),
+          calc(-2.3 * var(--s)) calc(0.7 * var(--s)),
+          0 0;
+      }
+      100% {
+        background-position:
+          calc(2.9 * var(--s)) calc(-1.1 * var(--s)),
+          calc(-2.1 * var(--s)) calc(1.9 * var(--s)),
+          calc(2.7 * var(--s)) calc(-1.3 * var(--s)),
+          calc(-2.3 * var(--s)) calc(1.7 * var(--s)),
+          0 0;
+      }
+    }
+
+    :root {
+      --bg-color: #020617;
+      --card-color: #1e293b;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      height: 260px;
+      flex-direction: column;
+      position: relative;
+      width: 300px;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card::before,
+    .card::after {
+      border-radius: inherit;
+      content: '';
+      height: 100%;
+      left: 0px;
+      opacity: 0;
+      position: absolute;
+      top: 0px;
+      transition: opacity 500ms;
+      width: 100%;
+    }
+
+    .card::before {
+      background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+      );
+      z-index: 3;
+    }
+
+    .card::after {
+      background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.4),
+        transparent 40%
+      );
+      z-index: 1;
+    }
+
+    .card > .card-content {
+      background-color: var(--card-color);
+      border-radius: inherit;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      inset: 1px;
+      padding: 10px;
+      position: absolute;
+      z-index: 2;
     }
   </style>
   <body class='dark'>
-    <!-- <div class='background'></div> -->
-    <main>
-      <h1>You're offline</h1>
-      <a
-        href='https://killedbyapixel.github.io/TinyCode/256B/BitwiseLiminal/'
-        target='_blank'
-        rel='noopener noreferrer'
-        class='grid place-content-center'
-        title='Bitwise Liminal by KilledByAPixel'
-        aria-label='Bitwise Liminal by KilledByAPixel'
-      >
-        <video
-          src='/movies/bitwise_liminal_compressed_240p.webm'
-          autoplay
-          style='width: 100%; height: 100%;'
-          muted
-          loop
-          playsinline
-          preload='auto'
-          class='object-cover rounded'
+    <div class='background w-[100dvw] h-[100dvh] fixed top-0 left-0'></div>
+    <main class='w-[100dvw] h-[100dvh] grid place-content-center'>
+      <header class='data-[dev]:flex hidden'>
+        <h1
+          class='text-xl font-bold absolute top-0 left-0 bg-gray-800/80 text-white w-full text-center font-secondary'
         >
-        </video>
-      </a>
+          Board
+        </h1>
+      </header>
+      <Page1 />
 
-      <script>
-        window.addEventListener('online', () => {
-          alert('You are back online')
-          window.location.href = '/'
-        })
-      </script>
-      <div class='loader'></div>
+      <footer
+        class='absolute bottom-0 left-0 w-full h-10 data-[dev]:flex hidden'
+      >
+        <Buttons rounded={false} />
+      </footer>
     </main>
   </body>
 </Layout>

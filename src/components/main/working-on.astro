@@ -7,16 +7,21 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 
 import Box from '@components/boxes/box.astro'
-import WorkingOnTsx from './working-on.tsx'
+// import WorkingOnTsx from './working-on.tsx'
+
+import ThreeDots from '@components/loaders/ThreeDots.astro'
 ---
 
-<Box title="Projects I'm working on" otherStyles='xl:col-span-2 xl:row-span-4'>
+<Box
+  title="Projects I'm working on"
+  otherStyles='xl:col-span-2 xl:row-span-4 gap-4'
+>
   <header
     class='text-2xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
   >
     <p>
       <!-- Working on -->
-      {lang === 'en' ? 'Working on' : 'Trabajando en'}
+      {lang === 'en' ? 'Working On' : 'Trabajando En'}
     </p>
     <svg
       class='w-8 h-8 inline-flex shadow bg-white/50 p-1 rounded dark:bg-slate-900/80'
@@ -24,5 +29,46 @@ import WorkingOnTsx from './working-on.tsx'
       fill={`#${siGitkraken.hex}`}
     />
   </header>
-  <WorkingOnTsx lang={lang} client:only='preact' />
+  <!-- <WorkingOnTsx lang={lang} client:only='preact' /> -->
+  <span class='text-center px-3 [&_a]:text-emerald-300'>
+    <!-- Currently working on my presentation for the <a
+      href='https://holamundo.day/#speakers'
+      target='_blank'
+      rel='noopener noreferrer'>#HolaMundoDay</a
+    > event by <a
+      href='https://www.twitch.tv/mouredev'
+      target='_blank'
+      rel='noopener noreferrer'>@mouredev</a
+    > on May 7th, 2024. -->
+    {lang === 'en' ? '#HolaMundoDay Workshop' : 'Taller #HolaMundoDay'}
+  </span>
+  <span class='text-center'>
+    {
+      lang === 'en'
+        ? 'Open Source Contributions for beginners'
+        : 'Contribuciones al Código Libre para principiantes'
+    }
+  </span>
+  <span class='text-center'>
+    <!-- <a
+      href='https://holamundo.day/#speakers'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='text-emerald-500 dark:text-emerald-300'
+    >
+      More info
+    </a> -->
+    <a
+      href='https://holamundo.day/#speakers'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='text-emerald-500 dark:text-emerald-300 bg-gray-600 px-2 py-1 rounded dark:bg-slate-900/80 hover:bg-gray-700 dark:hover:bg-slate-900/70 transition-colors'
+    >
+      {lang === 'en' ? 'More info' : 'Más información'}
+    </a>
+  </span>
+  <ThreeDots />
+  <a href='/board'>
+    {lang === 'en' ? 'Preview (?)' : 'Vistazo (?)'}
+  </a>
 </Box>

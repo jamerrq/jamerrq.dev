@@ -4,12 +4,12 @@ const LAST_ENTRIES_STYLES = [
   'bg-slate-300/80',
   'dark:bg-slate-900/90',
   'dark:text-slate-300',
-  'rounded-sm',
+  'rounded-[10px]',
   'flex',
   'flex-col',
   'p-2',
   'font-bold',
-  'font-rubik-doodle',
+  'font-primary',
   'w-full',
   'h-full',
   'transition-all',
@@ -19,7 +19,8 @@ const LAST_ENTRIES_STYLES = [
   'text-slate-900',
   'dark:text-slate-300',
   'py-4',
-  'px-2'
+  'px-2',
+  'min-h-[25rem]'
 ].join(' ')
 
 import { entries } from '@data/blog.json'
@@ -85,7 +86,7 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
       <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-4xl text-center'>
         - {lang === 'en' ? 'Last Entries' : 'Últimas Entradas'} -
       </h1>
-      <ul class='xl:grid xl:grid-cols-[1fr_5fr] flex flex-col gap-5 w-full h-full p-2'>
+      <ul class='flex flex-col gap-5 w-full h-full p-2'>
         {entries
           .filter(
             (entry) => entry.active !== 'false' && entry.date !== 'Coming soon'
@@ -100,12 +101,12 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
           .map((entry, index) => {
             return (
               <Fragment key={index}>
-                <li class='font-averia uppercase text-sm xl:text-base text-center rounded-sm xl:h-full dark:text-emerald-100 text-emerald-950 items-center flex w-full'>
+                {/* <li class='font-secondary uppercase text-sm xl:text-base text-center rounded-[10px] xl:h-full dark:text-emerald-100 text-emerald-950 items-center flex w-full'>
                   <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded'>
                     {entry.date}
                   </span>
-                </li>
-                <li class='font-averia uppercase text-sm xl:text-base py-2 px-2 rounded-sm cursor-pointer hover:bg-emerald-300/40 border-emerald-200 transition-all ease-in-out flex flex-col gap-2'>
+                </li> */}
+                <li class='font-secondary uppercase text-sm xl:text-base py-2 px-2 rounded-[10px] cursor-pointer hover:bg-emerald-300/40 border-emerald-200 transition-all ease-in-out flex flex-col gap-2'>
                   <a
                     href={`${lang === 'en' ? entry.href : entry.hrefEs}`}
                     class='h-full'
@@ -121,6 +122,9 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
                     </div>
                     <Badges badges={entry.tags} />
                   </a>
+                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded'>
+                    {entry.date}
+                  </span>
                 </li>
               </Fragment>
             )

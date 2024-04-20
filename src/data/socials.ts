@@ -15,7 +15,7 @@ export default function getSocialIcons(lang = 'en') {
       hex: siGithub.hex
     },
     {
-      title: 'Linkedin',
+      title: 'LinkedIn',
       href: 'https://www.linkedin.com/in/jamerrq/',
       svg: siLinkedin.svg,
       hex: siLinkedin.hex

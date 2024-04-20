@@ -22,7 +22,7 @@ const { lang = 'en' }: Props = Astro.props
     </h1>
   </header>
   <section
-    class='xl:grid flex place-content-center gap-2 grid-cols-2 grid-rows-2 [&>a>img]:rounded-sm [&>a>img]:border-2 w-full justify-items-center'
+    class='xl:grid flex place-content-center gap-2 grid-cols-2 grid-rows-2 [&>a>img]:rounded-[10px] [&>a>img]:border-2 w-full justify-items-center'
   >
     {testing.map((icon: IconProps) => <TechIcon obj={icon} />)}
   </section>

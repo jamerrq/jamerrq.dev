@@ -36,15 +36,15 @@ import { Image } from 'astro:assets'
 ---
 
 <li
-  class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>*]:rounded-sm [&>span]:text-sm [&>span]:xl:text-base'
+  class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>*]:rounded-[10px] [&>span]:text-sm [&>span]:xl:text-base'
 >
   <div
-    class='absolute bottom-0 right-2 font-averia text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90'
+    class='absolute bottom-0 right-2 font-secondary text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90'
   >
     <!-- {project?.time}+ {lang === 'en' ? 'months' : 'meses'} -->
   </div>
   <h1
-    class='text-sm xl:text-base font-rubik-doodle dark:text-emerald-100 text-emerald-950 bg-emerald-400 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'
+    class='text-sm xl:text-base font-primary dark:text-emerald-100 text-emerald-950 bg-emerald-400 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'
   >
     {lang === 'en' ? project?.title.en : project?.title.es}
   </h1>
@@ -74,7 +74,7 @@ import { Image } from 'astro:assets'
           })
         }
       </div>
-      <span class='font-averia'>
+      <span class='font-secondary'>
         Demo: {
           project?.preview ? '' : lang === 'en' ? 'Coming soon' : 'Próximamente'
         }

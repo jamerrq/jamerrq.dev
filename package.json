@@ -39,6 +39,8 @@
   },
   "type": "module",
   "devDependencies": {
+    "@fontsource/calistoga": "^5.0.19",
+    "@fontsource/fira-sans": "^5.0.19",
     "@midudev/tailwind-animations": "^0.0.7",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",

@@ -1,21 +1,22 @@
 ---
 interface Props {
   href?: string
+  rounded?: boolean
 }
 
-const { href }: Props = Astro.props
+const { href, rounded = true }: Props = Astro.props
 
 const BUTTONS_STYLES = [
   'col-span-1 xl:col-span-2',
   'row-span-1',
   'gap-2',
-  'rounded-sm',
+  rounded && 'rounded-[10px]',
   'shadow-[0_0_0.15rem_rgb(8_51_68)]',
   'flex',
   'items-center',
   'justify-around',
   'text-slate-950',
-  'font-rubik-doodle',
+  'font-primary',
   'w-full',
   'xl:h-full',
   'transition-all',
@@ -24,12 +25,16 @@ const BUTTONS_STYLES = [
   'dark:text-slate-100',
   'bg-slate-300/80',
   'p-2'
+  // 'card'
 ].join(' ')
 
 const BUTTON_STYLES = [
   'dark:hover:text-emerald-300',
   'hover:text-emerald-900',
-  'cursor-pointer'
+  'cursor-pointer',
+  'flex',
+  'flex-col',
+  'items-center'
 ].join(' ')
 
 import { siGithub, siGooglecardboard } from 'simple-icons'
@@ -38,8 +43,8 @@ import Home from '@components/icons/home.astro'
 import Moon from '@components/icons/moon.astro'
 import Sun from '@components/icons/sun.astro'
 import Translator from '@components/icons/translator.astro'
-import Shuffle from '@components/icons/shuffle.astro'
-import GoBack from '@components/icons/go-back.astro'
+// import Shuffle from '@components/icons/shuffle.astro'
+// import GoBack from '@components/icons/go-back.astro'
 
 const BOARD_BUTTON_STYLE = import.meta.env.DEV ? 'block' : 'hidden'
 
@@ -56,9 +61,15 @@ const SVGS_STYLES = [
 
 <article class={BUTTONS_STYLES}>
   <!-- THEME SWITCH -->
-  <button id='theme-toggle' type='button' title='Switch dark/light theme'>
+  <button
+    id='theme-toggle'
+    type='button'
+    title='Switch dark/light theme'
+    class='flex flex-col items-center group'
+  >
     <Moon class={`${SVGS_STYLES} hidden`} id='theme-toggle-dark-icon' />
     <Sun class={`${SVGS_STYLES} hidden`} id='theme-toggle-light-icon' />
+    <span class='text-xs group-hover:text-emerald-300'> switch theme</span>
   </button>
   <!-- LANGUAGE SWITCH -->
   <a
@@ -68,36 +79,23 @@ const SVGS_STYLES = [
     href={href}
   >
     <Translator class={SVGS_STYLES} />
+    <span class='text-xs'>en/es</span>
   </a>
   <!-- HOME OR RANDOM PLACE -->
   <button class={`${BUTTON_STYLES} hidden`} title='go home' id='home-button'>
     <Home class={SVGS_STYLES} />
-  </button>
-  <button
-    class={`${BUTTON_STYLES} hidden`}
-    title='Go to a random page'
-    id='random-place-button'
-  >
-    <Shuffle class={SVGS_STYLES} />
-  </button>
-  <!-- GO BACK -->
-  <button
-    class={`${BUTTON_STYLES}`}
-    title='Go back'
-    id='go-back-button'
-    onclick='window.history.back()'
-  >
-    <GoBack class={SVGS_STYLES} />
+    <span class='text-xs'>home</span>
   </button>
   <!-- SOURCE CODE -->
   <a
     href='https://github.com/jamerrq/jamerrq.dev'
     target='_blank'
     rel='noopener noreferrer'
-    class='dark:hover:text-emerald-300 hover:text-emerald-900'
+    class='dark:hover:text-emerald-300 hover:text-emerald-900 flex flex-col gap-1 items-center cursor-pointer'
     title='Source code on GitHub'
   >
     <svg class={SVGS_STYLES} set:html={siGithub.svg} />
+    <span class='text-xs'>source code</span>
   </a>
   <!-- BOARD -->
   <a
@@ -106,5 +104,6 @@ const SVGS_STYLES = [
     title='Go to the board'
   >
     <svg class={SVGS_STYLES} set:html={siGooglecardboard.svg} />
+    <span class='text-xs'>board</span>
   </a>
 </article>

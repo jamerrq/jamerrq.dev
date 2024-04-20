@@ -6,6 +6,7 @@
 * {
     box-sizing: border-box;
     min-width: 0;
+    font-family: inherit;
 }
 
 body {
@@ -28,11 +29,76 @@ p {
     scrollbar-color: gray black;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Rubik Doodle Subset';
     src: url('/fonts/rubik-doodle-shadow-latin-400-patched.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+} */
+
+* {
+    --wc-toast-font-family: 'Fira Sans', sans-serif;
 }
 
-.text * {top: calc(1em + 2.0em)}
+:root {
+    --bg-color: #020617;
+    --card-color: #1e293b;
+}
+
+.card {
+    /* background-color: var(--bg-color); */
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    /* height: 260px; */
+    /* flex-direction: column; */
+    position: relative;
+    /* width: 300px; */
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card::before,
+.card::after {
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+}
+
+.card::before {
+    background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.06),
+            transparent 40%);
+    z-index: 3;
+}
+
+.card::after {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.4),
+            transparent 40%);
+    z-index: 1;
+}
+
+.card>.card-content {
+    background-color: var(--card-color);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+}
+
+.text * {
+    top: calc(1em + 2.0em)
+}

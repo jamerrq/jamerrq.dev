@@ -3,7 +3,7 @@ import { data } from '@data/resources.json'
 const RESOURCE_STYLES: string = [
   'col-span-2',
   'row-span-4',
-  'rounded-sm',
+  'rounded-[10px]',
   'shadow-[0_0_0.1rem_rgb(8_51_68)]', // rgb(8, 51, 68)
   'flex',
   'xl:flex-col',
@@ -11,7 +11,7 @@ const RESOURCE_STYLES: string = [
   'items-center',
   'justify-center',
   'font-bold',
-  'font-rubik-doodle',
+  'font-primary',
   'w-full',
   'xl:h-full',
   'h-16',
@@ -40,8 +40,8 @@ import { DoubleUp, DoubleDown, DoubleLeft, DoubleRight } from './icons'
 
 const BUTTONS_STYLES = [
   'absolute',
-  'bg-cyan-300',
-  'rounded-md',
+  'bg-white',
+  'rounded-full',
   'flex',
   'flex-wrap',
   'items-center',

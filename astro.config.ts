@@ -38,15 +38,11 @@ export default defineConfig({
       workbox: {
         globDirectory: 'dist/client',
         globPatterns: [
-          '**/*.{woff2}',
-          'img/working_on/*.webp',
-          'pizarra.webp',
-          'img/this_is_fine.webp',
-          'movies/bitwise_liminal_compressed_240p.webm',
-          '_astro/*.module.*.js',
-          '_astro/client.*.js',
-          '_astro/hoisted.*.js',
-          '_astro/*icons.*.js'
+          // '**/*.{woff2}',
+          // '_astro/*.module.*.js',
+          // '_astro/client.*.js',
+          // '_astro/hoisted.*.js',
+          // '_astro/*icons.*.js'
         ],
         // Don't fallback on document based (e.g. `/some-page`) requests
         // This removes an errant console.log message from showing up.

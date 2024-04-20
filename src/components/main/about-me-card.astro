@@ -22,13 +22,15 @@ const { lang = 'en' }: Props = Astro.props
     }
   </style>
   <header class='flex flex-col xl:flex-row gap-1 items-center'>
-    <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl'>
+    <h1
+      class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl uppercase'
+    >
       {lang === 'en' ? 'Get To Know Me' : 'Conóceme'}
     </h1>
     <OpenToWork lang={lang} />
   </header>
   <div
-    class='flex items-center p-3 justify-around w-full font-averia xl:text-lg text-sm relative'
+    class='flex items-center p-3 justify-around w-full font-secondary xl:text-lg text-sm relative'
   >
     <ul class='w-full text-center p-2 gap-1.5 flex flex-col [&_p]:text-balance'>
       <li>
@@ -42,7 +44,7 @@ const { lang = 'en' }: Props = Astro.props
             href='https://www.eafit.edu.co/'
             rel='noopener noreferrer'
             target='_blank'
-            class='text-slate-50 dark:text-slate-800 inline dark:bg-blue-100 bg-blue-800 px-1 rounded-sm w-fit'
+            class='text-slate-50 dark:text-slate-800 inline dark:bg-blue-100 bg-blue-800 px-1.5 py-0.5 rounded-[10px] w-fit'
           >
             {lang === 'en' ? 'EAFIT University' : 'la Universidad EAFIT'}
           </a>
@@ -52,14 +54,14 @@ const { lang = 'en' }: Props = Astro.props
         <p>
           {
             lang === 'en'
-              ? 'Currently working as part time Backend Developer at'
-              : 'Actualmente trabajo como Desarrollador Backend de medio tiempo en'
+              ? 'Currently building my experience as part time Backend Developer at'
+              : 'Actualmente construyo mi experiencia como Desarrollador Backend de tiempo parcial en'
           }
           <a
             href='https://www.linkedin.com/showcase/dium-team/about/'
             rel='noopener noreferrer'
             target='_blank'
-            class='text-slate-50 dark:text-slate-800 inline dark:bg-emerald-100 bg-emerald-800 px-1 rounded-sm w-fit'
+            class='text-slate-50 dark:text-slate-800 inline dark:bg-emerald-100 bg-emerald-800 px-1.5 py-0.5 rounded-[10px] w-fit'
           >
             Dium
           </a>
