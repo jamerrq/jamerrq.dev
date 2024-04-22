@@ -17,7 +17,7 @@ import Container from '@components/main/container.astro'
     /* font-size: 2rem; */
     text-align: center;
     padding: 1rem;
-    box-shadow: 0 0.05rem 0 0.1rem #000;
+    /* box-shadow: 0 0.05rem 0 0.1rem #000; */
     border: 1px solid white;
     font-weight: 600;
     gap: 0.25rem;
@@ -47,16 +47,11 @@ import Container from '@components/main/container.astro'
     position: fixed;
     background-image: url('/pizarra.webp');
   }
-
-  a,
-  button {
-    font-family: 'Rubik Doodle Subset', sans-serif;
-  }
 </style>
 
 <Layout title='Resource Not Found - jamerrq.dev'>
   <div id='_404_background' class='hidden xl:grid'></div>
-  <main class='grid place-content-center bg-black [&>div>p]:text-balance'>
+  <main class='grid place-content-center [&>div>p]:text-balance'>
     <Container>
       <h1 class='text-emerald-300 text-2xl'>Page Not Found!</h1>
       <p class='text-sm xl:text-base font-secondary'>

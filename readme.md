@@ -12,6 +12,7 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev)
 - How to use signals with Preact
 - CSS Grid & Flexbox Layouts
 - PWA Development within an Astro App
+- Tailwind Tricks and Plugins
 
 ## Stack 🥞
 

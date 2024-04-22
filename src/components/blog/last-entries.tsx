@@ -62,18 +62,11 @@ function Badges({ badges }: { badges?: string[] }) {
 }
 
 function GenericBadge({ text }: { text: string }) {
-  const COLORS = [
-    // 'indigo',
-    'yellow',
-    // 'amber',
-    'red',
-    'teal',
-    'pink'
-  ]
+  const COLORS = ['yellow', 'red', 'teal', 'pink']
   const index = Math.floor(Math.random() * COLORS.length)
   return (
     <span
-      class={`bg-${COLORS[index]}-100 text-${COLORS[index]}-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-${COLORS[index]}-900 dark:text-${COLORS[index]}-300`}
+      class={`bg-${COLORS[index]}-100 text-${COLORS[index]}-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded-full dark:bg-${COLORS[index]}-900 dark:text-${COLORS[index]}-300`}
     >
       {text}
     </span>
@@ -101,18 +94,15 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
           .map((entry, index) => {
             return (
               <Fragment key={index}>
-                {/* <li class='font-secondary uppercase text-sm xl:text-base text-center rounded-[10px] xl:h-full dark:text-emerald-100 text-emerald-950 items-center flex w-full'>
-                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded'>
-                    {entry.date}
-                  </span>
-                </li> */}
-                <li class='font-secondary uppercase text-sm xl:text-base py-2 px-2 rounded-[10px] cursor-pointer hover:bg-emerald-300/40 border-emerald-200 transition-all ease-in-out flex flex-col gap-2'>
+                <li class='font-secondary uppercase text-sm xl:text-base py-4 px-4 rounded-[10px] cursor-pointer hover:bg-slate-400 dark:hover:bg-slate-600/70 border-emerald-200 transition-all ease-in-out flex flex-col gap-2 shadow'>
                   <a
                     href={`${lang === 'en' ? entry.href : entry.hrefEs}`}
                     class='h-full'
                   >
                     <div class='flex flex-col xl:flex-row gap-4'>
-                      <span>{lang === 'en' ? entry.title : entry.titleEs}</span>
+                      <span class='font-bold'>
+                        {lang === 'en' ? entry.title : entry.titleEs}
+                      </span>
                       <div class='xl:ml-auto'>
                         <ReadTimeBadge
                           readTime={entry.readTimeMins}
@@ -122,7 +112,7 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
                     </div>
                     <Badges badges={entry.tags} />
                   </a>
-                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded'>
+                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded text-emerald-300 dark:text-emerald-900'>
                     {entry.date}
                   </span>
                 </li>

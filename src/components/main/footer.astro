@@ -1,5 +1,5 @@
 ---
-import Copyright from '@components/icons/copyright.astro'
+// import Copyright from '@components/icons/copyright.astro'
 import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
 ---
 
@@ -10,7 +10,7 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
     left: 0;
     width: 100%;
     max-width: 100dvw;
-    height: fit-content;
+    height: 32px;
     padding: 0.2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -22,6 +22,14 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
     color: #fff;
     background-color: #000;
     opacity: 1;
+  }
+
+  @media (min-width: 640px) {
+    footer {
+      height: 36px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
   }
 </style>
 
@@ -59,7 +67,6 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
       rel='noopener noreferrer'
       class='text-emerald-300 flex gap-1 items-center ml-2'
     >
-      <Copyright />
       <span class='text-xs xl:text-xl'>@jamerrq</span>
     </a>
   </aside>

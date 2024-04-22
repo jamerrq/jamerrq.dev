@@ -24,7 +24,8 @@ const BUTTONS_STYLES = [
   'dark:bg-slate-900/95',
   'dark:text-slate-100',
   'bg-slate-300/80',
-  'p-2'
+  'p-2',
+  'font-bold'
   // 'card'
 ].join(' ')
 
@@ -69,7 +70,11 @@ const SVGS_STYLES = [
   >
     <Moon class={`${SVGS_STYLES} hidden`} id='theme-toggle-dark-icon' />
     <Sun class={`${SVGS_STYLES} hidden`} id='theme-toggle-light-icon' />
-    <span class='text-xs group-hover:text-emerald-300'> switch theme</span>
+    <span
+      class='text-xs group-hover:text-emerald-900 dark:group-hover:text-emerald-300'
+    >
+      switch theme</span
+    >
   </button>
   <!-- LANGUAGE SWITCH -->
   <a
