@@ -13,8 +13,8 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-lightblue?style=flat-square&lo
 
 ## Previews
 
-![Desktop](./lib/snaps/preview.png)
-![Mobile](./lib/snaps/preview-mobile.png)
+![Desktop](./lib/snaps/preview.webp)
+![Mobile](./lib/snaps/preview_mobile.webp)
 
 ### Tooling 🛠️
 

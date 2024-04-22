@@ -1,17 +1,24 @@
+---
+const isInBlog = Astro.url.pathname.includes('/blog/')
+---
+
 <style>
-  .background {
-    /* background-image: url('/pizarra.webp'); */
-    background-color: #222831;
-    min-height: 100%;
-    width: 100vw;
-    background-position: center;
-    background-repeat: repeat;
+  .noise::before {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: '';
+    opacity: 0.05;
     z-index: -50;
-    inset: 0;
+    pointer-events: none;
+    background: url('/img/resized_noise.gif');
   }
 </style>
-
-<div class='background'></div>
+<div
+  data-blog={isInBlog}
+  class='fixed top-0 -z-50 h-[100dvh] w-[100dvw] data-[blog]:bg-cover data-[blog]:bg-center bg-[#222831] data-[blog]:bg-[url("/pizarra.webp")] data-[blog]:bg-opacity-5'
+>
+  <div class='noise'></div>
+</div>

@@ -22,9 +22,7 @@ const { lang = 'en' }: Props = Astro.props
     }
   </style>
   <header class='flex flex-col xl:flex-row gap-1 items-center'>
-    <h1
-      class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl uppercase'
-    >
+    <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl'>
       {lang === 'en' ? 'Get To Know Me' : 'Conóceme'}
     </h1>
     <OpenToWork lang={lang} />

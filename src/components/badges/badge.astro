@@ -15,9 +15,9 @@ const { props } = Astro
 
     border-image-source: conic-gradient(
       from var(--a),
-      yellowgreen,
-      green,
-      lightgreen
+      #8decb4,
+      #41b06e,
+      #141e46
     );
 
     border-radius: 5px;
@@ -25,16 +25,16 @@ const { props } = Astro
     border-image-slice: 0.9 1 1 1;
     border-image-width: 0.15rem;
 
-    animation: move 1s infinite var(--timing);
+    animation: move 5s infinite var(--timing);
+  }
 
-    &.fill {
-      border-image-slice: 1 1 1 1 fill;
-    }
+  .badge .fill {
+    border-image-slice: 1 1 1 1 fill;
+  }
 
-    &:active {
-      transform: translate(5px, 5px);
-      box-shadow: none;
-    }
+  .badge:active {
+    transform: translate(5px, 5px);
+    box-shadow: none;
   }
 
   @keyframes move {
@@ -52,12 +52,10 @@ const { props } = Astro
     initial-value: 0deg;
   }
 </style>
-<div
-  class=`xl:absolute top-2 right-2 animate-slide-in-top rounded ${props.class}`
->
+<div class=`animate-slide-in-top rounded ${props.class}`>
   <span class='relative flex overflow-hidden rounded shadow shadow-black'>
     <div
-      class='flex items-center h-full w-full cursor-pointer justify-center rounded px-3 py-1 text-sm font-bold text-slate-900 bg-emerald-500 backdrop-blur-3xl shadow shadow-black dark:shadow-gray-300 badge'
+      class='flex items-center h-full w-full cursor-pointer justify-center rounded px-3 py-1 text-sm font-bold text-slate-900 dark:text-emerald-100 backdrop-blur-3xl shadow shadow-black dark:shadow-gray-300 badge'
     >
       <slot />
     </div>

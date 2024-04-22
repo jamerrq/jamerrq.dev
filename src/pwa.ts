@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
     immediate: true,
     onOfflineReady() {
       pwaToastMessage.innerHTML = 'App ready to work offline'
-      showPwaToast(true)
+      // showPwaToast(true)
     },
     onNeedRefresh() {
       pwaToastMessage.innerHTML =

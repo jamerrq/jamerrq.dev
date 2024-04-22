@@ -64,7 +64,11 @@ import ThreeDots from '@components/loaders/ThreeDots.astro'
       rel='noopener noreferrer'
       class='text-emerald-500 dark:text-emerald-300 bg-gray-600 px-2 py-1 rounded dark:bg-slate-900/80 hover:bg-gray-700 dark:hover:bg-slate-900/70 transition-colors'
     >
-      {lang === 'en' ? 'More info' : 'Más información'}
+      {
+        lang === 'en'
+          ? 'More info at holamundo.day/#speakers'
+          : 'Más información en holamundo.day/#speakers'
+      }
     </a>
   </span>
   <ThreeDots />

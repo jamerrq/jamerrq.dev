@@ -12,7 +12,7 @@ import Badge from './badge.astro'
   rel='noopener noreferrer'
 >
   <Badge
-    class='animate-fade-in group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md font-medium text-neutral-200 duration-500'
+    class='animate-fade-in group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md font-medium text-neutral-200 duration-500 top-2 right-2 xl:absolute'
   >
     <div
       class='translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0 flex'
@@ -37,7 +37,7 @@ import Badge from './badge.astro'
       </svg>
     </div>
     <div
-      class='absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100 flex items-center text-emerald-950 gap-2'
+      class='absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100 flex items-center gap-2'
     >
       {lang === 'en' ? "Let's connect!" : 'Conecta conmigo!'}
       <svg

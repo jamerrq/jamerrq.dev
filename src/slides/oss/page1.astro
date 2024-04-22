@@ -50,7 +50,7 @@
     ¡Hola! <span class='wave'>👋🏾</span><br /> Bienvenidos a
   </span>
   <img
-    src='https://www.bes.au/wp-content/uploads/2022/01/Open-source.png'
+    src='oss.webp'
     alt='open source illustration'
     class='animate-fade-in-right animate-delay-500 w-24 drop-shadow-lg'
   />
@@ -72,20 +72,34 @@
     ¿Conoces el código Konami? 🎮👾
   </h3>
 </article>
+<aside class='w-1/3 mx-auto hidden items-center' id='hidden-section'>
+  <img src='music_disc.webp' alt='strad' class='w-24' />
+  <marquee class='font-bold'> Now Playing: Strad - C418</marquee>
+</aside>
 <script>
   const h1 = document.querySelector('#slide-title')!
   // add the class animate-blink after 2 seconds
   // and also remove the class animate-slide-in-bottom while
   // adding the class animate-iteration-count-thrice
   setTimeout(() => {
-    h1.classList.add('animate-blink')
-    h1.classList.remove('animate-slide-in-bottom')
-    h1.classList.add('animate-iteration-count-thrice')
+    if (h1?.classList.contains('animate-slide-in-bottom')) {
+      h1?.classList.remove('animate-slide-in-bottom')
+    }
+    h1?.classList.add('animate-blink')
+    h1?.classList.remove('animate-slide-in-bottom')
+    if (h1?.classList.contains('animate-iteration-count-thrice')) {
+      h1?.classList.remove('animate-iteration-count-thrice')
+    }
+    h1?.classList.add('animate-iteration-count-thrice')
   }, 1000)
 
   // every 5 seconds, recreate the blinking effect
   setInterval(() => {
-    h1.classList.add('animate-blink')
+    // if the class is already there, remove it
+    if (h1?.classList.contains('animate-blink')) {
+      h1?.classList.remove('animate-blink')
+    }
+    h1?.classList.add('animate-blink')
   }, 5000)
 
   // konami code will play a sound
@@ -102,11 +116,16 @@
     'a'
   ]
   let konamiCodePosition = 0
+  const boardBackground = document.getElementById('board-background')
+  const hiddenSection = document.getElementById('hidden-section')
   document.addEventListener('keydown', (e) => {
     if (e.key === konamiCode[konamiCodePosition]) {
       konamiCodePosition++
       if (konamiCodePosition === konamiCode.length) {
         playKonamiSound()
+        boardBackground?.classList.toggle('hidden')
+        hiddenSection?.classList.replace('hidden', 'flex')
+        hiddenSection?.classList.add('animate-slide-in-top')
         konamiCodePosition = 0
       }
     } else {

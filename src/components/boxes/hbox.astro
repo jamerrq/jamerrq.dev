@@ -17,7 +17,6 @@ const { href, title } = props
   href={href}
   title={title}
   data-animated={props.animated}
-  id='card'
   class=`card bg-slate-400/90 dark:bg-slate-900/95 rounded-[10px] flex items-center justify-center font-bold dark:text-slate-300 font-primary w-full h-full  text-base py-3 px-2 relative hover:border-2 hover:border-amber-500/60 [&_p]:text-amber-950 [&_p]:dark:text-amber-300 data-[animated]:animate-blurred-fade-in ${props?.otherStyles}`
 >
   <slot />

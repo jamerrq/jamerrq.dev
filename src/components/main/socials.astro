@@ -1,7 +1,6 @@
 ---
 import { siMaildotru } from 'simple-icons'
 
-import Copy from '@components/icons/copy.astro'
 import GenericIcon from '@components/icons/icon.astro'
 
 interface Props {
@@ -11,6 +10,7 @@ interface Props {
 const { lang }: Props = Astro.props
 
 import Box from '@components/boxes/box.astro'
+import EmailBadge from '@components/badges/email-badge.astro'
 
 import getIconsFn from '@data/socials.ts'
 const socials = getIconsFn(lang)
@@ -24,18 +24,7 @@ const socials = getIconsFn(lang)
     <p class='font-semibold text-3xl xl:text-4xl'>Contact Links</p>
     <GenericIcon svg={siMaildotru.svg} />
   </header>
-  <div class='flex h-fit w-full items-center justify-center gap-2'>
-    <span
-      class='font-bold font-secondary text-sm xl:text-base text-center dark:text-cyan-100 text-cyan-950 dark:bg-emerald-950 bg-emerald-500 p-2 rounded shadow-sm shadow-black'
-    >
-      jamerrq@gmail.com
-    </span>
-    <button id='copyMailButton' aria-label='copy mail button' title='copy mail'>
-      <Copy
-        class='w-8 h-8 dark:bg-emerald-300 bg-slate-900 fill-slate-300 dark:fill-slate-950 px-2 py-1 rounded cursor-pointer hover:scale-110 transition-all shadow-sm shadow-black'
-      />
-    </button>
-  </div>
+  <EmailBadge lang={lang} />
   <div class='flex justify-around gap-4 w-[90%]'>
     {
       socials.map((s) => (
