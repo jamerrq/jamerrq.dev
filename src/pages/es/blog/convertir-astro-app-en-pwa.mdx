@@ -13,13 +13,21 @@ import { pwaSeoConfig } from '@data/codes.ts'
 	width="250" height="250" />
 </div>
 
-## Disclaimer ⚠️
+## Disclaimer
 
-En el momento de escribir este artículo, implementé la funcionalidad de PWA
-siguiendo los pasos descritos en este artículo, sin embargo, una forma
-alternativa
-de implementar esta funcionalidad es utilizando el plugin vite-pwa para Astro.
-Actualizaré este artículo con la nueva información tan pronto como sea posible.
+Hay una forma alternativa de convertir tu aplicación de Astro en una PWA usando
+el plugin vite pwa para Astro. Este método es más sencillo y requiere menos
+configuración. Recomiendo usar este método si eres nuevo en Astro o en el
+desarrollo de PWA. Mientras tanto, el método descrito en este artículo es más
+completo pero requiere más configuración. Echa un vistazo al método alternativo
+en este commit:
+
+<a
+href="https://github.com/jamerrq/lumina/commit/e54ac681181242703f39e27535abe36061d5d85a#diff-89195ac8f426657ed64cca6554781314cf86f19737ddb0d4d059041e146cd5e7"
+target="_blank" rel="noopener noreferrer">e54ac68</a>
+
+O directamente usar <a href="https://lumina-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">Lumina</a>, una plantilla de Astro con soporte para PWA, SEO y
+otras características (scrolea hasta el final para más información).
 
 ## Antes que nada ¿Qué es una PWA?
 
@@ -30,10 +38,10 @@ siguiente tipo de tooltip en algunas páginas populares:
 
 <a href='https://youtube.com' target='_blank' rel='noopener'>
   <Image
-    src='/img/blog/youtube-pwa.png'
+    src='/img/blog/youtube-pwa.webp'
     alt='youtube pwa'
-    width='860'
-    height='198'
+    width='1366'
+    height='748'
   />
 </a>
 
@@ -41,10 +49,10 @@ siguiente tipo de tooltip en algunas páginas populares:
 
 <a href='https://facebook.com' target='_blank' rel='noopener'>
   <Image
-    src='/img/blog/fb-pwa.png'
+    src='/img/blog/facebook-pwa.webp'
     alt='facebook pwa'
-    width='642'
-    height='138'
+    width='1366'
+    height='748'
   />
 </a>
 
@@ -52,25 +60,23 @@ siguiente tipo de tooltip en algunas páginas populares:
 
 <a href='https://duolingo.com' target='_blank' rel='noopener'>
   <Image
-    src='/img/blog/duolingo-pwa.png'
+    src='/img/blog/duolingo-pwa.webp'
     alt='duolingo pwa'
-    width='870'
-    height='155'
+    width='1366'
+    height='748'
   />
 </a>
 
-### La Velada (implementación propia)
+### Lichess
 
-<a href='https://lavelada.es' target='_blank' rel='noopener'>
+<a href='https://lichess.org' target='_blank' rel='noopener'>
   <Image
-    src='/img/blog/lavelada-pwa.png'
-    alt='lavelada pwa'
-    width='1126'
-    height='261'
+    src='/img/blog/lichess-pwa.webp'
+    alt='lichess pwa'
+    width='1366'
+    height='748'
   />
 </a>
-
-- Véase https://github.com/midudev/la-velada-web-oficial/pull/389
 
 Entre muchas otras. Esto significa que estas páginas tienen soporte para
 Progressive Web Apps (PWA), una tecnología que permite a los desarrolladores
@@ -140,8 +146,8 @@ target="_blank" rel="noopener">Favycon</a> sólo necesitas una imagen de 512x512
 Asegúrate de marcar la opción de "PWA" para que la herramienta genere los
 tamaños necesarios para una PWA. La imagen de preferencia debe ser en formato
 `.png` o `.svg` con un fondo transparente; si tu imagen no cumple estos
-requisitos puedes usar herramientas como <a href="https://www.remove.bg/"
-target="_blank" rel="noopener">Remove.bg</a> para eliminar el fondo de tu
+requisitos puedes usar herramientas como <a href="https://www.experte.com/background-remover"
+target="_blank" rel="noopener">Background Remover</a> para eliminar el fondo de tu
 imagen y <a href="https://squoosh.app/" target="_blank"
 rel="noopener">Squoosh</a>
 para convertir tu imagen a `.png` o `.svg` y optimizarla.
@@ -157,7 +163,7 @@ de Astro, también encontrarás un archivo llamado `browserconfig.xml`, el cuál
 yo te recomiendo mover a la raíz de la carpeta `public` para que sea de fácil
 acceso, pero esto es opcional.
 
-### 2. Manifest
+### 2. Archivo de manifiesto
 
 El siguiente paso es crear un archivo de manifiesto para tu aplicación. Este
 archivo le dice al navegador cómo debe comportarse tu aplicación cuando se
@@ -324,8 +330,8 @@ etiquetas en tu archivo `layout.astro`:
 
 <!-- Worker Registration -->
 { !import.meta.env.DEV && (
-<script is:inline src="/registerSW.js"></script>
-<link rel="manifest" href="/manifest.webmanifest" />
+  <script is:inline src="/registerSW.js"></script>
+  <link rel="manifest" href="/manifest.webmanifest" />
 ) }
 ```
 

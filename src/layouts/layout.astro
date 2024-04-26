@@ -30,7 +30,7 @@ import ReloadPrompt from '@components/main/ReloadPrompt.astro'
     <ViewTransitions />
   </head>
   <body data-dev={import.meta.env.DEV} class='data-[dev]:debug-screens'>
-    <wc-toast></wc-toast>
+    <wc-toast class='font-secondary'></wc-toast>
     <Background />
     <main class='min-h-[100dvh] grid place-content-center'>
       <slot />

@@ -1,9 +1,9 @@
 {
   "entries": [
     {
-      "title": "Building this awesome website with Astro and Tailwind CSS",
+      "title": "About this website",
       "date": "2024-Jan-01",
-      "titleEs": "El proceso de crear este sitio web con Astro y Tailwind CSS",
+      "titleEs": "Acerca de esta web",
       "href": "blog/building-this-website",
       "hrefEs": "blog/acerca-de-esta-web",
       "readTimeMins": "15",

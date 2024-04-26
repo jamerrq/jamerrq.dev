@@ -4,7 +4,7 @@ export default {
   theme: {
     debugScreens: {
       style: {
-        backgroundColor: 'grey',
+        backgroundColor: 'gold',
         color: 'black',
         position: 'fixed',
         borderRadius: '5px',
@@ -41,6 +41,7 @@ export default {
         merriweather: ['Merriweather', 'serif'],
         averia: ['Averia Serif Libre', 'system-ui'],
         firaSans: ['Fira Sans', 'sans-serif'],
+        firaMono: ['Fira Mono', 'monospace'],
         primary: ['Fira Sans', 'sans-serif'], // <- primary font
         secondary: ['Fira Sans', 'system-ui'] // <- secondary font
       }

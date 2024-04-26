@@ -36,7 +36,7 @@ function ReadTimeBadge({
 }) {
   if (!readTime) return null
   return (
-    <span class='bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded  border border-blue-400'>
+    <span class='bg-blue-100 text-blue-800 text-xs font-semibold inline-flex items-center px-2.5 py-0.5 rounded border border-blue-400'>
       <svg
         class='w-2.5 h-2.5 me-1.5'
         aria-hidden='true'
@@ -94,7 +94,7 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
           .map((entry, index) => {
             return (
               <Fragment key={index}>
-                <li class='font-secondary uppercase text-sm xl:text-base py-4 px-4 rounded-[10px] cursor-pointer hover:bg-slate-400 dark:hover:bg-slate-600/70 border-emerald-200 transition-all ease-in-out flex flex-col gap-2 shadow'>
+                <li class='font-secondary uppercase text-sm xl:text-base py-4 px-4 rounded-[10px] cursor-pointer hover:border-slate-400 dark:hover:border-slate-600/70 border-emerald-200 transition-all ease-in-out flex flex-col gap-2 shadow border-2'>
                   <a
                     href={`${lang === 'en' ? entry.href : entry.hrefEs}`}
                     class='h-full'
@@ -112,7 +112,7 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
                     </div>
                     <Badges badges={entry.tags} />
                   </a>
-                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded text-emerald-300 dark:text-emerald-900'>
+                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded text-emerald-100 dark:text-emerald-950'>
                     {entry.date}
                   </span>
                 </li>

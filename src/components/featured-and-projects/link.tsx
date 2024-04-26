@@ -1,13 +1,3 @@
-const ANCHOR_STYLES = [
-  'font-thin',
-  'responsive-text',
-  'dark:text-amber-300',
-  'text-amber-950',
-  'flex',
-  'w-6 h-6',
-  'xl:w-8 xl:h-8'
-].join(' ')
-
 type LinkProps = {
   href: string
   title: string
@@ -29,7 +19,7 @@ export default function Link({ href, title }: LinkProps) {
       href={href}
       target='_blank'
       rel='noopener noreferrer'
-      class={ANCHOR_STYLES}
+      class='font-thin responsive-text dark:text-amber-300 text-amber-950 grid place-content-center w-4 h-4 xl:w-8 xl:h-8 mx-2'
       title={title}
       aria-label={title}
     >

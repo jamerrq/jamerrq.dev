@@ -33,9 +33,9 @@ const { lang = 'en' }: Props = Astro.props
       </p>
     </a>
     <span
-      class='block font-secondary uppercase text-sm rounded w-fit mx-auto px-1 py-0.5 text-center'
+      class='block font-secondary font-bold text-sm rounded w-fit mx-auto px-1 py-0.5 text-center'
     >
-      Jr Backend Dev
+      {lang === 'en' ? 'Backend Developer' : 'Desarrollador Backend'}
     </span>
   </div>
   <div

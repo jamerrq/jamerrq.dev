@@ -12,32 +12,6 @@ const concatedData = featured.concat(notFeatured)
 const screenWidth = window.innerWidth
 const isScreenWidthEnough = screenWidth >= 1024
 
-const PROJECT_STYLES: string = [
-  'col-span-6',
-  'row-span-4',
-  'bg-emerald-300/80',
-  'rounded-[10px]',
-  'flex',
-  'xl:flex-row ',
-  'gap-3',
-  'items-center',
-  'justify-center',
-  'font-bold',
-  'font-primary',
-  'w-full',
-  'h-72',
-  'xl:h-full',
-  'transition-all',
-  'text-emerald-950',
-  'dark:text-emerald-300',
-  'dark:bg-emerald-900/95',
-  'responsive-text-xs',
-  'p-2',
-  'pb-4',
-  'relative',
-  'text-center'
-].join(' ')
-
 import { signal, effect } from '@preact/signals'
 
 const index = signal(0)
@@ -48,9 +22,26 @@ type ResourcesProps = {
   lang?: string
 }
 
-// import { SimpleLeft, SimpleRight } from './icons'
-
 import simpleIcons, { type toExportType } from '@components/icons/simple-icon'
+import { DoubleLeft, DoubleRight } from './icons'
+
+export const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
+  <div class='left-1 bottom-1 absolute bg-slate-900 dark:bg-slate-300 rounded-full text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90'>
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleLeft />
+    </button>
+  </div>
+)
+
+export const DoubleRightButton = ({ _f }: { _f: () => void }) => (
+  <div
+    class={`right-1 bottom-1 absolute bg-slate-900 dark:bg-slate-300 rounded-full text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90`}
+  >
+    <button onClick={_f} title={'iterate over'}>
+      <DoubleRight />
+    </button>
+  </div>
+)
 
 import { h } from 'preact'
 
@@ -73,17 +64,6 @@ function SimpleIcon(key: string) {
   return h('fragment', {})
 }
 
-// const BUTTONS_STYLES = [
-//   'absolute',
-//   'bg-cyan-300',
-//   'rounded-full',
-//   'hidden xl:flex',
-//   'items-center',
-//   'px-2',
-//   'py-1',
-//   'shadow-md shadow-black/90'
-// ].join(' ')
-
 function IndexPicker({ n, reference }: { n: number; reference: any }) {
   function goToIndex(i: number) {
     reference.value = i
@@ -91,7 +71,7 @@ function IndexPicker({ n, reference }: { n: number; reference: any }) {
     imagesIndex.value = 0
   }
   return (
-    <div className='absolute flex bottom-3 left-1/2 transform -translate-x-1/2'>
+    <div className='absolute hidden xl:flex bottom-3 left-1/2 transform -translate-x-1/2'>
       {Array.from(Array(n).keys()).map((i) => (
         <button
           key={i}
@@ -102,6 +82,25 @@ function IndexPicker({ n, reference }: { n: number; reference: any }) {
           }`}
         />
       ))}
+    </div>
+  )
+}
+
+function MobileImageCarousel({ images }: { images: string[] }) {
+  const currentImage = images[imagesIndex.value]
+  return (
+    <div className='relative'>
+      <div className=''>
+        {currentImage && (
+          <img
+            src={`/img/projects/${images[imagesIndex.value]}`}
+            alt='project'
+            class='w-1/2 mx-auto rounded-md border-2 shadow shadow-black'
+            loading='lazy'
+          />
+        )}
+      </div>
+      <IndexPicker n={images?.length ?? 0} reference={imagesIndex} />
     </div>
   )
 }
@@ -125,21 +124,23 @@ function ImageCarousel({ images }: { images: string[] }) {
   )
 }
 
-// const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
-//   <div className={`bottom-1 left-1 ${BUTTONS_STYLES}`}>
-//     <button onClick={_f} title={'iterate over'}>
-//       <SimpleLeft />
-//     </button>
-//   </div>
-// )
+function goRight() {
+  index.value++
+  imagesIndex.value = 0
+  if (index.value >= n) {
+    index.value = 0
+  }
+  cooldown.value = COOLDOWN_TIME
+}
 
-// const DoubleRightButton = ({ _f }: { _f: () => void }) => (
-//   <div className={`bottom-1 right-1 ${BUTTONS_STYLES}`}>
-//     <button onClick={_f} title={'iterate over'}>
-//       <SimpleRight />
-//     </button>
-//   </div>
-// )
+function goLeft() {
+  index.value--
+  imagesIndex.value = 0
+  if (index.value < 0) {
+    index.value = n - 1
+  }
+  cooldown.value = COOLDOWN_TIME
+}
 
 function ResourceCard({
   project,
@@ -150,33 +151,13 @@ function ResourceCard({
   lang: string
   i: number
 }) {
-  // const goRight = () => {
-  //   index.value++
-  //   if (index.value > data.length - 1) index.value = 0
-  //   // insert the 'xl:animate-fade-in-left' class
-  //   const el = document.querySelector('#project-card')
-  //   el?.classList.add('xl:animate-fade-in-left')
-  //   el?.addEventListener('animationend', () => {
-  //     el?.classList.remove('xl:animate-fade-in-left')
-  //   })
-  //   imagesIndex.value = 0
-  //   cooldown.value = COOLDOWN_TIME
-  // }
-  // const goLeft = () => {
-  //   index.value--
-  //   if (index.value < 0) index.value = data.length - 1
-  //   // insert the 'xl:animate-fade-in-left' class
-  //   const el = document.querySelector('#project-card')
-  //   el?.classList.add('xl:animate-fade-in-left')
-  //   el?.addEventListener('animationend', () => {
-  //     el?.classList.remove('xl:animate-fade-in-left')
-  //   })
-  //   imagesIndex.value = 0
-  //   cooldown.value = COOLDOWN_TIME
-  // }
   return (
-    <article className={PROJECT_STYLES} key={i} id='project-card'>
-      {/* {i === 0 && <DoubleLeftButton _f={goLeft} />} */}
+    <article
+      className='col-span-6 row-span-4 bg-emerald-300/80 rounded-[10px] flex xl:flex-row gap-3 items-center justify-center font-bold font-primary w-full h-96 xl:h-full transition-all text-emerald-950 dark:text-emerald-300 dark:bg-emerald-900/95 responsive-text-xs p-2 pb-4 relative text-center'
+      key={i}
+      id='project-card'
+    >
+      <DoubleLeftButton _f={goLeft} />
       <div className='lg:w-1/2 xl:w-1/2 h-full grid place-content-center justify-items-center gap-4'>
         <div
           className='absolute top-2 left-2'
@@ -196,11 +177,16 @@ function ResourceCard({
         <p className='font-bold font-secondary dark:text-slate-200 text-xs xl:text-base max-w-[400px] text-balance'>
           {project?.description[lang as 'es' | 'en']}
         </p>
-        <ul className='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-[10px] flex-wrap'>
-          {project?.stack?.map((tech, index) => (
-            <li key={index}>{SimpleIcon(tech)}</li>
-          ))}
-        </ul>
+        {isScreenWidthEnough && (
+          <ul className='flex gap-1 [&>li]:font-thin [&>li>a>img]:border-2 [&>li>a>img]:dark:border-amber-300 [&>li>a>img]:border-amber-950 [&>li>a>img]:rounded-[10px] flex-wrap w-4/5 items-center justify-center'>
+            {project?.stack?.map((tech, index) => (
+              <li key={index}>{SimpleIcon(tech)}</li>
+            ))}
+          </ul>
+        )}
+        {!isScreenWidthEnough && project?.images && (
+          <MobileImageCarousel images={project.images} />
+        )}
         <div className='flex gap-2'>
           {project?.repository && (
             <a
@@ -226,11 +212,10 @@ function ResourceCard({
       </div>
       {isScreenWidthEnough && (
         <div className='w-1/2 h-full hidden lg:block xl:block'>
-          {/* <h1>Images</h1> */}
           {project?.images && <ImageCarousel images={project.images} />}
         </div>
       )}
-      {/* {i === n - 1 && <DoubleRightButton _f={goRight} />} */}
+      <DoubleRightButton _f={goRight} />
       <IndexPicker n={concatedData.length} reference={index} />
     </article>
   )

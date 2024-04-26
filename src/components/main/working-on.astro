@@ -7,9 +7,9 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 
 import Box from '@components/boxes/box.astro'
-// import WorkingOnTsx from './working-on.tsx'
 
-import ThreeDots from '@components/loaders/ThreeDots.astro'
+// import WorkingOnTsx from './working-on.tsx'
+// import ThreeDots from '@components/loaders/ThreeDots.astro'
 ---
 
 <Box
@@ -31,15 +31,6 @@ import ThreeDots from '@components/loaders/ThreeDots.astro'
   </header>
   <!-- <WorkingOnTsx lang={lang} client:only='preact' /> -->
   <span class='text-center px-3 [&_a]:text-emerald-300'>
-    <!-- Currently working on my presentation for the <a
-      href='https://holamundo.day/#speakers'
-      target='_blank'
-      rel='noopener noreferrer'>#HolaMundoDay</a
-    > event by <a
-      href='https://www.twitch.tv/mouredev'
-      target='_blank'
-      rel='noopener noreferrer'>@mouredev</a
-    > on May 7th, 2024. -->
     {lang === 'en' ? '#HolaMundoDay Workshop' : 'Taller #HolaMundoDay'}
   </span>
   <span class='text-center'>
@@ -50,14 +41,6 @@ import ThreeDots from '@components/loaders/ThreeDots.astro'
     }
   </span>
   <span class='text-center'>
-    <!-- <a
-      href='https://holamundo.day/#speakers'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='text-emerald-500 dark:text-emerald-300'
-    >
-      More info
-    </a> -->
     <a
       href='https://holamundo.day/#speakers'
       target='_blank'
@@ -71,7 +54,6 @@ import ThreeDots from '@components/loaders/ThreeDots.astro'
       }
     </a>
   </span>
-  <ThreeDots />
   <a href='/board'>
     {lang === 'en' ? 'Preview (?)' : 'Vistazo (?)'}
   </a>

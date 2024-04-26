@@ -13,12 +13,20 @@ import { pwaSeoConfig } from '@data/codes.ts'
 	width="250" height="250" />
 </div>
 
-## Disclaimer ⚠️
+## Disclaimer
 
-As of the time of writing this article, I implemented the PWA functionality
-following the steps described in this article, however, an alternative way to
-implement this functionality is by using the vite-pwa plugin for Astro. I will
-update this article with the new information as soon as possible.
+There is an alternative way to convert your Astro app into a PWA using the
+vite pwa plugin for Astro. This method is more straightforward and requires
+less configuration. I recommend using this method if you are new to Astro or
+PWA development. Meanwhile, the method described in this article is more
+will works but requires more configuration. Check out the alternative method
+in this commit:
+
+<a
+href="https://github.com/jamerrq/lumina/commit/e54ac681181242703f39e27535abe36061d5d85a#diff-89195ac8f426657ed64cca6554781314cf86f19737ddb0d4d059041e146cd5e7"
+target="_blank" rel="noopener noreferrer">e54ac68</a>
+
+Or use <a href="https://lumina-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">Lumina</a>, a template that includes PWA support out of the box (scroll down to the end of the article for more information).
 
 ## First and foremost. What is a PWA?
 
@@ -28,31 +36,47 @@ the following type of tooltip on some popular pages:
 
 ### YouTube
 
-<a href="https://youtube.com" target="_blank" rel="noopener">
-<Image src="/img/blog/youtube-pwa.png" alt="youtube pwa" width="860" height="198"/>
+<a href='https://youtube.com' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/youtube-pwa.webp'
+    alt='youtube pwa'
+    width='1366'
+    height='748'
+  />
 </a>
 
 ### Facebook
 
-<a href="https://facebook.com" target="_blank" rel="noopener">
-<Image src="/img/blog/fb-pwa.png" alt="facebook pwa" width="642" height="138"/>
+<a href='https://facebook.com' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/facebook-pwa.webp'
+    alt='facebook pwa'
+    width='1366'
+    height='748'
+  />
 </a>
 
 ### Duolingo
 
-<a href="https://duolingo.com" target="_blank" rel="noopener">
-<Image src="/img/blog/duolingo-pwa.png" alt="duolingo pwa" width="870"
-height="155"/>
+<a href='https://duolingo.com' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/duolingo-pwa.webp'
+    alt='duolingo pwa'
+    width='1366'
+    height='748'
+  />
 </a>
 
-### La Velada (implemented by me)
+### Lichess
 
-<a href="https://lavelada.es" target="_blank" rel="noopener">
-<Image src="/img/blog/lavelada-pwa.png" alt="lavelada pwa" width="1126"
-height="261"/>
+<a href='https://lichess.org' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/lichess-pwa.webp'
+    alt='lichess pwa'
+    width='1366'
+    height='748'
+  />
 </a>
-
-* See https://github.com/midudev/la-velada-web-oficial/pull/389
 
 A Progressive Web App (PWA) is a type of web application that is designed to
 work on any platform and device, regardless of the browser or operating system
@@ -118,8 +142,8 @@ you only need an image of 512x512 (or larger) and the tool will generate all the
 necessary sizes for you. Make sure to check the "PWA" option so that the tool
 generates the necessary sizes for a PWA. The image should preferably be in
 `.png` or `.svg` format with a transparent background; if your image does not
-meet these requirements, you can use tools like <a href="https://www.remove.bg/"
-target="_blank" rel="noopener">Remove.bg</a> to remove the background from your
+meet these requirements, you can use tools like <a href="https://www.experte.com/background-remover"
+target="_blank" rel="noopener">Background Remover</a> to remove the background from your
 image and <a href="https://squoosh.app/" target="_blank"
 rel="noopener">Squoosh</a> to convert your image to `.png` or `.svg` and
 optimize it.
@@ -164,9 +188,9 @@ import type { ManifestOptions } from "vite-plugin-pwa"
  * SEO configuration for the application.
  */
 export const seoConfig = {
-	baseURL: "https://jamerrq.deno.dev/", // Production URL.
+	baseURL: "yourappwebsite.com", // Production URL.
 	description:
-		"Desarrollador de software con experiencia en desarrollo web y aplicaciones backend.",
+		"A brief description of your application.",
 	type: "website",
 	image: {
 		url: "https://jamerrq.deno.dev/og-image2.png",
@@ -188,7 +212,7 @@ export const manifest: Partial<ManifestOptions> = {
 	name: "jamerrq.dev",
 	short_name: "jamerrq.dev",
 	description:
-		"Desarrollador de software con experiencia en desarrollo web y aplicaciones backend.",
+		"A brief description of your application.",
 	theme_color: "#0F0F0F",
 	background_color: "#0F0F0F",
 	display: "fullscreen",
@@ -285,11 +309,13 @@ export default defineConfig({
             registerType: "autoUpdate",
             manifest,
             workbox: {
-            globDirectory: "dist",
-            globPatterns: ["**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}"],
-            // Don't fallback on document based (e.g. `/some-page`) requests
-            // This removes an errant console.log message from showing up.
-            navigateFallback: null
+				globDirectory: "dist",
+				// globPatterns for the files you want to cache inmediately
+				// after service worker registration.
+				globPatterns: ["**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}"],
+				// Don't fallback on document based (e.g. `/some-page`) requests
+				// This removes an errant console.log message from showing up.
+				navigateFallback: null
             }
         })],
     },
