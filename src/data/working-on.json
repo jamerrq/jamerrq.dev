@@ -58,24 +58,6 @@
     },
     {
       "title": {
-        "en": "AI Skills Challenge - Microsoft",
-        "es": "Desafío IA - Microsoft"
-      },
-      "description": {
-        "en": "A series of challenges to test your AI skills by Microsoft.",
-        "es": "Una serie de desafíos para poner a prueba tus habilidades en IA por Microsoft."
-      },
-      "image": "/img/working-on/aichallenge.webp",
-      "technologies": [
-        "azure",
-        "microsoft"
-      ],
-      "private": "false",
-      "preview": "https://learn.microsoft.com/en-us/collections/moqrtod2e2z7?WT.mc_id=cloudskillschallenge_3ef5d197-cdef-49bc-a8bc-954bcd9e88cc&sharingId=C74FED9E989834A",
-      "start": "2024-03-27"
-    },
-    {
-      "title": {
         "en": "Parrot - Habits Tracker",
         "es": "Parrot - Seguidor de hábitos"
       },

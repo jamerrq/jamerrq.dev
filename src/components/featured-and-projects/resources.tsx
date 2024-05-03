@@ -19,7 +19,7 @@ const shuffleData = shuffle(data)
 
 const DoubleUpButton = ({ _f }: { _f: () => void }) => (
   <div
-    class={`-left-3 absolute bg-slate-900 dark:bg-slate-300 rounded-full text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
+    class={`-left-3 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
   >
     <button onClick={_f} title={'iterate over'}>
       <DoubleUp />
@@ -29,7 +29,7 @@ const DoubleUpButton = ({ _f }: { _f: () => void }) => (
 
 const DoubleDownButton = ({ _f }: { _f: () => void }) => (
   <div
-    class={`-right-3 absolute bg-slate-900 dark:bg-slate-300 rounded-full text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
+    class={`-right-3 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
   >
     <button onClick={_f} title={'iterate over'}>
       <DoubleDown />

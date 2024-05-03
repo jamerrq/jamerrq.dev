@@ -1,6 +1,13 @@
 ---
 // import Copyright from '@components/icons/copyright.astro'
-import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
+import {
+  siAstro,
+  siPreact,
+  siTailwindcss,
+  siMdx,
+  siBun,
+  siDeno
+} from 'simple-icons'
 ---
 
 <style>
@@ -12,8 +19,8 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
     max-width: 100dvw;
     height: 32px;
     padding: 0.2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     text-align: center;
     align-items: center;
     display: flex;
@@ -58,6 +65,11 @@ import { siAstro, siPreact, siTailwindcss, siMdx, siBun } from 'simple-icons'
   <svg
     class='w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 inline'
     set:html={siBun.svg}
+    fill={`#fff`}
+  />
+  <svg
+    class='w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 inline'
+    set:html={siDeno.svg}
     fill={`#fff`}
   />
   <aside>

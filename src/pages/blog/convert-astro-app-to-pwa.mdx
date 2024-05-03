@@ -188,13 +188,13 @@ import type { ManifestOptions } from "vite-plugin-pwa"
  * SEO configuration for the application.
  */
 export const seoConfig = {
-	baseURL: "yourappwebsite.com", // Production URL.
+	baseURL: "yourwebsite.com", // Production URL.
 	description:
 		"A brief description of your application.",
 	type: "website",
 	image: {
-		url: "https://jamerrq.deno.dev/og-image2.png",
-		alt: "jamerrq.dev",
+		url: "yourwebsite.com/img/og-image.png",
+		alt: "og-image",
 		width: 730,
 		height: 382,
 	},
@@ -209,8 +209,8 @@ export const seoConfig = {
  * Defines the configuration for PWA webmanifest.
  */
 export const manifest: Partial<ManifestOptions> = {
-	name: "jamerrq.dev",
-	short_name: "jamerrq.dev",
+	name: "Name of your application",
+	short_name: "A short name for your application",
 	description:
 		"A brief description of your application.",
 	theme_color: "#0F0F0F",
@@ -278,7 +278,7 @@ how you can include these tags in your `layout.astro` file:
 <!-- Sitemap -->
 <meta name="msapplication-config" content="/browserconfig.xml" />
 
-<!-- Worker Registration -->
+<!-- Worker and Manifest Registration -->
 {
   !import.meta.env.DEV && (
     <script is:inline src="/registerSW.js"></script>

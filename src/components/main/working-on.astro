@@ -8,7 +8,7 @@ const { lang = 'en' }: Props = Astro.props
 
 import Box from '@components/boxes/box.astro'
 
-// import WorkingOnTsx from './working-on.tsx'
+import WorkingOnTsx from './working-on.tsx'
 // import ThreeDots from '@components/loaders/ThreeDots.astro'
 ---
 
@@ -29,8 +29,8 @@ import Box from '@components/boxes/box.astro'
       fill={`#${siGitkraken.hex}`}
     />
   </header>
-  <!-- <WorkingOnTsx lang={lang} client:only='preact' /> -->
-  <span class='text-center px-3 [&_a]:text-emerald-300'>
+  <WorkingOnTsx lang={lang} client:only='preact' />
+  <!-- <span class='text-center px-3 [&_a]:text-emerald-300'>
     {lang === 'en' ? '#HolaMundoDay Workshop' : 'Taller #HolaMundoDay'}
   </span>
   <span class='text-center'>
@@ -56,5 +56,5 @@ import Box from '@components/boxes/box.astro'
   </span>
   <a href='/board'>
     {lang === 'en' ? 'Preview (?)' : 'Vistazo (?)'}
-  </a>
+  </a> -->
 </Box>

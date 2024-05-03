@@ -46,7 +46,7 @@ import Template from './template.astro'
     Studio Code para proyectos de Open Source.
   </p>
   <ul
-    class='[&_li]:bg-slate-800 [&_li]:px-2 [&_li]:py-1 [&_li]:rounded [&_li]:font-semibold flex flex-col gap-1 [&_li]:grid items-center [&_li]:w-[50dvw] [&_li]:grid-cols-[1fr,1fr,40px]'
+    class='[&_li]:bg-slate-800 [&_li]:px-2 [&_li]:py-1 [&_li]:rounded [&_li]:font-semibold flex flex-col gap-1 [&_li]:grid items-center [&_li]:xl:w-[50dvw] [&_li]:grid-cols-[1fr,1fr,40px] [&_li]:w-[80dvw]'
   >
     <li>
       <span>
@@ -54,12 +54,12 @@ import Template from './template.astro'
           GitLens - Supercharge Git inside VS Code</a
         >
       </span>
-      <span class='me-2 bg-white/10 rounded px-1 py-0.5'>
+      <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
         ext install eamodio.gitlens</span
       >
       <button
         class='bg-blue-500 text-white px-2 py-0.5 rounded'
-        onclick='copyText("ext install eamodio.gitlens")'
+        data-copy='ext install eamodio.gitlens'
       >
         <svg
           class='feather feather-copy'
@@ -85,12 +85,12 @@ import Template from './template.astro'
           Data Size Count (Opcional)</a
         >
       </span>
-      <span class='me-2 bg-white/10 rounded px-1 py-0.5'>
+      <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
         ext install Thinker.data-size-count</span
       >
       <button
         class='bg-blue-500 text-white px-2 py-0.5 rounded'
-        onclick='copyText("ext install Thinker.data-size-count")'
+        data-copy='ext install Thinker.data-size-count'
       >
         <svg
           class='feather feather-copy'
@@ -118,12 +118,12 @@ import Template from './template.astro'
           rel='noreferrer'>Git History</a
         >
       </span>
-      <span class='me-2 bg-white/10 rounded px-1 py-0.5'>
+      <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
         ext install donjayamanne.githistory</span
       >
       <button
         class='bg-blue-500 text-white px-2 py-0.5 rounded'
-        onclick='copyText("ext install donjayamanne.githistory")'
+        data-copy='ext install donjayamanne.githistory'
       >
         <svg
           class='feather feather-copy'
@@ -156,7 +156,7 @@ import Template from './template.astro'
       >
       <button
         class='bg-blue-500 text-white px-2 py-0.5 rounded'
-        onclick='copyText("ext install GitHub.vscode-pull-request-github")'
+        data-copy='ext install GitHub.vscode-pull-request-github'
       >
         <svg
           class='feather feather-copy'
@@ -184,12 +184,45 @@ import Template from './template.astro'
           rel='noreferrer'>GitHub Repositories</a
         ></span
       >
-      <span class='me-2 bg-white/10 rounded px-1 py-0.5'>
+      <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
         ext install GitHub.remotehub</span
       >
       <button
         class='bg-blue-500 text-white px-2 py-0.5 rounded'
-        onclick='copyText("ext install GitHub.remotehub")'
+        data-copy='ext install GitHub.remotehub'
+      >
+        <svg
+          class='feather feather-copy'
+          fill='none'
+          height='24'
+          stroke='currentColor'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          stroke-width='2'
+          viewBox='0 0 24 24'
+          width='24'
+          xmlns='http://www.w3.org/2000/svg'
+          ><rect height='13' rx='2' ry='2' width='13' x='9' y='9'></rect><path
+            d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'
+          ></path></svg
+        >
+      </button>
+    </li>
+    <!-- Code Spell Checker -->
+    <li>
+      <span>
+        <a
+          href='https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker'
+          target='_blank'
+          rel='noreferrer'>Code Spell Checker</a
+        >
+      </span>
+      <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
+        ext install streetsidesoftware.code-spell-checker</span
+      >
+      <button
+        class='bg-blue-500 text-white px-2 py-0.5 rounded'
+        data-copy='ext install streetsidesoftware.code-spell-checker'
       >
         <svg
           class='feather feather-copy'
@@ -209,4 +242,24 @@ import Template from './template.astro'
       </button>
     </li>
   </ul>
+  <script>
+    import { toast } from 'wc-toast'
+    // Copy To Clipboard And Toast Message
+    function copyText(text: string) {
+      navigator.clipboard.writeText(text)
+      toast('el texto está ahora en tu clipboard :P 📬', {
+        duration: 2000,
+        theme: {
+          type: 'light'
+        }
+      })
+    }
+
+    const buttons = document.querySelectorAll('button')
+    buttons.forEach((button) => {
+      const copyData = button.getAttribute('data-copy')
+      if (!copyData) return
+      button.addEventListener('click', () => copyText(copyData))
+    })
+  </script>
 </Template>

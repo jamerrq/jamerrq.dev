@@ -1,16 +1,18 @@
 ---
 import Footer from '@components/main/footer.astro'
 import Layout from './layout.astro'
+
 interface Props {
   frontmatter: {
     title: string
     hrefLang: string
   }
 }
+
 const { frontmatter }: Props = Astro.props
 import Buttons from '@components/main/buttons.astro'
 
-// Mono Font
+// Mono Font for Code Blocks
 import '@fontsource/fira-mono'
 ---
 
