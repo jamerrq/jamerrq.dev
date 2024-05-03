@@ -1,0 +1,21 @@
+---
+import Template from './template.astro'
+---
+
+<Template index={4}>
+  <h1
+    class='text-4xl font-bold text-gray-100 animate-slide-in-bottom bg-blueBoard rounded px-2 py-1'
+  >
+    Configuración de llaves SSH en GitHub
+  </h1>
+  <p class='text-balance text-center text-slate-900'>
+    Tener configuradas las llaves SSH en GitHub es una buena práctica para
+    evitar tener que ingresar tu usuario y contraseña cada vez que haces un push
+    a tu repositorio, además de que es más seguro de esta manera
+  </p>
+  <img
+    src='https://res.cloudinary.com/dm064xuo5/image/upload/f_auto,q_auto/v1/jamerrq.dev/ma9kmtkev08n8jk6wf8e'
+    alt='gpg keys example'
+    class='rounded-lg w-1/2 mt-4'
+  />
+</Template>

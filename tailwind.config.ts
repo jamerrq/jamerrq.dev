@@ -44,6 +44,9 @@ export default {
         firaMono: ['Fira Mono', 'monospace'],
         primary: ['Fira Sans', 'sans-serif'], // <- primary font
         secondary: ['Fira Sans', 'system-ui'] // <- secondary font
+      },
+      colors: {
+        blueBoard: '#153448'
       }
     }
   },

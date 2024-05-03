@@ -21,7 +21,9 @@ const socials = getIconsFn(lang)
   otherStyles='xl:col-span-2 xl:row-span-2 justify-around'
 >
   <header class='flex gap-2 dark:text-emerald-300 text-slate-950'>
-    <p class='font-semibold text-3xl xl:text-4xl'>Contact Links</p>
+    <p class='font-semibold text-3xl xl:text-4xl'>
+      {lang === 'en' ? 'Contact Me' : 'Contáctame'}
+    </p>
     <GenericIcon svg={siMaildotru.svg} />
   </header>
   <EmailBadge lang={lang} />

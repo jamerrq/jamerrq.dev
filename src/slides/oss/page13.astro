@@ -1,0 +1,36 @@
+---
+import Template from './template.astro'
+---
+
+<Template index={12}>
+  <h1
+    class='text-xl font-bold text-gray-100 animate-slide-in-bottom bg-blueBoard rounded px-2 py-1 text-center text-pretty max-w-1/2'
+  >
+    Algunas Referencias
+  </h1>
+  <ul
+    class='text-center text-balance [&_li]:bg-slate-800 [&_li]:px-3 [&_li]:py-2 [&_li]:rounded [&_li]:font-semibold flex gap-3 flex-col max-w-1/2 mx-auto mt-4 [&_li]:text-blue-400'
+  >
+    <li>
+      <span>
+        1. <a href='https://opensource.org/' target='_blank' rel='noreferrer'
+          >Iniciativa Open Source</a
+        >
+      </span>
+    </li>
+    <li>
+      2. <a href='https://cli.github.com/' target='_blank' rel='noreferrer'>
+        GitHub Cli</a
+      >
+    </li>
+    <li>
+      3. <a
+        href='https://github.com/mouredev/roadmap-retos-programacion'
+        target='_blank'
+        rel='noreferrer'
+      >
+        Roadmap de la comunidad
+      </a>
+    </li>
+  </ul>
+</Template>

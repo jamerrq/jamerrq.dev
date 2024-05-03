@@ -1,0 +1,44 @@
+---
+interface Props {
+  index?: number
+}
+
+import Page1 from './page1.astro'
+import Page2 from './page2.astro'
+import Page3 from './page3.astro'
+import Page4 from './page4.astro'
+import Page5 from './page5.astro'
+import Page6 from './page6.astro'
+import Page7 from './page7.astro'
+import Page8 from './page8.astro'
+import Page9 from './page9.astro'
+import Page10 from './page10.astro'
+import Page11 from './page11.astro'
+import Page12 from './page12.astro'
+import Page13 from './page13.astro'
+import Page14 from './page14.astro'
+import Page15 from './page15.astro'
+
+const { index = 0 } = Astro.props
+---
+
+{index === 0 && <Page1 />}
+{index === 1 && <Page2 />}
+{index === 2 && <Page3 />}
+{index === 3 && <Page4 />}
+{index === 4 && <Page5 />}
+{index === 5 && <Page6 />}
+{index === 6 && <Page7 />}
+{index === 7 && <Page8 />}
+{index === 8 && <Page9 />}
+{index === 9 && <Page10 />}
+{index === 10 && <Page11 />}
+{index === 11 && <Page12 />}
+{index === 12 && <Page13 />}
+{index === 13 && <Page14 />}
+{index === 14 && <Page15 />}
+
+<span
+  class='bg-indigo-100 text-indigo-800 text-xs font-firaSans font-bold px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300 absolute right-0.5 top-0.5'
+  >Page {+index + 1}</span
+>

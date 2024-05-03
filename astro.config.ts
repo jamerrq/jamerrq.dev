@@ -96,5 +96,8 @@ export default defineConfig({
     build: {
       cssMinify: 'lightningcss'
     }
+  },
+  redirects: {
+    '/oss': '/oss/0'
   }
 })

@@ -1,0 +1,75 @@
+---
+import Template from './template.astro'
+---
+
+<Template index={1}>
+  <h1
+    class='text-5xl font-bold animate-slide-in-bottom bg-blueBoard rounded px-2 py-1'
+  >
+    Contenidos
+  </h1>
+  <ul
+    class='list-disc bg-blueBoard px-2 py-1 gap-4 flex flex-col rounded font-semibold'
+  >
+    <li>
+      <span> Una breve introducción a la iniciativa Open Source</span>
+    </li>
+    <li>
+      <span>¡Empezamos a picar! - Parte Práctica con el Roadmap</span>
+      <ul class='list-disc ml-6 my-1 gap-1 flex flex-col'>
+        <li>
+          <span>
+            Configuramos nuestras llaves de SSH para trabajar con GitHub
+          </span>
+        </li>
+        <li>
+          <span>
+            Adaptamos Visual Studio Code para trabajar con Git y GitHub
+          </span>
+        </li>
+        <li>
+          <span> Fork del repositorio</span>
+        </li>
+        <li>
+          <span> Clonar el repositorio en tu máquina local</span>
+        </li>
+        <li>
+          <span> Crea tu rama de trabajo</span>
+        </li>
+        <li>
+          <span> Realiza los cambios necesarios y sube tu rama</span>
+        </li>
+        <li>
+          <span>
+            Creamos nuestro primer Pull Request y esperamos la revisión
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <span> Consideraciones a tener en cuenta antes de contribuir</span>
+    </li>
+  </ul>
+  <a class='absolute left-1 top-1/2' href='/oss/0'>
+    <svg
+      viewBox='0 0 448 512'
+      class='w-4 h-4 xl:w-6 xl:h-6 fill-emerald-300 dark:fill-emerald-900'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path
+        d='M77.25 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C175.6 444.9 183.8 448 192 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L77.25 256zM269.3 256l137.4-137.4c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25l160 160C367.6 444.9 375.8 448 384 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L269.3 256z'
+      ></path>
+    </svg>
+  </a>
+  <a class='absolute right-1 top-1/2' href='/oss/2'>
+    <svg
+      viewBox='0 0 448 512'
+      class='w-4 h-4 xl:w-6 xl:h-6 fill-emerald-300 dark:fill-emerald-900'
+      xmlns='http://www.w3.org/2000/svg'
+    >
+      <path
+        d='M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z'
+      ></path>
+    </svg>
+  </a>
+</Template>

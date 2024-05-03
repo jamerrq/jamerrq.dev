@@ -1,0 +1,21 @@
+---
+import Layout from '@layouts/layout.astro'
+import Buttons from '@components/main/buttons.astro'
+
+import CurrentPage from '@slides/oss/currentPage.astro'
+
+const { page = 1 } = Astro.params
+---
+
+<Layout title='Open Source Para Todos'>
+  <div class='w-[100dvw] h-[100dvh] fixed top-0 left-0 -z-50 bg-[#B3C8CF]/90'>
+  </div>
+  <main class='w-[100dvw] h-[100dvh] grid place-content-center'>
+    <CurrentPage index={+page} />
+    <footer
+      class='absolute bottom-0 left-0 w-full flex opacity-10 hover:opacity-100 transition-opacity duration-200 ease-in-out'
+    >
+      <Buttons rounded={false} />
+    </footer>
+  </main>
+</Layout>

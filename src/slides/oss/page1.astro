@@ -1,7 +1,11 @@
-<article class='text-gray-100 font-primary flex gap-2 flex-col items-center'>
+---
+import Template from './template.astro'
+---
+
+<Template index={0}>
   <style>
     .wave {
-      animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+      animation-name: wave-animation;
       animation-duration: 2.5s; /* Change to speed up or slow down */
       animation-iteration-count: infinite; /* Never stop waving :) */
       transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
@@ -14,7 +18,7 @@
       }
       10% {
         transform: rotate(14deg);
-      } /* The following five values can be played with to make the waving more or less extreme */
+      }
       20% {
         transform: rotate(-8deg);
       }
@@ -45,117 +49,40 @@
     }
   </style>
   <span
-    class='px-2 py-1 rounded text-center font-primary font-bold animate-slide-in-top text-xl bg-[#153448] w-fit'
+    class='px-2 py-1 rounded text-center font-primary font-bold animate-slide-in-top text-xl bg-blueBoard w-fit'
   >
     ¡Hola! <span class='wave'>👋🏾</span><br /> Bienvenidos a
   </span>
   <img
-    src='oss.webp'
+    src='https://res.cloudinary.com/dm064xuo5/image/upload/f_auto,q_auto/v1/jamerrq.dev/z41jwrqiwb3yuy91j4gu'
     alt='open source illustration'
-    class='animate-fade-in-right animate-delay-500 w-24 drop-shadow-lg'
+    class='animate-fade-in-right animate-delay-500 w-[100px] mt-3 mb-1'
   />
   <h1
-    class='text-5xl font-bold animate-slide-in-bottom bg-[#153448] rounded px-2 py-1'
+    class='text-5xl font-bold animate-slide-in-bottom bg-blueBoard rounded px-2 py-1'
     id='slide-title'
   >
-    Open Source Para Principiantes
+    Open Source Para Todos
   </h1>
   <h2
-    class='text-base text-center font-semibold font-secondary animate-fade-in-left animate-delay-500 bg-[#153448] rounded px-2 py-1'
+    class='text-base text-center font-semibold font-secondary animate-fade-in-left animate-delay-500 bg-blueBoard rounded px-2 py-1'
   >
     Aprendamos acerca del mundo del código abierto, cómo contribuir y colaborar
     en proyectos de software libre
   </h2>
-  <h3
-    class='text-base text-center font-semibold font-secondary animate-fade-in-right animate-delay-800 bg-[#153448] rounded px-2 py-1'
-  >
-    👾 ¿Conoces el código Konami? 🎮
-  </h3>
-</article>
-<aside class='mx-auto justify-center items-center blur' id='player-section'>
-  <img src='music_disc.webp' alt='strad' class='w-24 mx-auto' />
-  <marquee class='font-bold font-primary bg-[#153448] text-gray-100 rounded'>
-    Now Playing: Strad - C418</marquee
-  >
-</aside>
+</Template>
 <script>
   const h1 = document.querySelector('#slide-title')!
-  // add the class animate-blink after 2 seconds
-  // and also remove the class animate-slide-in-bottom while
-  // adding the class animate-iteration-count-thrice
+  const h1ClassList = h1?.classList
   setTimeout(() => {
-    if (h1?.classList.contains('animate-slide-in-bottom')) {
-      h1?.classList.remove('animate-slide-in-bottom')
+    if (h1ClassList.contains('animate-slide-in-bottom')) {
+      h1ClassList.remove('animate-slide-in-bottom')
     }
-    h1?.classList.add('animate-blink')
-    h1?.classList.remove('animate-slide-in-bottom')
-    if (h1?.classList.contains('animate-iteration-count-thrice')) {
-      h1?.classList.remove('animate-iteration-count-thrice')
+    h1ClassList.add('animate-blink')
+    h1ClassList.remove('animate-slide-in-bottom')
+    if (h1ClassList.contains('animate-iteration-count-thrice')) {
+      h1ClassList.remove('animate-iteration-count-thrice')
     }
-    h1?.classList.add('animate-iteration-count-thrice')
+    h1ClassList.add('animate-iteration-count-thrice')
   }, 1000)
-
-  // every 5 seconds, recreate the blinking effect
-  setInterval(() => {
-    // if the class is already there, remove it
-    if (h1?.classList.contains('animate-blink')) {
-      h1?.classList.remove('animate-blink')
-    }
-    h1?.classList.add('animate-blink')
-  }, 5000)
-
-  // konami code will play a sound
-  const konamiCode = [
-    'ArrowUp',
-    'ArrowUp',
-    'ArrowDown',
-    'ArrowDown',
-    'ArrowLeft',
-    'ArrowRight',
-    'ArrowLeft',
-    'ArrowRight',
-    'b',
-    'a'
-  ]
-  let konamiCodePosition = 0
-  const boardBackground = document.getElementById('board-background')
-  const playerSection = document.getElementById('player-section')
-  document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[konamiCodePosition]) {
-      konamiCodePosition++
-      if (konamiCodePosition === konamiCode.length) {
-        playKonamiSound()
-        boardBackground?.classList.toggle('hidden')
-        playerSection?.classList.remove('blur')
-        playerSection?.classList.add('animate-slide-in-top')
-        const image = document.querySelector('#player-section img')
-        image?.classList.add('animate-spin-clockwise')
-        konamiCodePosition = 0
-      }
-    } else {
-      konamiCodePosition = 0
-    }
-  })
-
-  const audio = new Audio('/songs/strad.mp3')
-
-  const playKonamiSound = () => {
-    audio.volume = 0.25
-    audio.play()
-  }
-
-  // on click in the player section, the music will stop
-  playerSection?.addEventListener('click', () => {
-    audio.pause()
-    audio.currentTime = 0
-    playerSection?.classList.add('blur')
-    playerSection?.classList.remove('animate-slide-in-top')
-    playerSection?.classList.add('animate-slide-out-top')
-    const image = document.querySelector('#player-section img')
-    image?.classList.remove('animate-spin-clockwise')
-    setTimeout(() => {
-      boardBackground?.classList.toggle('hidden')
-      playerSection?.classList.remove('animate-slide-out-top')
-    }, 1000)
-  })
 </script>

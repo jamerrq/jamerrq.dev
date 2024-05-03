@@ -1,0 +1,28 @@
+---
+import Template from './template.astro'
+---
+
+<Template index={10}>
+  <h1
+    class='text-4xl font-bold text-gray-100 animate-slide-in-bottom bg-blueBoard rounded px-2 py-1'
+  >
+    ¿Qué es y cómo hacer una Pull Request?
+  </h1>
+  <p class='text-balance text-center text-slate-900'>
+    Una <strong>Pull Request</strong> es una petición que se hace a un repositorio
+    para que se incorporen los cambios que se han hecho en una rama. Es la forma
+    más común de contribuir a un proyecto en GitHub.
+  </p>
+  <span class='text-slate-800 italic'>
+    Si tienes el cli de GitHub instalado, puedes hacer una Pull Request con el
+    siguiente comando:
+    <code class='text-blue-300 italic px-1 py-0.5 rounded bg-slate-900'
+      >gh pr create
+    </code>
+  </span>
+  <img
+    src='https://res.cloudinary.com/dm064xuo5/image/upload/f_auto,q_auto/v1/jamerrq.dev/arrcwiisxadbkqcf9xts'
+    alt='gh cli manual'
+    class='rounded-lg w-1/2 mt-4'
+  />
+</Template>

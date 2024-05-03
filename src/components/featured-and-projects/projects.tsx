@@ -1,6 +1,9 @@
 import { data } from '@data/projects.json'
-
 import { shuffle } from '@utils'
+import simpleIcons, { type toExportType } from '@components/icons/simple-icon'
+import { DoubleLeft, DoubleRight } from './icons'
+import { signal, effect } from '@preact/signals'
+import { h } from 'preact'
 
 const shuffledData = import.meta.env.DEV ? data : shuffle([...data])
 
@@ -12,8 +15,6 @@ const concatedData = featured.concat(notFeatured)
 const screenWidth = window.innerWidth
 const isScreenWidthEnough = screenWidth >= 1024
 
-import { signal, effect } from '@preact/signals'
-
 const index = signal(0)
 const imagesIndex = signal(0)
 
@@ -22,11 +23,8 @@ type ResourcesProps = {
   lang?: string
 }
 
-import simpleIcons, { type toExportType } from '@components/icons/simple-icon'
-import { DoubleLeft, DoubleRight } from './icons'
-
 export const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
-  <div class='left-1 bottom-1 absolute bg-slate-900 dark:bg-slate-300 rounded-full text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90'>
+  <div class='left-1 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90'>
     <button onClick={_f} title={'iterate over'}>
       <DoubleLeft />
     </button>
@@ -35,15 +33,13 @@ export const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
 
 export const DoubleRightButton = ({ _f }: { _f: () => void }) => (
   <div
-    class={`right-1 bottom-1 absolute bg-slate-900 dark:bg-slate-300 rounded-full text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90`}
+    class={`right-1 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90`}
   >
     <button onClick={_f} title={'iterate over'}>
       <DoubleRight />
     </button>
   </div>
 )
-
-import { h } from 'preact'
 
 function SimpleIcon(key: string) {
   if (key === 'javascript') {

@@ -18,20 +18,19 @@ const {
   href={href}
   target='_blank'
   rel='noopener noreferrer'
-  class='w-full h-full grid place-content-center'
+  class='grid place-content-center'
   title={title}
   aria-label={title}
 >
   <video
     src={src}
     autoplay
-    style='width: 100%; height: 100%;'
     muted
     loop
     playsinline
     preload='auto'
     data-abs={absolute}
-    class='object-cover rounded data-[abs]:absolute'
+    class='object-cover rounded h-48'
   >
   </video>
 </a>
