@@ -19,7 +19,7 @@ const shuffleData = shuffle(data)
 
 const DoubleUpButton = ({ _f }: { _f: () => void }) => (
   <div
-    class={`-left-3 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
+    class={`-left-3 absolute bg-slate-900 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
   >
     <button onClick={_f} title={'iterate over'}>
       <DoubleUp />
@@ -29,7 +29,7 @@ const DoubleUpButton = ({ _f }: { _f: () => void }) => (
 
 const DoubleDownButton = ({ _f }: { _f: () => void }) => (
   <div
-    class={`-right-3 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
+    class={`-right-3 absolute bg-slate-900 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90 xl:hidden`}
   >
     <button onClick={_f} title={'iterate over'}>
       <DoubleDown />
@@ -38,7 +38,7 @@ const DoubleDownButton = ({ _f }: { _f: () => void }) => (
 )
 
 const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
-  <div class='left-1 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current hidden xl:flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90'>
+  <div class='left-1 absolute bg-slate-900 dark:bg-slate-950 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current hidden xl:flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90'>
     <button onClick={_f} title={'iterate over'}>
       <DoubleLeft />
     </button>
@@ -47,7 +47,7 @@ const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
 
 const DoubleRightButton = ({ _f }: { _f: () => void }) => (
   <div
-    class={`right-1 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current hidden xl:flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90`}
+    class={`right-1 absolute bg-slate-900 dark:bg-slate-950 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current hidden xl:flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90`}
   >
     <button onClick={_f} title={'iterate over'}>
       <DoubleRight />

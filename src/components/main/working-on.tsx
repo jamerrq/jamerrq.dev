@@ -45,10 +45,9 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
   const days = Math.floor((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24))
   return (
     <li class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>*]:rounded-[10px] [&>span]:text-sm [&>span]:xl:text-base'>
-      <div class='absolute bottom-0 right-2 font-secondary text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90'>
+      <div class='absolute bottom-0 right-2 font-secondary text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90 py-0.5'>
         {days}+ {lang === 'en' ? 'days' : 'días'}
       </div>
-
       <h1 class='text-sm xl:text-base font-primary dark:text-emerald-100 text-emerald-950 bg-emerald-500 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'>
         {lang === 'en' ? project?.title.en : project?.title.es}
       </h1>
@@ -61,7 +60,7 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
           loading='lazy'
           class='aspect-[4/3] w-32'
         />
-        <aside class='flex flex-col xl:flex-row text-sm gap-4 items-center justify-center'>
+        <aside class='flex flex-col xl:flex-row text-sm gap-4 items-center justify-around'>
           <div class='flex gap-2 items-center justify-center'>
             {project.technologies.map((t) => {
               const a =
@@ -81,14 +80,20 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
                   astrodb: siAmazondocumentdb
                 }[t.toLowerCase().replaceAll(' ', '')] || siAstro
               return (
-                <svg
+                <div
                   key={t}
-                  class='w-7 h-7 xl:w-8 xl:h-8 hover:scale-110 shadow bg-white/80 p-1 rounded'
-                  // eslint-disable-next-line react/no-danger
-                  dangerouslySetInnerHTML={{ __html: a.svg }}
-                  fill={`#${a.hex}`}
-                  title={t}
-                />
+                  class='flex flex-col justify-center items-center gap-1'
+                >
+                  <svg
+                    key={t}
+                    class='w-7 h-7 xl:w-8 xl:h-8 hover:scale-110 shadow bg-slate-600/80 p-1 rounded'
+                    // eslint-disable-next-line react/no-danger
+                    dangerouslySetInnerHTML={{ __html: a.svg }}
+                    fill={`#fff`}
+                    title={t}
+                  />
+                  <span class='text-xs lowercase'>{t}</span>
+                </div>
               )
             })}
           </div>

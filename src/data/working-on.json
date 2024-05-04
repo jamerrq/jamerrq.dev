@@ -15,8 +15,8 @@
         "Supabase",
         "Tailwind CSS"
       ],
-      "preview": "",
-      "private": "true",
+      "preview": "https://freenkie-jamer.vercel.app/",
+      "private": "false",
       "start": "2024-02-24"
     },
     {

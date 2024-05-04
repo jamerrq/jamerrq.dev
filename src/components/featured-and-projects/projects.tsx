@@ -24,7 +24,7 @@ type ResourcesProps = {
 }
 
 export const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
-  <div class='left-1 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90'>
+  <div class='left-1 absolute bg-slate-900 rounded-[10px] text-cyan-950  fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90'>
     <button onClick={_f} title={'iterate over'}>
       <DoubleLeft />
     </button>
@@ -33,7 +33,7 @@ export const DoubleLeftButton = ({ _f }: { _f: () => void }) => (
 
 export const DoubleRightButton = ({ _f }: { _f: () => void }) => (
   <div
-    class={`right-1 absolute bg-slate-900 dark:bg-slate-300 rounded-[10px] text-cyan-950 dark:text-cyan-300 fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90`}
+    class={`right-1 absolute bg-slate-900  rounded-[10px] text-cyan-950  fill-current flex flex-wrap items-center justify-center p-1 shadow-md shadow-black/90`}
   >
     <button onClick={_f} title={'iterate over'}>
       <DoubleRight />
