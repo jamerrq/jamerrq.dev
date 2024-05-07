@@ -1,0 +1,55 @@
+---
+import Template from './template.astro'
+---
+
+<Template index={13} last>
+  <h1
+    class='text-xl font-bold text-gray-100 animate-slide-in-bottom bg-blueBoard rounded px-2 py-1 text-center text-pretty max-w-1/2'
+  >
+    ¿Quién soy?
+  </h1>
+  <div class='flex gap-6 items-center justify-center'>
+    <img
+      src='https://res.cloudinary.com/dm064xuo5/image/upload/f_auto,q_auto/v1/jamerrq.dev/eusbxr0uhubwt9h5fzu4'
+      class='rounded-[10px] w-64 border-4 border-blueBoard shadow-lg'
+      alt='@jamerrq'
+    />
+    <ul
+      class='text-slate-900 list-disc w-1/2 font-semibold flex flex-col gap-2'
+    >
+      <li>
+        <span>
+          Mi nombre es Jamer José, tengo 24 años y soy Ingeniero Matemático de
+          la Universidad EAFIT en Medellín, Colombia
+        </span>
+      </li>
+      <li>
+        <span>
+          Durante el último año me he dedicado a aprender y trabajar en el mundo
+          del desarrollo web, especialmente del lado del servidor
+        </span>
+      </li>
+      <li>
+        Desde hace aproximadamente 1 año he estado realizando diferentes
+        contribuciones a proyectos de código abierto, principalmente en
+        TypeScript, Python y C#
+        <img
+          src='https://github-readme-stats-eight-theta.vercel.app/api?username=jamerrq&show_icons=true&theme=gotham&hide_border=true&include_all_commits=true&count_private=true'
+          alt='My GitHub stats'
+          class='rounded mx-auto w-4/5 my-2'
+        />
+      </li>
+    </ul>
+  </div>
+  <a href='/oss/1' class='py-1 px-2 rounded bg-slate-950'>
+    <svg
+      viewBox='0 0 640 512'
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      fill='white'
+      ><path
+        d='M624 448h-80V113.45C544 86.19 522.47 64 496 64H384v64h96v384h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM312.24 1.01l-192 49.74C105.99 54.44 96 67.7 96 82.92V448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h336V33.18c0-21.58-19.56-37.41-39.76-32.17zM264 288c-13.25 0-24-14.33-24-32s10.75-32 24-32 24 14.33 24 32-10.75 32-24 32z'
+      ></path></svg
+    ></a
+  >
+</Template>

@@ -3,11 +3,11 @@ interface Props {
   lang?: string
 }
 const { lang = 'en' }: Props = Astro.props
-import Badge from './badge.astro'
+import Badge from './noAnimationBadge.astro'
 ---
 
 <Badge
-  class='animate-fade-in group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md font-medium text-neutral-200 duration-500'
+  class='animate-fade-in group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md font-medium duration-500'
 >
   <div
     class='translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0 flex'

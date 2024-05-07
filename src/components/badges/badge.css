@@ -1,0 +1,43 @@
+.badge {
+    --timing: linear(0, 0.3, 0.75, 1);
+
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+
+    border-image-source: conic-gradient(from var(--a),
+            #8decb4,
+            #41b06e,
+            #141e46);
+
+    border-radius: 5px;
+
+    border-image-slice: 0.9 1 1 1;
+    border-image-width: 0.15rem;
+
+    animation: move 6.28s infinite var(--timing);
+}
+
+.badge .fill {
+    border-image-slice: 1 1 1 1 fill;
+}
+
+.badge:active {
+    transform: translate(5px, 5px);
+    box-shadow: none;
+}
+
+@keyframes move {
+    from {
+        --a: 0deg;
+    }
+
+    to {
+        --a: 360deg;
+    }
+}
+
+@property --a {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}

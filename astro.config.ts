@@ -98,6 +98,7 @@ export default defineConfig({
     }
   },
   redirects: {
-    '/oss': '/oss/0'
+    '/oss': '/oss/0',
+    '/opensource': '/oss/0'
   }
 })

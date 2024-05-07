@@ -14,10 +14,10 @@ import WorkingOnTsx from './working-on.tsx'
 
 <Box
   title="Projects I'm working on"
-  otherStyles='xl:col-span-2 xl:row-span-4 gap-4'
+  otherStyles='xl:col-span-2 xl:row-span-4 p-4'
 >
   <header
-    class='text-2xl xl:text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
+    class='text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
   >
     <p>
       <!-- Working on -->
@@ -30,31 +30,4 @@ import WorkingOnTsx from './working-on.tsx'
     />
   </header>
   <WorkingOnTsx lang={lang} client:only='preact' />
-  <!-- <span class='text-center px-3 [&_a]:text-emerald-300'>
-    {lang === 'en' ? '#HolaMundoDay Workshop' : 'Taller #HolaMundoDay'}
-  </span>
-  <span class='text-center'>
-    {
-      lang === 'en'
-        ? 'Open Source Contributions for beginners'
-        : 'Contribuciones al Código Libre para principiantes'
-    }
-  </span>
-  <span class='text-center'>
-    <a
-      href='https://holamundo.day/#speakers'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='text-emerald-500 dark:text-emerald-300 bg-gray-600 px-2 py-1 rounded dark:bg-slate-900/80 hover:bg-gray-700 dark:hover:bg-slate-900/70 transition-colors'
-    >
-      {
-        lang === 'en'
-          ? 'More info at holamundo.day/#speakers'
-          : 'Más información en holamundo.day/#speakers'
-      }
-    </a>
-  </span>
-  <a href='/board'>
-    {lang === 'en' ? 'Preview (?)' : 'Vistazo (?)'}
-  </a> -->
 </Box>

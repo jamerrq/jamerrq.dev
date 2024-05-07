@@ -4,31 +4,34 @@ import Template from './template.astro'
 
 <Template index={1}>
   <h1
-    class='text-5xl font-bold animate-slide-in-bottom bg-blueBoard rounded px-2 py-1'
+    class='xl:text-6xl text-2xl font-bold animate-slide-in-bottom bg-blueBoard rounded px-2 py-1'
   >
     Contenidos
   </h1>
   <ul
-    class='list-disc bg-blueBoard px-6 py-1 gap-4 flex flex-col rounded font-semibold marker:text-slate-200'
+    class='list-disc bg-blueBoard px-8 py-4 gap-4 flex flex-col rounded font-semibold marker:text-slate-200 xl:text-xl'
   >
+    <li>
+      <span>
+        Un poco sobre
+        <a href='/oss/14'>mí,</a>
+        mi experiencia y su relación con el Open Source
+      </span>
+    </li>
     <li>
       <span> Una breve introducción a la iniciativa Open Source</span>
     </li>
     <li>
       <span>¡Empezamos a picar! - Parte Práctica con el Roadmap</span>
-      <ul class='list-disc ml-6 my-1 gap-1 flex flex-col marker:text-blue-300'>
+      <ul class='list-disc ml-6 my-1 gap-1 flex flex-col marker:text-blue-500'>
         <li>
-          <span>
-            Configuramos nuestras llaves de SSH para trabajar con GitHub
-          </span>
+          <span> Configuramos nuestras llaves de SSH</span>
         </li>
         <li>
-          <span>
-            Adaptamos Visual Studio Code para trabajar con Git y GitHub
-          </span>
+          <span> Adaptamos Visual Studio Code</span>
         </li>
         <li>
-          <span> Fork del repositorio</span>
+          <span>Hacemos un fork de nuestro repositorio</span>
         </li>
         <li>
           <span> Clonar el repositorio en tu máquina local</span>

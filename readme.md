@@ -2,9 +2,9 @@
 
 Source code for my personal website, [jamerrq.dev](https://jamerrq.dev)
 
-![](https://img.shields.io/badge/Made%20with-Astro-orange?style=for-the-badge&logo=astro&logoColor=orange)
+![](https://img.shields.io/badge/Made%20with-Astro-000?style=for-the-badge&logo=astro&logoColor=orange)
 
-## What can you learn from this project?
+## What can you learn from this project? 🧐
 
 - Astro Server Side Rendering with Deno and Deno Deploy
 - Astro View Transitions
@@ -12,27 +12,29 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev)
 - How to use signals with Preact
 - CSS Grid & Flexbox Layouts
 - PWA Development within an Astro App
-- Tailwind Tricks and Plugins
+- Styling with Tailwind CSS and Plugins
+- GitHub Project Board for managing tasks
+- Dark & Light Mode with Tailwind CSS
 
 ## Stack 🥞
 
 ![Astro](https://img.shields.io/badge/-Astro-000000?style=flat-square&logo=astro&logoColor=orange)
 ![Tailwind
-CSS](https://img.shields.io/badge/-Tailwind%20CSS-lightblue?style=flat-square&logo=tailwind-css&logoColor=blue)
-![Preact](https://img.shields.io/badge/-Preact-673AB8?style=flat-square&logo=preact&logoColor=white)
+CSS](https://img.shields.io/badge/-Tailwind%20CSS-000?style=flat-square&logo=tailwind-css&logoColor=blue)
+![Preact](https://img.shields.io/badge/-Preact-000000?style=flat-square&logo=preact&logoColor=white)
 ![MDX](https://img.shields.io/badge/-MDX-000000?style=flat-square&logo=markdown&logoColor=white)
 
 ## Previews
 
 ![Desktop](./lib/snaps/preview-4.png)
 ![Desktop](./lib/snaps/preview-3.png)
-![Mobile](./lib/snaps/preview-mobile-2.png)
+![Mobile](./lib/snaps/preview-mobile-3.png)
 
 ### Tooling 🛠️
 
-![Bun](https://img.shields.io/badge/-Bun-orange?style=flat-square&logo=bun&logoColor=white)
-![Prettier](https://img.shields.io/badge/-Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=black)
-![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
+![Bun](https://img.shields.io/badge/-Bun-000?style=flat-square&logo=bun&logoColor=white)
+![Prettier](https://img.shields.io/badge/-Prettier-000?style=flat-square&logo=prettier&logoColor=yellow)
+![ESLint](https://img.shields.io/badge/-ESLint-000?style=flat-square&logo=eslint&logoColor=indigo)
 
 ### CI/CD & Deployment 🚀
 
@@ -42,7 +44,7 @@ Deploy](https://img.shields.io/badge/-Deno%20Deploy-000000?style=flat-square&log
 
 ## Board 📋
 
-https://github.com/users/jamerrq/projects/1/views/2
+[Project Board on GitHub](https://github.com/users/jamerrq/projects/1/views/2)
 
 ## Resources 📚
 

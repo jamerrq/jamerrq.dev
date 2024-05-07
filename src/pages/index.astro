@@ -10,3 +10,27 @@ import Bento from '@components/main/main-bento.astro'
 <Layout title='jamerrq.dev'>
   <Bento lang={lang} />
 </Layout>
+<script>
+  // add key listener to go to /oss
+  // typing oss
+  const oss = ['o', 's', 's']
+  let ossIndex = 0
+  let ossTimeout: number | null = null
+  const ossListener = (e: KeyboardEvent) => {
+    if (e.key === oss[ossIndex]) {
+      ossIndex++
+      if (ossIndex === oss.length) {
+        window.location.href = '/oss'
+      }
+      if (ossTimeout) {
+        clearTimeout(ossTimeout)
+      }
+      ossTimeout = setTimeout(() => {
+        ossIndex = 0
+      }, 1000) as unknown as number
+    } else {
+      ossIndex = 0
+    }
+  }
+  window.addEventListener('keydown', ossListener)
+</script>

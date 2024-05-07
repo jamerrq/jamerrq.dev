@@ -13,9 +13,32 @@ const { page = 1 } = Astro.params
   <main class='w-[85dvw] min-h-[100dvh] grid place-content-center'>
     <CurrentPage index={+page} />
     <footer
-      class='absolute bottom-0 left-0 w-full flex opacity-10 hover:opacity-100 transition-opacity duration-200 ease-in-out'
+      class='absolute bottom-0 left-0 w-full flex opacity-0 hover:opacity-100 transition-opacity duration-200 ease-in-out'
     >
       <Buttons rounded={false} />
     </footer>
   </main>
+  <script is:inline define:vars={{ page }}>
+    const lastPage = 13
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        const currentPage = +page || 0
+        const nextPage = currentPage + 1
+        window.location.href = `/oss/${nextPage}`
+      }
+      if (e.key === 'ArrowLeft') {
+        const currentPage = +page || 0
+        const prevPage = currentPage - 1
+        window.location.href = `/oss/${prevPage}`
+      }
+      // initial page
+      if (e.key === 'Home') {
+        window.location.href = '/oss'
+      }
+      // last page
+      if (e.key === 'End') {
+        window.location.href = `/oss/${lastPage}`
+      }
+    })
+  </script>
 </Layout>

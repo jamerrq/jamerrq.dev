@@ -49,14 +49,14 @@ import Template from './template.astro'
     }
   </style>
   <span
-    class='px-2 py-1 rounded text-center font-primary font-bold animate-slide-in-top text-xl bg-blueBoard w-fit'
+    class='px-2 py-1 rounded text-center font-primary font-bold animate-slide-in-top text-3xl bg-blueBoard w-fit'
   >
     ¡Hola! <span class='wave'>👋🏾</span><br /> Bienvenidos a
   </span>
   <img
     src='https://res.cloudinary.com/dm064xuo5/image/upload/f_auto,q_auto/v1/jamerrq.dev/z41jwrqiwb3yuy91j4gu'
     alt='open source illustration'
-    class='animate-fade-in-right animate-delay-500 w-[100px] mt-3 mb-1'
+    class='animate-fade-in-right animate-delay-500 w-[150px] mt-3 mb-1'
   />
   <h1
     class='text-5xl font-bold animate-slide-in-bottom bg-blueBoard rounded px-2 py-1'
@@ -70,6 +70,15 @@ import Template from './template.astro'
     Aprendamos acerca del mundo del código abierto, cómo contribuir y colaborar
     en proyectos de software libre
   </h2>
+  <span class='italic text-slate-900 mt-8'>
+    Puedes visitar esta presentación en
+    <a
+      href='https://jamerrq.deno.dev/oss'
+      class='text-blue-700 hover:underline'
+    >
+      jamerrq.deno.dev/opensource
+    </a>
+  </span>
 </Template>
 <script>
   const h1 = document.querySelector('#slide-title')!

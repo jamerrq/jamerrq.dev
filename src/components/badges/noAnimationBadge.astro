@@ -1,0 +1,19 @@
+---
+interface Props {
+  class: string
+}
+
+const { props } = Astro
+---
+
+<div class=`animate-slide-in-top rounded ${props.class}`>
+  <span
+    class='relative flex overflow-hidden rounded shadow shadow-black border-2'
+  >
+    <div
+      class='flex items-center h-full w-full cursor-pointer justify-center rounded px-3 py-1 text-sm font-bold text-slate-900 dark:text-emerald-300 shadow shadow-black dark:shadow-gray-300'
+    >
+      <slot />
+    </div>
+  </span>
+</div>

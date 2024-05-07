@@ -44,11 +44,11 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
   // get number of days since the project started
   const days = Math.floor((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24))
   return (
-    <li class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>*]:rounded-[10px] [&>span]:text-sm [&>span]:xl:text-base'>
-      <div class='absolute bottom-0 right-2 font-secondary text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-100 text-emerald-950 px-1 shadow shadow-black/90 py-0.5'>
+    <li class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>span]:text-sm [&>span]:xl:text-base w-full'>
+      <div class='absolute bottom-0 right-2 font-secondary font-bold text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-200 text-emerald-950 px-1 shadow shadow-black/90 py-0.5 rounded'>
         {days}+ {lang === 'en' ? 'days' : 'días'}
       </div>
-      <h1 class='text-sm xl:text-base font-primary dark:text-emerald-100 text-emerald-950 bg-emerald-500 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90'>
+      <h1 class='text-sm font-primary dark:text-emerald-100 text-emerald-950 bg-emerald-500 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90 rounded'>
         {lang === 'en' ? project?.title.en : project?.title.es}
       </h1>
       <section class='bg-transparent w-full flex'>
@@ -86,13 +86,15 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
                 >
                   <svg
                     key={t}
-                    class='w-7 h-7 xl:w-8 xl:h-8 hover:scale-110 shadow bg-slate-600/80 p-1 rounded'
+                    class='w-7 h-7 xl:w-8 xl:h-8 shadow dark:bg-slate-600/80 bg-slate-200/80 p-1 rounded fill-slate-900 dark:fill-white'
                     // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{ __html: a.svg }}
-                    fill={`#fff`}
+                    // fill={`#fff`}
                     title={t}
                   />
-                  <span class='text-xs lowercase'>{t}</span>
+                  <span class='text-xs lowercase'>
+                    {t.toLowerCase().replaceAll(' ', '')}
+                  </span>
                 </div>
               )
             })}
@@ -104,11 +106,11 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
                   href={project.preview}
                   target='_blank'
                   rel='noopener noreferrer'
-                  class=''
+                  class='text-xs'
                   aria-label={`Preview for ${project.title.en}`}
                   title={`Preview for ${project.title.en}`}
                 >
-                  {lang === 'en' ? 'Project Preview' : 'Demo del Proyecto'}
+                  {lang === 'en' ? 'Preview' : 'Demo del Proyecto'}
                 </a>
               ) : null}
             </span>
@@ -134,7 +136,7 @@ effect(() => {
 export default function WorkingOn({ lang = 'en' }) {
   return (
     <div class='h-full w-full gap-2' id='working-on-client'>
-      <ul class='flex gap-2 text-base flex-col justify-around h-full font-secondary font-bold py-2'>
+      <ul class='flex gap-2 text-base flex-col justify-around h-full font-secondary font-bold py-6'>
         {Array.from({ length: 2 }, (_, i) => i + index.value).map((i) => (
           <ProjectCard
             lang={lang}

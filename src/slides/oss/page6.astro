@@ -12,8 +12,8 @@ import Template from './template.astro'
     viewBox='0 0 256 254'
     xmlns='http://www.w3.org/2000/svg'
     xmlns:xlink='http://www.w3.org/1999/xlink'
-    width='35'
-    height='35'
+    width='50'
+    height='50'
     preserveAspectRatio='xMidYMid'
     class='hover:scale-110 transition-scale duration-300 hover:drop-shadow-lg'
     ><defs
@@ -41,12 +41,12 @@ import Template from './template.astro'
       d='M180.828 252.605a15.874 15.874 0 0 0 12.65-.486l52.5-25.263a15.938 15.938 0 0 0 9.026-14.363V41.197a15.939 15.939 0 0 0-9.025-14.363L193.477 1.57a15.877 15.877 0 0 0-18.114 3.084L74.857 96.35l-43.78-33.232a10.614 10.614 0 0 0-13.56.603L3.476 76.494c-4.63 4.211-4.635 11.495-.012 15.713l37.967 34.638-37.967 34.637c-4.623 4.219-4.618 11.502.012 15.714l14.041 12.772a10.614 10.614 0 0 0 13.56.604l43.78-33.233 100.506 91.695a15.857 15.857 0 0 0 5.465 3.571Zm10.464-183.65-76.262 57.89 76.262 57.888V68.956Z'
     ></path></svg
   >
-  <p class='text-balance text-center text-slate-900'>
+  <p class='text-balance text-center text-slate-900 text-xl'>
     Aquí tenemos una lista de las mejores extensiones que puedes usar en Visual
     Studio Code para proyectos de Open Source.
   </p>
   <ul
-    class='[&_li]:bg-slate-800 [&_li]:px-2 [&_li]:py-1 [&_li]:rounded [&_li]:font-semibold flex flex-col gap-1 [&_li]:grid items-center [&_li]:xl:w-[50dvw] [&_li]:grid-cols-[1fr,1fr,40px] [&_li]:w-[80dvw]'
+    class='[&_li]:bg-slate-800 [&_li]:px-2 [&_li]:py-1 [&_li]:rounded [&_li]:font-semibold flex flex-col gap-2 [&_li]:grid items-center [&_li]:xl:w-[50dvw] [&_li]:grid-cols-[1fr,1fr,40px] [&_li]:w-[80dvw] mt-2'
   >
     <li>
       <span>
@@ -109,46 +109,13 @@ import Template from './template.astro'
         >
       </button>
     </li>
-    <!-- Git History -->
-    <li>
-      <span>
-        <a
-          href='https://github.com/DonJayamanne/gitHistoryVSCode'
-          target='_blank'
-          rel='noreferrer'>Git History</a
-        >
-      </span>
-      <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
-        ext install donjayamanne.githistory</span
-      >
-      <button
-        class='bg-blue-500 text-white px-2 py-0.5 rounded'
-        data-copy='ext install donjayamanne.githistory'
-      >
-        <svg
-          class='feather feather-copy'
-          fill='none'
-          height='24'
-          stroke='currentColor'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          stroke-width='2'
-          viewBox='0 0 24 24'
-          width='24'
-          xmlns='http://www.w3.org/2000/svg'
-          ><rect height='13' rx='2' ry='2' width='13' x='9' y='9'></rect><path
-            d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'
-          ></path></svg
-        >
-      </button>
-    </li>
     <!-- GitHub Pull Requests -->
     <li>
       <span>
         <a
           href='https://github.com/Microsoft/vscode-pull-request-github'
           target='_blank'
-          rel='noreferrer'>GitHub Pull Requests</a
+          rel='noreferrer'>GitHub Pull Requests (Opcional)</a
         >
       </span>
       <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
@@ -181,7 +148,7 @@ import Template from './template.astro'
         <a
           href='https://github.com/microsoft/vscode-remote-repositories-github'
           target='_blank'
-          rel='noreferrer'>GitHub Repositories</a
+          rel='noreferrer'>GitHub Repositories (Opcional)</a
         ></span
       >
       <span class='me-2 bg-white/10 rounded px-1 py-0.5 text-sm'>
