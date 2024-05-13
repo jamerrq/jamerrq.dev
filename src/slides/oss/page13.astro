@@ -15,7 +15,7 @@ import Template from './template.astro'
     referencias para que puedas seguir aprendiendo y contribuyendo a la comunidad!
   </span>
   <ul
-    class='text-center text-balance [&_li]:bg-slate-800 [&_li]:px-3 [&_li]:py-2 [&_li]:rounded [&_li]:font-semibold flex gap-3 flex-col max-w-1/2 mx-auto mt-4 [&_li]:text-blue-100'
+    class='text-center text-balance [&_li]:bg-slate-800 [&_li]:px-3 [&_li]:py-2 [&_li]:rounded [&_li]:font-semibold flex gap-1 flex-col w-1/2 items-center mx-auto mt-4 [&_li]:text-blue-100 [&_li]:w-full [&_li]:shadow-md'
   >
     <li class='hover:scale-105 transition-scale duration-300 hover:shadow'>
       <span>
@@ -38,7 +38,7 @@ import Template from './template.astro'
         Roadmap de la comunidad
       </a>
     </li>
-    <li>
+    <li class='hover:scale-105 transition-scale duration-300 hover:shadow'>
       4. <a
         href='https://www.youtube.com/watch?v=PVD1LNDxOnc&ab_channel=IBMTechnology'
         target='_blank'
@@ -47,23 +47,38 @@ import Template from './template.astro'
         Open Source Explained by IBM
       </a>
     </li>
-    <li>
+    <li class='hover:scale-105 transition-scale duration-300 hover:shadow'>
       5. <a href='https://www.gitkraken.com/' target='_blank' rel='noreferrer'>
         GitKraken
       </a>
     </li>
-  </ul>
+    <li class='hover:scale-105 transition-scale duration-300 hover:shadow'>
+      6. <a
+        href='https://github.com/marioizquierdo/git-branch-zsh-command'
+        target='_blank'
+        rel='noreferrer'
+      >
+        Branch: ZSH Plugin
+      </a>
+    </li>
+    <!-- Oh My ZSH -->
+    <li class='hover:scale-105 transition-scale duration-300 hover:shadow'>
+      7. <a href='https://ohmyz.sh/' target='_blank' rel='noreferrer'>
+        Oh My ZSH
+      </a>
+    </li>
 
-  <span
-    class='italic text-slate-950 font-semibold mt-5 xl:w-1/2 text-balance text-center'
-  >
-    Puedes visitar <a
-      href='https://github.com/firstcontributions/first-contributions/blob/main/translations/README.es.md'
-      target='_blank'
-      rel='noopener noreferrer'
-      class='text-blue-600 underline'>Primeras Contribuciones</a
-    > un proyecto patrocinado por
-    <a href='https://www.digitalocean.com/'> Digital Ocean,</a>
-    donde puedes dar un vistazo a proyectos para primeras contribuciones
-  </span>
+    <span
+      class='italic text-slate-950 font-semibold mt-5 xl:w-1/2 text-balance text-center'
+    >
+      Puedes visitar <a
+        href='https://github.com/firstcontributions/first-contributions/blob/main/translations/README.es.md'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='text-blue-600 underline'>Primeras Contribuciones</a
+      > un proyecto patrocinado por
+      <a href='https://www.digitalocean.com/'> Digital Ocean,</a>
+      donde puedes dar un vistazo a proyectos para primeras contribuciones
+    </span>
+  </ul>
 </Template>

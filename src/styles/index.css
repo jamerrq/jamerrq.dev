@@ -27,7 +27,13 @@ p {
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: gray black;
+    scrollbar-color: black gray;
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        scrollbar-color: gray black;
+    }
 }
 
 /* @font-face {
@@ -101,6 +107,7 @@ p {
     top: calc(1em + 2.0em)
 }
 
-pre, code {
+pre,
+code {
     font-family: 'Fira Mono', monospace;
 }

@@ -1,0 +1,153 @@
+---
+layout: '@layouts/blog-layout.astro'
+title: Herramientas de terminal en Linux que mejorarán tu flujo de trabajo y productividad
+hrefLang: ../../../blog/linux-tools-improve-workflow
+---
+
+import { Image } from 'astro:assets'
+import Code from '@components/main/code.astro'
+import { pwaSeoConfig } from '@data/codes.ts'
+import BlogImage from '@components/main/blog-image.astro'
+
+<div align="center">
+	<BlogImage src="/img/blog/gnu-linux.webp" />
+</div>
+
+## Introducción
+
+La terminal de Linux es una herramienta poderosa que puede ayudarte a hacer las
+cosas de manera rápida y eficiente. Pero a veces puede ser un poco abrumadora,
+especialmente si eres nuevo en Linux. Con las herramientas adecuadas y un poco
+de práctica, puedes mejorar tu flujo de trabajo y ser más productivo.
+
+Gracias a la comunidad de código abierto y al auge de algunos lenguajes de
+programación como Rust y Go, tenemos muchas herramientas que pueden ayudarnos a
+mejorar nuestro flujo de trabajo en Linux. En esta publicación, compartiré
+contigo algunas de las herramientas que uso a diario para mejorar mi flujo de
+trabajo cuando trabajo usando la terminal de Linux.
+
+## 1. FZF: Buscador difuso de línea de comandos
+
+<a href='https://github.com/junegunn/fzf' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/fzf-preview.webp'
+    alt='fzf logo'
+    width='2560'
+    height='1600'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+¿Estás cansado de recordar el nombre exacto de un archivo o directorio? ¿O
+quizás estás cansado de escribir comandos largos? Deberías probar FZF. FZF es un
+buscador difuso de línea de comandos que se puede utilizar con cualquier lista;
+archivos, directorios, procesos, etc. Es una herramienta muy potente que puede
+ahorrarte mucho tiempo.
+
+No más usar las teclas de flecha para navegar por el historial de tu terminal,
+solo escribe unos pocos caracteres y FZF hará el resto.
+
+Esta herramienta es imprescindible para cualquier usuario de Linux. Y puedes
+consultar el código fuente de FZF en <a href='https://github.com/junegunn/fzf' target='_blank'
+rel='noopener'>GitHub (junegunn/fzf)</a> así como las instrucciones de instalación.
+
+## 2. Ripgrep: Un grep más rápido
+
+<a href='https://github.com/BurntSushi/ripgrep' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/ripgrep.webp'
+    alt='ripgrep'
+    width='769'
+    height='295'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+Ripgrep es una herramienta de búsqueda orientada a líneas que busca de forma
+recursiva en tu directorio actual un patrón de expresión regular. Es una
+alternativa más rápida a grep, y está escrita en Rust. Es más rápido que grep
+porque está optimizado para buscar en directorios grandes mientras ignora los
+archivos que no te interesan.
+
+Tienes la posibilidad de consultar el código fuente de Ripgrep en
+<a href='https://github.com/BurntSushi/ripgrep' target='_blank'
+rel='noopener'>GitHub (BurntSushi/ripgrep)</a> así como las instrucciones de
+uso e instalación.
+
+## 3. Exa: Un reemplazo moderno para ls
+
+<a href='https://github.com/ogham/exa' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/exa.webp'
+    alt='ripgrep'
+    width='2687'
+    height='1460'
+  />
+</a>
+
+Exa es un reemplazo moderno para el comando `ls`. Está escrito en Rust y tiene
+muchas características que el comando `ls` no tiene. Es más rápido, más
+colorido, y tiene muchas opciones que puedes usar para personalizar la salida.
+
+Puedes consultar el código fuente de Exa en <a
+href='https://github.com/ogham/exa' target='_blank' rel='noopener'>GitHub (ogham/exa)</a>
+así como sus instrucciones de instalación.
+
+## 4. Bat: Un clon de cat con alas
+
+<a href='https://github.com/sharkdp/bat' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/bat-demo.webp'
+    alt='ripgrep'
+    width='656'
+    height='327'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+Bat es un reemplazo moderno para el comando `cat`.
+Está escrito en Rust y tiene muchas características que el comando `cat` no
+tiene. Tiene resaltado de sintaxis, integración con git, y también es más rápido
+que el comando `cat` gracias a su implementación en este lenguaje de programación.
+
+Puedes consultar el código fuente de Bat en <a
+href='https://github.com/sharkdp/bat' target='_blank' rel='noopener'>GitHub (sharkdp/bat)</a>
+as well as the installation instructions.
+
+## 5. Zoxide: Navega por tu sistema de archivos de forma más rápida
+
+<a href='https://github.com/ajeetdsouza/zoxide' target='_blank' rel='noopener'>
+  <Image
+	src='/img/blog/zoxide.webp'
+	alt='ripgrep'
+	width='2314'
+	height='1250'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+Con Zoxide puedes saltar por tu sistema de archivos con facilidad. Es una forma
+más rápida de navegar por tu sistema de archivos. Es una herramienta que lleva
+un registro de los directorios que visitas y te permite saltar a ellos con
+facilidad. Esta es sin duda una herramienta imprescindible para cualquier
+usuario de Linux.
+
+Puedes consultar el código fuente de Zoxide en <a
+href='https://github.com/ajeetdsouza/zoxide' target='_blank'
+rel='noopener'>GitHub (ajeetdsouza/zoxide)</a> as well as the installation instructions.
+
+## Resumen
+
+Esta es un resumen de algunas de las herramientas que uso a diario para mejorar
+mi flujo de trabajo cuando trabajo usando la terminal de Linux. En esta tabla,
+puedes ver un resumen de las herramientas mencionadas en esta publicación:
+
+| Herramienta | Descripción                                  | Repositorio (GitHub) (GitHub)                                                                         |
+| ----------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| FZF         | Buscador difuso de comandos                  | <a href="https://github.com/junegunn/fzf" target="_blank" rel="noreferrer" >junegunn/fzf</a>          |
+| Ripgrep     | Grep pero más rápido                         | <a href='https://github.com/BurntSushi/ripgrep' target='_blank' rel='noopener'>BurntSushi/ripgrep</a> |
+| Exa         | Un reemplazo moderno para ls                 | <a href='https://github.com/ogham/exa' target='_blank' rel='noopener'>ogham/exa</a>                   |
+| Bat         | Clon de cat con alas                         | <a href='https://github.com/sharkdp/bat' target='_blank' rel='noopener'>sharkdp/bat</a>               |
+| Zoxide      | Navega por tus archivos de manera más rápida | <a href='https://github.com/ajeetdsouza/zoxide' target='_blank' rel='noopener'>ajeetdsouza/zoxide</a> |
+
+¡Gracias por leer! Espero que hayas encontrado útil esta publicación.

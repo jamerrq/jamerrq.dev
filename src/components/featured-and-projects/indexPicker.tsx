@@ -15,8 +15,10 @@ export default function IndexPicker({
           key={i}
           onClick={() => goToIndex(i)}
           aria-label={`subpage ${i}`}
-          className={`w-3 h-3 rounded-full mx-1 ${
-            i === reference.value ? 'bg-cyan-300' : 'bg-cyan-950'
+          className={`w-4 h-3 rounded-full mx-1 ${
+            i === reference.value
+              ? 'dark:bg-cyan-300 bg-cyan-900'
+              : 'dark:bg-cyan-950 bg-cyan-500'
           }`}
         />
       ))}

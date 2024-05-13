@@ -1,0 +1,146 @@
+---
+layout: '@layouts/blog-layout.astro'
+title: Linux Terminal tools that will improve your workflow and boost your productivity
+hrefLang: ../es/blog/herramientas-linux-mejorar-flujo-trabajo
+---
+
+import { Image } from 'astro:assets'
+import Code from '@components/main/code.astro'
+import { pwaSeoConfig } from '@data/codes.ts'
+import BlogImage from '@components/main/blog-image.astro'
+
+<div align="center">
+	<BlogImage src="/img/blog/gnu-linux.webp" />
+</div>
+
+## Introduction
+
+The Linux terminal is a powerful tool that can help you to get things done
+quickly. But sometimes it can be a bit overwhelming, especially if you're new to
+Linux. With the right tools and a bit of practice, you can improve your workflow
+and become more productive.
+
+Thanks to the open-source community and the auge of some programming languages
+blaziling fast as Rust and Go, we have a lot of tools that can help us to
+improve our workflow on Linux. In this post, I'll share with you some of the
+tools that I use on a daily basis to improve my workflow when working using the
+Linux terminal.
+
+## 1. FZF: Command Line Fuzzy Finder
+
+<a href='https://github.com/junegunn/fzf' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/fzf-preview.webp'
+    alt='fzf logo'
+    width='2560'
+    height='1600'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+Are you tired of remembering the exact name of a file or directory? Or maybe
+you're tired of typing long commands? You should give FZF a try. FZF is a
+command-line fuzzy finder that can be used with any list; files, directories,
+processes, etc. It's a very powerful tool that can save you a lot of time.
+
+No more using the arrow keys to navigate through your terminal history, just type a few
+characters and FZF will do the rest.
+
+This tool is a must-have for any Linux user. And you could check out the
+source code for FZF on <a href='https://github.com/junegunn/fzf' target='_blank'
+rel='noopener'>GitHub</a> as well as the installation instructions.
+
+## 2. Ripgrep: A faster grep
+
+<a href='https://github.com/BurntSushi/ripgrep' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/ripgrep.webp'
+    alt='ripgrep'
+    width='769'
+    height='295'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+Ripgrep is a line-oriented search tool that recursively searches your current
+directory for a regex pattern. It's a faster alternative to grep, and it's
+written in Rust. It's faster than grep because it's optimized for searching in
+large directories while ignoring files that you don't care about.
+
+You can check out the source code for Ripgrep on
+<a href='https://github.com/BurntSushi/ripgrep' target='_blank' rel='noopener'>GitHub</a> as well as the installation instructions.
+
+## 3. Exa: A modern replacement for ls
+
+<a href='https://github.com/ogham/exa' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/exa.webp'
+    alt='ripgrep'
+    width='2687'
+    height='1460'
+  />
+</a>
+
+Exa is a modern replacement for the `ls` command. It's written in Rust and it
+has a lot of features that the `ls` command doesn't have. It's faster, more
+colorful, and it has a lot of options that you can use to customize the output.
+
+You can check out the source code for Exa on <a
+href='https://github.com/ogham/exa' target='_blank' rel='noopener'>GitHub</a> as
+well as the installation instructions.
+
+## 4. Bat: A cat clone with wings
+
+<a href='https://github.com/sharkdp/bat' target='_blank' rel='noopener'>
+  <Image
+    src='/img/blog/bat-demo.webp'
+    alt='ripgrep'
+    width='656'
+    height='327'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+Bat is a cat clone with wings. It's a modern replacement for the `cat` command.
+It's written in Rust and it has a lot of features that the `cat` command doesn't
+have. It's syntax highlighting, git integration, and it's also faster than the
+`cat` command.
+
+You can check out the source code for Bat on <a
+href='https://github.com/sharkdp/bat' target='_blank' rel='noopener'>GitHub</a>
+as well as the installation instructions.
+
+## 5. Zoxide: A faster way to navigate your filesystem
+
+<a href='https://github.com/ajeetdsouza/zoxide' target='_blank' rel='noopener'>
+  <Image
+	src='/img/blog/zoxide.webp'
+	alt='ripgrep'
+	width='2314'
+	height='1250'
+	class='shadow-md rounded shadow-black'
+  />
+</a>
+
+With Zoxide you can jump around your filesystem with ease. It's a faster way to
+navigate your filesystem. It's a tool that keeps track of the directories you
+visit and it allows you to jump to them with ease. It's a must-have tool for any
+Linux user. You can check out the source code for Zoxide on <a
+href='https://github.com/ajeetdsouza/zoxide' target='_blank'
+rel='noopener'>GitHub</a> as well as the installation instructions.
+
+## To Conclude
+
+This is a summary of some of the tools that I use on a daily basis to improve my
+workflow when working using the Linux terminal. In this table, you can see a
+recap of the tools mentioned in this post:
+
+| Tool    | Description                              | Repository (GitHub)                                                                                   |
+| ------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| FZF     | Command Line Fuzzy Finder                | <a href="https://github.com/junegunn/fzf" target="_blank" rel="noreferrer" >junegunn/fzf</a>          |
+| Ripgrep | A faster grep                            | <a href='https://github.com/BurntSushi/ripgrep' target='_blank' rel='noopener'>BurntSushi/ripgrep</a> |
+| Exa     | A modern replacement for ls              | <a href='https://github.com/ogham/exa' target='_blank' rel='noopener'>ogham/exa</a>                   |
+| Bat     | A cat clone with wings                   | <a href='https://github.com/sharkdp/bat' target='_blank' rel='noopener'>sharkdp/bat</a>               |
+| Zoxide  | A faster way to navigate your filesystem | <a href='https://github.com/ajeetdsouza/zoxide' target='_blank' rel='noopener'>ajeetdsouza/zoxide</a> |
+
+Thanks for reading! I hope you found this post useful.

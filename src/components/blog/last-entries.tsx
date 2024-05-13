@@ -1,7 +1,7 @@
 const LAST_ENTRIES_STYLES = [
   'col-span-6',
   'row-span-5',
-  'bg-slate-300/80',
+  'bg-slate-300/90',
   'dark:bg-slate-900/90',
   'dark:text-slate-300',
   'rounded-[10px]',
@@ -20,7 +20,8 @@ const LAST_ENTRIES_STYLES = [
   'dark:text-slate-300',
   'py-4',
   'px-2',
-  'min-h-[25rem]'
+  'min-h-[25rem]',
+  'overflow-y-auto'
 ].join(' ')
 
 import { entries } from '@data/blog.json'
@@ -89,12 +90,12 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
             if (isNaN(dateA)) return 1
             const dateB = new Date(b.date).getTime()
             if (isNaN(dateB)) return -1
-            return -dateB + dateA
+            return -dateA + dateB
           })
           .map((entry, index) => {
             return (
               <Fragment key={index}>
-                <li class='font-secondary uppercase text-sm xl:text-base py-4 px-4 rounded-[10px] cursor-pointer hover:border-slate-400 dark:hover:border-slate-600/70 border-emerald-200 transition-all ease-in-out flex flex-col gap-2 shadow border-2'>
+                <li class='font-secondary uppercase text-sm xl:text-base py-4 px-4 rounded-[10px] cursor-pointer hover:border-slate-400 dark:hover:border-slate-600/70 dark:border-emerald-200 transition-all ease-in-out flex flex-col gap-2 shadow border-2 relative'>
                   <a
                     href={`${lang === 'en' ? entry.href : entry.hrefEs}`}
                     class='h-full'
@@ -103,18 +104,18 @@ export default function LastEntries({ lang = 'en' }: { lang?: string }) {
                       <span class='font-bold'>
                         {lang === 'en' ? entry.title : entry.titleEs}
                       </span>
-                      <div class='xl:ml-auto'>
+                      <div class='xl:ml-auto flex flex-col gap-1'>
                         <ReadTimeBadge
                           readTime={entry.readTimeMins}
                           lang={lang}
                         />
+                        <span class='px-1 py-0.5 dark:bg-emerald-300/60 bg-emerald-800/60 rounded text-emerald-100 dark:text-emerald-950 text-xs text-center'>
+                          {entry.date}
+                        </span>
                       </div>
                     </div>
                     <Badges badges={entry.tags} />
                   </a>
-                  <span class='grow dark:bg-emerald-300/60 bg-emerald-800/60 p-2 rounded text-emerald-100 dark:text-emerald-950'>
-                    {entry.date}
-                  </span>
                 </li>
               </Fragment>
             )

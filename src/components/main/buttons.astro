@@ -2,9 +2,10 @@
 interface Props {
   href?: string
   rounded?: boolean
+  border?: boolean
 }
 
-const { href, rounded = true }: Props = Astro.props
+const { href, rounded = true, border = false }: Props = Astro.props
 
 const BUTTONS_STYLES = [
   'col-span-1 xl:col-span-2',
@@ -21,11 +22,12 @@ const BUTTONS_STYLES = [
   'xl:h-full',
   'transition-all',
   'duration-200',
-  'dark:bg-slate-900/95',
+  'dark:bg-slate-900',
   'dark:text-slate-100',
-  'bg-slate-300/80',
+  'bg-slate-300',
   'p-2',
-  'font-bold'
+  'font-bold',
+  border && 'border-2 border-slate-50'
   // 'card'
 ].join(' ')
 

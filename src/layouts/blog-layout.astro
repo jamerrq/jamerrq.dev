@@ -22,12 +22,25 @@ import '@fontsource/fira-mono'
       scroll-behavior: smooth;
       scrollbar-width: thin;
     }
+
+    /* Tables */
+    #mdx-content table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin: 1em 0;
+      font-size: 0.9em;
+      display: block;
+      overflow-x: auto;
+      border-radius: 0.5em;
+      border: 1px solid #fff;
+    }
   </style>
   <div
-    class='dark:bg-[#1b383c] py-8 bg-[#75A47F] xl:h-[100dvh] h-[95dvh] lg:w-[80dvw] md:w-[95dvw] w-[65dvw] xs:w-[95dvw] mx-auto px-4 dark:text-emerald-50 [&>*]:text-balance overflow-y-auto max-h-[100dvh] [scrollbar-color:#1b383c_#9DBC98] [scrollbar-width:thin] relative'
+    class='dark:bg-gray-900/95 py-8 bg-[#76ABAE] xl:h-[100dvh] h-[95dvh] lg:w-[80dvw] md:w-[95dvw] w-[65dvw] xs:w-[95dvw] mx-auto px-4 dark:text-emerald-50 [&>*]:text-balance overflow-y-auto max-h-[100dvh] [scrollbar-width:thin] relative'
   >
     <aside class='sticky -top-5'>
-      <Buttons href={frontmatter.hrefLang} />
+      <Buttons href={frontmatter.hrefLang} border />
     </aside>
     <br />
     <header
@@ -41,7 +54,8 @@ import '@fontsource/fira-mono'
     </header>
     <br />
     <div
-      class='[&>h1]:font-bold font-secondary font-semibold text-sm [&_h1]:text-emerald-900 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-900 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#153448] [&_a]:dark:text-cyan-300 flex flex-col gap-2 mb-8 [&_blockquote]:[font-secondary] [&_code]:[font-firaMono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden'
+      class='[&>h1]:font-bold font-secondary font-semibold text-sm [&_h1]:text-emerald-950 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-950 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#153448] [&_a]:dark:text-cyan-300 flex flex-col gap-5 mb-8 [&_blockquote]:[font-secondary] [&_code]:[font-firaMono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden px-2 [&_table]:border [&_table]:rounded [&_table]:text-center [&_thead]:border [&_table]:p-2'
+      id='mdx-content'
     >
       <slot />
     </div>

@@ -87,6 +87,20 @@
         "pwa",
         "webdev"
       ]
+    },
+    {
+      "title": "Linux Terminal Tools that will improve your workflow and boost productivity",
+      "date": "2024-May-13",
+      "titleEs": "Herramientas de terminal en Linux que mejorarán tu flujo de trabajo y productividad",
+      "href": "blog/linux-tools-improve-workflow",
+      "hrefEs": "blog/herramientas-linux-mejorar-flujo-trabajo",
+      "readTimeMins": "10",
+      "tags": [
+        "linux",
+        "tools",
+        "workflow",
+        "terminal"
+      ]
     }
   ]
 }

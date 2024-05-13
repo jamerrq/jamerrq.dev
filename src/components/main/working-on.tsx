@@ -45,7 +45,7 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
   const days = Math.floor((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24))
   return (
     <li class='grid justify-items-center items-center gap-1 [&>*]:text-center relative [&>span]:text-sm [&>span]:xl:text-base w-full'>
-      <div class='absolute bottom-0 right-2 font-secondary font-bold text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-200 text-emerald-950 px-1 shadow shadow-black/90 py-0.5 rounded'>
+      <div class='absolute bottom-0 right-2 font-secondary font-bold text-xs dark:bg-emerald-700 bg-emerald-500 dark:text-emerald-50 text-emerald-950 px-1 shadow shadow-black/90 py-0.5 rounded'>
         {days}+ {lang === 'en' ? 'days' : 'días'}
       </div>
       <h1 class='text-sm font-primary dark:text-emerald-100 text-emerald-950 bg-emerald-500 dark:bg-emerald-900 px-2 py-1 shadow shadow-black/90 rounded'>
