@@ -42,9 +42,6 @@ export const DoubleRightButton = ({ _f }: { _f: () => void }) => (
 )
 
 function SimpleIcon(key: string) {
-  if (key === 'javascript') {
-    console.log('key', key)
-  }
   const Icon = simpleIcons[key as keyof toExportType]
   if (typeof Icon === 'function') {
     // return icon with title
@@ -73,7 +70,7 @@ function IndexPicker({ n, reference }: { n: number; reference: any }) {
           key={i}
           onClick={() => goToIndex(i)}
           aria-label={`subpage ${i}`}
-          className={`w-3 h-3 rounded-full mx-1 ${
+          className={`w-3 h-2 rounded-full mx-1 ${
             i === reference.value ? 'bg-cyan-300' : 'bg-cyan-950'
           }`}
         />
@@ -138,7 +135,7 @@ function goLeft() {
   cooldown.value = COOLDOWN_TIME
 }
 
-function ResourceCard({
+function ProjectCard({
   project,
   lang,
   i
@@ -280,7 +277,7 @@ export default function Resources({ n = 1, lang = 'en' }: ResourcesProps) {
     <>
       {Array.from(Array(n).keys()).map((i) => {
         const project = concatedData.at((i + index.value) % data.length)
-        return <ResourceCard project={project} lang={lang} i={i} key={i} />
+        return <ProjectCard project={project} lang={lang} i={i} key={i} />
       })}
     </>
   )

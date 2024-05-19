@@ -1,12 +1,12 @@
 import type { ManifestOptions } from 'vite-plugin-pwa'
 
 export const seoConfig = {
-  baseURL: 'https://jamerrq.deno.dev/', // Production URL.
+  baseURL: 'https://jamerrq.dev/', // Production URL.
   description:
-    'Desarrollador de software con experiencia en desarrollo web y aplicaciones backend.',
+    "I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems.",
   type: 'website',
   image: {
-    url: 'https://jamerrq.deno.dev/og-image2.png',
+    url: 'https://jamerrq.dev/og-image2.png',
     alt: 'jamerrq.dev',
     width: 730,
     height: 382
@@ -24,7 +24,7 @@ export const manifest: Partial<ManifestOptions> = {
   name: 'jamerrq.dev',
   short_name: 'jamerrq.dev',
   description:
-    'Desarrollador de software con experiencia en desarrollo web y aplicaciones backend.',
+    "I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems.",
   theme_color: '#0F0F0F',
   background_color: '#0F0F0F',
   display: 'fullscreen',

@@ -269,6 +269,24 @@
         "leetcode75-2.webp",
         "leetcode75-3.webp"
       ]
+    },
+    {
+      "title": "Full Stack Resources App",
+      "description": {
+        "en": "Web full stack resources for developers, with a focus on the MERN stack.",
+        "es": "Recursos web full stack para desarrolladores, con un enfoque en el stack MERN."
+      },
+      "stack": [
+        "Next JS",
+        "Vitest",
+        "Tailwind CSS"
+      ],
+      "demo": "https://resources-app.vercel.app/",
+      "repository": "https://github.com/jamerrq/resources-app",
+      "images": [
+        "resources-app.webp",
+        "resources-app-2.webp"
+      ]
     }
   ]
 }

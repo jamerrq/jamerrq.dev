@@ -17,14 +17,14 @@ import WorkingOnTsx from './working-on.tsx'
   otherStyles='xl:col-span-2 xl:row-span-4 p-4'
 >
   <header
-    class='text-3xl flex gap-2 text-emerald-950 dark:text-emerald-300 items-center'
+    class='text-3xl flex gap-2 text-slate-950 dark:text-emerald-300 items-center'
   >
     <p>
       <!-- Working on -->
       {lang === 'en' ? 'Working On' : 'Trabajando En'}
     </p>
     <svg
-      class='w-8 h-8 inline-flex shadow bg-white/50 p-1 rounded dark:bg-slate-900/80'
+      class='w-8 h-8 inline-flex shadow rounded-full dark:bg-slate-900/80'
       set:html={siGitkraken.svg}
       fill={`#${siGitkraken.hex}`}
     />

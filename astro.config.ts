@@ -24,9 +24,7 @@ export default defineConfig({
     preact(),
     pageInsight(),
     sitemap({
-      filter: (page) =>
-        page !== 'https://jamerrq.deno.dev/board/' &&
-        page !== 'https://jamerrq.deno.dev/es/board/'
+      filter: (page) => page !== 'https://jamerrq.dev/board/'
     }),
     mdx(),
     AstroPWA({
@@ -86,7 +84,7 @@ export default defineConfig({
       strategy: 'pathname'
     }
   },
-  site: 'https://jamerrq.deno.dev',
+  site: 'https://jamerrq.dev',
   image: {
     domains: ['https://github.com/']
   },

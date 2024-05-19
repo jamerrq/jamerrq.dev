@@ -1,0 +1,27 @@
+---
+/** https://developers.google.com/search/docs/appearance/structured-data/organization */
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'website',
+  url: 'https://jamerrq.dev',
+  image: 'https://jamerrq.dev/og-image2.png',
+  sameAs: [
+    'https://www.instagram.com/jamerrq',
+    'https://x.com/jamerrq',
+    'https://github.com/jamerrq',
+    'https://twitter.com/jamerrq',
+    'https://www.linkedin.com/in/jamerrq'
+  ],
+  logo: 'https://jamerrq.dev/og-image2.png',
+  name: 'jamerrq.dev',
+  alternateName: 'Jamer José - jamerrq.dev',
+  description:
+    "I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems."
+}
+---
+
+<script
+  is:inline
+  type='application/ld+json'
+  set:html={JSON.stringify(organizationSchema)}
+/>

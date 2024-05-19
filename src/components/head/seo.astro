@@ -1,5 +1,6 @@
 ---
 import { SEO } from 'astro-seo'
+import RichResults from './richResults.astro'
 ---
 
 <meta charset='UTF-8' />
@@ -9,18 +10,20 @@ import { SEO } from 'astro-seo'
   content='width=device-width,initial-scale=1,viewport-fit=cover'
 />
 <link rel='icon' type='image/png' href='/favicon.png' />
+<!-- Cannonical -->
+<link rel='canonical' href='https://jamerrq.dev' />
 <meta name='generator' content={Astro.generator} />
 <!-- Open Graph -->
 <meta name='twitter:card' content='summary_large_image' />
 <meta name='twitter:site' content='@jamerrq' />
 <meta name='twitter:title' content='jamerrq.dev' />
-<meta name='twitter:description' content='Software Development' />
-<meta name='twitter:image' content='https://jamerrq.deno.dev/og-image2.png' />
+<meta name='twitter:description' content='Jamer José: Software Development' />
+<meta name='twitter:image' content='https://jamerrq.dev/og-image2.png' />
 <meta property='og:title' content='jamerrq.dev' />
 <meta property='og:type' content='personal website' />
-<meta property='og:url' content='https://jamerrq.deno.dev' />
-<meta property='og:image' content='https://jamerrq.deno.dev/og-image2.png' />
-<meta property='og:description' content='Software Development' />
+<meta property='og:url' content='https://jamerrq.dev' />
+<meta property='og:image' content='https://jamerrq.dev/og-image2.png' />
+<meta property='og:description' content='Jamer José: Software Development' />
 <meta property='og:site_name' content='jamerrq.dev' />
 <meta name='theme-color' content='#10B981' />
 <!-- Robots -->
@@ -112,21 +115,22 @@ import { SEO } from 'astro-seo'
 
 <SEO
   title='Jamer José - Backend Developer'
-  description='I am a backend developer with a focus on Node.js and TypeScript. I am passionate about building scalable and maintainable systems.'
+  description="I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems."
   openGraph={{
     basic: {
       title: 'jamerrq.dev',
       type: 'website',
-      image: 'https://jamerrq.deno.dev/og-image2.png'
+      image: 'https://jamerrq.dev/og-image2.png'
     }
   }}
   twitter={{
     creator: '@jamerrq',
     card: 'summary_large_image',
     description:
-      'I am a backend developer with a focus on Node.js and TypeScript. I am passionate about building scalable and maintainable systems.',
-    image: 'https://jamerrq.deno.dev/og-image2.png',
+      "I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems.",
+    image: 'https://jamerrq.dev/og-image2.png',
     site: '@jamerrq',
     title: 'jamerrq.dev'
   }}
 />
+<RichResults />

@@ -1,95 +1,64 @@
 ---
 import OpenToWork from '@components/badges/open-to-work.astro'
 import Box from '@components/boxes/box.astro'
+
 interface Props {
   lang: string
 }
+
 const { lang = 'en' }: Props = Astro.props
+const paragraphs: Array<Record<string, string>> = [
+  {
+    es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro actualmente en proceso de construcción de mi experiencia como Desarrollador Backend de tiempo parcial en Dium, donde estoy aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
+    en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience as a part-time Backend Developer at Dium, where I am learning and developing my skills in the exciting world of backend development.'
+  },
+  {
+    es: 'Fiel a la frase «la mejor (y única) forma de lograr algo es comenzándolo», me encuentro en constante búsqueda de nuevos retos y oportunidades que me permitan ampliar mis conocimientos y habilidades en el área de la programación.',
+    en: 'True to the phrase "the best (and only) way to achieve something is to start it", I am constantly looking for new challenges and opportunities that allow me to expand my knowledge and skills in the field of programming.'
+  },
+  {
+    es: 'Me apasionan los algoritmos, el código abierto y el desarrollo web en general, y considero que el aprendizaje continuo es una parte fundamental del crecimiento profesional. Además del desarrollo backend, disfruto del ajedrez y de explorar nuevas tecnologías relacionadas con el desarrollo web.',
+    en: 'I am passionate about algorithms, open source and web development in general, and I consider that continuous learning is a fundamental part of professional growth. In addition to backend development, I enjoy chess and exploring new technologies related to web development.'
+  },
+  {
+    es: 'Soy una persona entusiasta, proactiva y con gran capacidad de aprendizaje, siempre dispuesto a asumir nuevos desafíos y contribuir de manera positiva en los proyectos en los que me involucro. ¿Te gustaría saber más sobre mí? ¡No dudes en contactarme!',
+    en: 'I am an enthusiastic, proactive person with a great capacity for learning, always willing to take on new challenges and contribute positively to the projects I am involved in. Would you like to know more about me? Do not hesitate to contact me!'
+  }
+]
 ---
 
-<Box title='Get to know me' otherStyles='xl:col-span-4 xl:row-span-2'>
-  <style>
-    .phrase {
-      font-style: italic;
-    }
-
-    .phrase::before {
-      content: '« ';
-    }
-
-    .phrase::after {
-      content: ' »';
-    }
-  </style>
-  <header class='flex flex-col xl:flex-row gap-1 items-center'>
-    <h1 class='dark:text-emerald-300 text-emerald-950 text-2xl xl:text-3xl'>
+<Box
+  title='Get to know me'
+  otherStyles='xl:col-span-4 xl:row-span-2 min-h-max py-2'
+>
+  <header class='flex flex-col xl:flex-row gap-1 items-center mt-2'>
+    <h1 class='dark:text-emerald-300 text-slate-950 text-3xl xl:text-4xl'>
       {lang === 'en' ? 'Get To Know Me' : 'Conóceme'}
     </h1>
     <OpenToWork lang={lang} />
   </header>
   <div
-    class='flex items-center p-3 justify-around w-full font-secondary xl:text-base text-sm relative'
+    class='flex px-2 py-1 justify-center items-center w-full font-secondary xl:text-base text-sm relative h-40'
   >
-    <ul class='w-full text-center p-2 gap-1.5 flex flex-col [&_p]:text-balance'>
-      <li>
-        <p>
-          {
-            lang === 'en'
-              ? "My name is Jamer José, I'm a Mathematical Engineer from"
-              : 'Mi nombre es Jamer José, soy un Ingeniero Matemático de'
-          }
-          <a
-            href='https://www.eafit.edu.co/'
-            rel='noopener noreferrer'
-            target='_blank'
-            class='text-slate-50 dark:text-slate-800 inline dark:bg-blue-100 bg-blue-800 px-1.5 py-0.5 rounded-[10px] w-fit'
-          >
-            {lang === 'en' ? 'EAFIT University' : 'la Universidad EAFIT'}
-          </a>
-        </p>
-      </li>
-      <li>
-        <p>
-          {
-            lang === 'en'
-              ? 'Currently building my experience as part time Backend Developer at'
-              : 'Actualmente construyo mi experiencia como Desarrollador Backend de tiempo parcial en'
-          }
-          <a
-            href='https://www.linkedin.com/showcase/dium-team/about/'
-            rel='noopener noreferrer'
-            target='_blank'
-            class='text-slate-50 dark:text-slate-800 inline dark:bg-emerald-100 bg-emerald-800 px-1.5 py-0.5 rounded-[10px] w-fit'
-          >
-            Dium
-          </a>
-        </p>
-      </li>
-      <li>
-        <p class='phrase dark:text-amber-300 text-amber-950'>
-          {
-            lang === 'en'
-              ? 'The best (and only) way to achieve something is by starting it'
-              : 'La mejor (y única) forma de lograr algo es comenzándolo'
-          }
-        </p>
-      </li>
-    </ul>
+    <p
+      class='text-[95%] text-pretty md:w-[90%] pt-2 text-slate-900 dark:text-slate-300'
+      id='about-me-paragraph'
+    >
+      {paragraphs.at(0)![lang]}
+    </p>
   </div>
-  <!-- <script define:vars={{ lang }}>
-    const phrases = [
-      {
-        en: 'As long as I can continue learning, i will feel alive',
-        es: 'Mientras pueda seguir aprendiendo, me sentiré vivo'
-      },
-      {
-        en: 'Open source has become the best way to learn and share knowledge',
-        es: 'El código abierto se ha convertido en la mejor forma de aprender y compartir conocimiento'
-      }
-    ]
-    setInterval(() => {
-      const phrase = phrases[Math.floor(Math.random() * phrases.length)]
-      document.querySelector('.phrase').textContent = phrase[lang]
-    }, 5000)
-  </script> -->
+  <div class='xl:absolute bottom-1 right-2'>
+    <span class='text-xs' id='index-indicator'>1/4</span>
+  </div>
+  <script define:vars={{ lang, paragraphs }} is:inline>
+    let index = 0
+    const domParagraph = document.getElementById('about-me-paragraph')
+    const domIndex = document.getElementById('index-indicator')
+    function changeParagraph() {
+      domParagraph.textContent = paragraphs[index][lang]
+      domIndex.textContent = `${index + 1}/${paragraphs.length}`
+      index = (index + 1) % paragraphs.length
+    }
+    setInterval(changeParagraph, 10000)
+  </script>
 </Box>

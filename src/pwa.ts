@@ -31,8 +31,8 @@ window.addEventListener('load', () => {
       hidePwaToast(false)
       if (!offline) pwaToast.classList.add('refresh')
       pwaToast.classList.add('show')
-      // after 7.5 seconds hide the toast
-      setTimeout(hidePwaToast, 7500)
+      // after 3.14 seconds hide the toast
+      setTimeout(hidePwaToast, 3140)
     })
   }
 
