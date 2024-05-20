@@ -7,24 +7,10 @@ interface Props {
 }
 
 const { lang = 'en' }: Props = Astro.props
-const paragraphs: Array<Record<string, string>> = [
-  {
-    es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro actualmente en proceso de construcción de mi experiencia como Desarrollador Backend de tiempo parcial en Dium, donde estoy aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
-    en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience as a part-time Backend Developer at Dium, where I am learning and developing my skills in the exciting world of backend development.'
-  },
-  {
-    es: 'Fiel a la frase «la mejor (y única) forma de lograr algo es comenzándolo», me encuentro en constante búsqueda de nuevos retos y oportunidades que me permitan ampliar mis conocimientos y habilidades en el área de la programación.',
-    en: 'True to the phrase "the best (and only) way to achieve something is to start it", I am constantly looking for new challenges and opportunities that allow me to expand my knowledge and skills in the field of programming.'
-  },
-  {
-    es: 'Me apasionan los algoritmos, el código abierto y el desarrollo web en general, y considero que el aprendizaje continuo es una parte fundamental del crecimiento profesional. Además del desarrollo backend, disfruto del ajedrez y de explorar nuevas tecnologías relacionadas con el desarrollo web.',
-    en: 'I am passionate about algorithms, open source and web development in general, and I consider that continuous learning is a fundamental part of professional growth. In addition to backend development, I enjoy chess and exploring new technologies related to web development.'
-  },
-  {
-    es: 'Soy una persona entusiasta, proactiva y con gran capacidad de aprendizaje, siempre dispuesto a asumir nuevos desafíos y contribuir de manera positiva en los proyectos en los que me involucro. ¿Te gustaría saber más sobre mí? ¡No dudes en contactarme!',
-    en: 'I am an enthusiastic, proactive person with a great capacity for learning, always willing to take on new challenges and contribute positively to the projects I am involved in. Would you like to know more about me? Do not hesitate to contact me!'
-  }
-]
+const firstParagraph = {
+  es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro actualmente en proceso de construcción de mi experiencia como Desarrollador Backend de tiempo parcial en Dium, donde estoy aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
+  en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience as a part-time Backend Developer at Dium, where I am learning and developing my skills in the exciting world of backend development.'
+}[lang]
 ---
 
 <Box
@@ -44,13 +30,31 @@ const paragraphs: Array<Record<string, string>> = [
       class='text-[95%] text-pretty md:w-[90%] pt-2 text-slate-900 dark:text-slate-300'
       id='about-me-paragraph'
     >
-      {paragraphs.at(0)![lang]}
+      {firstParagraph}
     </p>
   </div>
   <div class='xl:absolute bottom-1 right-2'>
     <span class='text-xs' id='index-indicator'>1/4</span>
   </div>
-  <script define:vars={{ lang, paragraphs }} is:inline>
+  <script define:vars={{ lang }} is:inline>
+    const paragraphs = [
+      {
+        es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro actualmente en proceso de construcción de mi experiencia como Desarrollador Backend de tiempo parcial en Dium, donde estoy aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
+        en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience as a part-time Backend Developer at Dium, where I am learning and developing my skills in the exciting world of backend development.'
+      },
+      {
+        es: 'Fiel a la frase «la mejor (y única) forma de lograr algo es comenzándolo», me encuentro en constante búsqueda de nuevos retos y oportunidades que me permitan ampliar mis conocimientos y habilidades en el área de la programación.',
+        en: 'True to the phrase "the best (and only) way to achieve something is to start it", I am constantly looking for new challenges and opportunities that allow me to expand my knowledge and skills in the field of programming.'
+      },
+      {
+        es: 'Me apasionan los algoritmos, el código abierto y el desarrollo web en general, y considero que el aprendizaje continuo es una parte fundamental del crecimiento profesional. Además del desarrollo backend, disfruto del ajedrez y de explorar nuevas tecnologías relacionadas con el desarrollo web.',
+        en: 'I am passionate about algorithms, open source and web development in general, and I consider that continuous learning is a fundamental part of professional growth. In addition to backend development, I enjoy chess and exploring new technologies related to web development.'
+      },
+      {
+        es: 'Soy una persona entusiasta, proactiva y con gran capacidad de aprendizaje, siempre dispuesto a asumir nuevos desafíos y contribuir de manera positiva en los proyectos en los que me involucro. ¿Te gustaría saber más sobre mí? ¡No dudes en contactarme!',
+        en: 'I am an enthusiastic, proactive person with a great capacity for learning, always willing to take on new challenges and contribute positively to the projects I am involved in. Would you like to know more about me? Do not hesitate to contact me!'
+      }
+    ]
     let index = 0
     const domParagraph = document.getElementById('about-me-paragraph')
     const domIndex = document.getElementById('index-indicator')

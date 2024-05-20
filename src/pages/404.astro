@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/layout.astro'
 import Container from '@components/main/container.astro'
+import { Image } from 'astro:assets'
 ---
 
 <style>
@@ -12,7 +13,7 @@ import Container from '@components/main/container.astro'
     justify-items: center;
     color: white;
     border-radius: 0.5rem;
-    background-color: #1b383c;
+    /* background-color: #1b383c; */
     font-family: 'Averia', sans-serif;
     /* font-size: 2rem; */
     text-align: center;
@@ -25,7 +26,6 @@ import Container from '@components/main/container.astro'
 
   .go-home-button {
     text-decoration: none;
-    border: 1px solid white;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.05rem 0 0.1rem #000;
@@ -42,25 +42,56 @@ import Container from '@components/main/container.astro'
   #_404_background {
     filter: blur(1px);
     z-index: -1;
-    /* width: 100vw;
-    height: 100vh; */
+    width: 100vw;
+    height: 100vh;
     position: fixed;
-    background-image: url('/pizarra.webp');
+    background-image: url('/mandelbrot.webp');
+  }
+
+  img {
+    --a: 8deg; /* control the angle of rotation (the smaller, the better) */
+    transform: perspective(400px)
+      rotate3d(var(--r, 1, -1), 0, calc(var(--i, 1) * var(--a)));
+    -webkit-mask: linear-gradient(135deg, #000c 40%, #000, #000c 60%) 100% 100%/250%
+      250%;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  .alt {
+    --r: 1, 1;
+    -webkit-mask: linear-gradient(45deg, #000c 40%, #000, #000c 60%) 0 100%/250%
+      250%;
+  }
+  img:hover {
+    --i: -1;
+    -webkit-mask-position: 0 0;
+  }
+  .alt:hover {
+    -webkit-mask-position: 100% 0;
   }
 </style>
 
 <Layout title='Resource Not Found - jamerrq.dev'>
-  <div id='_404_background' class='hidden xl:grid'></div>
+  <div id='_404_background'></div>
   <main class='grid place-content-center [&>div>p]:text-balance'>
     <Container>
       <h1 class='text-emerald-300 text-2xl'>Page Not Found!</h1>
       <p class='text-sm xl:text-base font-secondary'>
-        Sorry, the resource you are looking for does not exist (yet?).
+        Sorry, the resource you are looking for does not exist (yet?) 🗿
       </p>
+      <Image
+        src='/img/this_is_fine.webp'
+        alt='404'
+        width='200'
+        height='200'
+        class='rounded'
+      />
       <p class='text-sm xl:text-base font-secondary'>
-        Please check the URL and try again or go back.
+        Please check the URL and try again or go back 🗣️
       </p>
-      <div class='flex gap-2 text-emerald-300'>
+      <div
+        class='flex flex-col xl:flex-row justify-center w-full gap-2 text-emerald-300'
+      >
         <button class='text-base go-home-button' onclick='window.history.back()'
           >Go Back</button
         >

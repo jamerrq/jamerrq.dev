@@ -1,17 +1,22 @@
 ---
 import { SEO } from 'astro-seo'
 import RichResults from './richResults.astro'
+
+const url = Astro.url
+const isInDeno = url.toString().includes('.deno.dev')
 ---
 
 <meta charset='UTF-8' />
-<meta name='description' content='jamerrq.dev' />
+<meta name='description' content='Jamer José: Software Development' />
 <meta
   name='viewport'
   content='width=device-width,initial-scale=1,viewport-fit=cover'
 />
 <link rel='icon' type='image/png' href='/favicon.png' />
-<!-- Cannonical -->
-<link rel='canonical' href='https://jamerrq.dev' />
+<!-- Go to cannonical if needed -->
+<script is:inline define:vars={{ isInDeno }}>
+  if (isInDeno) window.location.href = 'https://jamerrq.dev'
+</script>
 <meta name='generator' content={Astro.generator} />
 <!-- Open Graph -->
 <meta name='twitter:card' content='summary_large_image' />
@@ -114,8 +119,8 @@ import RichResults from './richResults.astro'
 }
 
 <SEO
-  title='Jamer José - Backend Developer'
-  description="I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems."
+  title='Jamer José - Software Development'
+  description="Hi! I'm Jamer José. A software (backend) developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems."
   openGraph={{
     basic: {
       title: 'jamerrq.dev',
@@ -127,7 +132,7 @@ import RichResults from './richResults.astro'
     creator: '@jamerrq',
     card: 'summary_large_image',
     description:
-      "I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems.",
+      "Hi! I'm Jamer José. A software (backend) developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems.",
     image: 'https://jamerrq.dev/og-image2.png',
     site: '@jamerrq',
     title: 'jamerrq.dev'

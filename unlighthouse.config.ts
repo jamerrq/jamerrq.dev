@@ -1,5 +1,5 @@
 export default {
   scanner: {
-    device: 'desktop'
+    device: 'mobile'
   }
 }

@@ -39,7 +39,7 @@ import '@fontsource/fira-mono'
   <div
     class='dark:bg-gray-900/95 py-8 bg-[#76ABAE] xl:h-[100dvh] h-[95dvh] lg:w-[80dvw] md:w-[95dvw] w-[65dvw] xs:w-[95dvw] mx-auto px-4 dark:text-emerald-50 [&>*]:text-balance overflow-y-auto max-h-[100dvh] [scrollbar-width:thin] relative'
   >
-    <aside class='sticky -top-5'>
+    <aside class='sticky -top-5 z-50'>
       <Buttons href={frontmatter.hrefLang} border />
     </aside>
     <br />
@@ -48,13 +48,13 @@ import '@fontsource/fira-mono'
       class='flex font-secondary bg-slate-300/90 p-2 cursor-pointer font-bold rounded'
       onclick='window.history.back()'
     >
-      <h1 class='-z-10 text-slate-950'>
+      <h1 class='text-slate-950'>
         {frontmatter.title}
       </h1>
     </header>
     <br />
     <div
-      class='[&>h1]:font-bold font-secondary font-semibold text-sm [&_h1]:text-emerald-950 [&_h1]:dark:text-emerald-300 [&_h2]:text-emerald-950 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-[#153448] [&_a]:dark:text-cyan-300 flex flex-col gap-5 mb-8 [&_blockquote]:[font-secondary] [&_code]:[font-firaMono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden px-2 [&_table]:border [&_table]:rounded [&_table]:text-center [&_thead]:border [&_table]:p-2'
+      class='[&>h1]:font-bold font-secondary font-semibold text-sm [&_h1]:text-emerald-950 [&_h1]:dark:text-emerald-300 [&_h2]:text-slate-950 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-cyan-950 [&_a]:dark:text-cyan-300 flex flex-col gap-5 mb-8 [&_blockquote]:[font-secondary] [&_code]:[font-firaMono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden px-2 [&_table]:border [&_table]:rounded [&_table]:text-center [&_thead]:border [&_table]:p-2'
       id='mdx-content'
     >
       <slot />
