@@ -2,10 +2,10 @@
 import { SEO } from 'astro-seo'
 import RichResults from './richResults.astro'
 
-const url = Astro.url
-const isInDeno = url.toString().includes('.deno.dev')
+const prod = import.meta.env.PROD
 ---
 
+<!-- Metadata -->
 <meta charset='UTF-8' />
 <meta name='description' content='Jamer José: Software Development' />
 <meta
@@ -13,12 +13,25 @@ const isInDeno = url.toString().includes('.deno.dev')
   content='width=device-width,initial-scale=1,viewport-fit=cover'
 />
 <link rel='icon' type='image/png' href='/favicon.png' />
-<!-- Go to cannonical if needed -->
-<script is:inline define:vars={{ isInDeno }}>
-  if (isInDeno) window.location.href = 'https://jamerrq.dev'
-</script>
+
+<!-- Production Only -->
+{
+  prod && (
+    <>
+      <link rel='canonical' href='https://jamerrq.dev' />
+      <link rel='alternate' href='https://jamerrq.dev/es' hreflang='es' />
+      <link rel='alternate' href='https://jamerrq.dev' hreflang='x-default' />
+    </>
+  )
+}
+
+<!-- Open Graph && Additional Metadata -->
 <meta name='generator' content={Astro.generator} />
-<!-- Open Graph -->
+<meta name='author' content='Jamer José' />
+<meta
+  name='keywords'
+  content='software, development, backend, nodejs, python, c#, .net, typescript'
+/>
 <meta name='twitter:card' content='summary_large_image' />
 <meta name='twitter:site' content='@jamerrq' />
 <meta name='twitter:title' content='jamerrq.dev' />
@@ -31,6 +44,12 @@ const isInDeno = url.toString().includes('.deno.dev')
 <meta property='og:description' content='Jamer José: Software Development' />
 <meta property='og:site_name' content='jamerrq.dev' />
 <meta name='theme-color' content='#10B981' />
+<meta
+  name='apple-mobile-web-app-status-bar-style'
+  content='black-translucent'
+/>
+<meta name='msapplication-TileColor' content='#10B981' />
+
 <!-- Robots -->
 <meta name='robots' content='index, follow' />
 <meta name='googlebot' content='index, follow' />
@@ -108,15 +127,8 @@ const isInDeno = url.toString().includes('.deno.dev')
 <!-- Sitemap -->
 <meta name='msapplication-config' content='/browserconfig.xml' />
 
-<!-- Worker Registration -->
-{
-  !import.meta.env.DEV && (
-    <>
-      {/*<script is:inline src='/registerSW.js' />*/}
-      <link rel='manifest' href='/manifest.webmanifest' />
-    </>
-  )
-}
+<!-- Worker Manifest Registration -->
+{!import.meta.env.DEV && <link rel='manifest' href='/manifest.webmanifest' />}
 
 <SEO
   title='Jamer José - Software Development'
@@ -137,5 +149,6 @@ const isInDeno = url.toString().includes('.deno.dev')
     site: '@jamerrq',
     title: 'jamerrq.dev'
   }}
+  canonical={'https://jamerrq.dev'}
 />
 <RichResults />
