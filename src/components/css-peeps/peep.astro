@@ -1,7 +1,7 @@
 ---
 const {
   head = 'twists1',
-  face = 'gasp',
+  face = 'calm',
   body = 'coffee',
   facialHair = '',
   accesory = '',
@@ -17,7 +17,12 @@ const {
 } = Astro.props
 ---
 
-<>
+<a href='https://css-peeps.com/' target='_blank' rel='noreferrer'>
+  <link
+    rel='stylesheet'
+    type='text/css'
+    href='https://unpkg.com/css-peeps@1/css-peeps.css'
+  />
   <div class='css-peeps'></div>
   <style
     define:vars={{
@@ -54,9 +59,9 @@ const {
 
       --peep-clothes-color: var(--clothesColor);
 
-      width: 80px;
-      height: 80px;
-      border: 1px solid white;
+      width: 180px;
+      height: 180px;
+      /* border: 1px solid white; */
     }
   </style>
-</>
+</a>

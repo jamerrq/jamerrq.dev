@@ -15,6 +15,7 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev)
 - Styling with Tailwind CSS and Plugins
 - GitHub Project Board for managing tasks
 - Dark & Light Mode with Tailwind CSS
+- i18n routing with Astro
 
 ## Stack 🥞
 

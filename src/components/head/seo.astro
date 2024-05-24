@@ -2,6 +2,12 @@
 import { SEO } from 'astro-seo'
 import RichResults from './richResults.astro'
 
+interface Props {
+  title?: string
+}
+
+const { title = 'Jamer José - Software Development' } = Astro.props
+
 const prod = import.meta.env.PROD
 ---
 
@@ -30,19 +36,19 @@ const prod = import.meta.env.PROD
 <meta name='author' content='Jamer José' />
 <meta
   name='keywords'
-  content='software, development, backend, nodejs, python, c#, .net, typescript'
+  content='software, development, backend, nodejs, python, c#, .net, typescript, jamerrq, jamer, josé, jamerjosé, jamer josé, jamerrq.dev, jamerrq, jamerrqdev'
 />
 <meta name='twitter:card' content='summary_large_image' />
 <meta name='twitter:site' content='@jamerrq' />
-<meta name='twitter:title' content='jamerrq.dev' />
+<meta name='twitter:title' content={title} />
 <meta name='twitter:description' content='Jamer José: Software Development' />
-<meta name='twitter:image' content='https://jamerrq.dev/og-image2.png' />
-<meta property='og:title' content='jamerrq.dev' />
+<meta name='twitter:image' content='https://jamerrq.dev/og-image3.png' />
+<meta property='og:title' content={title} />
 <meta property='og:type' content='personal website' />
 <meta property='og:url' content='https://jamerrq.dev' />
-<meta property='og:image' content='https://jamerrq.dev/og-image2.png' />
+<meta property='og:image' content='https://jamerrq.dev/og-image3.png' />
 <meta property='og:description' content='Jamer José: Software Development' />
-<meta property='og:site_name' content='jamerrq.dev' />
+<meta property='og:site_name' content={title} />
 <meta name='theme-color' content='#10B981' />
 <meta
   name='apple-mobile-web-app-status-bar-style'
@@ -131,13 +137,13 @@ const prod = import.meta.env.PROD
 {!import.meta.env.DEV && <link rel='manifest' href='/manifest.webmanifest' />}
 
 <SEO
-  title='Jamer José - Software Development'
+  title={title}
   description="Hi! I'm Jamer José. A software (backend) developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems."
   openGraph={{
     basic: {
-      title: 'jamerrq.dev',
+      title: 'jamerrq.dev - Jamer José',
       type: 'website',
-      image: 'https://jamerrq.dev/og-image2.png'
+      image: 'https://jamerrq.dev/og-image3.png'
     }
   }}
   twitter={{
@@ -145,9 +151,9 @@ const prod = import.meta.env.PROD
     card: 'summary_large_image',
     description:
       "Hi! I'm Jamer José. A software (backend) developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems.",
-    image: 'https://jamerrq.dev/og-image2.png',
+    image: 'https://jamerrq.dev/og-image3.png',
     site: '@jamerrq',
-    title: 'jamerrq.dev'
+    title: 'jamerrq.dev - Jamer José'
   }}
   canonical={'https://jamerrq.dev'}
 />

@@ -16,7 +16,7 @@ import Buttons from '@components/main/buttons.astro'
 import '@fontsource/fira-mono'
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={`${frontmatter.title} - jamerrq.dev`}>
   <style>
     * {
       scroll-behavior: smooth;
@@ -54,7 +54,7 @@ import '@fontsource/fira-mono'
     </header>
     <br />
     <div
-      class='[&>h1]:font-bold font-secondary font-semibold text-sm [&_h1]:text-emerald-950 [&_h1]:dark:text-emerald-300 [&_h2]:text-slate-950 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-900 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-cyan-950 [&_a]:dark:text-cyan-300 flex flex-col gap-5 mb-8 [&_blockquote]:[font-secondary] [&_code]:[font-firaMono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden px-2 [&_table]:border [&_table]:rounded [&_table]:text-center [&_thead]:border [&_table]:p-2'
+      class='[&>h1]:font-bold font-secondary font-semibold text-sm [&_h1]:text-emerald-950 [&_h1]:dark:text-emerald-300 [&_h2]:text-slate-950 [&_h2]:dark:text-emerald-300 [&_h3]:text-emerald-950 [&_h3]:dark:text-emerald-300 [&_h1]:text-xl [&_h1]:xl:text-3xl [&_h1]:font-bold [&_h2]:font-semibold [&_h2]:text-lg [&_h2]:xl:text-2xl [&_h3]:text-base [&_h3]:xl:text-xl [&_h3]:font-semibold [&_p]:text-pretty [&_ul]:m-4 [&_ul]:list-disc max-w-[800px] [&_a]:font-semibold [&_a]:text-cyan-950 [&_a]:dark:text-cyan-300 flex flex-col gap-5 mb-8 [&_blockquote]:[font-secondary] [&_blockquote]:font-sm [&_blockquote]:italic [&_blockquote]:dark:text-amber-300 [&_blockquote]:text-amber-800 [&_code]:[font-firaMono] [&_a]:underline [&_a]:[target=_blank] [&_pre]:p-2 [&_pre]:overflow-x-hidden px-2 [&_table]:border [&_table]:rounded [&_table]:text-center [&_thead]:border [&_table]:p-2'
       id='mdx-content'
     >
       <slot />

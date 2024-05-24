@@ -7,8 +7,6 @@ interface Props {
 const { title, lang = 'en' }: Props = Astro.props
 
 // Fonts
-// import '@fontsource/averia-serif-libre'
-// import '@fontsource/calistoga'
 import '@fontsource/fira-sans'
 
 // Styles
@@ -25,7 +23,7 @@ import ReloadPrompt from '@components/main/ReloadPrompt.astro'
 <!doctype html>
 <html lang={lang}>
   <head>
-    <SEO />
+    <SEO title={title} />
     <title>{title}</title>
     <ViewTransitions />
   </head>

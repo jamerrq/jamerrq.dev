@@ -31,3 +31,4 @@ _studio.yml
 
 # ignored files
 ignored/
+unlighthouse.config.ts

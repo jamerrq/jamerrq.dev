@@ -1,5 +1,18 @@
 ---
 import Layout from '@layouts/layout.astro'
+import Peep from '@components/css-peeps/peep.astro'
+import '@fontsource/fira-mono'
 ---
 
-<Layout title='Board - jamerrq.dev' />
+<Layout title='Board - jamerrq.dev'>
+  <div class='w-[100dvw] h-[100dvh] fixed top-0 left-0 -z-50 bg-cover blur-sm'>
+    <img src='/pizarra.webp' alt='pizarra' class='w-full' />
+  </div>
+  <main class='font-firaMono flex justify-center flex-col items-center gap-0'>
+    <Peep />
+    <span
+      class='bg-slate-900 text-emerald-200 px-2 py-1 text-xl rounded font-semibold -mt-2'
+      >jamerrq.dev - Software Development</span
+    >
+  </main>
+</Layout>

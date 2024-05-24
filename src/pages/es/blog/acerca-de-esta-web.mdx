@@ -6,6 +6,7 @@ hrefLang: ../../../blog/building-this-website
 
 import BitwiseLiminal from '@movies/bitwise-liminal.astro'
 import { Image } from 'astro:assets'
+import Peep from '@components/css-peeps/peep.astro'
 
 <BitwiseLiminal />
 
@@ -14,17 +15,38 @@ import { Image } from 'astro:assets'
 Empezar algo es a veces la clave para terminarlo.
 Siempre puedes irlo mejorando con el tiempo.
 
+## ¿Quién soy?
+
+<Peep />
+
+Mi nombre es Jamer José, soy ingeniero matemático y desarrollador web. Mis
+primeros acercamientos al código no fueron muy afortunados, pero con el tiempo y
+de la mano de las matemáticas, encontré en la programación una forma de
+expresión y creatividad que me ha permitido explorar y aprender muchas cosas
+nuevas e interesantes.
+
+En 2024, decidí crear esta web para compartir mis conocimientos y experiencias
+en este mundo. Entre mis intereses se encuentran el código abierto, linux
+(Ubuntu), el desarrollo web, los algoritmos así como las matemáticas aplicadas a
+la programación.
+
+Siéntete libre de explorar mi web y de contactarme si tienes alguna pregunta o
+sugerencia. Eres totalmente bienvenido 😺
+
 ## ¿Qué puedes aprender de este proyecto?
 
 ¿Quieres construir tu propio portafolio o página web personal? Aquí tienes algunas cosas que puedes aprender de este proyecto:
 
-- Astro Server Side Rendering con Deno y Deno Deploy
+- Renderizado del lado del servidor con Astro y Deno
+- Despliegue de tu web gratis con <a href="https://deno.com/deploy" target="_blank">Deno
+  Deploy</a>
 - View Transitions con Astro y CSS
 - Integración de Preact con Astro
 - Cómo usar señales con Preact
 - Diseños con CSS Grid y Flexbox
-- <a href="/blog/convert-astro-app-to-pwa">Desarrollo de PWA dentro de una aplicación Astro</a>
-- Trucos y plugins de Tailwind
+- <a href="../convertir-astro-app-en-pwa">Implementación de PWA dentro de una
+  aplicación de Astro</a>
+- Cómo estilizar tu web con Tailwind CSS y plugins
 - Modo oscuro con Tailwind CSS
 - Cómo usar MDX en Astro
 - Accesibilidad y SEO en Astro
@@ -32,14 +54,84 @@ Siempre puedes irlo mejorando con el tiempo.
 - I18n routing con Astro (Multilenguaje)
 - <a href="/404">Páginas de error (404, 500) personalizadas</a>
 
-Explora el código fuente de esta web en <a
+Trataré de ir expandiendo este artículo entrando en más detalles sobre cada uno
+de estos puntos, mientras tanto puedes explorar el código fuente de esta web en <a
 href="https://github.com/jamerrq/jamerrq.dev" target="_blank" rel="noopener
-noreferrer">GitHub</a>
+noreferrer">GitHub [jamerrq/jamerrq.dev]</a>
+
+### ¿Qué es Astro? (Y por qué deberías aprenderlo)
+
+<a href="https://astro.build/" target="_blank" rel="noopener noreferrer">
+<Image
+  src="/img/blog/astro-logo.webp" width="920" height="320" alt="Astro Logo"
+  class="w-1/2"
+/>
+</a>
+
+<a href="https://astro.build/" target="_blank" rel="noopener
+noreferrer">Astro</a> es un framework de frontend moderno diseñado para la
+creación de sitios web altamente optimizados y rápidos. Se destaca por su
+capacidad de generar HTML estático de manera predeterminada, lo que minimiza la
+carga de JavaScript en el cliente, mejorando significativamente el rendimiento.
+
+Astro también permite la integración de componentes de diversos frameworks como
+React, Svelte y Vue en un mismo proyecto, ofreciendo una gran flexibilidad.
+Además, facilita el uso de Markdown y MDX (Markdown + JS) para la creación de
+contenido.
+
+Así mismo cuenta con un sistema de plugins robusto que amplía sus
+funcionalidades, haciendo de Astro una herramienta poderosa y versátil para
+desarrolladores web. Si quieres saber más sobre Astro, puedes visitar su sitio
+web oficial en <a href="https://astro.build/" target="_blank" rel="noopener
+noreferrer">astro.build</a> para que conozcas todas sus características y
+beneficios.
+
+### Cómo empezar una aplicación web con Astro
+
+Empezar un proyecto Astro es muy sencillo. Sólo necesitas tener un entorno para
+ejecutar JavaScript y un editor de texto. En mi caso, uso <a
+href="https://bun.sh/" target="_blank" rel="noreferrer noopener">Bun</a> como mi gestor de
+paquetes durante el desarrollo ya que es un proyecto en el que tengo la libertad
+de experimentar con diferentes tecnologías y herramientas. Sin embargo, puedes
+usar el gestor de paquetes de tu preferencia.
+
+Para crear un nuevo proyecto Astro, puedes usar el siguiente comando:
+
+```bash
+bun create-astro@latest
+```
+
+Si usas npm, puedes ejecutar el siguiente comando:
+
+```bash
+npm create astro@latest
+```
+
+Con pnpm:
+
+```bash
+pnpm create astro@latest
+```
+
+Yarn:
+
+```bash
+yarn create astro
+```
+
+Este comando ejecutará un asistente que te guiará a través de la configuración
+inicial de tu proyecto. Una vez completado, podrás empezar a desarrollar tu
+aplicación Astro en tu editor de texto favorito. Yo recomiendo altamente <a
+href="https://code.visualstudio.com/" target="_blank" rel="noopener
+noreferrer">Visual Studio Code</a> ya que cuenta con una gran cantidad de
+extensiones y herramientas que te facilitarán el desarrollo. Entre ellas, la
+extensión oficial de Astro que te permitirá tener una mejor experiencia en el
+desarrollo de tu proyecto.
 
 ## Referencias
 
 - <a
-  href="https://www.freecodecamp.org/news/technical-writing-for-developers-why-you-should-have-a-blog-and-how-to-start-one/"
+  href="https://www.freecodecamp.org/news/technical-writing-for-developers/"
   target="_blank" rel="noopener noreferrer" title="Technical Writing for
   Developers – Why You Should Have a Blog and How to Start One">Technical
   Writing for Developers – Why You Should Have a Blog and How to Start One</a>

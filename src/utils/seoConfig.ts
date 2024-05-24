@@ -6,7 +6,7 @@ export const seoConfig = {
     "I'm a backend developer with a focus on Node.js, Python, C# (.NET) and TypeScript. I am passionate about building scalable and maintainable systems.",
   type: 'website',
   image: {
-    url: 'https://jamerrq.dev/og-image2.png',
+    url: 'https://jamerrq.dev/og-image3.png',
     alt: 'jamerrq.dev',
     width: 730,
     height: 382

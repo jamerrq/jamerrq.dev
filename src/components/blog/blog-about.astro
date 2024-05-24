@@ -16,8 +16,8 @@ const ABOUT_STYLES = [
   'xl:h-full',
   'transition-all',
   'hover:border-2',
-  'dark:border-amber-300',
-  'border-amber-950',
+  'dark:border-cyan-300',
+  'border-cyan-950',
   'text-4xl',
   'flex-row',
   'gap-2',
@@ -39,9 +39,9 @@ const { lang = 'en' }: Props = Astro.props
   transition:name='blog'
   href={lang === 'en' ? '/' : '/es'}
 >
-  <span>Blog</span>
+  <span class='dark:text-cyan-300'>Blog</span>
   <svg
-    class='w-8 h-8 inline-flex dark:fill-amber-300 fill-amber-950'
+    class='w-8 h-8 inline-flex dark:fill-cyan-300 fill-amber-950'
     set:html={siGitbook.svg}
   />
 </a>
