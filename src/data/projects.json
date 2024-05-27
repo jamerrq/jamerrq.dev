@@ -179,8 +179,8 @@
     {
       "title": "IDE Pinturerías Full Stack Web App",
       "description": {
-        "en": "Full stack web application for the management of a paint store, with features such as inventory management, sales, reports and blog. Official website coming soon.",
-        "es": "Aplicación web full stack para la gestión de una tienda de pinturas, con características como gestión de inventario, ventas, informes y blog. Sitio web oficial próximamente."
+        "en": "Full stack web application for the management of a paint store, with features such as inventory management, sales, reports and blog.",
+        "es": "Aplicación web full stack para la gestión de una tienda de pinturas, con características como gestión de inventario, ventas, informes y blog."
       },
       "stack": [
         "React",
@@ -189,7 +189,7 @@
         "PostgreSQL",
         "NodeJS"
       ],
-      "private": true,
+      "private": false,
       "featured": true,
       "images": [
         "ide-pinturerias-1.webp",
@@ -197,7 +197,9 @@
         "ide-pinturerias-3.webp",
         "ide-pinturerias-4.webp",
         "ide-pinturerias-5.webp"
-      ]
+      ],
+      "website": "https://www.idepinturerias.com/",
+      "repository": "https://github.com/Ide-Pinturerias/pinturas-app-front"
     },
     {
       "title": "Foundational C# with Microsoft & FreeCodeCamp",

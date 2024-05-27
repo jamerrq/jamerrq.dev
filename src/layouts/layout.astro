@@ -17,7 +17,11 @@ import { ViewTransitions } from 'astro:transitions'
 import Background from '@components/main/background.astro'
 import SEO from '@components/head/seo.astro'
 import Scripts from '@components/head/scripts.astro'
+import DevScripts from '@components/head/dev-scripts.astro'
 import ReloadPrompt from '@components/main/ReloadPrompt.astro'
+
+// Environment
+const dev = import.meta.env.DEV
 ---
 
 <!doctype html>
@@ -27,13 +31,14 @@ import ReloadPrompt from '@components/main/ReloadPrompt.astro'
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body data-dev={import.meta.env.DEV} class='data-[dev]:debug-screens'>
+  <body data-dev={dev} class='data-[dev]:debug-screens'>
     <wc-toast class='font-secondary'></wc-toast>
     <Background />
     <main class='min-h-[100dvh] grid place-content-center'>
       <slot />
     </main>
     <script>
+      // Card hover effect
       window.onmousemove = (e) => {
         for (const card of document.getElementsByClassName(
           'card'
@@ -47,7 +52,7 @@ import ReloadPrompt from '@components/main/ReloadPrompt.astro'
         }
       }
     </script>
-    <Scripts />
+    {dev ? <DevScripts /> : <Scripts />}
     <ReloadPrompt />
   </body>
 </html>

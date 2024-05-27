@@ -43,6 +43,14 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-000?style=flat-square&logo=tai
 ![Deno
 Deploy](https://img.shields.io/badge/-Deno%20Deploy-000000?style=flat-square&logo=deno&logoColor=white)
 
+### Speed Insights 🚄
+
+![Lighthouse Report](public/img/blog/pagespeed-insights.webp)
+
+![Lighthouse Report Desktop](public/img/blog/pagespeed-insights-desktop.webp)
+
+Check the latest [Lighthouse Report](https://pagespeed.web.dev/analysis/https-jamerrq-dev/cfgjgvhswj)
+
 ## Board 📋
 
 [Project Board on GitHub](https://github.com/users/jamerrq/projects/1/views/2)

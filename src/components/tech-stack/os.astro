@@ -9,6 +9,7 @@ import { siLinux, siUbuntu } from 'simple-icons'
   href='https://releases.ubuntu.com/focal/'
   animated
   otherStyles='xl:row-span-2 flex-col animate-delay-200 gap-1'
+  external
 >
   <img
     src='/img/desktop.webp'
@@ -18,14 +19,8 @@ import { siLinux, siUbuntu } from 'simple-icons'
   />
   <header class='flex gap-2 items-center text-3xl'>
     <h1>OS</h1>
-    <svg
-      class={'w-6 h-6 fill-amber-900 dark:fill-amber-600'}
-      set:html={siLinux.svg}
-    />
-    <svg
-      class={'w-6 h-6 fill-amber-900 dark:fill-amber-600'}
-      set:html={siUbuntu.svg}
-    />
+    <svg class={'w-6 h-6 fill-current'} set:html={siLinux.svg} />
+    <svg class={'w-6 h-6 fill-current'} set:html={siUbuntu.svg} />
   </header>
   <section
     class='text-base font-secondary flex flex-col justify-center items-center'

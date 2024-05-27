@@ -201,6 +201,16 @@ function ProjectCard({
               {lang === 'es' ? 'Demo' : 'Preview'}
             </a>
           )}
+          {project?.website && (
+            <a
+              href={project.website}
+              className='border-b-2 font-secondary text-sm xl:text-base'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {lang === 'es' ? 'Sitio web' : 'Website'}
+            </a>
+          )}
         </div>
       </div>
       {isScreenWidthEnough && (

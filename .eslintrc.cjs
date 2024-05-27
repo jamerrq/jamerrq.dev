@@ -19,6 +19,9 @@ module.exports = {
         "react/self-closing-comp": "off",
         "react/jsx-key": "off"
       }
+    },
+    {
+      files: ['*.ts', '*.tsx'],
     }
   ]
 }

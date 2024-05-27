@@ -7,6 +7,7 @@ hrefLang: ../es/blog/acerca-de-esta-web/
 import BitwiseLiminal from '@movies/bitwise-liminal.astro'
 import { Image } from 'astro:assets'
 import Peep from '@components/css-peeps/peep.astro'
+import Title from '@components/main/title.astro'
 
 <BitwiseLiminal />
 
@@ -91,6 +92,37 @@ yarn create astro
 ```
 
 This command will run a wizard that will guide you through the initial configuration of your project. Once completed, you can start developing your Astro application in your favorite text editor. I highly recommend <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a> as it has a large number of extensions and tools that will make development easier. Among them, the official Astro extension that will allow you to have a better experience in the development of your project.
+
+### LightHouse y Pagespeed Insights
+
+To ensure that my website is accessible and fast, I have used tools like <a
+href="https://web.dev/lighthouse/" target="_blank" rel="noopener
+noreferrer">LightHouse</a> and <a
+href="https://developers.google.com/speed/pagespeed/insights/" target="_blank"
+rel="noopener noreferrer">Pagespeed Insights</a> to measure and optimize the
+performance of my website as I have developed it.
+
+This process has allowed me to identify and correct performance and accessibility
+issues, as well as improve the user experience on this website. Later on, I will
+write an article detailing how I have optimized my website with Astro so that you
+can apply these same principles to your project.
+
+Here, you can see the result of the last audit carried out on my website with
+Pagespeed Insights:
+
+<a href="https://pagespeed.web.dev/analysis/https-jamerrq-dev/cfgjgvhswj"
+target="_blank" rel="noopener noreferrer" class="flex flex-col gap-3">
+<Image
+  src="/img/blog/pagespeed-insights.webp" width="1366" height="726" alt="Pagespeed Insights"
+/>
+<Image
+  src="/img/blog/pagespeed-insights-desktop.webp" width="1366" height="726" alt="Pagespeed Insights Desktop"
+/>
+</a>
+
+### Maybe you don't notice it, but...
+
+<Title demo />
 
 ## Some References
 

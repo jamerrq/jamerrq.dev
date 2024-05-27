@@ -1,10 +1,9 @@
 ---
 interface Props {
   lang: string
+  demo?: boolean
 }
-const { lang = 'en' }: Props = Astro.props
-
-// import BitwiseLiminal from '@movies/bitwise-liminal.astro'
+const { lang = 'en', demo = false }: Props = Astro.props
 ---
 
 <style>
@@ -21,17 +20,21 @@ const { lang = 'en' }: Props = Astro.props
   class='bg-slate-300/80 dark:bg-slate-900/95 row-span-2 xl:col-span-2 title dark:text-emerald-400 text-slate-950 p-2 rounded w-full h-full flex items-center flex-row animate-blurred-fade-in relative card animate-delay-300'
 >
   <div class='flex flex-col gap-1 animate-fade-in z-10'>
-    <a href={lang !== 'en' ? '/' : 'es'}>
-      <p
-        class='font-primary font-semibold text-2xl xl:text-4xl px-2 py-1 rounded'
-      >
-        jamerrq.dev
-      </p>
-    </a>
+    <p
+      class='font-primary font-semibold text-2xl xl:text-4xl px-2 py-1 rounded'
+    >
+      {!demo ? 'jamerrq.dev' : 'HOVER ME!'}
+    </p>
     <span
       class='block font-secondary font-bold text-sm rounded w-fit mx-auto px-1 py-0.5 text-center'
     >
-      {lang === 'en' ? 'Backend Developer' : 'Desarrollador Backend'}
+      {
+        !demo
+          ? lang === 'en'
+            ? 'Backend Developer'
+            : 'Desarrollador Backend'
+          : null
+      }
     </span>
   </div>
   <div

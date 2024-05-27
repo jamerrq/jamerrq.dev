@@ -7,6 +7,7 @@ hrefLang: ../../../blog/building-this-website
 import BitwiseLiminal from '@movies/bitwise-liminal.astro'
 import { Image } from 'astro:assets'
 import Peep from '@components/css-peeps/peep.astro'
+import Title from '@components/main/title.astro'
 
 <BitwiseLiminal />
 
@@ -127,6 +128,37 @@ noreferrer">Visual Studio Code</a> ya que cuenta con una gran cantidad de
 extensiones y herramientas que te facilitarán el desarrollo. Entre ellas, la
 extensión oficial de Astro que te permitirá tener una mejor experiencia en el
 desarrollo de tu proyecto.
+
+### LightHouse y Pagespeed Insights
+
+Para asegurarme de que mi web es accesible y rápida, he utilizado herramientas
+como <a href="https://web.dev/lighthouse/" target="_blank" rel="noopener
+noreferrer">LightHouse</a> y <a
+href="https://developers.google.com/speed/pagespeed/insights/"
+target="_blank" rel="noopener noreferrer">Pagespeed Insights</a> para medir y
+optimizar el rendimiento de mi web a medida que he la he ido desarrollando.
+
+Este proceso me ha permitido identificar y corregir problemas de rendimiento y
+accesibilidad, así como mejorar la experiencia de usuario en esta web. Más
+adelante escribiré un artículo detallando cómo he optimizado mi web con Astro
+para que puedas aplicar estos mismos principios en tu proyecto.
+
+Este es el resultado de la última auditoría realizada a mi web con Pagespeed
+Insights:
+
+<a href="https://pagespeed.web.dev/analysis/https-jamerrq-dev/cfgjgvhswj"
+target="_blank" rel="noopener noreferrer" class="flex flex-col gap-3">
+<Image
+  src="/img/blog/pagespeed-insights.webp" width="1366" height="726" alt="Pagespeed Insights"
+/>
+<Image
+  src="/img/blog/pagespeed-insights-desktop.webp" width="1366" height="726" alt="Pagespeed Insights Desktop"
+/>
+</a>
+
+### Tal vez no se note, pero...
+
+<Title demo />
 
 ## Referencias
 

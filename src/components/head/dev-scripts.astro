@@ -5,17 +5,11 @@ interface Props {
 
 const { lang = 'en' } = Astro.props
 
-import blobs from '@data/blobs/blobs.txt?raw'
-const rawBlobs = blobs.split('- SEP -')
-const index = Math.floor(Math.random() * rawBlobs.length)
-const blob = rawBlobs.at(index)!
-
 // @ts-ignore
 import { pwaInfo } from 'virtual:pwa-info'
 ---
 
-<script defer is:inline define:vars={{ lang, blob }}>
-  console.log(blob)
+<script defer is:inline define:vars={{ lang }}>
   // Theme switch
   function setTheme() {
     const darkIcon = document.getElementById('theme-toggle-dark-icon')

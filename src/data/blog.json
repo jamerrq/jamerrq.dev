@@ -6,61 +6,15 @@
       "titleEs": "Acerca de esta web",
       "href": "blog/building-this-website",
       "hrefEs": "blog/acerca-de-esta-web",
-      "readTimeMins": "3",
+      "readTimeMins": "6",
       "tags": [
         "astro",
         "tailwindcss",
         "preact",
         "portfolio",
         "ssr"
-      ]
-    },
-    {
-      "title": "5+ years using Linux: My experience and current setup",
-      "date": "Coming soon",
-      "titleEs": "5+ años usando Linux: Mi experiencia y configuración actual",
-      "href": "5-years-using-linux",
-      "hrefEs": "60-meses-con-linux",
-      "readTimeMins": "10",
-      "tags": [
-        "linux",
-        "ubuntu",
-        "zsh",
-        "i3wm",
-        "vim"
-      ]
-    },
-    {
-      "title": "Projects to develop in 2024",
-      "date": "Coming soon",
-      "titleEs": "Proyectos a desarrollar en 2024",
-      "href": "blog/projects-2024",
-      "hrefEs": "blog/proyectos-2024",
-      "readTimeMins": "5",
-      "tags": [
-        "projects",
-        "2024",
-        "nextjs",
-        "astro",
-        "supabase",
-        "rust"
-      ]
-    },
-    {
-      "title": "Creating a secure Node.js server with Express",
-      "date": "Coming soon",
-      "titleEs": "Creando un servidor seguro con Node.js y Express",
-      "href": "blog/creating-a-secure-server-with-nodejs",
-      "hrefEs": "blog/creando-un-servidor-seguro-con-nodejs",
-      "readTimeMins": "15",
-      "tags": [
-        "nodejs",
-        "express",
-        "security",
-        "jwt",
-        "testing"
       ],
-      "active": "false"
+      "lastUpdate": "27-May-2024"
     },
     {
       "title": "Open Source: What a time to be alive!",

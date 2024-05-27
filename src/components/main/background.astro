@@ -1,6 +1,5 @@
 ---
 const isInBlog = Astro.url.pathname.includes('/blog/')
-const isInBoard = Astro.url.pathname.includes('/board/')
 ---
 
 <style>
@@ -17,9 +16,8 @@ const isInBoard = Astro.url.pathname.includes('/board/')
   }
 </style>
 <div
-  data-blog={isInBlog}
-  data-board={isInBoard}
-  class='fixed top-0 -z-50 h-full w-[100dvw] bg-[#222831] data-[blog]:bg-cover data-[blog]:bg-center data-[blog]:bg-[url("/mandelbrot.webp")] data-[blog]:bg-opacity-5'
+  data-blog={isInBlog || true}
+  class='fixed top-0 -z-50 h-full w-[100dvw] bg-[#222831] data-[blog]:bg-cover data-[blog]:bg-center data-[blog]:bg-[url("/mandelbrot.webp")] data-[blog]:bg-opacity-50'
 >
   <div class='noise'></div>
 </div>
