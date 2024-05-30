@@ -57,7 +57,7 @@ function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
           alt={`snap for ${project?.title.en}`}
           width='960'
           height='720'
-          loading='lazy'
+          loading='eager'
           class='aspect-[4/3] w-32'
         />
         <aside class='flex flex-col xl:flex-row text-sm gap-4 items-center justify-around'>

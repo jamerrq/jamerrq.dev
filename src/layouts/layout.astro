@@ -37,21 +37,6 @@ const dev = import.meta.env.DEV
     <main class='min-h-[100dvh] grid place-content-center'>
       <slot />
     </main>
-    <script>
-      // Card hover effect
-      window.onmousemove = (e) => {
-        for (const card of document.getElementsByClassName(
-          'card'
-        ) as any as HTMLElement[]) {
-          const rect = card.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top
-
-          card.style.setProperty('--mouse-x', `${x}px`)
-          card.style.setProperty('--mouse-y', `${y}px`)
-        }
-      }
-    </script>
     {dev ? <DevScripts /> : <Scripts />}
     <ReloadPrompt />
   </body>

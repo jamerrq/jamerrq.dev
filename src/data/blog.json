@@ -6,7 +6,7 @@
       "titleEs": "Acerca de esta web",
       "href": "blog/building-this-website",
       "hrefEs": "blog/acerca-de-esta-web",
-      "readTimeMins": "6",
+      "readTimeMins": "12",
       "tags": [
         "astro",
         "tailwindcss",

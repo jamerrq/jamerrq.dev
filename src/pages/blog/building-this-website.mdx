@@ -32,7 +32,7 @@ Want to build your own portfolio or personal website? Here are some things you c
 
 - Server Side Rendering with Astro and Deno
 - Deploy your website for free with <a href="https://deno.com/deploy" target="_blank">Deno Deploy</a>
-- Astro View Transitions
+- <a href="#explore-this-app-with-astros-view-transitions">Astro View Transitions</a>
 - Preact Integration with Astro
 - How to use signals with Preact
 - CSS Grid & Flexbox Layouts
@@ -123,6 +123,80 @@ target="_blank" rel="noopener noreferrer" class="flex flex-col gap-3">
 ### Maybe you don't notice it, but...
 
 <Title demo />
+
+### Explore this app with Astro's view transitions
+
+One of the most interesting features of Astro is the ability to implement
+transitions between views in a simple and elegant way. This allows you to create
+more attractive and dynamic user experiences, improving navigation and
+interaction with the web.
+
+In this website, I have used Astro's view transitions to create entry and exit
+effects when changing pages. This gives a special touch to the navigation and
+improves the user experience when exploring the content.
+
+Here is a demonstration video so you can see how the view transitions work on
+this website:
+
+<video controls autoplay loop muted playsinline>
+  <source src="/video/view-transitions-demo.webm" type="video/webm" />
+  Your browser does not support the video tag.
+</video>
+
+To implement view transitions in your Astro project, you just need to import
+them into your main layout, and then include them within the `<head>` component
+of your `layout.astro` file:
+
+```astro
+---
+import { ViewTransitions } from 'astro:transitions'
+---
+<head>
+  <ViewTransitions />
+</head>
+```
+
+With this, you will have the view transitions activated in your Astro project.
+Now you just have to add the transitions between elements of your web to give it
+a special touch to the navigation. How is it done? I'll give you an example 👇
+
+This is the `blog-about.astro` component that holds the title "Blog" when you
+enter the /blog subpage
+
+```astro
+<a
+  class={ABOUT_STYLES}
+  transition:name='blog'
+  href={lang === 'en' ? '/' : '/es'}
+>
+  <span class='dark:text-cyan-300'>Blog</span>
+  <svg
+    class='w-8 h-8 inline-flex dark:fill-cyan-300 fill-amber-950'
+    set:html={siGitbook.svg}
+  />
+</a>
+```
+
+And this would be the component that is part of the main bento of the web, i.e.
+`blog.astro`
+
+```astro
+<Hbox
+  title='Blog'
+  href={lang === 'en' ? '/blog' : '/es/blog'}
+  otherStyles='xl:row-span-2 [&_p]:text-3xl'
+>
+  <div class='flex gap-2' transition:name='blog'>
+    <p>Blog</p>
+    <svg
+      class='w-8 h-8 inline-flex dark:fill-cyan-300 fill-cyan-950'
+      set:html={siGitbook.svg}
+    />
+  </div>
+</Hbox>
+```
+
+If you observe, both components have the property `transition:name='blog'` that indicates Astro to apply the transition between these two elements when navigating between them. This is how simple it is to implement view transitions in your Astro project. If you want to know more about how view transitions work, you can check the <a href="https://docs.astro.build/en/guides/view-transitions/" target="_blank" rel="noopener noreferrer">official Astro documentation</a>.
 
 ## Some References
 

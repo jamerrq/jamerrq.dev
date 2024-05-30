@@ -85,7 +85,9 @@ export default function Resources({ n = 3 }: ResourceProps) {
         const resource = shuffleData.at((i + index.value) % data.length)
         return (
           <article
-            class={`col-span-2 row-span-4 rounded-[10px] shadow-[0_0_0.1rem_rgb(8_51_68)] flex xl:flex-col gap-5 items-center justify-center font-bold font-primary w-full xl:h-full h-16 transition-all text-cyan-950 dark:text-cyan-300 bg-slate-300/70 dark:bg-slate-900/90 text-base xl:text-2xl px-2 py-1 relative ${i === 1 ? 'px-5' : ''}`}
+            class={`col-span-2 row-span-4 rounded-[10px] shadow-[0_0_0.1rem_rgb(8_51_68)] flex xl:flex-col gap-5 items-center justify-center font-bold font-primary w-full xl:h-full h-16 transition-all text-cyan-950 dark:text-cyan-300 bg-slate-300/70 dark:bg-slate-900/90 text-base xl:text-2xl px-2 py-1 relative ${
+              i === 1 ? 'px-5' : ''
+            }`}
             key={i}
             id={
               i == 2

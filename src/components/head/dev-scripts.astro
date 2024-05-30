@@ -9,13 +9,15 @@ const { lang = 'en' } = Astro.props
 import { pwaInfo } from 'virtual:pwa-info'
 ---
 
+<!-- Theme & Language -->
 <script defer is:inline define:vars={{ lang }}>
   // Theme switch
   function setTheme() {
     const darkIcon = document.getElementById('theme-toggle-dark-icon')
     const lightIcon = document.getElementById('theme-toggle-light-icon')
 
-    // Cambia los iconos dentro del botón en función de la configuración anterior
+    // Cambia los iconos dentro del botón en
+    // función de la configuración anterior
     if (
       localStorage.getItem('color-theme') === 'dark' ||
       !('color-theme' in localStorage)
@@ -52,7 +54,8 @@ import { pwaInfo } from 'virtual:pwa-info'
           localStorage.setItem('color-theme', 'light')
         }
 
-        // se comprueba si el sistema operativo tiene configurado el tema oscuro
+        // se comprueba si el sistema operativo
+        // tiene preferencias de color
       } else if (document.documentElement?.classList?.contains('dark')) {
         document.documentElement?.classList?.remove('dark')
         document.documentElement?.classList?.add('light')
@@ -69,24 +72,17 @@ import { pwaInfo } from 'virtual:pwa-info'
   document.addEventListener('astro:after-preparation', setTheme)
   document.addEventListener('astro:after-swap', setTheme)
 
-  // Home & Random Place buttons
-  const setHomeRandomButton = () => {
+  // Home button
+  const prepareHomeButton = () => {
     const homeButton = document.getElementById('home-button')
-    const randomPlaceButton = document.getElementById('random-place-button')
 
     // Show home button only if not in home
-    // Otherwise show random place button
     if (
       window.location.pathname === '/' ||
       window.location.pathname === '/es'
     ) {
-      homeButton?.classList?.add('hidden')
-      randomPlaceButton?.classList?.remove('hidden')
-    } else {
-      homeButton?.classList?.remove('hidden')
-      randomPlaceButton?.classList?.add('hidden')
+      homeButton.classList.toggle('hidden')
     }
-
     // Add click event to home button
     homeButton?.addEventListener('click', () => {
       // window.location.href = '/'
@@ -94,18 +90,30 @@ import { pwaInfo } from 'virtual:pwa-info'
         ? (window.location.href = '/es')
         : (window.location.href = '/')
     })
-
-    randomPlaceButton?.addEventListener('click', () => {
-      const places = ['/blog', '/tech-stack', '/featured']
-      window.location.href = places[Math.floor(Math.random() * places.length)]
-    })
   }
 
-  setHomeRandomButton()
-  document.addEventListener('astro:after-preparation', setHomeRandomButton)
-  document.addEventListener('astro:after-swap', setHomeRandomButton)
+  prepareHomeButton()
+  document.addEventListener('astro:after-preparation', prepareHomeButton)
+  document.addEventListener('astro:after-swap', prepareHomeButton)
 </script>
 
+<!-- Cards hover effect -->
+<script>
+  window.onmousemove = (e) => {
+    for (const card of document.getElementsByClassName(
+      'card'
+    ) as any as HTMLElement[]) {
+      const rect = card.getBoundingClientRect(),
+        x = e.clientX - rect.left,
+        y = e.clientY - rect.top
+
+      card.style.setProperty('--mouse-x', `${x}px`)
+      card.style.setProperty('--mouse-y', `${y}px`)
+    }
+  }
+</script>
+
+<!-- Toast event listener -->
 <script>
   import { toast } from 'wc-toast'
   const copyMailButton = document.getElementById('copyMailButton')
@@ -119,6 +127,8 @@ import { pwaInfo } from 'virtual:pwa-info'
     })
   })
 </script>
+
+<!-- PWA Registration -->
 <script src='/src/pwa.ts'></script>
 {
   // eslint-disable-next-line
