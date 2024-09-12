@@ -9,6 +9,7 @@ const { lang = 'en' }: Props = Astro.props
 import Box from '@components/boxes/box.astro'
 
 import WorkingOnTsx from './working-on.tsx'
+import ThreeDots from '@components/loaders/ThreeDots.astro'
 // import ThreeDots from '@components/loaders/ThreeDots.astro'
 ---
 
@@ -29,5 +30,8 @@ import WorkingOnTsx from './working-on.tsx'
       fill={`#${siGitkraken.hex}`}
     />
   </header>
-  <WorkingOnTsx lang={lang} client:only='preact' />
+  <div class='my-2'>
+    <ThreeDots />
+  </div>
+  <!--WorkingOnTsx lang={lang} client:only='preact' /-->
 </Box>

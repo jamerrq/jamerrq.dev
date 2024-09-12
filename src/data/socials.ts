@@ -30,8 +30,8 @@ export default function getSocialIcons(lang = 'en') {
       title: 'Curriculum Vitae',
       href:
         lang === 'en'
-          ? '/docs/cv_Jamer_Rebolledo_en.pdf'
-          : '/docs/cv_Jamer_Rebolledo_es.pdf',
+          ? '/docs/CV_JAMER_JOSE_ENG.pdf'
+          : '/docs/CV_JAMER_JOSE_ESP.pdf',
       svg: siAdobeacrobatreader.svg,
       hex: siAdobeacrobatreader.hex
     },

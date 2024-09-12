@@ -8,8 +8,8 @@ interface Props {
 
 const { lang = 'en' }: Props = Astro.props
 const firstParagraph = {
-  es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro actualmente en proceso de construcción de mi experiencia como Desarrollador Backend de tiempo parcial en Dium, donde estoy aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
-  en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience as a part-time Backend Developer at Dium, where I am learning and developing my skills in the exciting world of backend development.'
+  es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
+  en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience and developing my skills in the exciting world of backend development.'
 }[lang]
 ---
 
@@ -39,8 +39,8 @@ const firstParagraph = {
   <script define:vars={{ lang }} is:inline>
     const paragraphs = [
       {
-        es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro actualmente en proceso de construcción de mi experiencia como Desarrollador Backend de tiempo parcial en Dium, donde estoy aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
-        en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience as a part-time Backend Developer at Dium, where I am learning and developing my skills in the exciting world of backend development.'
+        es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
+        en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience and developing my skills in the exciting world of backend development.'
       },
       {
         es: 'Fiel a la frase «la mejor (y única) forma de lograr algo es comenzándolo», me encuentro en constante búsqueda de nuevos retos y oportunidades que me permitan ampliar mis conocimientos y habilidades en el área de la programación.',
