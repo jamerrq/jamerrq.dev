@@ -13,14 +13,15 @@ const blob = rawBlobs.at(index)!
 // @ts-ignore
 import { pwaInfo } from 'virtual:pwa-info'
 
-const url = Astro.url
-const isInDeno = url.toString().includes('.deno.dev')
+const astroURL = Astro.url.toString()
+const isInDeno = astroURL.includes('.deno.dev')
 ---
 
-<!-- Redirect to jamerrq.dev if in deno -->
-<script is:inline define:vars={{ isInDeno }}>
+<!-- Redirect to canon if needed -->
+<script is:inline define:vars={{ isInDeno, astroURL }}>
   if (isInDeno) {
-    window.location.href = 'https://jamerrq.dev'
+    const canonURL = astroURL.replace('.deno.dev', '.dev')
+    window.location.href = canonURL
   }
 </script>
 
