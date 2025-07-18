@@ -44,8 +44,9 @@ export default {
         averia: ['Averia Serif Libre', 'system-ui'],
         firaSans: ['Fira Sans', 'sans-serif'],
         firaMono: ['Fira Mono', 'monospace'],
-        primary: ['Fira Sans', 'sans-serif'], // <- primary font
-        secondary: ['Fira Sans', 'system-ui'] // <- secondary font
+        bitter: ['Bitter Variable', 'serif'],
+        primary: ['Bitter Variable', 'serif'],
+        secondary: ['Bitter Variable', 'serif']
       },
       colors: {
         blueBoard: '#153448'

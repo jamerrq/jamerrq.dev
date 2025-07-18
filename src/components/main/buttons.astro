@@ -15,11 +15,11 @@ const BUTTONS_STYLES = [
   'shadow-[0_0_0.15rem_rgb(8_51_68)]',
   'flex',
   'items-center',
-  'justify-around',
+  'justify-evenly',
   'text-slate-950',
   'font-primary',
   'w-full',
-  'xl:h-full',
+  'h-full',
   'transition-all',
   'duration-200',
   'dark:bg-slate-900',
@@ -27,8 +27,8 @@ const BUTTONS_STYLES = [
   'bg-slate-300',
   'p-2',
   'font-bold',
-  border && 'border-2 border-slate-50'
-  // 'card'
+  border && 'border-2 border-slate-50',
+  'space-evenly'
 ].join(' ')
 
 const BUTTON_STYLES = [
@@ -47,16 +47,18 @@ import Moon from '@components/icons/moon.astro'
 import Sun from '@components/icons/sun.astro'
 import Translator from '@components/icons/translator.astro'
 
-const BOARD_BUTTON_STYLE = import.meta.env.DEV ? 'block' : 'hidden'
+const BOARD_BUTTON_STYLE = import.meta.env.DEV && 0 ? 'block' : 'hidden'
 
 const SVGS_STYLES = [
   'w-6',
   'h-6',
-  'xl:w-8',
-  'xl:h-8',
+  'sm:w-8',
+  'sm:h-8',
   'inline-flex',
   'fill-slate-950',
-  'dark:fill-emerald-300'
+  'dark:fill-emerald-300',
+  'text-center',
+  'mx-2'
 ].join(' ')
 ---
 
@@ -73,7 +75,7 @@ const SVGS_STYLES = [
     <span
       class='text-xs group-hover:text-emerald-900 dark:group-hover:text-emerald-300'
     >
-      switch theme</span
+      theme</span
     >
   </button>
   <!-- LANGUAGE SWITCH -->
@@ -86,7 +88,7 @@ const SVGS_STYLES = [
     <Translator class={SVGS_STYLES} />
     <span class='text-xs'>en/es</span>
   </a>
-  <!-- HOME OR RANDOM PLACE -->
+  <!-- HOME -->
   <button class={`${BUTTON_STYLES} `} title='go home' id='home-button'>
     <Home class={SVGS_STYLES} />
     <span class='text-xs'>home</span>
@@ -100,7 +102,7 @@ const SVGS_STYLES = [
     title='Source code on GitHub'
   >
     <svg class={SVGS_STYLES} set:html={siGithub.svg} />
-    <span class='text-xs'>source code</span>
+    <span class='text-xs text-center'>source</span>
   </a>
   <!-- BOARD -->
   <a

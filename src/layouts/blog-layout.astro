@@ -11,6 +11,7 @@ interface Props {
 
 const { frontmatter }: Props = Astro.props
 import Buttons from '@components/main/buttons.astro'
+import ArrowLeft from '@components/icons/arrow-left.astro'
 
 // Mono Font for Code Blocks
 import '@fontsource/fira-mono'
@@ -21,6 +22,7 @@ import '@fontsource/fira-mono'
     * {
       scroll-behavior: smooth;
       scrollbar-width: thin;
+      scroll-behavior: auto;
     }
 
     /* Tables */
@@ -45,9 +47,10 @@ import '@fontsource/fira-mono'
     <br />
     <header
       transition:name='blog-title'
-      class='flex font-secondary bg-slate-300/90 p-2 cursor-pointer font-bold rounded'
+      class='flex font-secondary bg-slate-300/90 p-2 cursor-pointer font-bold rounded flex-row gap-2 items-center'
       onclick='window.history.back()'
     >
+      <ArrowLeft class='w-8 h-8 stroke-slate-950' />
       <h1 class='text-slate-950'>
         {frontmatter.title}
       </h1>

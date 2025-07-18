@@ -5,12 +5,19 @@ interface Props {
 
 const { lang = 'en' } = Astro.props
 
+import blobs from '@data/blobs/blobs.txt?raw'
+const rawBlobs = blobs.split('- SEP -')
+const index = Math.floor(Math.random() * rawBlobs.length)
+const blob = rawBlobs.at(index)!
+
 // @ts-ignore
 import { pwaInfo } from 'virtual:pwa-info'
 ---
 
 <!-- Theme & Language -->
-<script defer is:inline define:vars={{ lang }}>
+<script defer is:inline define:vars={{ lang, blob }}>
+  console.log('[DEV MODE]')
+  console.log(blob)
   // Theme switch
   function setTheme() {
     const darkIcon = document.getElementById('theme-toggle-dark-icon')
@@ -81,11 +88,12 @@ import { pwaInfo } from 'virtual:pwa-info'
       window.location.pathname === '/' ||
       window.location.pathname === '/es'
     ) {
-      homeButton.classList.toggle('hidden')
+      homeButton.classList.add('hidden')
+    } else {
+      homeButton.classList.remove('hidden')
     }
     // Add click event to home button
     homeButton?.addEventListener('click', () => {
-      // window.location.href = '/'
       lang === 'es'
         ? (window.location.href = '/es')
         : (window.location.href = '/')
@@ -125,6 +133,7 @@ import { pwaInfo } from 'virtual:pwa-info'
         type: 'light'
       }
     })
+    // console.log(new Date().toLocaleString())
   })
 </script>
 

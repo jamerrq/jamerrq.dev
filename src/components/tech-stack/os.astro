@@ -1,31 +1,91 @@
 ---
 import Hbox from '@components/boxes/hbox.astro'
+import Box from '@components/boxes/box.astro'
 
-import { siLinux, siUbuntu } from 'simple-icons'
+import { siLinux, siUbuntu, siLubuntu } from 'simple-icons'
 ---
 
-<Hbox
+<Box
   title='My OS'
-  href='https://releases.ubuntu.com/focal/'
   animated
   otherStyles='xl:row-span-2 flex-col animate-delay-200 gap-1'
-  external
 >
   <img
-    src='/img/desktop.webp'
+    src='/img/desktop2.webp'
     alt='my desktop'
-    class='w-2/3 rounded border'
+    class='w-2/3 rounded border cursor-zoom-in transition-transform duration-200'
     id='desktop-image'
   />
-  <header class='flex gap-2 items-center text-3xl'>
+  <header
+    class='flex gap-2 items-center text-3xl dark:text-orange-500 text-orange-950'
+  >
     <h1>OS</h1>
     <svg class={'w-6 h-6 fill-current'} set:html={siLinux.svg} />
     <svg class={'w-6 h-6 fill-current'} set:html={siUbuntu.svg} />
+    <svg class={'w-6 h-6 fill-current'} set:html={siLubuntu.svg} />
   </header>
   <section
-    class='text-base font-secondary flex flex-col justify-center items-center'
+    class='text-base font-secondary flex flex-col justify-center items-center dark:text-blue-300 text-blue-950'
   >
-    <p>Ubuntu 20.04.6 LTS</p>
-    <p>Focal Fossa</p>
+    <a
+      href='https://lubuntu.me/noble-released/'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='text-blue-950 dark:text-blue-300'
+    >
+      <p>Lubuntu 24.04</p>
+      <p>Noble Numbat</p>
+    </a>
   </section>
-</Hbox>
+  <div class='mt-2 flex justify-center'>
+    <a
+      href='https://github.com/jamerrq/.dotfiles'
+      target='_blank'
+      rel='noopener noreferrer'
+      class='inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-800 text-white hover:bg-slate-700 transition text-sm shadow'
+      title='view my dotfiles on GitHub'
+    >
+      <svg class='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
+        <path
+          d='M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.207 11.387.6.113.793-.262.793-.582 0-.287-.01-1.04-.016-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.086 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.933 0-1.31.469-2.381 1.236-3.221-.124-.304-.535-1.527.117-3.176 0 0 1.008-.322 3.301 1.23A11.52 11.52 0 0 1 12 6.844c1.02.005 2.047.138 3.008.404 2.291-1.553 3.297-1.23 3.297-1.23.654 1.649.243 2.872.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.371.823 1.102.823 2.222 0 1.606-.015 2.899-.015 3.293 0 .322.192.699.801.58C20.565 21.796 24 17.297 24 12c0-6.63-5.373-12-12-12z'
+        ></path>
+      </svg>
+      .dotfiles
+    </a>
+  </div>
+</Box>
+
+<!-- OS Modal rendered at root level -->
+<div
+  id='os-modal'
+  class='fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-200 invisible opacity-0'
+  tabindex='-1'
+  aria-modal='true'
+>
+  <img
+    src='/img/desktop2.webp'
+    alt='Expanded desktop screenshot'
+    class='max-w-[90vw] max-h-[90vh] rounded-lg shadow-lg border-4 border-slate-900 dark:border-slate-100 pointer-events-none'
+  />
+</div>
+<script is:inline>
+  const img = document.getElementById('desktop-image')
+  const modal = document.getElementById('os-modal')
+  function showModal() {
+    modal.classList.remove('invisible', 'opacity-0')
+    modal.classList.add('visible', 'opacity-100')
+    document.body.style.overflow = 'hidden'
+  }
+  function hideModal() {
+    modal.classList.add('invisible', 'opacity-0')
+    modal.classList.remove('visible', 'opacity-100')
+    document.body.style.overflow = ''
+  }
+  img?.addEventListener('click', showModal)
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) hideModal()
+  })
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hideModal()
+  })
+</script>

@@ -15,7 +15,7 @@ const { svg, hex = '#000', href = '', title = 'Generic Icon' } = Astro.props
       href={href}
       target='_blank'
       rel='noopener noreferrer'
-      class='hover:scale-110'
+      class='hover:scale-110 transition-all flex items-center flex-col gap-1 justify-center'
       title={title}
     >
       <svg
@@ -23,7 +23,7 @@ const { svg, hex = '#000', href = '', title = 'Generic Icon' } = Astro.props
         set:html={svg}
         fill={hex}
       />
-      <span class='text-xs font-secondary ml-2'>
+      <span class='text-xs font-secondary'>
         {title === 'Curriculum Vitae' ? 'CV' : title}
       </span>
     </a>

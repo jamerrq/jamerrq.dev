@@ -1,294 +1,46 @@
 {
-  "data": [
-    {
-      "title": "Json Forms App",
-      "description": {
-        "en": "[Technical test]. This application allows you to convert a JSON file to a web form interface, as well as register the answers in a database. Currently down for maintenance.",
-        "es": "Esta aplicación permite convertir un archivo JSON a una interfaz de formulario web, así como registrar las respuestas en una base de datos."
-      },
-      "stack": [
-        "Supabase",
-        "Next JS",
-        "Tailwind CSS"
-      ],
-      "demo": "https://json-forms-app.vercel.app/",
-      "repository": "https://github.com/jamerrq/json-forms-app",
-      "images": [
-        "json-forms-app-1.webp",
-        "json-forms-app-2.webp"
-      ]
-    },
-    {
-      "title": "Rocket Launches App",
-      "description": {
-        "en": "Astro course app to explore the beauty and power of the framework with features like view Transition, dynamic data fetching and server-side rendering.",
-        "es": "Aplicación del curso de Astro para explorar la belleza y potencia del framework con características como transición de vistas, obtención de datos dinámicos y renderizado del lado del servidor."
-      },
-      "stack": [
-        "Astro",
-        "Tailwind CSS"
-      ],
-      "demo": "https://rocket-launches.deno.dev/",
-      "repository": "https://github.com/jamerrq/rocket-launches",
-      "images": [
-        "rocket-launches-1.webp",
-        "rocket-launches-2.webp",
-        "rocket-launches-3.webp"
-      ]
-    },
-    {
-      "title": "Reading List App",
-      "description": {
-        "en": "[Technical test]. The challenge was to design and implement a small web application of a book list and bookmarks.",
-        "es": "Prueba técnica para una entrevista, el reto fue diseñar e implementar una pequeña aplicación web de una lista de libros y marcadores."
-      },
-      "stack": [
-        "Next JS",
-        "Tailwind CSS"
-      ],
-      "demo": "https://reading-list-app-ecru.vercel.app/",
-      "repository": "https://github.com/jamerrq/reading-list-app",
-      "images": [
-        "reading-list-app-1.webp",
-        "reading-list-app-2.webp",
-        "reading-list-app-3.webp",
-        "reading-list-app-4.webp"
-      ]
-    },
-    {
-      "title": "TypeScript - Exercism",
-      "description": {
-        "en": "My solutions to the TypeScript track on Exercism.",
-        "es": "Mis soluciones a la pista de TypeScript en Exercism."
-      },
-      "stack": [
-        "TypeScript"
-      ],
-      "repository": "https://github.com/jamerrq/typescriptExercisesOnExercism",
-      "demo": "https://exercism.org/tracks/typescript",
-      "images": [
-        "typescript-exercism.webp"
-      ]
-    },
-    {
-      "title": "Sport Scheduling",
-      "description": {
-        "en": "Investigation Project. Scheduling of Colombian professional soccer league: A comparison of models and algorithms.",
-        "es": "Proyecto de Investigación. Programación de la liga profesional de fútbol colombiano: Una comparación de modelos y algoritmos."
-      },
-      "stack": [
-        "Python",
-        "Jupyter Notebook",
-        "LaTeX"
-      ],
-      "repository": "https://github.com/jamerrq/20201-Sport-Scheduling",
-      "demo": "https://github.com/jamerrq/20192-Sport-Scheduling",
-      "images": [
-        "sport-scheduling.webp"
-      ]
-    },
-    {
-      "title": "AHP Forms App",
-      "description": {
-        "en": "Private freelance application for the Rise Group to create forms and surveys using the Analytic Hierarchy Process (AHP).",
-        "es": "Aplicación freelance privada para el Grupo Rise para crear formularios y encuestas utilizando el Proceso Analítico Jerárquico (AHP)."
-      },
-      "stack": [
-        "Python",
-        "Html",
-        "JavaScript",
-        "Php"
-      ],
-      "private": true,
-      "images": [
-        "ahp-forms-app.webp"
-      ]
-    },
-    {
-      "title": "Checkbox Enhancement",
-      "description": {
-        "en": "Visual Studio Code extension to improve the enhancement when using checboxes, specially in markdown (working on the v1)",
-        "es": "Extensión de Visual Studio Code para mejorar la mejora al usar casillas de verificación, especialmente en markdown (trabajando en la v1)"
-      },
-      "stack": [
-        "TypeScript",
-        "Visual Studio Code"
-      ],
-      "repository": "https://github.com/jamerrq/checkbox-md-enhancement",
-      "demo": "https://marketplace.visualstudio.com/items?itemName=jamerrq.checkbox-counter",
-      "images": [
-        "checkbox-md-enhancement-1.webp",
-        "checkbox-md-enhancement-2.webp"
-      ]
-    },
-    {
-      "title": "Lumina - PWA Starter Template for Astro",
-      "description": {
-        "en": "A simple and beautiful PWA starter template for Astro, with a focus on performance and best practices.",
-        "es": "Una plantilla de inicio PWA simple y hermosa para Astro, con un enfoque en el rendimiento y las mejores prácticas."
-      },
-      "stack": [
-        "Astro",
-        "Tailwind CSS",
-        "TypeScript"
-      ],
-      "repository": "https://github.com/jamerrq/lumina",
-      "demo": "https://lumina-sigma.vercel.app/",
-      "images": [
-        "lumina-1.webp",
-        "lumina-2.webp"
-      ]
-    },
-    {
-      "title": "Advent JS - Console Edition",
-      "description": {
-        "en": "Deno module to get the Advent JS challenges and test the solutions directly from the console.",
-        "es": "Módulo de Deno para obtener los desafíos de Advent JS y probar las soluciones directamente desde la consola."
-      },
-      "stack": [
-        "Deno",
-        "TypeScript",
-        "JavaScript"
-      ],
-      "demo": "https://deno.land/x/adventjs",
-      "repository": "https://github.com/jamerrq/advent-js-cli",
-      "images": [
-        "adventjs-cli-1.webp"
-      ]
-    },
-    {
-      "title": "HTML 30 Days Challenge",
-      "description": {
-        "en": "30 days of HTML and CSS challenges by ManzDev.",
-        "es": "30 días de desafíos de HTML y CSS por ManzDev."
-      },
-      "stack": [
-        "Html",
-        "Css",
-        "JavaScript",
-        "Astro"
-      ],
-      "demo": "https://html-30-days-challenge.vercel.app/",
-      "repository": "https://github.com/jamerrq/html-30-days-challenge",
-      "images": [
-        "html-30-days-1.webp",
-        "html-30-days-2.webp",
-        "html-30-days-3.webp"
-      ]
-    },
-    {
-      "title": "IDE Pinturerías Full Stack Web App",
-      "description": {
-        "en": "Full stack web application for the management of a paint store, with features such as inventory management, sales, reports and blog.",
-        "es": "Aplicación web full stack para la gestión de una tienda de pinturas, con características como gestión de inventario, ventas, informes y blog."
-      },
-      "stack": [
-        "React",
-        "Tailwind CSS",
-        "Express",
-        "PostgreSQL",
-        "NodeJS"
-      ],
-      "private": false,
-      "featured": true,
-      "images": [
-        "ide-pinturerias-1.webp",
-        "ide-pinturerias-2.webp",
-        "ide-pinturerias-3.webp",
-        "ide-pinturerias-4.webp",
-        "ide-pinturerias-5.webp"
-      ],
-      "website": "https://www.idepinturerias.com/",
-      "repository": "https://github.com/Ide-Pinturerias/pinturas-app-front"
-    },
-    {
-      "title": "Foundational C# with Microsoft & FreeCodeCamp",
-      "description": {
-        "en": "Foundational C# certification with Microsoft and FreeCodeCamp.",
-        "es": "Certificación de C# fundamental con Microsoft y FreeCodeCamp."
-      },
-      "stack": [
-        "C#",
-        "Visual Studio",
-        "FreeCodeCamp",
-        "Microsoft",
-        ".NET"
-      ],
-      "demo": "https://www.freecodecamp.org/certification/jamerrq/foundational-c-sharp-with-microsoft",
-      "repository": "https://github.com/jamerrq/Foundational-CSharp-with-Microsoft",
-      "images": [
-        "foundational-csharp-microsoft.webp",
-        "foundational-csharp-microsoft-2.webp"
-      ]
-    },
-    {
-      "title": "JavaScript Algorithms and Data Structures",
-      "description": {
-        "en": "JavaScript Algorithms and Data Structures certification with FreeCodeCamp.",
-        "es": "Curso de Algoritmos y Estructuras de Datos en JavaScript con FreeCodeCamp."
-      },
-      "stack": [
-        "JavaScript",
-        "FreeCodeCamp"
-      ],
-      "demo": "https://www.freecodecamp.org/certification/jamerrq/javascript-algorithms-and-data-structures",
-      "repository": "https://github.com/jamerrq/javascript-algorithms-and-data-structures",
-      "images": [
-        "js-algorithms.webp"
-      ]
-    },
-    {
-      "title": "Responsive Web Design",
-      "description": {
-        "en": "Responsive Web Design certification with FreeCodeCamp.",
-        "es": "Certificación de Diseño Web Responsivo con FreeCodeCamp."
-      },
-      "stack": [
-        "Html",
-        "Css",
-        "FreeCodeCamp"
-      ],
-      "demo": "https://www.freecodecamp.org/certification/jamerrq/responsive-web-design",
-      "repository": "https://github.com/jamerrq/responsive-web-design/",
-      "images": [
-        "responsive-web-design.webp"
-      ]
-    },
-    {
-      "title": "LeetCode 75 - Python",
-      "description": {
-        "en": "Ace Coding Interview with 75 Qs. My solutions to the 75 LeetCode problems in Python.",
-        "es": "Domina la entrevista de codificación con 75 preguntas. Mis soluciones a los 75 problemas de LeetCode en Python."
-      },
-      "stack": [
-        "Python",
-        "LeetCode"
-      ],
-      "demo": "https://leetcode.com/studyplan/leetcode-75/",
-      "repository": "https://github.com/jamerrq/LeetCode-75",
-      "images": [
-        "leetcode75-1.webp",
-        "leetcode75-2.webp",
-        "leetcode75-3.webp"
-      ]
-    },
-    {
-      "title": "Full Stack Resources App",
-      "description": {
-        "en": "Web full stack resources for developers, with a focus on the MERN stack.",
-        "es": "Recursos web full stack para desarrolladores, con un enfoque en el stack MERN."
-      },
-      "stack": [
-        "Next JS",
-        "Vitest",
-        "Tailwind CSS"
-      ],
-      "demo": "https://resources-app.vercel.app/",
-      "repository": "https://github.com/jamerrq/resources-app",
-      "images": [
-        "resources-app.webp",
-        "resources-app-2.webp"
-      ]
-    }
-  ]
+    "data": [
+        {
+            "title": "IDE Pinturerías Full Stack Web App",
+            "description": {
+                "en": "Full stack web application for the management of a paint store, with features such as inventory management, sales, reports and blog.",
+                "es": "Aplicación web full stack para la gestión de una tienda de pinturas, con características como gestión de inventario, ventas, informes y blog."
+            },
+            "stack": [
+                "React",
+                "Tailwind CSS",
+                "Express",
+                "PostgreSQL",
+                "NodeJS"
+            ],
+            "private": false,
+            "featured": true,
+            "images": [
+                "ide-pinturerias-1.webp",
+                "ide-pinturerias-2.webp",
+                "ide-pinturerias-3.webp",
+                "ide-pinturerias-4.webp",
+                "ide-pinturerias-5.webp"
+            ],
+            "website": "https://www.idepinturerias.com/"
+        },
+        {
+            "title": "Lumina - PWA Starter Template for Astro",
+            "description": {
+                "en": "A simple and beautiful PWA starter template for Astro, with a focus on performance and best practices.",
+                "es": "Una plantilla de inicio PWA simple y hermosa para Astro, con un enfoque en el rendimiento y las mejores prácticas."
+            },
+            "stack": [
+                "Astro",
+                "Tailwind CSS",
+                "TypeScript"
+            ],
+            "repository": "https://github.com/jamerrq/lumina",
+            "demo": "https://lumina-sigma.vercel.app/",
+            "images": [
+                "lumina-1.webp",
+                "lumina-2.webp"
+            ]
+        }
+    ]
 }

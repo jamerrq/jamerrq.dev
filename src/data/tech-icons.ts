@@ -268,9 +268,9 @@ const icons = {
   ],
   testing: [
     {
-      name: 'Vite',
+      name: 'Vitest',
       __html: siVitest.svg,
-      href: 'https://vitejs.dev/',
+      href: 'https://vitest.dev/',
       hex: `#${siVitest.hex}`
     },
     {

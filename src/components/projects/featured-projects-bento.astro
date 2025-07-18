@@ -2,7 +2,6 @@
 import Bento from '@components/main/bento.astro'
 import About from './about.astro'
 import Buttons from '@components/main/buttons.astro'
-import ResourcesPreact from './resources.tsx'
 import ProjectsPreact from './projects.tsx'
 interface Props {
   lang: string
@@ -12,7 +11,6 @@ const { lang = 'en' }: Props = Astro.props
 
 <Bento>
   <About lang={lang} />
-  <Buttons href={lang === 'en' ? '/es/destacados-y-proyectos' : '/featured'} />
+  <Buttons href={lang === 'en' ? '/es/proyectos' : '/projects'} />
   <ProjectsPreact lang={lang} client:only='preact' />
-  <ResourcesPreact client:only='preact' />
 </Bento>

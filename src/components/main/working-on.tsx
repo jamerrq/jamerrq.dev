@@ -37,7 +37,7 @@ interface ProjectCardProps {
 const n = projects?.length ?? 0
 const index = signal(Math.floor(Math.random() * n))
 
-import IndexPicker from '@components/featured-and-projects/indexPicker'
+import IndexPicker from '@components/projects/index-picker'
 
 function ProjectCard({ lang = 'en', project }: ProjectCardProps) {
   const date = new Date(project.start)

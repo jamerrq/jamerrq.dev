@@ -5,19 +5,18 @@ interface Props {
 const { lang = 'en' }: Props = Astro.props
 
 import Hbox from '@components/boxes/hbox.astro'
+import ArrowRight from '@components/icons/arrow-right.astro'
 ---
 
 <Hbox
-  href={lang === 'en' ? '/featured' : '/es/destacados-y-proyectos'}
-  title={lang === 'en' ? 'Featured & Projects' : 'Proyectos y Destacados'}
-  otherStyles='xl:row-span-2 flex-col [&_p]:text-2xl'
+  href={lang === 'en' ? '/projects' : '/es/proyectos'}
+  title={lang === 'en' ? 'Projects' : 'Proyectos'}
+  otherStyles='xl:row-span-2 [&_p]:text-3xl'
 >
-  <div transition:name='featured'>
-    <p>
-      {lang === 'en' ? 'Projects &' : 'Proyectos &'}
+  <div transition:name='featured' class='flex gap-2 items-center'>
+    <p class='font-bold text-2xl sm:text-3xl md:text-4xl leading-tight'>
+      {lang === 'en' ? 'Projects' : 'Proyectos'}
     </p>
-    <p>
-      {lang === 'en' ? 'Featured' : 'Destacados'}
-    </p>
+    <ArrowRight class='w-8 h-8 stroke-emerald-950 dark:stroke-emerald-300' />
   </div>
 </Hbox>

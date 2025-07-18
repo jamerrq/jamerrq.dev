@@ -1,68 +1,98 @@
 ---
-import OpenToWork from '@components/badges/open-to-work.astro'
 import Box from '@components/boxes/box.astro'
-
 interface Props {
   lang: string
 }
 
 const { lang = 'en' }: Props = Astro.props
-const firstParagraph = {
-  es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
-  en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience and developing my skills in the exciting world of backend development.'
-}[lang]
 ---
 
 <Box
-  title='Get to know me'
-  otherStyles='xl:col-span-4 xl:row-span-2 min-h-max py-2'
+  title={lang === 'en' ? 'About Me' : 'Sobre Mí'}
+  otherStyles='xl:col-span-4 xl:row-span-2 min-h-max'
 >
-  <header class='flex flex-col xl:flex-row gap-1 items-center mt-2'>
-    <h1 class='dark:text-emerald-300 text-slate-950 text-3xl xl:text-4xl'>
-      {lang === 'en' ? 'Get To Know Me' : 'Conóceme'}
+  <header class='flex flex-col xl:flex-row gap-2 items-center mt-2'>
+    <h1 class='fluid-heading dark:text-emerald-300 text-slate-950'>
+      {lang === 'en' ? 'About Me' : 'Sobre Mí'}
     </h1>
-    <OpenToWork lang={lang} />
   </header>
   <div
-    class='flex px-2 py-1 justify-center items-center w-full font-secondary xl:text-base text-sm relative h-40'
+    class='flex px-5 py-2 justify-center items-center w-full font-secondary relative h-52'
   >
     <p
-      class='text-[95%] text-pretty md:w-[90%] pt-2 text-slate-900 dark:text-slate-300'
+      class='text-base text-pretty md:w-[90%] pt-2 text-slate-900 dark:text-slate-300 text-center max-w-[90%]'
       id='about-me-paragraph'
     >
-      {firstParagraph}
+      <!-- will be set by script -->
     </p>
   </div>
-  <div class='xl:absolute bottom-1 right-2'>
-    <span class='text-xs' id='index-indicator'>1/4</span>
+  <div
+    class='absolute bottom-2 right-1/2 translate-x-1/2 flex gap-1'
+    id='paragraph-indicator'
+  >
   </div>
   <script define:vars={{ lang }} is:inline>
     const paragraphs = [
       {
-        es: '¡Hola 👋! Soy Jamer José, un Ingeniero Matemático de 24 años egresado de la Universidad EAFIT. Me encuentro aprendiendo y desarrollando mis habilidades en el apasionante mundo del desarrollo backend.',
-        en: 'Hi there 👋! I am Jamer José, a 24-year-old Mathematical Engineer graduated from Universidad EAFIT. I am currently in the process of building my experience and developing my skills in the exciting world of backend development.'
+        es: 'Soy Jamer José, Ingeniero Matemático y Científico de Datos. Me especializo en desarrollo backend, automatización y soluciones con Python, Docker y bases de datos.',
+        en: 'I’m Jamer José, a Mathematical Engineer and Data Scientist. I specialize in backend development, automation, and solutions with Python, Docker, and databases.'
       },
       {
-        es: 'Fiel a la frase «la mejor (y única) forma de lograr algo es comenzándolo», me encuentro en constante búsqueda de nuevos retos y oportunidades que me permitan ampliar mis conocimientos y habilidades en el área de la programación.',
-        en: 'True to the phrase "the best (and only) way to achieve something is to start it", I am constantly looking for new challenges and opportunities that allow me to expand my knowledge and skills in the field of programming.'
+        es: 'Mi enfoque principal es el desarrollo backend y la integración de APIs, utilizando tecnologías como Python, FastAPI, Express, Docker, PostgreSQL y MongoDB.',
+        en: 'My main focus is backend development and API integration, using technologies such as Python, FastAPI, Express, Docker, PostgreSQL, and MongoDB.'
       },
       {
-        es: 'Me apasionan los algoritmos, el código abierto y el desarrollo web en general, y considero que el aprendizaje continuo es una parte fundamental del crecimiento profesional. Además del desarrollo backend, disfruto del ajedrez y de explorar nuevas tecnologías relacionadas con el desarrollo web.',
-        en: 'I am passionate about algorithms, open source and web development in general, and I consider that continuous learning is a fundamental part of professional growth. In addition to backend development, I enjoy chess and exploring new technologies related to web development.'
+        es: 'Creo firmemente en el aprendizaje continuo y en compartir conocimiento. Me entusiasma el código abierto, la arquitectura backend y la automatización.',
+        en: 'I strongly believe in continuous learning and sharing knowledge. I’m enthusiastic about open source, backend architecture, and automation.'
       },
       {
-        es: 'Soy una persona entusiasta, proactiva y con gran capacidad de aprendizaje, siempre dispuesto a asumir nuevos desafíos y contribuir de manera positiva en los proyectos en los que me involucro. ¿Te gustaría saber más sobre mí? ¡No dudes en contactarme!',
-        en: 'I am an enthusiastic, proactive person with a great capacity for learning, always willing to take on new challenges and contribute positively to the projects I am involved in. Would you like to know more about me? Do not hesitate to contact me!'
+        es: 'Como profesional bilingüe, valoro la colaboración y la adaptabilidad. Siempre busco nuevos retos y contribuir positivamente en cualquier proyecto.',
+        en: 'As a bilingual professional, I value collaboration and adaptability. I’m always eager to take on new challenges and contribute positively to any project.'
       }
     ]
     let index = 0
     const domParagraph = document.getElementById('about-me-paragraph')
-    const domIndex = document.getElementById('index-indicator')
-    function changeParagraph() {
-      domParagraph.textContent = paragraphs[index][lang]
-      domIndex.textContent = `${index + 1}/${paragraphs.length}`
-      index = (index + 1) % paragraphs.length
+    const domIndicator = document.getElementById('paragraph-indicator')
+
+    let intervalId = null
+    function renderIndicator(current, total) {
+      domIndicator.innerHTML = ''
+      for (let i = 0; i < total; i++) {
+        const bar = document.createElement('span')
+        bar.style.display = 'inline-block'
+        bar.style.width = '20px'
+        bar.style.height = '6px'
+        bar.style.borderRadius = '3px'
+        bar.style.margin = '0 2px'
+        bar.style.background =
+          i === current
+            ? 'var(--emerald-400, #34d399)'
+            : 'var(--slate-400, #94a3b8)'
+        bar.style.transition = 'background 0.3s'
+        bar.style.cursor = 'pointer'
+        bar.addEventListener('click', () => {
+          index = i
+          showParagraph(index)
+          resetInterval()
+        })
+        domIndicator.appendChild(bar)
+      }
     }
-    setInterval(changeParagraph, 10000)
+
+    function showParagraph(idx) {
+      domParagraph.textContent = paragraphs[idx][lang]
+      renderIndicator(idx, paragraphs.length)
+    }
+
+    function resetInterval() {
+      if (intervalId) clearInterval(intervalId)
+      intervalId = setInterval(() => {
+        index = (index + 1) % paragraphs.length
+        showParagraph(index)
+      }, 10000)
+    }
+
+    showParagraph(index)
+    resetInterval()
   </script>
 </Box>

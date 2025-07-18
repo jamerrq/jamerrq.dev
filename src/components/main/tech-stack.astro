@@ -1,5 +1,6 @@
 ---
 import Hbox from '@components/boxes/hbox.astro'
+import ArrowRight from '@components/icons/arrow-right.astro'
 
 import {
   siNodedotjs,
@@ -47,12 +48,13 @@ const SVGS_STYLES = ['w-6', 'h-6', 'xl:w-8', 'xl:h-8', 'hover:scale-110'].join(
   otherStyles='xl:row-span-3 xl:col-span-2 flex-col gap-4'
 >
   <div
-    class='gap-2 flex font-bold text-2xl xl:text-4xl text-cyan-950 dark:text-cyan-300'
+    class='gap-2 flex font-bold text-2xl xl:text-4xl text-cyan-950 dark:text-cyan-300 items-center'
     transition:name='tech-stack'
   >
     <h2>
       {lang === 'en' ? 'Tech Stack' : 'Tecnologías'}
     </h2>
+    <ArrowRight class='w-8 h-8 stroke-cyan-950 dark:stroke-cyan-300' />
   </div>
   <div class='grid grid-cols-2 gap-2 items-center justify-items-center'>
     <div class={SUBTITLE_STYLES}>
@@ -113,7 +115,7 @@ const SVGS_STYLES = ['w-6', 'h-6', 'xl:w-8', 'xl:h-8', 'hover:scale-110'].join(
     </div>
     <div class={SUBTITLE_STYLES}>
       <p class='font-semibold text-xl xl:text-3xl'>
-        {lang === 'en' ? 'Tools' : 'Misc'}
+        {lang === 'en' ? 'Environment' : 'Entorno'}
       </p>
     </div>
     <div class={`${ICON_BLOCKS_STYLES} `}>
@@ -135,11 +137,4 @@ const SVGS_STYLES = ['w-6', 'h-6', 'xl:w-8', 'xl:h-8', 'hover:scale-110'].join(
       <svg class={SVGS_STYLES} set:html={siLinux.svg} fill={`#FE7A36`} />
     </div>
   </div>
-  <aside class='p-2 rounded-[10px] flex gap-2 justify-center items-center'>
-    <span
-      class='font-bold text-sm xl:text-base dark:text-emerald-300 text-slate-900 font-secondary'
-    >
-      - {lang === 'en' ? 'Tap to see more' : 'Presiona para ver más'} -
-    </span>
-  </aside>
 </Hbox>

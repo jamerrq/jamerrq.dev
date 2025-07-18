@@ -4,7 +4,7 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev)
 
 ![](https://img.shields.io/badge/Made%20with-Astro-000?style=for-the-badge&logo=astro&logoColor=orange)
 
-## What can you learn from this project? 🧐
+## What can you learn from this project?
 
 - Astro Server Side Rendering with Deno and Deno Deploy
 - Astro View Transitions
@@ -17,7 +17,7 @@ Source code for my personal website, [jamerrq.dev](https://jamerrq.dev)
 - Dark & Light Mode with Tailwind CSS
 - i18n routing with Astro
 
-## Stack 🥞
+## Stack
 
 ![Astro](https://img.shields.io/badge/-Astro-000000?style=flat-square&logo=astro&logoColor=orange)
 ![Tailwind
@@ -31,19 +31,19 @@ CSS](https://img.shields.io/badge/-Tailwind%20CSS-000?style=flat-square&logo=tai
 ![Desktop](./lib/snaps/preview-3.png)
 ![Mobile](./lib/snaps/preview-mobile-3.png)
 
-### Tooling 🛠️
+### Tooling
 
 ![Bun](https://img.shields.io/badge/-Bun-000?style=flat-square&logo=bun&logoColor=white)
 ![Prettier](https://img.shields.io/badge/-Prettier-000?style=flat-square&logo=prettier&logoColor=yellow)
 ![ESLint](https://img.shields.io/badge/-ESLint-000?style=flat-square&logo=eslint&logoColor=indigo)
 
-### CI/CD & Deployment 🚀
+### CI/CD & Deployment
 
 ![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-black?style=flat-square&logo=github-actions&logoColor=white)
 ![Deno
 Deploy](https://img.shields.io/badge/-Deno%20Deploy-000000?style=flat-square&logo=deno&logoColor=white)
 
-### Speed Insights 🚄
+### Speed Insights
 
 ![Lighthouse Report](public/img/blog/pagespeed-insights.webp)
 
@@ -51,11 +51,11 @@ Deploy](https://img.shields.io/badge/-Deno%20Deploy-000000?style=flat-square&log
 
 Check the latest [Lighthouse Report](https://pagespeed.web.dev/analysis/https-jamerrq-dev/cfgjgvhswj)
 
-## Board 📋
+## Board
 
 [Project Board on GitHub](https://github.com/users/jamerrq/projects/1/views/2)
 
-## Resources 📚
+## Resources
 
 - [Nerd Fonts Cheat Sheet (removed)](https://www.nerdfonts.com/cheat-sheet)
 - [Tailwind CSS Debug Screens](https://github.com/jorenvanhee/tailwindcss-debug-screens)

@@ -8,6 +8,7 @@ const { title, lang = 'en' }: Props = Astro.props
 
 // Fonts
 import '@fontsource/fira-sans'
+import '@fontsource-variable/bitter'
 
 // Styles
 import '@styles/index.css'
@@ -37,7 +38,7 @@ const dev = import.meta.env.DEV
     <main class='min-h-[100dvh] grid place-content-center'>
       <slot />
     </main>
-    {dev ? <DevScripts /> : <Scripts />}
+    <Scripts />
     <ReloadPrompt />
   </body>
 </html>

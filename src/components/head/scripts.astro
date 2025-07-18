@@ -13,21 +13,17 @@ const blob = rawBlobs.at(index)!
 // @ts-ignore
 import { pwaInfo } from 'virtual:pwa-info'
 
-const astroURL = Astro.url.toString()
-const isInDeno = astroURL.includes('.deno.dev')
+// const astroURL = Astro.url.toString()
+// const isInDeno = astroURL.includes('.deno.dev')
 ---
 
-<!-- Redirect to canon if needed -->
-<script is:inline define:vars={{ isInDeno, astroURL }}>
+<!-- Redirect to canon if needed --><!-- <script is:inline define:vars={{ isInDeno, astroURL }}>
   if (isInDeno) {
     const canonURL = astroURL.replace('.deno.dev', '.dev')
     window.location.href = canonURL
   }
-</script>
-
-<!-- Theme & Language -->
+</script> --><!-- Theme & Language -->
 <script defer is:inline define:vars={{ lang, blob }}>
-  console.log(blob)
   // Theme switch
   function setTheme() {
     const darkIcon = document.getElementById('theme-toggle-dark-icon')
@@ -86,8 +82,7 @@ const isInDeno = astroURL.includes('.deno.dev')
   }
 
   setTheme()
-  document.addEventListener('astro:after-preparation', setTheme)
-  document.addEventListener('astro:after-swap', setTheme)
+  document.addEventListener('astro:before-swap', setTheme)
 
   // Home button
   const prepareHomeButton = () => {
@@ -110,8 +105,7 @@ const isInDeno = astroURL.includes('.deno.dev')
   }
 
   prepareHomeButton()
-  document.addEventListener('astro:after-preparation', prepareHomeButton)
-  document.addEventListener('astro:after-swap', prepareHomeButton)
+  document.addEventListener('astro:before-swap', prepareHomeButton)
 </script>
 
 <!-- Cards hover effect -->
@@ -134,15 +128,16 @@ const isInDeno = astroURL.includes('.deno.dev')
 <script>
   import { toast } from 'wc-toast'
   const copyMailButton = document.getElementById('copyMailButton')
-  copyMailButton?.addEventListener('click', () => {
+  function handleCopyMail() {
     navigator.clipboard.writeText('jamerrq@gmail.com')
     toast('email shipped into your clipboard 📬', {
       duration: 2000,
-      theme: {
-        type: 'light'
-      }
+      theme: { type: 'light' }
     })
-  })
+  }
+  // Remove any previous listener before adding
+  copyMailButton?.removeEventListener('click', handleCopyMail)
+  copyMailButton?.addEventListener('click', handleCopyMail)
 </script>
 
 <!-- PWA Registration -->

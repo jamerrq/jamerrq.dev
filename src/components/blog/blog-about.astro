@@ -13,17 +13,20 @@ const ABOUT_STYLES = [
   'text-black',
   'font-primary',
   'w-full',
-  'xl:h-full',
+  'h-full',
   'transition-all',
   'hover:border-2',
   'dark:border-cyan-300',
   'border-cyan-950',
-  'text-4xl',
+  'text-xl',
+  'sm:text-2xl',
+  'xl:text-4xl',
   'flex-row',
   'gap-2',
   'text-slate-900',
   'dark:text-slate-300',
-  'p-2'
+  'p-2',
+  'sm:p-3'
 ].join(' ')
 
 import { siGitbook } from 'simple-icons'
@@ -32,6 +35,8 @@ interface Props {
   lang: string
 }
 const { lang = 'en' }: Props = Astro.props
+
+import ArrowLeft from '@components/icons/arrow-left.astro'
 ---
 
 <a
@@ -39,6 +44,7 @@ const { lang = 'en' }: Props = Astro.props
   transition:name='blog'
   href={lang === 'en' ? '/' : '/es'}
 >
+  <ArrowLeft class='w-8 h-8 stroke-cyan-950 dark:stroke-cyan-300' />
   <span class='dark:text-cyan-300'>Blog</span>
   <svg
     class='w-8 h-8 inline-flex dark:fill-cyan-300 fill-amber-950'

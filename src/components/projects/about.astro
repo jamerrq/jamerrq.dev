@@ -1,0 +1,20 @@
+---
+interface Props {
+  lang: string
+}
+const { lang = 'en' }: Props = Astro.props
+
+import ArrowLeft from '@components/icons/arrow-left.astro'
+---
+
+<a
+  class={`col-span-1 xl:col-span-4 row-span-1 bg-slate-300 dark:bg-slate-900 dark:text-slate-300 rounded-[10px] flex items-center justify-center font-bold font-primary w-full h-full transition-all text-3xl flex-row gap-2 text-slate-900 p-2 flex-wrap hover:shadow-lg shadow-md mx-4`}
+  transition:name='featured'
+  href={lang === 'en' ? '/' : '/es'}
+>
+  <ArrowLeft class='w-8 h-8 stroke-emerald-950 dark:stroke-emerald-300' />
+  <p class='text-emerald-950 dark:text-emerald-300'>
+    <!-- Projects -->
+    {lang === 'en' ? 'Projects' : 'Proyectos'}
+  </p>
+</a>

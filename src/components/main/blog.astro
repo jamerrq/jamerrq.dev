@@ -1,6 +1,7 @@
 ---
 import Hbox from '@components/boxes/hbox.astro'
 import { siGitbook } from 'simple-icons'
+import ArrowRight from '@components/icons/arrow-right.astro'
 
 interface Props {
   lang: string
@@ -11,13 +12,10 @@ const { lang = 'en' }: Props = Astro.props
 <Hbox
   title='Blog'
   href={lang === 'en' ? '/blog' : '/es/blog'}
-  otherStyles='xl:row-span-2 [&_p]:text-3xl'
+  otherStyles='xl:row-span-2 [&_p]:text-3xl sm:col-span-2'
 >
-  <div class='flex gap-2' transition:name='blog'>
+  <div class='flex gap-2 items-center' transition:name='blog'>
     <p>Blog</p>
-    <svg
-      class='w-8 h-8 inline-flex dark:fill-cyan-300 fill-cyan-950'
-      set:html={siGitbook.svg}
-    />
+    <ArrowRight class='w-8 h-8 stroke-emerald-950 dark:stroke-emerald-300' />
   </div>
 </Hbox>

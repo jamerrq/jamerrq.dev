@@ -5,6 +5,8 @@ interface Props {
   lang?: string
 }
 const { lang = 'en' }: Props = Astro.props
+
+import ArrowLeft from '@components/icons/arrow-left.astro'
 ---
 
 <Hbox
@@ -12,6 +14,7 @@ const { lang = 'en' }: Props = Astro.props
   otherStyles='xl:col-span-2 xl:row-span-2'
   href={lang === 'en' ? '/' : '/es'}
 >
+  <ArrowLeft class='w-8 h-8 mr-4 stroke-emerald-950 dark:stroke-emerald-300' />
   <div
     class='flex flex-col font-secondary min-w-[50%]'
     transition:name='tech-stack'
@@ -19,11 +22,13 @@ const { lang = 'en' }: Props = Astro.props
     <p class='font-semibold text-2xl font-primary'>
       {lang === 'en' ? 'Tech Stack' : 'Mi Stack'}
     </p>
-    <p class='font-semibold text-balance text-sm xl:text-base text-emerald-300'>
+    <p
+      class='font-semibold text-balance text-sm xl:text-base text-cyan-900 dark:text-cyan-300'
+    >
       {
         lang === 'en'
-          ? 'Painters have brushes, I got these 🦜'
-          : 'Los pintores tienen pinceles, yo tengo estas 🦜'
+          ? 'Painters have brushes, I got these.'
+          : 'Los pintores tienen pinceles, yo tengo estas.'
       }
     </p>
   </div>
